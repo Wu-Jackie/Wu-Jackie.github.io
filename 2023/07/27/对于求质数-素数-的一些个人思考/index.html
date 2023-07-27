@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html lang="zh-CH">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+    <link rel="dns-prefetch" href="//hm.baidu.com">
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>对于求质数(素数)的一些个人思考 | Jackie&#39;s Blog</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Jackie's Blog"><meta name="msapplication-starturl" content="http://example.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jackie's Blog"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="对于求质数(素数)的一些个人思考 | Jackie&#39;s Blog"><meta property="og:site_name" content="Jackie&#39;s Blog"><meta property="og:type" content="article"><meta property="og:url" content="http://example.com/2023/07/27/%E5%AF%B9%E4%BA%8E%E6%B1%82%E8%B4%A8%E6%95%B0-%E7%B4%A0%E6%95%B0-%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"><meta property="og:locale" content="zh-CH"><meta name="description" content="看到一道题  求100之内的素数  动手尝试后查阅相关资料看到一篇文章：求质数算法的N种境界-试除法和初级筛法原文链接受到一些启发  遂动手修改了程序如下，基本实现了两种功能，进一步的代码优化欢迎各位大佬交流！ 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515 - Jackie - Jackie&#39;s Blog"><meta name="keywords" content="summary"><meta property="article:published_time" content="2023-07-27T15:17:48.000Z"><meta property="article:modified_time" content="2023-07-27T15:19:41.055Z"><meta property="og:updated_time" content="2023-07-27T15:19:41.055Z"><meta property="article:author" content="Jackie"><meta property="article:tag" content="summary"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://example.com/2023/07/27/%E5%AF%B9%E4%BA%8E%E6%B1%82%E8%B4%A8%E6%95%B0-%E7%B4%A0%E6%95%B0-%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/">
+
+    <meta name="generator" content="Hexo 6.3.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?6fa63450abd362f22fde7934382733b4';
+    var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://example.com/2023/07/27/%E5%AF%B9%E4%BA%8E%E6%B1%82%E8%B4%A8%E6%95%B0-%E7%B4%A0%E6%95%B0-%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/",
+    "@type": "BlogPosting",
+    "logo": "http://example.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://example.com/2023/07/27/%E5%AF%B9%E4%BA%8E%E6%B1%82%E8%B4%A8%E6%95%B0-%E7%B4%A0%E6%95%B0-%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"
+    },
+    "headline": "对于求质数(素数)的一些个人思考 | Jackie&#39;s Blog",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://example.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2023-07-27T15:17:48.000Z",
+    "dateModified": "2023-07-27T15:19:41.055Z",
+    "author": {
+        "@type": "Person",
+        "name": "Jackie",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/default_avatar.png"
+        },
+        "description": "Welcome To My Blog!,無限進步！"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Jackie&#39;s Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://example.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "summary",
+    "description": "看到一道题  求100之内的素数  动手尝试后查阅相关资料看到一篇文章：求质数算法的N种境界-试除法和初级筛法原文链接受到一些启发  遂动手修改了程序如下，基本实现了两种功能，进一步的代码优化欢迎各位大佬交流！ 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515 - Jackie - Jackie&#39;s Blog"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Jackie&#39;s Blog</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Welcome To My Blog!<br>無限進步！
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/links/" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+
+        <!-- Share Twitter -->
+        
+
+        <!-- Share Facebook -->
+        
+
+        <!-- Share Google+ -->
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com&title=对于求质数(素数)的一些个人思考" target="_blank" rel="external noopener noreferrer nofollow">分享到 LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=对于求质数(素数)的一些个人思考&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEK0lEQVR42u3bwXrTQAxF4bz/S8OqC4rn3iOni8g92QBJsOc3XzUaSbz+/ILXS6RIkSJFinwT+Qqvr8+vvvvPxb79+fRZ+/3VdU6ftXWLFLkZmRZ3Bf7+3n8XDwv6/vdP97haT7rH5cMTKXIxchJw4g87RJ8CyDRwxXWLFPlAZIKkzTlt6CdQ+uzqGiJF/kZk2tQTECXQJbEnwUukyKci0yZMb94O3Sl5b/egB3WRIp+AJIWsT/z1x6t1IkV+ALI2TQ6H6HSgbkXhU5BphbKU2L/V1RIp8oOQpGB8uuH0UNsKX6SQlR56bfiIFLkM2Qq68YJhMSSwpGtOi9UiRW5GtiZNa5iSQEASBdLEnQQ0kSK3IluxNx2m2/t3HhgpWNFCmUiRW5EkEacBhzRmaDBrjdl2f5EiNyPbouPFyvAfPeSS4lhLOkSK3I6kyTXZ1CdFq5SoTw4AqAkrUuQiJB3WqwfUGwMWZMEtSYjNJZEiFyLbAZkMyU8K0pPEYHo4iNFVpMglSHIgfYEXKTbdCULt2rirJVLkIiQpNJEbUCQ9BLSCdC1CixS5EDkdICRFK1rsOhWRSYKAEniRIpcip00YGigmCXZLRFoRCxWXRYpcgJw0Tk+HawKiQ0zvfl+kyKcgyTDCpNhEkv/2sEjQisVpkSIXImnBlhSSaaGrDUaQBAQ1h0WKXIhsg7rTTTglzq1QNoGkBy9S5BOQZHA9Ie58nzwQ0qg9BkWRIpci28GUfHeSeNPP7gZBkSK3IyfBgAxUkIM3GchAQ4KpcCZS5ELkOwkwSarJAZo2dts1a6dZpMiFyBYkSFBozaHJEEVLGuI/gEiRC5F3AgIZNKQPijZwpwU0kSI3I9vhmOKmiUNr2LZkYzSsJFLkImTbxNuAX3qfbuAkUTgVzI6BSqTIhUiSaJNAQ4Zs6YMgD5U8LJEiNyLTQmgTaDLkR4ciJu8di14iRS5EkoQgBZdJIErXJIEqFZxrw0ekyEXIFhzSD3zb7KeLpgkESjpEinwQkjRRJ4kE2dAnf68FIZEityPvFHLpwZo0lFpgo80ekSK3IydFXzIo0TZ6klBMD97H64gUuRBJFtR+8O+gWkOp3Rs9LJEilyLb4qcbeUvyyWDDKcjdDjwiRS5B0ou0AffJf2b5qUQCD9qLFLkIORlISC/y/WmRmR7Qj++JFLkU2ZLotHgyREEeDmnwtOBXGz4iRS5DkkIyQbakgjSYWgLfkguRIrci2+JIc5Z+TgJaO1CPBqREilyKpIk5HSyaFMFoYJk0pESKfAKSNFdrQgwTdPI+KaLVxEOkyAci2+BgapC2Db0dCibJfU3QRYp8EJIMF9UDbClCt8GkFpwuH5ZIkYuRd4aVUnO0JfHTwnJKQHDgESlyCZIWsqbBhkDJgRhv/iJFPgD55JdIkSJFihR58/UXSQtx7aOhWyAAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">对于求质数(素数)的一些个人思考</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="Jackie's Avatar">
+        <span>2023-07-27</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com/2023/07/27/%E5%AF%B9%E4%BA%8E%E6%B1%82%E8%B4%A8%E6%95%B0-%E7%B4%A0%E6%95%B0-%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/&title=Jackie's Blog" target="_blank" rel="external noopener noreferrer nofollow">分享到 LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=Jackie's Blog&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com/2023/07/27/%E5%AF%B9%E4%BA%8E%E6%B1%82%E8%B4%A8%E6%95%B0-%E7%B4%A0%E6%95%B0-%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEK0lEQVR42u3bwXrTQAxF4bz/S8OqC4rn3iOni8g92QBJsOc3XzUaSbz+/ILXS6RIkSJFinwT+Qqvr8+vvvvPxb79+fRZ+/3VdU6ftXWLFLkZmRZ3Bf7+3n8XDwv6/vdP97haT7rH5cMTKXIxchJw4g87RJ8CyDRwxXWLFPlAZIKkzTlt6CdQ+uzqGiJF/kZk2tQTECXQJbEnwUukyKci0yZMb94O3Sl5b/egB3WRIp+AJIWsT/z1x6t1IkV+ALI2TQ6H6HSgbkXhU5BphbKU2L/V1RIp8oOQpGB8uuH0UNsKX6SQlR56bfiIFLkM2Qq68YJhMSSwpGtOi9UiRW5GtiZNa5iSQEASBdLEnQQ0kSK3IluxNx2m2/t3HhgpWNFCmUiRW5EkEacBhzRmaDBrjdl2f5EiNyPbouPFyvAfPeSS4lhLOkSK3I6kyTXZ1CdFq5SoTw4AqAkrUuQiJB3WqwfUGwMWZMEtSYjNJZEiFyLbAZkMyU8K0pPEYHo4iNFVpMglSHIgfYEXKTbdCULt2rirJVLkIiQpNJEbUCQ9BLSCdC1CixS5EDkdICRFK1rsOhWRSYKAEniRIpcip00YGigmCXZLRFoRCxWXRYpcgJw0Tk+HawKiQ0zvfl+kyKcgyTDCpNhEkv/2sEjQisVpkSIXImnBlhSSaaGrDUaQBAQ1h0WKXIhsg7rTTTglzq1QNoGkBy9S5BOQZHA9Ie58nzwQ0qg9BkWRIpci28GUfHeSeNPP7gZBkSK3IyfBgAxUkIM3GchAQ4KpcCZS5ELkOwkwSarJAZo2dts1a6dZpMiFyBYkSFBozaHJEEVLGuI/gEiRC5F3AgIZNKQPijZwpwU0kSI3I9vhmOKmiUNr2LZkYzSsJFLkImTbxNuAX3qfbuAkUTgVzI6BSqTIhUiSaJNAQ4Zs6YMgD5U8LJEiNyLTQmgTaDLkR4ciJu8di14iRS5EkoQgBZdJIErXJIEqFZxrw0ekyEXIFhzSD3zb7KeLpgkESjpEinwQkjRRJ4kE2dAnf68FIZEityPvFHLpwZo0lFpgo80ekSK3IydFXzIo0TZ6klBMD97H64gUuRBJFtR+8O+gWkOp3Rs9LJEilyLb4qcbeUvyyWDDKcjdDjwiRS5B0ou0AffJf2b5qUQCD9qLFLkIORlISC/y/WmRmR7Qj++JFLkU2ZLotHgyREEeDmnwtOBXGz4iRS5DkkIyQbakgjSYWgLfkguRIrci2+JIc5Z+TgJaO1CPBqREilyKpIk5HSyaFMFoYJk0pESKfAKSNFdrQgwTdPI+KaLVxEOkyAci2+BgapC2Db0dCibJfU3QRYp8EJIMF9UDbClCt8GkFpwuH5ZIkYuRd4aVUnO0JfHTwnJKQHDgESlyCZIWsqbBhkDJgRhv/iJFPgD55JdIkSJFihR58/UXSQtx7aOhWyAAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                    
+                    <article id="post-content">
+                        <p>看到一道题</p>
+<blockquote>
+<p>求100之内的素数</p>
+</blockquote>
+<p>动手尝试后查阅相关资料看到一篇文章：<a target="_blank" rel="noopener" href="http://t.csdn.cn/TIo4L">求质数算法的N种境界-试除法和初级筛法</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/caiminfeng/p/4805544.html">原文链接</a><br>受到一些启发  遂动手修改了程序如下，基本实现了两种功能，进一步的代码优化欢迎各位大佬交流！</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;math.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> N 15000</span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>	<span class="hljs-type">int</span> a, i, j, k, num, sum = <span class="hljs-number">0</span>;<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Q1:要求多少以内的素数?\nQ2:要多少个素数?\n&quot;</span>);<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Q1请输入1,Q2请输入2\n请输入:&quot;</span>);<br>	scanf_s(<span class="hljs-string">&quot;%d&quot;</span>,&amp;a);<br>	<span class="hljs-keyword">if</span> (a == <span class="hljs-number">1</span>)<br>	&#123;<br>		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;请输入数字:&quot;</span>);<br>		scanf_s(<span class="hljs-string">&quot;%d&quot;</span>,&amp;num);<br>		<span class="hljs-keyword">for</span> (i = <span class="hljs-number">2</span>; i &lt;= num; i++)<br>		&#123;<br>			k = <span class="hljs-built_in">sqrt</span>(i);<br>			<span class="hljs-keyword">for</span> (j = <span class="hljs-number">2</span>; j &lt;= k; j += <span class="hljs-number">1</span>)<br>			&#123;<br>				<span class="hljs-keyword">if</span> (i % j == <span class="hljs-number">0</span>)<br>				&#123;<br>					<span class="hljs-keyword">break</span>;<br>				&#125;<br>			&#125;<br>			<span class="hljs-keyword">if</span> (j &gt; k)<br>			&#123;<br>				<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\t&quot;</span>, i);<br>				sum++;<br>				<span class="hljs-keyword">if</span> (sum % <span class="hljs-number">10</span> == <span class="hljs-number">0</span>)<br>				&#123;<br>					<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);<br>				&#125;<br>			&#125;<br>		&#125;<br>		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n%d内一共有%d个素数&quot;</span>, num, sum);<br>	&#125;<br>	<span class="hljs-keyword">if</span> (a == <span class="hljs-number">2</span>)<br>	&#123;<br>		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;请输入数字:&quot;</span>);<br>		scanf_s(<span class="hljs-string">&quot;%d&quot;</span>, &amp;num);<br>		<span class="hljs-keyword">for</span> (i = <span class="hljs-number">2</span>; i &lt;= N; i++)<br>		&#123;<br>			k = <span class="hljs-built_in">sqrt</span>(i);<br>			<span class="hljs-keyword">for</span> (j = <span class="hljs-number">2</span>; j &lt;= k; j += <span class="hljs-number">1</span>)<br>			&#123;<br>				<span class="hljs-keyword">if</span> (i % j == <span class="hljs-number">0</span>)<br>				&#123;<br>					<span class="hljs-keyword">break</span>;<br>				&#125;<br>			&#125;<br>			<span class="hljs-keyword">if</span> (j &gt; k)<br>			&#123;<br>				<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\t&quot;</span>, i);<br>				sum++;<br>				<span class="hljs-keyword">if</span> (sum % <span class="hljs-number">10</span> == <span class="hljs-number">0</span>)<br>				&#123;<br>					<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);<br>				&#125;<br>				<span class="hljs-keyword">if</span> (sum == num)<br>				&#123;<br>					<span class="hljs-keyword">break</span>;<br>				&#125;<br>			&#125;<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+                    </article>
+                    
+
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2023-07-27T15:17:48.000Z" itemprop="datePublished">2023-07-27</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+<span class="post-tags-list mt-2">
+
+<a class="post-tags-list-item" href="/tags/summary/" rel="tag">#&nbsp;summary</a>
+
+</span>
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2023/07/27/test01/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">test01</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://example.com">Jackie's Blog</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+    <!-- Busuanzi Post Views -->
+    <span id="busuanzi_container_site_pv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_pv"></span>
+        <span>Views</span>
+        
+    </span>
+
+
+
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站访客数<span id="busuanzi_value_site_uv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+(function() {
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.getElementById('copyright-year');
+    var copyrightSince = 2023;
+    if (copyrightSince === copyrightNow) {
+        copyrightContent.textContent = copyrightNow;
+    } else {
+        copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
+    }
+})();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>
