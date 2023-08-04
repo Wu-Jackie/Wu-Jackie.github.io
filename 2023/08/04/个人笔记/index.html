@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+    <link rel="dns-prefetch" href="//hm.baidu.com">
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>个人笔记 | Jackie&#39;s Blog</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/obsidian.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/obsidian.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Jackie's Blog"><meta name="msapplication-starturl" content="http://example.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jackie's Blog"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="个人笔记 | Jackie&#39;s Blog"><meta property="og:site_name" content="Jackie&#39;s Blog"><meta property="og:type" content="article"><meta property="og:url" content="http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"><meta property="og:locale" content="zh-CN"><meta name="description" content="个人学习笔记 - Jackie - Jackie&#39;s Blog"><meta name="keywords" content="summary"><meta property="og:image" content="http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/%E7%AE%80%E5%8D%95%E5%B1%80%E5%9F%9F%E7%BD%91%E7%9A%84%E6%9E%84%E6%88%90.png"><meta property="og:image" content="http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/%E7%BD%91%E5%85%B3.jpeg"><meta property="og:image" content="http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/DNS.jpeg"><meta property="og:image" content="http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E5%A4%B4.png"><meta property="og:image" content="http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/tcp%E4%B8%89%E6%AC%A1%E8%BF%9E%E6%8E%A5%E6%8F%A1%E6%89%8B.png"><meta property="og:image" content="http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/TCP%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png"><meta property="og:image" content="http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/ARP%E6%AC%BA%E9%AA%97.jpg"><meta property="og:image" content="http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/ICMP%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90%E8%AF%B7%E6%B1%82%E5%8C%85.png"><meta property="og:image" content="http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/ICMP%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90%E5%BA%94%E7%AD%94%E5%8C%85.png"><meta property="article:published_time" content="2023-08-04T14:22:38.000Z"><meta property="article:modified_time" content="2023-08-04T15:13:07.304Z"><meta property="og:updated_time" content="2023-08-04T15:13:07.304Z"><meta property="article:author" content="Jackie"><meta property="article:tag" content="summary"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">
+
+    <meta name="generator" content="Hexo 6.3.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?6fa63450abd362f22fde7934382733b4';
+    var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/",
+    "@type": "BlogPosting",
+    "logo": "http://example.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"
+    },
+    "headline": "个人笔记 | Jackie&#39;s Blog",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://example.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2023-08-04T14:22:38.000Z",
+    "dateModified": "2023-08-04T15:13:07.304Z",
+    "author": {
+        "@type": "Person",
+        "name": "Jackie",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/default_avatar.png"
+        },
+        "description": "Welcome To My Blog!,無限進步！"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Jackie&#39;s Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://example.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "summary",
+    "description": "个人学习笔记 - Jackie - Jackie&#39;s Blog"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Jackie&#39;s Blog</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Welcome To My Blog!<br>無限進步！
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about" class="navbar-link">About</a>
+    
+        <a href="/links" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+
+        <!-- Share Twitter -->
+        
+
+        <!-- Share Facebook -->
+        
+
+        <!-- Share Google+ -->
+        
+
+        <!-- Share LinkedIn -->
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=个人笔记&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACMUlEQVR42u2aQXKDQAwE+f+nk1MuDtK0KFKxUe/FLlig7dpZpJGOrw8Yh5BCCinkG0Aezfg53817PUfuiecIuRbydNEWAK8Pqa7r7kfmCSlkEkx14wq+ExZ5rpBCdpN/XdzM6V4IlYCEFPKqcM4eSAKT9CmkkJMA4wyo27grYf1pFCTk4yDvEsBVwdyaLQr58ZDYPDoJYqk4qhfD7a6akI+ApCZSBVgJoYKiCZmQeyGTKZW+VwKbQJfnhFwJOTFRE9wkuSMGmJA7IasNPSbucNPuro3HhFwJeaU4RAOH6hh9UQi5FzIlR8mQSiZrKpgKKWRlWE0MU9JMkgpM0YwVci1kCkC7wJWKgv7gNhETcg1kau6YFpqIoMZBr5BrICfBBDXxSWKHhCfkashOMFc2+2mTXtsoIuRaSBrsThtLOiMBJWJCroJMTcJpkZNCFSlG4aBXyMdDdskY3dRTsYkYr3EzF3IN5NWFTzfsSWFUSCErsaTgIYkmCYLOE3I35CT5J2ZXJ0rcMCXkWkhqllLRXCminl4jpJDBiI/J/MAQSMaXkLsh8UIeBCNXmpNj47GQqyBpQ0gMCkLiRe4v5G7INGiDSBfcpoSs/MOEXAk5WcxdcEGEkor4o24WIR8NSQQzbfSYmPvYwRByFeTEdCKGwSS4GCViQgoJG4on85LQhBQyFSUnApgkcLdt5kI+EpI2yNFkjGz26YcIuReSJE6kAJ8KAEQ8Qgr5zkNIIYUU8h/HNw1H12bBrwrbAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">个人笔记</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="Jackie's Avatar">
+        <span>2023-08-04</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=Jackie's Blog&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACMUlEQVR42u2aQXKDQAwE+f+nk1MuDtK0KFKxUe/FLlig7dpZpJGOrw8Yh5BCCinkG0Aezfg53817PUfuiecIuRbydNEWAK8Pqa7r7kfmCSlkEkx14wq+ExZ5rpBCdpN/XdzM6V4IlYCEFPKqcM4eSAKT9CmkkJMA4wyo27grYf1pFCTk4yDvEsBVwdyaLQr58ZDYPDoJYqk4qhfD7a6akI+ApCZSBVgJoYKiCZmQeyGTKZW+VwKbQJfnhFwJOTFRE9wkuSMGmJA7IasNPSbucNPuro3HhFwJeaU4RAOH6hh9UQi5FzIlR8mQSiZrKpgKKWRlWE0MU9JMkgpM0YwVci1kCkC7wJWKgv7gNhETcg1kau6YFpqIoMZBr5BrICfBBDXxSWKHhCfkashOMFc2+2mTXtsoIuRaSBrsThtLOiMBJWJCroJMTcJpkZNCFSlG4aBXyMdDdskY3dRTsYkYr3EzF3IN5NWFTzfsSWFUSCErsaTgIYkmCYLOE3I35CT5J2ZXJ0rcMCXkWkhqllLRXCminl4jpJDBiI/J/MAQSMaXkLsh8UIeBCNXmpNj47GQqyBpQ0gMCkLiRe4v5G7INGiDSBfcpoSs/MOEXAk5WcxdcEGEkor4o24WIR8NSQQzbfSYmPvYwRByFeTEdCKGwSS4GCViQgoJG4on85LQhBQyFSUnApgkcLdt5kI+EpI2yNFkjGz26YcIuReSJE6kAJ8KAEQ8Qgr5zkNIIYUU8h/HNw1H12bBrwrbAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">1.</span> <span class="post-toc-text">位与、位或、异或、位移运算</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">位与（&amp;）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">位或（|）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">异或 （^）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">左位移（&lt;&lt;）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">右位移（&gt;&gt;）</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">2.</span> <span class="post-toc-text">IP地址详解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">简单局域网的构成</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">IP地址</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">子网掩码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">IP地址详解</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">网关</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">DNS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">网络测试命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">进制转换</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">存储单位</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">3.</span> <span class="post-toc-text">※小技巧</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">更改图标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">robots协议</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">4.</span> <span class="post-toc-text">常见文件头</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">5.</span> <span class="post-toc-text">Dirsearch</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">6.</span> <span class="post-toc-text">Nmap</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">常用扫描命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">扫描ip地址或域名</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link"><span class="post-toc-number">6.1.2.</span> <span class="post-toc-text">扫描整个网段</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link"><span class="post-toc-number">6.1.3.</span> <span class="post-toc-text">扫描端口</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link"><span class="post-toc-number">6.1.4.</span> <span class="post-toc-text">探测主机操作系统</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link"><span class="post-toc-number">6.1.5.</span> <span class="post-toc-text">全面的系统探测</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link"><span class="post-toc-number">6.1.6.</span> <span class="post-toc-text">扫描目标主机和端口上运行的软件的版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link"><span class="post-toc-number">6.1.7.</span> <span class="post-toc-text">路由跟踪扫描</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">nmap常用方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">nmap脚本实例</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">7.</span> <span class="post-toc-text">Wireshark</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">TCP协议</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">UDP协议</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">ARP协议</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">ICMP协议</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">7.5.</span> <span class="post-toc-text">过滤器</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">8.</span> <span class="post-toc-text">杂项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">Windows</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">Linux</span></a></li></ol></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h1><span id="位与-位或-异或-位移运算">位与、位或、异或、位移运算</span></h1><h2><span id="位与amp">位与（&amp;）</span></h2><p>参与运算的两个数据，按照二进制位进行“与运算”。</p>
+<p>运算规则：0&amp;0&#x3D;0;   0&amp;1&#x3D;0;   1&amp;0&#x3D;0;    1&amp;1&#x3D;1;</p>
+<blockquote>
+<p>即：两位同时为1，则值为1。否则为0</p>
+<p>例如：9 &amp; 5 &#x3D; 1001 &amp; 0101 &#x3D; 0001 &#x3D; 1</p>
+</blockquote>
+<h2><span id="位或">位或（|）</span></h2><p>参与运算的两个数据，按照二进制位进行“或运算”。</p>
+<p>运算规则：0|0&#x3D;0;   0|1&#x3D;1;   1|0&#x3D;1;    1|1&#x3D;1;</p>
+<blockquote>
+<p>即：参与运算的两个数据只要有一个值为1 那么值为1</p>
+<p>例如：9 | 5 &#x3D; 1001| 0101 &#x3D; 1101 &#x3D; 13</p>
+</blockquote>
+<h2><span id="异或">异或 （^）</span></h2><p>参与 运算的两个数据，按照二进制位进行“异或运算”。</p>
+<p>运算规则： 0&amp;0&#x3D;0;   0&amp;1&#x3D;1;   1&amp;0&#x3D;1;    1&amp;1&#x3D;0;</p>
+<blockquote>
+<p>即：参加运算的两个对象，如果两个相应位为“异”（值不同），则该位结果为1，否则为0。</p>
+<p>例如：9 ^ 5 &#x3D; 1001^0101 &#x3D; 1100 &#x3D; 12 </p>
+</blockquote>
+<h2><span id="左位移ltlt">左位移（&lt;&lt;）</span></h2><p>a&lt;&lt;b 表示把a转为二进制后左移b位（在后面添加 b个0）。</p>
+<p>例如100的二进制表示为1100100，100左移2位后（后面加2个零）：1100100&lt;&lt;2 &#x3D;110010000 &#x3D;400</p>
+<p>可以看出，<strong>a&lt;&lt;b的值实际上就是a乘以2的b次方</strong>，因为在二进制数后面添加一个0就相当该数乘以2，2个零即2的2次方 等于4。通常认为a&lt;&lt;1比a*2更快，因为前者是更底层一些的操作。因此程序中乘以2的操作尽量用左移一位来代替。</p>
+<p><strong>定义一些常量可能会用到&lt;&lt;运算</strong> 。你可以方便的用1&lt;&lt;16 -1 来表示65535（unsingned int 最大值16位系统）。很多算法和数据结构要求数据模块必须是2的幂，此时就可以用&lt;&lt;来定义MAX_N等常量。</p>
+<h2><span id="右位移gtgt">右位移（&gt;&gt;）</span></h2><p>和&lt;&lt;相似，a&gt;&gt;b表示二进制右移b位（去掉末b位），相当于a除以2的b次方（取整）。我们经常用&gt;&gt;1来代替 &#x2F;2（div 2)</p>
+<p>比如<strong>二分查找</strong>、<strong>堆的插入</strong>操作等等。&#x3D;&#x3D;想办法用&gt;&gt;代替除法运算可以使程序的效率大大提高。&#x3D;&#x3D; 最大公约数的二进制算法用除以2操作来代替慢的出奇的%（mod）运算，效率可以提高60%。</p>
+<blockquote>
+<p>int a &#x3D;100;<br>a&#x2F;4 &#x3D;&#x3D;a&gt;&gt;2;</p>
+</blockquote>
+<hr>
+<h1><span id="ip地址详解">IP地址详解</span></h1><h2><span id="简单局域网的构成">简单局域网的构成</span></h2><p><img src="/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/%E7%AE%80%E5%8D%95%E5%B1%80%E5%9F%9F%E7%BD%91%E7%9A%84%E6%9E%84%E6%88%90.png" alt="简单局域网的构成"></p>
+<p>（长方形+箭头→交换机；圈里打叉→路由器）</p>
+<blockquote>
+<p>局域网：一般称为内网</p>
+<p>简单局域网的构成：交换机、网线、pc（其他IT终端）</p>
+<p>交换机是用来组建局域网最重要的设备，不能让局域网上网，需要另一个设备：路由器（实现连接内网和外网）</p>
+</blockquote>
+<h2><span id="ip地址">IP地址</span></h2><p>IP地址就是一个唯一标识，是一段网络编码（二进制），由32位组成</p>
+<blockquote>
+<p>IP地址形式：X.X.X.X（X的范围：0-255）</p>
+</blockquote>
+<h2><span id="子网掩码">子网掩码</span></h2><p><strong>局域网通信规则</strong>：在同一个局域网中，所有的IP必须在&#x3D;&#x3D;同一网段&#x3D;&#x3D;中才可以互相通信</p>
+<p><strong>IP地址构成</strong>：网络位+主机位（ 网络位相同的IP地址，为同一网段）</p>
+<p><strong>子网掩码</strong>：用来确定IP地址的网络位</p>
+<p>子网掩码如何确认网络位：与255对应的数字为网络位，与0对应的数字为主机位</p>
+<blockquote>
+<p>特例（为子网掩码）</p>
+<p>255.0.0.0</p>
+<p>255.255.0.0</p>
+<p>255.255.255.0</p>
+</blockquote>
+<p><strong>※</strong>：1个IP地址。必须配套一个子网掩码</p>
+<h2><span id="ip地址详解">IP地址详解</span></h2><p>国际标准组织ISO定义地址分类：五大类（以IP地址的第一位进行区分）</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>详情</th>
+<th>默认子网掩码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A类</td>
+<td>1-126</td>
+<td>255.0.0.0</td>
+</tr>
+<tr>
+<td>B类</td>
+<td>128-191</td>
+<td>255.255.0.0</td>
+</tr>
+<tr>
+<td>C类</td>
+<td>192-223</td>
+<td>255.255.255.0</td>
+</tr>
+<tr>
+<td>D类</td>
+<td>224-239 （组播地址）</td>
+<td></td>
+</tr>
+<tr>
+<td>E类</td>
+<td>240-254 （科研使用）</td>
+<td></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>普通只可使用A、B、C三类，且子网掩码可修改</p>
+</blockquote>
+<p> eg1：</p>
+<blockquote>
+<p>10.1.1.1</p>
+<p>255.255.255.0</p>
+<p>Q1：10.1.1.1属于哪个网段？ </p>
+<p>A1：属于10.1.1.0网段（主机位 置零为所在网段）</p>
+<p>Q2：所在网段有多少个可用的IP地址？ </p>
+<p>A2：254个（&#x3D;&#x3D;0&#x3D;&#x3D;不能用，为网段总称；&#x3D;&#x3D;255&#x3D;&#x3D;代表该网段的广播地址<a href="%E4%BB%A3%E8%A1%A8%E8%AF%A5%E7%BD%91%E6%AE%B5%E7%9A%84%E6%89%80%E6%9C%89%E4%BA%BA">^1</a></p>
+</blockquote>
+<p>全局广播地址：255.255.255.255</p>
+<p>127.0.0.1代表自己的地址（回环地址 ）</p>
+<p>eg2：</p>
+<blockquote>
+<p>10.1.1.1</p>
+<p>255.255.0.0</p>
+<p>Q1：10.1.1.1属于哪个网段？</p>
+<p>A1：10.1.0.0网段</p>
+<p>Q2：所在网段有多少个可用IP地址？  </p>
+<p>A2：10.1.0.1~10.1.255.254</p>
+<p>Q3：该网段广播地址？</p>
+<p>A3：10.1.0.0网段的广播地址：10.1.255.255</p>
+</blockquote>
+<p><strong>※</strong>：当主机位置全部置0代表网段，主机位全部置255代表该网段的广播地址</p>
+<h2><span id="网关">网关</span></h2><p>网关：一个网络的出口，Gateway&#x3D;GW,一边网关是在路由器上</p>
+<p>路由器：可用连接内外网的设备</p>
+<p><img src="/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/%E7%BD%91%E5%85%B3.jpeg" alt="网关"></p>
+<blockquote>
+<p>PC向外发包：</p>
+<ol>
+<li>首先判断目标IP地址与自己是否在同一网段</li>
+<li>如在同一网段，接直接发送出去，而不找网关</li>
+<li>如不在同一网段，则直接发包给网关</li>
+</ol>
+</blockquote>
+<h2><span id="dns">DNS</span></h2><p>DNS：Domin Name Service 域名服务</p>
+<p><img src="/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/DNS.jpeg" alt="DNS"></p>
+<p>PC连接外网时需要IP地址、子网掩码、网关、DNS四大参数</p>
+<blockquote>
+<p><strong>原理</strong>：访问域名时，DNS会先找本地缓存查看是否存访问过该域名（有的话可直接访问，不需解析，缓存有时间限制）</p>
+<p>然后DNS寻找本地hosts文件（查看是否记录有该域名）</p>
+<p>最后找DNS服务器进行解析。</p>
+</blockquote>
+<h2><span id="网络测试命令">网络测试命令</span></h2><ul>
+<li>查看IP地址</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ipconfig</td>
+<td>查看IP地址基本信息</td>
+</tr>
+<tr>
+<td>ipconfig &#x2F;all</td>
+<td>查看IP地址详细信息</td>
+</tr>
+</tbody></table>
+<ul>
+<li>测试网络连通性</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ping 目标IP地址</td>
+<td>测试网络连通性，有去有回即可以成功通信</td>
+</tr>
+<tr>
+<td>ping -t 目标IP地址</td>
+<td>一直ping(按直到Ctrl+c停止)</td>
+</tr>
+<tr>
+<td>ping -n 数字 目标IP地址</td>
+<td>修改ping包的数量</td>
+</tr>
+<tr>
+<td>ping -l 数字 目标IP地址</td>
+<td>修改ping包的大小</td>
+</tr>
+</tbody></table>
+<p><strong>注</strong>：若ping不通，对方可能不在线或开防火墙</p>
+<ul>
+<li>手工解析域名</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nslookup 目标IP地址</td>
+<td>手工解析域名的IP地址</td>
+</tr>
+</tbody></table>
+<h2><span id="进制转换">进制转换</span></h2><ul>
+<li>位权：每位所对应的权数</li>
+</ul>
+<blockquote>
+<p>eg.(101110)<del>2</del>&#x3D;1×32+1×8+1×4+1×2&#x3D;(46)<del>10</del></p>
+</blockquote>
+<ul>
+<li>十六进制符号：0-9及A-F</li>
+<li>十六进制转换为二进制方法：1：4关系直接转</li>
+</ul>
+<blockquote>
+<p>eg. (EF)<del>16</del>→1110——1111&#x3D;(11101111)<del>2</del></p>
+</blockquote>
+<h2><span id="存储单位">存储单位</span></h2><p>二进制每一位称为1个bit，如1100，代表4个bit（比特）</p>
+<p>8bit&#x3D;1Byte（Byte：字节，1个字母占用1个字节，1个汉字占用2个字节）</p>
+<p>1024Byte &#x3D; 1KB</p>
+<p>1024KB &#x3D; 1MB</p>
+<p>1024MB &#x3D; 1GB</p>
+<p>1024GB &#x3D; 1TB</p>
+<p>1024TB &#x3D; 1PB</p>
+<h1><span id="小技巧">※小技巧</span></h1><h2><span id="更改图标">更改图标</span></h2><p>工具：ResourceHacker</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jj0219/p/11398356.html">使用Resource Hacker 实现替换exe图标</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/YKZ6yWWxOhn2KjTV5lDP7w">邮件钓鱼攻击</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?biz=Mzg2NjQ2NzU3Ng==&mid=2247487419&idx=1&sn=06f9f8934611cce555d9bd76464f404f">红队技巧-网络钓鱼</a></p>
+<h2><span id="robots协议">robots协议</span></h2><p>也称爬虫协议，有些网站根目录下会存放该文件</p>
+<h1><span id="常见文件头">常见文件头</span></h1><table>
+<thead>
+<tr>
+<th align="center">文件类型</th>
+<th align="center">文件头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">JPEG（jpg）</td>
+<td align="center">FFD8FFE1</td>
+</tr>
+<tr>
+<td align="center">PNG（png）</td>
+<td align="center">89504E47</td>
+</tr>
+<tr>
+<td align="center">GIF（gif）</td>
+<td align="center">47494638</td>
+</tr>
+<tr>
+<td align="center">TIFF（tif）</td>
+<td align="center">49492A00</td>
+</tr>
+<tr>
+<td align="center">Windows Bitmap（bmp）</td>
+<td align="center">424DC001</td>
+</tr>
+<tr>
+<td align="center">ZIP Archive（zip&#x2F;doc）</td>
+<td align="center">504B0304</td>
+</tr>
+<tr>
+<td align="center">RAR Archive（rar）</td>
+<td align="center">52617221</td>
+</tr>
+<tr>
+<td align="center">Adobe Photoshop（psd）</td>
+<td align="center">38425053</td>
+</tr>
+<tr>
+<td align="center">Rich Text Format（rtf）</td>
+<td align="center">7B5C727466</td>
+</tr>
+<tr>
+<td align="center">XML（xml）</td>
+<td align="center">3C3F786D6C</td>
+</tr>
+<tr>
+<td align="center">HTML（html）</td>
+<td align="center">68746D6C3E</td>
+</tr>
+<tr>
+<td align="center">Adobe Acrobat（pdf）</td>
+<td align="center">255044462D312E</td>
+</tr>
+<tr>
+<td align="center">Wave（wav）</td>
+<td align="center">57415645</td>
+</tr>
+<tr>
+<td align="center">pcap（pcap）</td>
+<td align="center">4D3C2B1A</td>
+</tr>
+</tbody></table>
+<p><img src="/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/%E5%B8%B8%E8%A7%81%E6%96%87%E4%BB%B6%E5%A4%B4.png" alt="1"></p>
+<h1><span id="dirsearch">Dirsearch</span></h1><p>到达dirsearch.py所在目录后在地址框输入cmd</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">python dirsearch.py -u 目标网址<br></code></pre></td></tr></table></figure>
+
+<p>-u 指定网址</p>
+<p>-e 指定语言</p>
+<p>-w 指定字典</p>
+<p>-r 递归目录（跑出目录后继续跑目录下的目录）</p>
+<p>-random-agents 使用随机UA</p>
+<p>python dirsearch.py -u url -e * (或[指定后缀]) -s[延迟] -X[去掉的后缀] -i[保留状态码] -x[删除状态码]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">增加延迟：<br>python dirsearch.py -u url -e * -s 5 -x 400,403,404,429,500,503<br><br>调低线程：<br>python dirsearch.py -u url -e * --timeout=2 -t 1 -x 400,403,404,429,500,503<br></code></pre></td></tr></table></figure>
+
+<h1><span id="nmap">Nmap</span></h1><p>官网：<a target="_blank" rel="noopener" href="https://nmap.org/">https://nmap.org</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">nmap[扫描类型…] [选项] [扫描目标说明]<br></code></pre></td></tr></table></figure>
+
+<p>参考链接1：<a target="_blank" rel="noopener" href="http://t.csdn.cn/YazJS">http://t.csdn.cn/YazJS</a></p>
+<p>参考链接2：<a target="_blank" rel="noopener" href="http://t.csdn.cn/twOfh">http://t.csdn.cn/twOfh</a></p>
+<h2><span id="常用扫描命令">常用扫描命令</span></h2><h3><span id="扫描ip地址或域名">扫描ip地址或域名</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">nmap baidu.com<br><br>nmap 8.130.129.48<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">扫描指定IP上的开放端口。以192.168.56.1为例，扫描1-65535所有端口中的开放端口。</span><br>nmap -p 1-65535 -v 192.168.56.1<br></code></pre></td></tr></table></figure>
+
+<h3><span id="扫描整个网段">扫描整个网段</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">nmap  ip/网段<br><span class="hljs-meta prompt_">#</span><span class="language-bash">还可以输入ip地址范围</span><br>nmap 192.168.0.1-200<br></code></pre></td></tr></table></figure>
+
+<h3><span id="扫描端口">扫描端口</span></h3><p>扫描指定IP上的开放端口。以192.168.56.1为例，扫描1-65535所有端口中的开放端口。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">nmap -p 1-65535 -v 192.168.56.1<br></code></pre></td></tr></table></figure>
+
+<p>指定端口扫描，只扫描80和22端口，以百度为例。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">nmap -p 80,22 www.baidu.com<br></code></pre></td></tr></table></figure>
+
+<h3><span id="探测主机操作系统">探测主机操作系统</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">nmap -o www.baidu.com<br></code></pre></td></tr></table></figure>
+
+<h3><span id="全面的系统探测">全面的系统探测</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">nmap -v -A www.baidu.com<br></code></pre></td></tr></table></figure>
+
+<h3><span id="扫描目标主机和端口上运行的软件的版本">扫描目标主机和端口上运行的软件的版本</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">nmap -sV 192.168.56.1<br></code></pre></td></tr></table></figure>
+
+<h3><span id="路由跟踪扫描">路由跟踪扫描</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">nmap -traceroute www.baidu.com<br></code></pre></td></tr></table></figure>
+
+<h2><span id="nmap常用方法">nmap常用方法</span></h2><p>1.扫描单个目标地址</p>
+<p>nmap 192.168.0.100</p>
+<p>2.扫描多个目标地址</p>
+<p>nmap 192.168.0.100 192.168.0.105</p>
+<p>3.扫描一个范围内的目标地址</p>
+<p>nmap 192.168.0.100-110</p>
+<p>4.扫描目标地址所在的某个网段</p>
+<p>nmap 192.168.0.0&#x2F;24</p>
+<p>5.扫描主机列表targets.txt中的所有目标地址</p>
+<p>nmap -iL d:\targets.txt</p>
+<p>6.扫描除某一个目标地址之外的所有目标地址</p>
+<p>nmap 192.168.0.0&#x2F;24 -exclude 192.168.109.105</p>
+<p>7.扫描除某一文件中的目标地址之外的目标地址</p>
+<p>nmap 192.168.0.0&#x2F;24 -excludefile d:\targets.txt</p>
+<p>8.扫描某一目标地址的21、22、23、80端口</p>
+<p>nmap 192.168.0.100 -p 21,22,23,80</p>
+<p>9.对目标地址进行路由跟踪</p>
+<p>nmap –traceroute 192.168.0.105</p>
+<p>10.扫描目标地址所在C段的在线情况</p>
+<p>nmap -sP 192.168.0.0&#x2F;24</p>
+<p>11.目标地址的操作系统指纹识别</p>
+<p>nmap -O 192.168.0.105</p>
+<p>12.目标地址提供的服务版本检测</p>
+<p>nmap -sV 192.168.0.105</p>
+<p>13.探测防火墙状态</p>
+<p>在实战中，可以利用FIN扫描的方式探测防火墙的状态。FIN扫描用于识别端口是否关闭，收到RST回复说明该端口关闭，否则就是open或filtered状态。</p>
+<p>nmap -sF -T4 192.168.0.105</p>
+<h2><span id="nmap脚本实例">nmap脚本实例</span></h2><p>1、鉴权扫描</p>
+<p>使用–script&#x3D;auth可以对目标主机或目标主机所在的网段进行应用弱口令检测</p>
+<p>nmap –script&#x3D;auth 192.168.0.105</p>
+<p>2.暴力破解攻击</p>
+<p>nmap具有暴力破解的功能，可对数据库、SMB、SNMP等进行简单密码的暴力猜解</p>
+<p>nmap –script&#x3D;brute 192.168.0.105</p>
+<p>3.扫描常见的漏洞</p>
+<p>nmap具有漏洞扫描的功能，可以检查目标主机或网段是否存在常见的漏洞</p>
+<p>nmap –script&#x3D;vuln 192.168.0.105</p>
+<p>4.应用服务扫描</p>
+<p>nmap具备很多常见应用服务的扫描脚本，例如VNC服务、MySQL服务、Telnet服务、Rsync服务等，以VNC服务为例</p>
+<p>nmap –script&#x3D;realvnc-auth-bypass 192.168.0.105</p>
+<p>5.探测局域网内更多服务开启的情况</p>
+<p>nmap -n -p 445 –script&#x3D;broadcast 192.168.0.105</p>
+<p>6.whois解析</p>
+<p>利用第三方的数据库或资源查询目标地址的信息，例如进行whois解析</p>
+<p>nmap -script external baidu.com</p>
+<h1><span id="wireshark">Wireshark</span></h1><h2><span id="tcp协议">TCP协议</span></h2><ul>
+<li>TCP连接三次握手</li>
+</ul>
+<p><img src="/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/tcp%E4%B8%89%E6%AC%A1%E8%BF%9E%E6%8E%A5%E6%8F%A1%E6%89%8B.png" alt="tcp三次连接握手"></p>
+<p>SYN：连接请求</p>
+<p>ACK：确认信息</p>
+<p>fin：每发一次数据完成后带其标志</p>
+<ul>
+<li>TCP连接断开四次挥手</li>
+</ul>
+<p><img src="/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/TCP%E8%BF%9E%E6%8E%A5%E6%96%AD%E5%BC%80%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png" alt="TCP连接断开四次挥手"></p>
+<h2><span id="udp协议">UDP协议</span></h2><p>客户端向DNS服务器查询域名，一般返回的内容都不超过512字节，用UDP传输即可，不用经过三次握手，这样DNS服务器负载更低，响应更快。理论上说，客户端也可以制定向DNS服务器查询时用TCP，但事实上很多DNS服务器进行配置的时候仅支持UDP查询包</p>
+<h2><span id="arp协议">ARP协议</span></h2><p>地址解析协议(Address Resolution Protocol)，是一个通过解析网络层地址来寻找数据链路层地址的网络传输协议，它在IPv4中极其重要</p>
+<p>根据IP地址获取物理地址的一个tcp&#x2F;ip协议</p>
+<p><img src="/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/ARP%E6%AC%BA%E9%AA%97.jpg" alt="ARP欺骗"></p>
+<h2><span id="icmp协议">ICMP协议</span></h2><p><img src="/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/ICMP%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90%E8%AF%B7%E6%B1%82%E5%8C%85.png" alt="ICMP协议分析请求包"></p>
+<p><img src="/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/ICMP%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90%E5%BA%94%E7%AD%94%E5%8C%85.png" alt="ICMP协议分析应答包"></p>
+<p>工作过程：</p>
+<p>本机发送一个ICMP echo request的包</p>
+<p>接受方返回一个ICMP echo reply，包含了接受到数据拷贝和一些其他指令</p>
+<h2><span id="过滤器">过滤器</span></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">tcp.flags.fin=1<br></code></pre></td></tr></table></figure>
+
+<p>查询ip：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ip.src_host==192.168.x.x or ip.dst_host==192.168.x.xx<br>筛选出源ip=192.168.x.x或者目标ip=192.168.x.xx<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ip.addr==192.168.x.x<br>不管是源ip还是目标ip都显示出来<br></code></pre></td></tr></table></figure>
+
+<h1><span id="杂项">杂项</span></h1><h2><span id="windows">Windows</span></h2><ol>
+<li>win+r搜索后按住快捷键ctrl+shift+enter即可以管理员运行cmd</li>
+<li>Ctrl+win+d新建桌面</li>
+<li>shell中白色是文件，蓝色是文件夹</li>
+<li>shell中上下键切换命令</li>
+<li>若文件在文件夹内可见，输入前缀后按住tab键可自动补全</li>
+<li>cmd中curl是一个在命令行下工作的文件传输工具，可用来发送http请求<ul>
+<li>-I：大写的i表示仅返回头部信息</li>
+</ul>
+</li>
+<li>cmd切换盘符方法</li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">cd</span>\<br>D:<br><span class="hljs-comment"># 再cd到目标文件夹的相对路径</span><br><span class="hljs-comment">#或者直接如下</span><br>d:<br><span class="hljs-built_in">cd</span> 目标文件夹<br></code></pre></td></tr></table></figure>
+
+<h2><span id="linux">Linux</span></h2><ol>
+<li>CentOS7系统中网络配置目录：&#x2F;etc&#x2F;sysconfig&#x2F;network-scripts</li>
+<li>Linux中使用ifconfig查看网络配置</li>
+</ol>
+<blockquote>
+<p>Windows中是ipconfig</p>
+</blockquote>
+<ol start="3">
+<li><pre><code class="bash">cd /bin/etc
+cat redhat-release#系统版本信息
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>4. 搜索目录：find 目录 参数 文件名称<br><br>find /xxx/aaa -name ‘a*’  查找/xxx/aaa目录下所有以a开头的目录或文件<br><br>5. ```<br>   从 https://mirrors.aliyun.com/docker-ce/linux/centos/gpg 检索密钥<br>   导入 GPG key 0x621E9F35:<br>    用户ID     : &quot;Docker Release (CE rpm) &lt;docker@docker.com&gt;&quot;<br>    指纹       : 060a 61c5 1b55 8a7f 742b 77aa c52f eb6b 621e 9f35<br>    来自       : https://mirrors.aliyun.com/docker-ce/linux/centos/gpg<br></code></pre></td></tr></table></figure>
+</code></pre>
+</li>
+<li><p>docker status：查看CPU状态</p>
+</li>
+<li><p>docker可视化——图形化界面管理工具</p>
+</li>
+</ol>
+<ul>
+<li>portainer</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run -d  -p 9000:9000 --name portainer --restart=always --privileged=true -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>rancher(CI&#x2F;CD)</li>
+</ul>
+<ol start="8">
+<li>Ctrl+Q+P：不关闭该容器退出</li>
+<li>TTL：数据报文的生存周期</li>
+</ol>
+<p>默认Linux操作系统值：64，每经过一个路由节点TTL值减1。TTL值为0时，说明目标地址不可达并返回：Time to live exceeded</p>
+<p>位置：&#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_default_ttl</p>
+<p>作用：防止数据包无限制在公网中转发</p>
+<p>我们判断和目标之间经过多少个网络设备是根据目标返回给我们的TTL值来判断的，因为我们发送的数据包是看不到的</p>
+<ol start="10">
+<li>kali 工具：MTR</li>
+</ol>
+<p>可以检测我们到达目标网络之间的所有网络设备的网络质量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt install -y mtr<br><br>mtr www.baidu.com<br></code></pre></td></tr></table></figure>
+
+<p>中间的丢包率100％说明有防火墙故意丢掉的（禁止ping）</p>
+
+                    </article>
+                    
+
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2023-08-04T14:22:38.000Z" itemprop="datePublished">2023-08-04</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+<span class="post-tags-list mt-2">
+
+<a class="post-tags-list-item" href="/tags/summary/" rel="tag">#&nbsp;summary</a>
+
+</span>
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2023/08/04/Git/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Git</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2023/08/04/C%E8%AF%AD%E8%A8%80/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">C语言</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <!-- <a class="footer-copyright-a" href="http://example.com">Jackie's Blog</a> -->
+            <a class="footer-copyright-a" target="_blank" rel="noopener" href="https://github.com/Wu-Jackie">Jackie's Blog</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+    <!-- Busuanzi Post Views -->
+    <span id="busuanzi_container_site_pv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_pv"></span>
+        <span>Views</span>
+        
+    </span>
+
+
+
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站访客数<span id="busuanzi_value_site_uv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+(function() {
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.getElementById('copyright-year');
+    var copyrightSince = 2023;
+    if (copyrightSince === copyrightNow) {
+        copyrightContent.textContent = copyrightNow;
+    } else {
+        copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
+    }
+})();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

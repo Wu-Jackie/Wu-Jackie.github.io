@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+    <link rel="dns-prefetch" href="//hm.baidu.com">
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Java | Jackie&#39;s Blog</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/obsidian.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/obsidian.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Jackie's Blog"><meta name="msapplication-starturl" content="http://example.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jackie's Blog"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Java | Jackie&#39;s Blog"><meta property="og:site_name" content="Jackie&#39;s Blog"><meta property="og:type" content="article"><meta property="og:url" content="http://example.com/2023/08/04/Java/"><meta property="og:locale" content="zh-CN"><meta name="description" content="Java黑马|Java   JVM（Java Virtual Machine）：Java虚拟机，真正运行Java程序的地方  核心类库：Java自己写好的程序，给程序员自己的程序调用的  JRE（Java Runtime Environment）：Java的运行环境  JDK（Java Development Kit）：Java开发工具包   变量详解字面量   常用数据 生活写法 程序中写法 说 - Jackie - Jackie&#39;s Blog"><meta name="keywords" content="summary"><meta property="og:image" content="http://example.com/2023/08/04/Java/Scanner.png"><meta property="og:image" content="http://example.com/2023/08/04/Java/Random.png"><meta property="og:image" content="http://example.com/2023/08/04/Java/Theorypic.png"><meta property="article:published_time" content="2023-08-04T14:49:36.000Z"><meta property="article:modified_time" content="2023-08-04T15:10:26.656Z"><meta property="og:updated_time" content="2023-08-04T15:10:26.656Z"><meta property="article:author" content="Jackie"><meta property="article:tag" content="summary"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://example.com/2023/08/04/Java/">
+
+    <meta name="generator" content="Hexo 6.3.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?6fa63450abd362f22fde7934382733b4';
+    var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://example.com/2023/08/04/Java/",
+    "@type": "BlogPosting",
+    "logo": "http://example.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://example.com/2023/08/04/Java/"
+    },
+    "headline": "Java | Jackie&#39;s Blog",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://example.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2023-08-04T14:49:36.000Z",
+    "dateModified": "2023-08-04T15:10:26.656Z",
+    "author": {
+        "@type": "Person",
+        "name": "Jackie",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/default_avatar.png"
+        },
+        "description": "Welcome To My Blog!,無限進步！"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Jackie&#39;s Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://example.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "summary",
+    "description": "Java黑马|Java   JVM（Java Virtual Machine）：Java虚拟机，真正运行Java程序的地方  核心类库：Java自己写好的程序，给程序员自己的程序调用的  JRE（Java Runtime Environment）：Java的运行环境  JDK（Java Development Kit）：Java开发工具包   变量详解字面量   常用数据 生活写法 程序中写法 说 - Jackie - Jackie&#39;s Blog"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Jackie&#39;s Blog</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Welcome To My Blog!<br>無限進步！
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about" class="navbar-link">About</a>
+    
+        <a href="/links" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+
+        <!-- Share Twitter -->
+        
+
+        <!-- Share Facebook -->
+        
+
+        <!-- Share Google+ -->
+        
+
+        <!-- Share LinkedIn -->
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=Java&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABjUlEQVR42u3a0Y6DMAxEUf7/p7vvbOwZQzexV5cXWgroVLJiO8n1aXBcIECAGIG4kuPXQ7frq++V94Loi1gGTXA9uvd+v/NeEL0R98BZnbPfo8/RcyD+B8IJTBcPYjYiSlzqHhCzEVGiqRYqf5JFQWxHZC9+c/5atQ1iK+JtEVspiB935SC2IrJAUgWsKmrkgAaiLcJpaLKXqT9kJzAQLRBO8xINSlEBazdNIFoinianbGJVDXQgZiBWDa4KsujZ7HcQMxBqYIomRdyCJkyOIFojVNDJ5tYsgOXiLIjjCHeirDppqpIjiP4IJyk5E6tZUWzP1IA4iqg8nDVAUQDbiy4gWiGyAkZNqjqDl11tg2iFcApehZKLsdWGGMRRRKXZeVIMlzcAgjiGqC7EqQImG9BAzEBUmt1sQaWyMQhEf4S7sacywGWBDWIGoropNJsgyxKYvWsAxAhEdk0Vv8v7QYxFqCB0k+GrwASxHaEmzNzNGu5CPojeCKeRVZsznOL4cbUNYivi5AECBIjWiB8GSljoXWrmnwAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Java</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="Jackie's Avatar">
+        <span>2023-08-04</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=Jackie's Blog&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com/2023/08/04/Java/" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABjUlEQVR42u3a0Y6DMAxEUf7/p7vvbOwZQzexV5cXWgroVLJiO8n1aXBcIECAGIG4kuPXQ7frq++V94Loi1gGTXA9uvd+v/NeEL0R98BZnbPfo8/RcyD+B8IJTBcPYjYiSlzqHhCzEVGiqRYqf5JFQWxHZC9+c/5atQ1iK+JtEVspiB935SC2IrJAUgWsKmrkgAaiLcJpaLKXqT9kJzAQLRBO8xINSlEBazdNIFoinianbGJVDXQgZiBWDa4KsujZ7HcQMxBqYIomRdyCJkyOIFojVNDJ5tYsgOXiLIjjCHeirDppqpIjiP4IJyk5E6tZUWzP1IA4iqg8nDVAUQDbiy4gWiGyAkZNqjqDl11tg2iFcApehZKLsdWGGMRRRKXZeVIMlzcAgjiGqC7EqQImG9BAzEBUmt1sQaWyMQhEf4S7sacywGWBDWIGoropNJsgyxKYvWsAxAhEdk0Vv8v7QYxFqCB0k+GrwASxHaEmzNzNGu5CPojeCKeRVZsznOL4cbUNYivi5AECBIjWiB8GSljoXWrmnwAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java"><span class="post-toc-number">1.</span> <span class="post-toc-text">Java</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%8F%98%E9%87%8F%E8%AF%A6%E8%A7%A3"><span class="post-toc-number">2.</span> <span class="post-toc-text">变量详解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">字面量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">数据类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="post-toc-number">3.</span> <span class="post-toc-text">类型转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">自动类型转换</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">表达式的自动类型转换</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">强制类型转换</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="post-toc-number">4.</span> <span class="post-toc-text">运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%AC%A6%E5%8F%B7%E5%81%9A%E8%BF%9E%E6%8E%A5%E7%AC%A6"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">+符号做连接符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%87%AA%E5%A2%9E%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">自增自减运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">赋值运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">逻辑运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">运算符的优先级</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Demo1%EF%BC%9A%E6%8E%A5%E6%94%B6%E7%94%A8%E6%88%B7%E9%94%AE%E7%9B%98%E8%BE%93%E5%85%A5%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">Demo1：接收用户键盘输入的数据</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84%EF%BC%88if%E3%80%81switch%EF%BC%89"><span class="post-toc-number">5.</span> <span class="post-toc-text">分支结构（if、switch）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%EF%BC%88for%E3%80%81while%E3%80%81do-while"><span class="post-toc-number">6.</span> <span class="post-toc-text">循环结构（for、while、do-while</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Demo2%EF%BC%9A%E9%9A%8F%E6%9C%BA%E6%95%B0random%E7%B1%BB"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">Demo2：随机数random类</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%95%B0%E7%BB%84"><span class="post-toc-number">7.</span> <span class="post-toc-text">数组</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%95%B0%E7%BB%84%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86"><span class="post-toc-number">8.</span> <span class="post-toc-text">数组在计算机中的执行原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F%E6%8C%87%E5%90%91%E5%90%8C%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">多个变量指向同一个数组</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Java%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%9C%BA%E5%88%B6"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">Java的参数传递机制</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD"><span class="post-toc-number">9.</span> <span class="post-toc-text">方法重载</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9C%A8%E6%96%B9%E6%B3%95%E4%B8%AD%E5%8D%95%E7%8B%AC%E4%BD%BF%E7%94%A8return"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">在方法中单独使用return</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%9D%82%E9%A1%B9"><span class="post-toc-number">10.</span> <span class="post-toc-text">杂项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IDEA%E7%AE%A1%E7%90%86Java%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%93%E6%9E%84"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">IDEA管理Java程序的结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="post-toc-number">10.1.1.</span> <span class="post-toc-text">快捷键</span></a></li></ol></li></ol></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Cv411372m/?p=64&share_source=copy_web&vd_source=15214a7977f78540f7402494fb912cda">黑马|Java</a></p>
+<hr>
+<ul>
+<li><p>JVM（Java Virtual Machine）：Java虚拟机，真正运行Java程序的地方</p>
+</li>
+<li><p>核心类库：Java自己写好的程序，给程序员自己的程序调用的</p>
+</li>
+<li><p>JRE（Java Runtime Environment）：Java的运行环境</p>
+</li>
+<li><p>JDK（Java Development Kit）：Java开发工具包</p>
+</li>
+</ul>
+<h1 id="变量详解"><a href="#变量详解" class="headerlink" title="变量详解"></a>变量详解</h1><h2 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h2><table>
+<thead>
+<tr>
+<th align="center">常用数据</th>
+<th align="center">生活写法</th>
+<th align="center">程序中写法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">整数</td>
+<td align="center">336，-143</td>
+<td align="center">336，-143</td>
+<td align="center">写法一致</td>
+</tr>
+<tr>
+<td align="center">小数</td>
+<td align="center">13.14，-5.21</td>
+<td align="center">13.14，-5.21</td>
+<td align="center">写法一致</td>
+</tr>
+<tr>
+<td align="center">字符</td>
+<td align="center">A,0,我</td>
+<td align="center">‘A’,’0’,’我’</td>
+<td align="center">必须使用单引号，有且只有一个字符</td>
+</tr>
+<tr>
+<td align="center">字符串</td>
+<td align="center">Jackie</td>
+<td align="center">“hello”,”Jackie”</td>
+<td align="center">必须使用双引号，内容可有可无</td>
+</tr>
+<tr>
+<td align="center">布尔值</td>
+<td align="center">真、假</td>
+<td align="center">true、false</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">空值</td>
+<td align="center"></td>
+<td align="center">null</td>
+<td align="center">特殊的值，空值</td>
+</tr>
+</tbody></table>
+<p>二进制(BIN)以0B开头</p>
+<p>八进制(OCT)以0开头</p>
+<p>十进制(DEC)</p>
+<p>十六进制(HEX)以0x开头</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li>整型：byte、short、int、long</li>
+</ul>
+<p>byte：-128~127</p>
+<p>如果希望随便写一个整型字面量默认是long类型需在后面加上L&#x2F;l</p>
+<ul>
+<li>浮点型：float、double</li>
+</ul>
+<p>如果希望随便写一个小数字面量默认是float类型需在后面加上F&#x2F;f</p>
+<ul>
+<li><p>字符型：char</p>
+</li>
+<li><p>布尔型：boolean</p>
+</li>
+<li><p>引用数据类型：String</p>
+</li>
+</ul>
+<p>定义的变量可用于记住一个字符串数据</p>
+<h1 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h1><h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2><p>类型小的变量可直接赋值给类型范围大的变量</p>
+<h2 id="表达式的自动类型转换"><a href="#表达式的自动类型转换" class="headerlink" title="表达式的自动类型转换"></a>表达式的自动类型转换</h2><p>byte、short、char→int→long→float→double</p>
+<p>表达式的最终结果类型由表达式中的<strong>最高类型决定</strong></p>
+<p>表达式中，byte、short、char直接转换成int类型参与运算</p>
+<h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><p>数据类型 变量2 &#x3D;（数据类型）变量1、数据</p>
+<p>浮点类型强转成整型，直接丢掉小数部分，保留整数部分返回</p>
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="符号做连接符"><a href="#符号做连接符" class="headerlink" title="+符号做连接符"></a>+符号做连接符</h2><p>能算则算，不能算就在一起</p>
+<h2 id="自增自减运算符"><a href="#自增自减运算符" class="headerlink" title="自增自减运算符"></a>自增自减运算符</h2><p>++a：先加再用</p>
+<p>a++：先用再加</p>
+<h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><p>自带强制类型转换</p>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>^：逻辑异或	eg.2&gt;1^3&gt;1</p>
+<p>前后条件结果相同就直接返回false，不同才返回true</p>
+<blockquote>
+<p>相同为假，不同为真</p>
+</blockquote>
+<p>&amp;&amp;：左边为false，右边则不执行</p>
+<p>||：左边为true，右边则不执行</p>
+<blockquote>
+<p>两者与&amp;、|区别：后者无论左边是false还是true，右边都要执行</p>
+</blockquote>
+<h2 id="运算符的优先级"><a href="#运算符的优先级" class="headerlink" title="运算符的优先级"></a>运算符的优先级</h2><table>
+<thead>
+<tr>
+<th align="center">优先级</th>
+<th align="center">运算符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">()</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">!、-、++、–</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">*、&#x2F;、%</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">+、-</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">&lt;&lt;、&gt;&gt;、&gt;&gt;&gt;</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">&lt;、&lt;&#x3D;、&gt;、&gt;&#x3D;、instanceof</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">&#x3D;&#x3D;、！&#x3D;</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">&amp;</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">^</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">|</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">&amp;&amp;</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">||</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">?:</td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center">&#x3D;、+&#x3D;、-&#x3D;、*&#x3D;、&#x2F;&#x3D;、%&#x3D;、&amp;&#x3D;</td>
+</tr>
+</tbody></table>
+<h2 id="Demo1：接收用户键盘输入的数据"><a href="#Demo1：接收用户键盘输入的数据" class="headerlink" title="Demo1：接收用户键盘输入的数据"></a>Demo1：接收用户键盘输入的数据</h2><p><img src="/2023/08/04/Java/Scanner.png" alt="Scanner"></p>
+<h1 id="分支结构（if、switch）"><a href="#分支结构（if、switch）" class="headerlink" title="分支结构（if、switch）"></a>分支结构（if、switch）</h1><ul>
+<li>switch使用时注意事项</li>
+</ul>
+<ol>
+<li>表达式类型只能是byte、short、int、char，JDK5开始支持枚举，JDK7开始支持string，不支持double、float、long</li>
+<li>case给出的值不允许重复，且只能是字面量，不能是变量</li>
+</ol>
+<h1 id="循环结构（for、while、do-while"><a href="#循环结构（for、while、do-while" class="headerlink" title="循环结构（for、while、do-while"></a>循环结构（for、while、do-while</h1><h2 id="Demo2：随机数random类"><a href="#Demo2：随机数random类" class="headerlink" title="Demo2：随机数random类"></a>Demo2：随机数random类</h2><p><img src="/2023/08/04/Java/Random.png" alt="Random"></p>
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><ul>
+<li>静态初始化数组</li>
+</ul>
+<p>数据类型[] 数组名&#x3D;new 数据类型[]{元素1，元素2，…};</p>
+<p>获取数组长度：数组名.length</p>
+<ul>
+<li>动态初始化数组</li>
+</ul>
+<p>数据类型[] 数组名&#x3D;new 数据类型[长度]</p>
+<h1 id="数组在计算机中的执行原理"><a href="#数组在计算机中的执行原理" class="headerlink" title="数组在计算机中的执行原理"></a>数组在计算机中的执行原理</h1><p>Java内存分配：</p>
+<ul>
+<li>方法区</li>
+</ul>
+<p>编译后的字节码文件先加载到这里</p>
+<ul>
+<li>栈</li>
+</ul>
+<p>方法运行时所进入的内存，变量也是在这里</p>
+<p>方法被调用的时候，是进入到&#x3D;&#x3D;栈内存&#x3D;&#x3D;中运行</p>
+<p><strong>特点</strong>：先进后出</p>
+<ul>
+<li>堆</li>
+</ul>
+<p>new出来的东西会在这块内存中开辟空间并产生地址</p>
+<ul>
+<li>本地方法栈</li>
+<li>寄存器</li>
+</ul>
+<p>图解</p>
+<p><img src="/2023/08/04/Java/Theorypic.png" alt="Theorypic"></p>
+<h2 id="多个变量指向同一个数组"><a href="#多个变量指向同一个数组" class="headerlink" title="多个变量指向同一个数组"></a>多个变量指向同一个数组</h2><ul>
+<li>多个数组变量中存储的是同一个数组对象的地址</li>
+<li>多个变量修改的都是同一个数组对象中的数据</li>
+<li>如果某个数组变脸中存储的null代表这个数组变量没有指向对象，需要注意可以输出这个变量，但不能用这个数组变量去访问数据或者访问数组长度</li>
+</ul>
+<blockquote>
+<p>会报空指针异常：NullPointerException</p>
+</blockquote>
+<h2 id="Java的参数传递机制"><a href="#Java的参数传递机制" class="headerlink" title="Java的参数传递机制"></a>Java的参数传递机制</h2><p>都是值传递</p>
+<p>基本类型的参数传输存储的数据值</p>
+<p>引用类型的参数传输存储的地址值</p>
+<h1 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h1><p>一个类中出现多个方法的名字相同，但是它们的形参列表是不同的，其它的都不管（如修饰符、返回值类型是否一样都无所谓）</p>
+<blockquote>
+<p>形参列表不同指：形参的个数、类型、顺序不同，不关心形参的名称</p>
+</blockquote>
+<h2 id="在方法中单独使用return"><a href="#在方法中单独使用return" class="headerlink" title="在方法中单独使用return"></a>在方法中单独使用return</h2><p>在无返回值的方法中使用</p>
+<p>作用：立即跳出并&#x3D;&#x3D;结束当前方法的执行&#x3D;&#x3D;</p>
+<h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><h2 id="IDEA管理Java程序的结构"><a href="#IDEA管理Java程序的结构" class="headerlink" title="IDEA管理Java程序的结构"></a>IDEA管理Java程序的结构</h2><ul>
+<li>project（项目、工程）</li>
+<li>module（模块）</li>
+<li>package（包）</li>
+<li>class（类）</li>
+</ul>
+<hr>
+<ol>
+<li>创建工程（空工程）</li>
+<li>创建模块</li>
+<li>创建包 src-新建包（域名倒写+名字）</li>
+<li>创建类 包-新建类（类名首字母大写）</li>
+</ol>
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><p>main&#x2F;psvm、sout</p>
+<p>Ctrl+D：复制当前行数据到下一行</p>
+<p>Ctrl+Y：快速删除所在行</p>
+<p>Ctrl+Alt+L：格式化代码</p>
+<p>Alt+shift+↑&#x2F;↓：上下移动当前代码</p>
+<p>Ctrl+&#x2F;，Ctrl+shift+&#x2F;：代码注释</p>
+<blockquote>
+<p>&#x2F;**  *&#x2F;：文档注释</p>
+</blockquote>
+<p>Alt+Enter </p>
+<p>选中代码，然后Ctrl+Alt+T</p>
+<p>数组名.fori然后回车快速遍历数组</p>
+
+                    </article>
+                    
+
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2023-08-04T14:49:36.000Z" itemprop="datePublished">2023-08-04</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+<span class="post-tags-list mt-2">
+
+<a class="post-tags-list-item" href="/tags/summary/" rel="tag">#&nbsp;summary</a>
+
+</span>
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2023/08/04/C++/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">C++</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <!-- <a class="footer-copyright-a" href="http://example.com">Jackie's Blog</a> -->
+            <a class="footer-copyright-a" target="_blank" rel="noopener" href="https://github.com/Wu-Jackie">Jackie's Blog</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+    <!-- Busuanzi Post Views -->
+    <span id="busuanzi_container_site_pv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_pv"></span>
+        <span>Views</span>
+        
+    </span>
+
+
+
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站访客数<span id="busuanzi_value_site_uv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+(function() {
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.getElementById('copyright-year');
+    var copyrightSince = 2023;
+    if (copyrightSince === copyrightNow) {
+        copyrightContent.textContent = copyrightNow;
+    } else {
+        copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
+    }
+})();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

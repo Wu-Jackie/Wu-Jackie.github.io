@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+    <link rel="dns-prefetch" href="//hm.baidu.com">
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>C++ | Jackie&#39;s Blog</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/obsidian.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/obsidian.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Jackie's Blog"><meta name="msapplication-starturl" content="http://example.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jackie's Blog"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="C++ | Jackie&#39;s Blog"><meta property="og:site_name" content="Jackie&#39;s Blog"><meta property="og:type" content="article"><meta property="og:url" content="http://example.com/2023/08/04/C++/"><meta property="og:locale" content="zh-CN"><meta name="description" content="C++黑马|C++  字符字符型1char ch&#x3D;&amp;#x27;a&amp;#x27;  字符串C风格： 1char str[]&#x3D;&amp;quot;hello&amp;quot;  C++风格： 12#include &amp;lt;string&amp;gt;string str&#x3D;&amp;quot;hello&amp;quot;  ※分文件编写 创建后缀名为.h的头文件 创建后缀名为.cpp的源文件 头文件中写函数的声明 源文件中写函数的定义  1 - Jackie - Jackie&#39;s Blog"><meta name="keywords" content="summary"><meta property="article:published_time" content="2023-08-04T14:49:24.000Z"><meta property="article:modified_time" content="2023-08-04T14:52:20.884Z"><meta property="og:updated_time" content="2023-08-04T14:52:20.884Z"><meta property="article:author" content="Jackie"><meta property="article:tag" content="summary"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://example.com/2023/08/04/C++/">
+
+    <meta name="generator" content="Hexo 6.3.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?6fa63450abd362f22fde7934382733b4';
+    var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://example.com/2023/08/04/C++/",
+    "@type": "BlogPosting",
+    "logo": "http://example.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://example.com/2023/08/04/C++/"
+    },
+    "headline": "C++ | Jackie&#39;s Blog",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://example.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2023-08-04T14:49:24.000Z",
+    "dateModified": "2023-08-04T14:52:20.884Z",
+    "author": {
+        "@type": "Person",
+        "name": "Jackie",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/default_avatar.png"
+        },
+        "description": "Welcome To My Blog!,無限進步！"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Jackie&#39;s Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://example.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "summary",
+    "description": "C++黑马|C++  字符字符型1char ch=&amp;amp;#x27;a&amp;amp;#x27;  字符串C风格： 1char str[]=&amp;amp;quot;hello&amp;amp;quot;  C++风格： 12#include &amp;amp;lt;string&amp;amp;gt;string str=&amp;amp;quot;hello&amp;amp;quot;  ※分文件编写 创建后缀名为.h的头文件 创建后缀名为.cpp的源文件 头文件中写函数的声明 源文件中写函数的定义  1 - Jackie - Jackie&#39;s Blog"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Jackie&#39;s Blog</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Welcome To My Blog!<br>無限進步！
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about" class="navbar-link">About</a>
+    
+        <a href="/links" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+
+        <!-- Share Twitter -->
+        
+
+        <!-- Share Facebook -->
+        
+
+        <!-- Share Google+ -->
+        
+
+        <!-- Share LinkedIn -->
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=C++&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABjElEQVR42u3aQZKDMAxEUe5/6clmFlPEUreBOO2azyaBSsxbCFuyOH4CjgMECBBbII7mePvT77XqN3/PnXFB5CKGQXPhBt3/h+OAiEacB+uun39TQbtxQeyNOAek+g7ifyA61HBxArE9wklgVLLzsVUUxHJEl6Tc+Xws2waxFCGL1sEiVU1eH6vKQSxFOJOSupFKkMtJDkQsokpau/OuCHYLZRC5iG5iUghVHHdBDSIT4SanzkJWFUjlZhyIWISzydEFnALIBQxEHMIJTqf47RawdpMERBxCJSizCa4KWBDZCLdxonBO0VQuYCCiEO5mqNpMlUHoPB0gIhCqeHUDcJQMqyIJRC6iC7RqoJkGnL17ByIK0QXclURHFccg9kGoCaxKfmaCGUQ2wmnEzTZg1MQHIhthNdaNpMd9gdBKdEF8HaEa9dZm+QQUxB4IFVizjTvV9AWxP8KZwNQLgrcDE0QUoktUZgrpR54OEEsQVxtyzuQGYj+EU8iqgkgtdLeybRBLEd88QIAAEY14AULheMg0cn46AAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">C++</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="Jackie's Avatar">
+        <span>2023-08-04</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=Jackie's Blog&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com/2023/08/04/C++/" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABjElEQVR42u3aQZKDMAxEUe5/6clmFlPEUreBOO2azyaBSsxbCFuyOH4CjgMECBBbII7mePvT77XqN3/PnXFB5CKGQXPhBt3/h+OAiEacB+uun39TQbtxQeyNOAek+g7ifyA61HBxArE9wklgVLLzsVUUxHJEl6Tc+Xws2waxFCGL1sEiVU1eH6vKQSxFOJOSupFKkMtJDkQsokpau/OuCHYLZRC5iG5iUghVHHdBDSIT4SanzkJWFUjlZhyIWISzydEFnALIBQxEHMIJTqf47RawdpMERBxCJSizCa4KWBDZCLdxonBO0VQuYCCiEO5mqNpMlUHoPB0gIhCqeHUDcJQMqyIJRC6iC7RqoJkGnL17ByIK0QXclURHFccg9kGoCaxKfmaCGUQ2wmnEzTZg1MQHIhthNdaNpMd9gdBKdEF8HaEa9dZm+QQUxB4IFVizjTvV9AWxP8KZwNQLgrcDE0QUoktUZgrpR54OEEsQVxtyzuQGYj+EU8iqgkgtdLeybRBLEd88QIAAEY14AULheMg0cn46AAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#C"><span class="post-toc-number">1.</span> <span class="post-toc-text">C++</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6"><span class="post-toc-number">2.</span> <span class="post-toc-text">字符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">字符型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">字符串</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E2%80%BB%E5%88%86%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99"><span class="post-toc-number">3.</span> <span class="post-toc-text">※分文件编写</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%8C%87%E9%92%88"><span class="post-toc-number">4.</span> <span class="post-toc-text">指针</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%A9%BA%E6%8C%87%E9%92%88"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">空指针</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%87%8E%E6%8C%87%E9%92%88"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">野指针</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#const%E4%BF%AE%E9%A5%B0%E6%8C%87%E9%92%88"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">const修饰指针</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="post-toc-number">5.</span> <span class="post-toc-text">结构体</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%9A%E4%B9%89-%E4%BD%BF%E7%94%A8"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">定义&amp;使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">结构体数组</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E6%8C%87%E9%92%88"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">结构体指针</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E5%8C%BA%E6%A8%A1%E5%9E%8B"><span class="post-toc-number">6.</span> <span class="post-toc-text">内存分区模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#new"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">new</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%BC%95%E7%94%A8"><span class="post-toc-number">7.</span> <span class="post-toc-text">引用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">引用做函数参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%BC%95%E7%94%A8%E5%81%9A%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">*引用做函数返回值</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%87%BD%E6%95%B0"><span class="post-toc-number">8.</span> <span class="post-toc-text">函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%87%BD%E6%95%B0%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">函数默认参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%87%BD%E6%95%B0%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">函数占位参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E2%80%BB%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">※函数重载</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="post-toc-number">8.3.1.</span> <span class="post-toc-text">注意事项</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="post-toc-number">9.</span> <span class="post-toc-text">类和对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0-%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">构造函数&amp;析构函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="post-toc-number">9.1.1.</span> <span class="post-toc-text">构造函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="post-toc-number">9.1.2.</span> <span class="post-toc-text">析构函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E7%B1%BB%E5%8F%8A%E8%B0%83%E7%94%A8"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">构造函数的分类及调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%88%86%E7%B1%BB"><span class="post-toc-number">9.2.1.</span> <span class="post-toc-text">分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%B0%83%E7%94%A8"><span class="post-toc-number">9.2.2.</span> <span class="post-toc-text">调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%97%B6%E6%9C%BA"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">拷贝构造函数调用时机</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E8%A7%84%E5%88%99"><span class="post-toc-number">9.4.</span> <span class="post-toc-text">构造函数调用规则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E2%80%BB%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="post-toc-number">9.5.</span> <span class="post-toc-text">※深拷贝与浅拷贝</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8"><span class="post-toc-number">9.6.</span> <span class="post-toc-text">初始化列表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%B1%BB%E5%AF%B9%E8%B1%A1%E4%BD%9C%E4%B8%BA%E7%B1%BB%E6%88%90%E5%91%98"><span class="post-toc-number">9.7.</span> <span class="post-toc-text">类对象作为类成员</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%9D%99%E6%80%81%E6%88%90%E5%91%98"><span class="post-toc-number">9.8.</span> <span class="post-toc-text">静态成员</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="post-toc-number">9.8.1.</span> <span class="post-toc-text">静态成员变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="post-toc-number">9.8.2.</span> <span class="post-toc-text">静态成员函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#this%E6%8C%87%E9%92%88"><span class="post-toc-number">9.9.</span> <span class="post-toc-text">this指针</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#const%E4%BF%AE%E9%A5%B0%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="post-toc-number">9.10.</span> <span class="post-toc-text">const修饰成员函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%B8%B8%E5%87%BD%E6%95%B0"><span class="post-toc-number">9.10.1.</span> <span class="post-toc-text">常函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%B8%B8%E5%AF%B9%E8%B1%A1"><span class="post-toc-number">9.10.2.</span> <span class="post-toc-text">常对象</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%AE%97%E6%B3%95"><span class="post-toc-number">10.</span> <span class="post-toc-text">算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">冒泡排序</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%9D%82%E9%A1%B9"><span class="post-toc-number">11.</span> <span class="post-toc-text">杂项</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h1 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1et411b73Z/?share_source=copy_web&vd_source=15214a7977f78540f7402494fb912cda">黑马|C++</a></p>
+<hr>
+<h1 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h1><h2 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">char</span> ch=<span class="hljs-string">&#x27;a&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>C风格：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">char</span> str[]=<span class="hljs-string">&quot;hello&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>C++风格：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string&gt;</span></span><br>string str=<span class="hljs-string">&quot;hello&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="※分文件编写"><a href="#※分文件编写" class="headerlink" title="※分文件编写"></a>※分文件编写</h1><ol>
+<li>创建后缀名为.h的头文件</li>
+<li>创建后缀名为.cpp的源文件</li>
+<li>头文件中写函数的声明</li>
+<li>源文件中写函数的定义</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//swap.h头文件</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-comment">//函数声明</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-type">int</span> a , <span class="hljs-type">int</span> b)</span></span>;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//swap.cpp文件</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&quot;swap.h&quot;</span></span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-type">int</span> a , <span class="hljs-type">int</span> b)</span></span>&#123;<br>	...<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//main.cpp文件</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&quot;swap.h&quot;</span></span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	...<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><p>在32位操作系统下占用4个字节，64位下占用8个字节（<strong>和数据类型无关！</strong>）</p>
+<h2 id="空指针"><a href="#空指针" class="headerlink" title="空指针"></a>空指针</h2><p>指针变量指向内存中编号为0的空间</p>
+<ul>
+<li>用途：初始化指针变量</li>
+<li>注意：空指针指向的内存不可访问！</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> * p = <span class="hljs-literal">NULL</span>;<br></code></pre></td></tr></table></figure>
+
+<p>内存编号为0~255为系统占用内存，不允许用户访问</p>
+<h2 id="野指针"><a href="#野指针" class="headerlink" title="野指针"></a>野指针</h2><p>指针变量指向非法的内存空间</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> * p = (<span class="hljs-type">int</span> *)<span class="hljs-number">0</span>×<span class="hljs-number">1100</span>;<br></code></pre></td></tr></table></figure>
+
+<h2 id="const修饰指针"><a href="#const修饰指针" class="headerlink" title="const修饰指针"></a>const修饰指针</h2><p>三种情况：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> a=<span class="hljs-number">10</span>;<br><span class="hljs-type">int</span> b=<span class="hljs-number">10</span>;<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>修饰指针—常量指针</li>
+</ol>
+<p>特点：指针指向可修改，但指针指向的值不可修改</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">const</span> <span class="hljs-type">int</span> *p=&amp;a;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">*p=20;//×<br>*p=&amp;b;//√（指向可以改）<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>修饰常量—指针常量（常指针）</li>
+</ol>
+<p>特点：指针指向不可修改，指向的值可修改</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> * <span class="hljs-type">const</span> p=&amp;a;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++">*p=<span class="hljs-number">20</span>;<span class="hljs-comment">//√</span><br>*p=&amp;b;<span class="hljs-comment">//×</span><br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>既修饰指针，又修饰常量</li>
+</ol>
+<p>特点：指针指向和指向的值都不可修改</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">const</span> <span class="hljs-type">int</span> * <span class="hljs-type">const</span> p=&amp;a;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++">*p=<span class="hljs-number">20</span>;<span class="hljs-comment">//×</span><br>*p=&amp;b;<span class="hljs-comment">//×</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>技巧：看const右侧紧跟着的是指针还是常量，是指针就是常量指针，是常量就是指针常量</p>
+</blockquote>
+<h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><p>&#x3D;&#x3D;用户自定义的数据类型&#x3D;&#x3D;，允许存储不同的数据类型</p>
+<h2 id="定义-使用"><a href="#定义-使用" class="headerlink" title="定义&amp;使用"></a>定义&amp;使用</h2><p>语法：struct 结构体名 { 结构体成员列表 };</p>
+<p>通过结构体创建变量的三种方式：</p>
+<ul>
+<li>struct 结构体名 变量名</li>
+<li>struct 结构体名 变量名&#x3D;{成员1值，成员2值…}</li>
+<li>定义结构体时顺便创建变量</li>
+</ul>
+<blockquote>
+<p>定义结构体变量时关键字struct不可省略</p>
+<p>创建结构体变量时关键字struct可省略</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">student</span> &#123; ... &#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    (<span class="hljs-keyword">struct</span>) student stu1=&#123; ... &#125;;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="结构体数组"><a href="#结构体数组" class="headerlink" title="结构体数组"></a>结构体数组</h2><p>将自定义的结构体放到数组中，方便维护</p>
+<p>语法：struct 结构体名 数组名[元素个数]&#x3D;{ {}，{}，… {}}</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">student</span> arr[<span class="hljs-number">3</span>]=&#123;<br>    &#123;<span class="hljs-string">&quot;张三&quot;</span>，<span class="hljs-number">18</span>,<span class="hljs-number">80</span>&#125;,<br>    &#123; ... &#125;,<br>    &#123; ... &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>给数组中的元素赋值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">arr[<span class="hljs-number">2</span>].name=<span class="hljs-string">&quot;赵六&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+<h2 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h2><p>通过指针访问结构体中的成员</p>
+<ul>
+<li>利用操作符<kbd>-></kbd>可以通过结构体指针访问结构体属性</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">student</span> s=&#123; &#125;;<br><span class="hljs-keyword">struct</span> *p=&amp;s;<br>cout&lt;&lt;<span class="hljs-string">&quot;姓名：&quot;</span>&lt;&lt;p-&gt;name&lt;&lt;endl;<br></code></pre></td></tr></table></figure>
+
+<h1 id="内存分区模型"><a href="#内存分区模型" class="headerlink" title="内存分区模型"></a>内存分区模型</h1><ul>
+<li>C++中在程序运行前分为全局区和代码区</li>
+<li>代码区的特点是<strong>共享</strong>和<strong>只读</strong></li>
+<li>全局区中存放<strong>全局变量</strong>、<strong>静态变量</strong>、<strong>常量</strong></li>
+<li>常量区中存放const修饰的<strong>全局常量</strong>和<strong>字符串常量</strong></li>
+</ul>
+<h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><p>在堆区创建整形数据</p>
+<p>new返回的是该数据类型的指针</p>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>语法：数据类型 &amp;别名 &#x3D; 原名</p>
+<blockquote>
+<p>注意事项：</p>
+<ul>
+<li>引用必须初始化，且初始化后不可改变</li>
+</ul>
+</blockquote>
+<h2 id="引用做函数参数"><a href="#引用做函数参数" class="headerlink" title="引用做函数参数"></a>引用做函数参数</h2><p>作用：函数传参时可利用引用的技术让形参修饰实参</p>
+<p>优点：简化指针修改实参</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//三种交换值方法：值传递、地址传递、引用传递</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-type">int</span> &amp;a,<span class="hljs-type">int</span> &amp;b)</span></span>&#123;<br>    <span class="hljs-type">int</span> temp=a;<br>    a=b;<br>    b=temp;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> a=<span class="hljs-number">10</span>;<br>    <span class="hljs-type">int</span> b=<span class="hljs-number">20</span>;<br>    <span class="hljs-built_in">swap</span>(a,b);<br>    cout&lt;&lt;<span class="hljs-string">&quot;a:&quot;</span>&lt;&lt;a&lt;&lt;<span class="hljs-string">&quot;b:&quot;</span>&lt;&lt;b&lt;&lt;endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<span class="hljs-comment">//a=20,b=10</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>通过引用参数产生的效果同地址传递是一样的。引用语法更清楚简单。</p>
+</blockquote>
+<h2 id="引用做函数返回值"><a href="#引用做函数返回值" class="headerlink" title="*引用做函数返回值"></a>*引用做函数返回值</h2><p>引用可作为函数的返回值存在</p>
+<p>不要返回局部变量的引用</p>
+<p>函数的调用可作为左值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">int</span>&amp; <span class="hljs-title">test</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">static</span> <span class="hljs-type">int</span> a=<span class="hljs-number">10</span>;<br>    <span class="hljs-keyword">return</span> a;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> &amp;ref=<span class="hljs-built_in">test</span>();<br>    cout&lt;&lt;<span class="hljs-string">&quot;ref:&quot;</span>&lt;&lt;ref&lt;&lt;endl;<br>    <span class="hljs-built_in">test</span>()=<span class="hljs-number">100</span><br>    cout&lt;&lt;<span class="hljs-string">&quot;赋值后ref:&quot;</span>&lt;&lt;ref&lt;&lt;endl;<br>&#125;<span class="hljs-comment">//ref=10</span><br><span class="hljs-comment">//ref=100</span><br></code></pre></td></tr></table></figure>
+
+<p>如果函数的返回值是引用，这个函数调用可作为左值</p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="函数默认参数"><a href="#函数默认参数" class="headerlink" title="函数默认参数"></a>函数默认参数</h2><p>C++中函数才形参列表中形参是可以有默认值的</p>
+<p>语法：返回值类型 函数名（参数&#x3D;默认值）{}</p>
+<blockquote>
+<p><strong>注意事项</strong></p>
+<ol>
+<li><p>若某个位置已有默认参数，那么从该位置往后，从左到右都必须有默认值</p>
+</li>
+<li><p>函数声明和实现只能有一个默认参数</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="函数占位参数"><a href="#函数占位参数" class="headerlink" title="函数占位参数"></a>函数占位参数</h2><p>C++中函数形参列表里可以有占位参数，用来做占位，调用函数时必须填补该位置</p>
+<p>语法：返回值类型 函数名（数据类型）{}</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//函数占位参数，占位参数也可有默认参数</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span>)</span></span>&#123;&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-built_in">fun</span>(<span class="hljs-number">10</span>,<span class="hljs-number">10</span>);<span class="hljs-comment">//占位参数必须填补</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="※函数重载"><a href="#※函数重载" class="headerlink" title="※函数重载"></a>※函数重载</h2><p><strong>满足条件：</strong></p>
+<ul>
+<li>同一作用域下</li>
+<li>函数名称相同</li>
+<li>函数参数<strong>类型不同</strong> 或者<strong>个数不同</strong> 或者<strong>顺序不同</strong></li>
+</ul>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>函数的返回值不可以作为函数重载的条件</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span></span>&#123;&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span></span>&#123;&#125;<br><span class="hljs-comment">//×，两者仅返回值(int/void)不同</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>引用作为重载条件</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">int</span> &amp;a)</span></span>&#123;&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fun</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">int</span> &amp;a)</span></span>&#123;&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> a=<span class="hljs-number">10</span>;<br>    <span class="hljs-built_in">fun</span>(a);<span class="hljs-comment">//调用无const版本</span><br>    <span class="hljs-built_in">fun</span>(<span class="hljs-number">10</span>);<span class="hljs-comment">//调用有const</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>函数重载避免<strong>默认参数</strong></li>
+</ul>
+<h1 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h1><table>
+<thead>
+<tr>
+<th align="center">权限</th>
+<th align="center">访问权限</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">公共权限public</td>
+<td align="center">类内可以访问  类外可以访问</td>
+</tr>
+<tr>
+<td align="center">保护权限protected</td>
+<td align="center">类内可以访问  类外不可访问  子类可以访问父类中的保护内容</td>
+</tr>
+<tr>
+<td align="center">私有权限private</td>
+<td align="center">类内可以访问  类外不可访问  子类不可访问父类中的保护内容</td>
+</tr>
+</tbody></table>
+<h2 id="构造函数-析构函数"><a href="#构造函数-析构函数" class="headerlink" title="构造函数&amp;析构函数"></a>构造函数&amp;析构函数</h2><h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>语法：类名（）{}</p>
+<ol>
+<li>无返回值 也不写void</li>
+<li>函数名称与类名相同</li>
+<li>可以有参数，即可以发生<strong>重载</strong></li>
+<li>程序调用对象时自动调用构造，无需手动调用，且只会调用一次</li>
+</ol>
+<h3 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h3><p>语法：~类名（）{}</p>
+<ol>
+<li>无返回值 也不写void</li>
+<li>不可以有参数，因此不可发生重载</li>
+</ol>
+<h2 id="构造函数的分类及调用"><a href="#构造函数的分类及调用" class="headerlink" title="构造函数的分类及调用"></a>构造函数的分类及调用</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>两种分类方式：</p>
+<ul>
+<li>按参数分：有参构造   无参构造（默认构造）</li>
+<li>按类型分：普通构造   拷贝构造</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//拷贝构造函数</span><br><span class="hljs-built_in">Person</span>(<span class="hljs-type">const</span> Person &amp;p)&#123;&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h3><p>三种调用方式：</p>
+<ul>
+<li>括号法</li>
+<li>显示法</li>
+<li>隐式转换法</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-comment">//括号法</span><br>    Person p1;<span class="hljs-comment">//默认构造函数调用[不要加()!编译器会认为是一个函数的声明]</span><br>    <span class="hljs-function">Person <span class="hljs-title">p2</span><span class="hljs-params">(<span class="hljs-number">10</span>)</span></span>;<span class="hljs-comment">//有参构造函数</span><br>    <span class="hljs-function">Person <span class="hljs-title">p3</span><span class="hljs-params">(p2)</span></span>;<br>    <span class="hljs-comment">//显示法</span><br>    Person p1;<br>    Person p2=<span class="hljs-built_in">Person</span>(<span class="hljs-number">10</span>);<span class="hljs-comment">//有参构造</span><br>    Person p2=<span class="hljs-built_in">Person</span>(p2);<span class="hljs-comment">//拷贝构造</span><br>    <span class="hljs-comment">//隐式转换法</span><br>    Person p4=<span class="hljs-number">10</span>;<span class="hljs-comment">//相当于Person p4=Person(10);</span><br>    Person p4=p4;<span class="hljs-comment">//拷贝构造</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Person(10);&#x2F;&#x2F;匿名对象，特点：当前执行结束后，系统会立即回收掉匿名对象</p>
+<p>注意：不要利用拷贝构造函数，初始化匿名对象，编译器会认为Person(p3) &#x3D;&#x3D;&#x3D; Person p3&#x2F;&#x2F;对象的声明</p>
+</blockquote>
+<h2 id="拷贝构造函数调用时机"><a href="#拷贝构造函数调用时机" class="headerlink" title="拷贝构造函数调用时机"></a>拷贝构造函数调用时机</h2><ul>
+<li>使用一个已经创建完毕的对象来初始化一个对象</li>
+<li>值传递的方式给函数参数传值</li>
+<li>以值的方式返回局部对象</li>
+</ul>
+<h2 id="构造函数调用规则"><a href="#构造函数调用规则" class="headerlink" title="构造函数调用规则"></a>构造函数调用规则</h2><p>默认情况下，C++编译器至少给一个类添加3个函数</p>
+<ol>
+<li>默认构造函数（无参，函数体为空）</li>
+<li>默认析构函数（无参，函数体为空）</li>
+<li>默认拷贝析构函数，对属性进行值拷贝</li>
+</ol>
+<p>调用规则：</p>
+<ul>
+<li>若用户定义有参构造函数，C++不再提供默认无参构造，但会提供默认拷贝构造</li>
+<li>若用户定义拷贝构造函数，C++不再提供其他构造函数</li>
+</ul>
+<h2 id="※深拷贝与浅拷贝"><a href="#※深拷贝与浅拷贝" class="headerlink" title="※深拷贝与浅拷贝"></a>※深拷贝与浅拷贝</h2><blockquote>
+<p>面试经典问题，常见的一个坑</p>
+</blockquote>
+<p>浅拷贝：简单的赋值拷贝操作</p>
+<p>深拷贝：在堆区重新申请空间，进行拷贝操作</p>
+<p>浅拷贝带来的问题：堆区的内存重复释放（利用深拷贝解决</p>
+<p>总结：若属性有在堆区开辟的，一定要自己提供拷贝构造函数，防止浅拷贝带来的问题</p>
+<h2 id="初始化列表"><a href="#初始化列表" class="headerlink" title="初始化列表"></a>初始化列表</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-built_in">Person</span>(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b,<span class="hljs-type">int</span> c):<span class="hljs-built_in">a</span>(a),<span class="hljs-built_in">b</span>(b),<span class="hljs-built_in">c</span>(c)&#123; ... &#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;Person p;&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="类对象作为类成员"><a href="#类对象作为类成员" class="headerlink" title="类对象作为类成员"></a>类对象作为类成员</h2><p>当其他类对象作为本类成员（<strong>对象成员</strong>），先调用对象成员的构造，再调用本类的构造，析构的顺序与构造相反</p>
+<h2 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h2><p>在成员变量和成员函数前加上关键字static</p>
+<h3 id="静态成员变量"><a href="#静态成员变量" class="headerlink" title="静态成员变量"></a>静态成员变量</h3><ul>
+<li>所有对象共享同一份数据</li>
+<li>在编译阶段分配内存</li>
+<li>类内声明，类外初始化</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">person</span>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-type">static</span> <span class="hljs-type">int</span> a;<br>&#125;;<br><span class="hljs-type">int</span> person::a=<span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+
+<p>静态成员变量不属于某个对象上，所有对象都共享同一份数据</p>
+<p>因此静态成员变量有两种访问方式</p>
+<ol>
+<li>通过对象进行访问</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++">person p;<br>cout&lt;&lt;p.a&lt;&lt;endl;<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>通过类名进行访问</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">cout&lt;&lt;person::a&lt;&lt;endl;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>有访问权限，私有权限访问不到</p>
+</blockquote>
+<h3 id="静态成员函数"><a href="#静态成员函数" class="headerlink" title="静态成员函数"></a>静态成员函数</h3><ul>
+<li>所有对象共享同一个函数</li>
+<li>静态成员函数&#x3D;&#x3D;只能&#x3D;&#x3D;访问静态成员变量</li>
+</ul>
+<p>同上有两种访问方式，且有访问权限</p>
+<p>空对象占用内存空间为：1</p>
+<blockquote>
+<p>C++编译器会给每个空对象分配一个字节空间，是为了区分空对象占内存的位置</p>
+</blockquote>
+<h2 id="this指针"><a href="#this指针" class="headerlink" title="this指针"></a>this指针</h2><p>本质：指针常量</p>
+<p>指向被调用的成员函数所属的对象</p>
+<p>是隐含每一个非静态成员函数内的一种指针</p>
+<p>用途：</p>
+<ul>
+<li>当形参和成员变量同名时，可用this指针来区分</li>
+<li>在类的非静态成员函数中返回对象本身，可使用return *this</li>
+</ul>
+<h2 id="const修饰成员函数"><a href="#const修饰成员函数" class="headerlink" title="const修饰成员函数"></a>const修饰成员函数</h2><h3 id="常函数"><a href="#常函数" class="headerlink" title="常函数"></a>常函数</h3><ul>
+<li>成员函数后加const后我们称为这个函数为常函数</li>
+<li>常函数内不可以修改成员属性</li>
+<li>成员属性声明时加关键字mutable后，在常函数中依然可以修改</li>
+</ul>
+<h3 id="常对象"><a href="#常对象" class="headerlink" title="常对象"></a>常对象</h3><ul>
+<li>声明对象前加const称该对象为常对象</li>
+<li>常对象只能调用常函数</li>
+</ul>
+<p>next p117</p>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><ol>
+<li>比较相邻的元素，若前一个比后一个大，交换他们两个</li>
+<li>对每对相邻元素做同样工作，执行完毕后找出第一个最大值</li>
+<li>重复以上步骤，每次比较次数-1，直到无需比较</li>
+</ol>
+<ul>
+<li>外层循环：排序总轮数&#x3D;元素个数-1</li>
+<li>内层循环：每轮对比数&#x3D;元素个数-排序轮数-1</li>
+</ul>
+<h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><ol>
+<li>数组个数计算方法：</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-built_in">sizeof</span>(arr)/<span class="hljs-built_in">sizeof</span>(arr[<span class="hljs-number">0</span>])<span class="hljs-number">-1</span><br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>随机数生成</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;ctime&gt;</span><span class="hljs-comment">//添加随机数种子（利用当前系统时间生成随机数，防止每次随机数都一样）</span></span><br><span class="hljs-built_in">srand</span>((unsighed <span class="hljs-type">int</span>)<span class="hljs-built_in">time</span>(<span class="hljs-literal">NULL</span>));<br><span class="hljs-type">int</span> num=<span class="hljs-built_in">rand</span>()%<span class="hljs-number">100</span><span class="hljs-comment">//生成0~99随机数</span><br></code></pre></td></tr></table></figure>
+
+<p>visual studio中Ctrl+D快速复制当前一行</p>
+<p>值传递时，函数形参发生改变，并不会影响实参</p>
+
+                    </article>
+                    
+
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2023-08-04T14:49:24.000Z" itemprop="datePublished">2023-08-04</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+<span class="post-tags-list mt-2">
+
+<a class="post-tags-list-item" href="/tags/summary/" rel="tag">#&nbsp;summary</a>
+
+</span>
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2023/08/04/Java/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Java</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2023/08/04/MySQL/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">MySQL</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <!-- <a class="footer-copyright-a" href="http://example.com">Jackie's Blog</a> -->
+            <a class="footer-copyright-a" target="_blank" rel="noopener" href="https://github.com/Wu-Jackie">Jackie's Blog</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+    <!-- Busuanzi Post Views -->
+    <span id="busuanzi_container_site_pv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_pv"></span>
+        <span>Views</span>
+        
+    </span>
+
+
+
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站访客数<span id="busuanzi_value_site_uv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+(function() {
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.getElementById('copyright-year');
+    var copyrightSince = 2023;
+    if (copyrightSince === copyrightNow) {
+        copyrightContent.textContent = copyrightNow;
+    } else {
+        copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
+    }
+})();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

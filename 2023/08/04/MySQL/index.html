@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+    <link rel="dns-prefetch" href="//hm.baidu.com">
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>MySQL | Jackie&#39;s Blog</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/obsidian.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/obsidian.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Jackie's Blog"><meta name="msapplication-starturl" content="http://example.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jackie's Blog"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="MySQL | Jackie&#39;s Blog"><meta property="og:site_name" content="Jackie&#39;s Blog"><meta property="og:type" content="article"><meta property="og:url" content="http://example.com/2023/08/04/MySQL/"><meta property="og:locale" content="zh-CN"><meta name="description" content="MySQL狂神说MySQL  小tips–表示注释；&amp;#x2F;**&amp;#x2F;为多行注释 所有语句使用分号;结尾 如果表名或者字段名是一个特殊字符。就需要带&#96; 基本的数据库操作命令show database：查看所有的数据库 use 数据库名：切换数据库 show tables：查看数据库中所有的表 describe 表名：显示数据库中所有的表的信息 create database 数据库名：创 - Jackie - Jackie&#39;s Blog"><meta name="keywords" content="summary"><meta property="og:image" content="http://example.com/2023/08/04/MySQL/MySQL%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E9%95%BF%E5%BA%A6%E5%92%8C%E8%8C%83%E5%9B%B4.jpg"><meta property="article:published_time" content="2023-08-04T14:30:31.000Z"><meta property="article:modified_time" content="2023-08-04T14:43:41.838Z"><meta property="og:updated_time" content="2023-08-04T14:43:41.838Z"><meta property="article:author" content="Jackie"><meta property="article:tag" content="summary"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://example.com/2023/08/04/MySQL/">
+
+    <meta name="generator" content="Hexo 6.3.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?6fa63450abd362f22fde7934382733b4';
+    var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://example.com/2023/08/04/MySQL/",
+    "@type": "BlogPosting",
+    "logo": "http://example.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://example.com/2023/08/04/MySQL/"
+    },
+    "headline": "MySQL | Jackie&#39;s Blog",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://example.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2023-08-04T14:30:31.000Z",
+    "dateModified": "2023-08-04T14:43:41.838Z",
+    "author": {
+        "@type": "Person",
+        "name": "Jackie",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/default_avatar.png"
+        },
+        "description": "Welcome To My Blog!,無限進步！"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Jackie&#39;s Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://example.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "summary",
+    "description": "MySQL狂神说MySQL  小tips–表示注释；&amp;amp;#x2F;**&amp;amp;#x2F;为多行注释 所有语句使用分号;结尾 如果表名或者字段名是一个特殊字符。就需要带` 基本的数据库操作命令show database：查看所有的数据库 use 数据库名：切换数据库 show tables：查看数据库中所有的表 describe 表名：显示数据库中所有的表的信息 create database 数据库名：创 - Jackie - Jackie&#39;s Blog"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Jackie&#39;s Blog</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Welcome To My Blog!<br>無限進步！
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about" class="navbar-link">About</a>
+    
+        <a href="/links" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+
+        <!-- Share Twitter -->
+        
+
+        <!-- Share Facebook -->
+        
+
+        <!-- Share Google+ -->
+        
+
+        <!-- Share LinkedIn -->
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=MySQL&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABjklEQVR42u3awY7CMAxF0f7/T8OGRVViv+cSpY643YzEQHoWluPYOV4NngMECBBbII7k+frR57Pz/8/fu36u1gXRFzEMmuCFo5eM1lLrguiPuC6aLRIF7+j32bog9kZEAQri/xBRQlIbFIj9EelGI16UYafsoiCWI9wAq/6dVm2DWIqwD68iUKNNbeqpHMQShAqwLBk5gCyBgeiJiDAqQNMkZB6UQfREqC9HBYzTVMkKXhB9EZUCxQ1mOwGC2AqhFnY3tzRoQbREqGSkQO7h2O7UgHgcETXNKwMWdTgKcSDaIrKCRiUiecDJmvYgWiJUgZoNU1Rgy40OREuE2sicZql6Wbg+iJaIbGDmvlgVPaVCF8TjCKfIdS9/uYMbEL0R7mUMNwArgxgQPRHuAE4daFQi+2k4C2IpwhqsJ433SrMMxD4INVStDuFuT4hBtEK4F3pUkioNbUFsiXCKljuNdhD7IpyLnqqROuW2MojlCNVwV8lJBffPuyiIpYhK8nETmHXpB0RLxJMPCBAgWiPeUTeJqdHA+JMAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">MySQL</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="Jackie's Avatar">
+        <span>2023-08-04</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=Jackie's Blog&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com/2023/08/04/MySQL/" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABjklEQVR42u3awY7CMAxF0f7/T8OGRVViv+cSpY643YzEQHoWluPYOV4NngMECBBbII7k+frR57Pz/8/fu36u1gXRFzEMmuCFo5eM1lLrguiPuC6aLRIF7+j32bog9kZEAQri/xBRQlIbFIj9EelGI16UYafsoiCWI9wAq/6dVm2DWIqwD68iUKNNbeqpHMQShAqwLBk5gCyBgeiJiDAqQNMkZB6UQfREqC9HBYzTVMkKXhB9EZUCxQ1mOwGC2AqhFnY3tzRoQbREqGSkQO7h2O7UgHgcETXNKwMWdTgKcSDaIrKCRiUiecDJmvYgWiJUgZoNU1Rgy40OREuE2sicZql6Wbg+iJaIbGDmvlgVPaVCF8TjCKfIdS9/uYMbEL0R7mUMNwArgxgQPRHuAE4daFQi+2k4C2IpwhqsJ433SrMMxD4INVStDuFuT4hBtEK4F3pUkioNbUFsiXCKljuNdhD7IpyLnqqROuW2MojlCNVwV8lJBffPuyiIpYhK8nETmHXpB0RLxJMPCBAgWiPeUTeJqdHA+JMAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MySQL"><span class="post-toc-number">1.</span> <span class="post-toc-text">MySQL</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%B0%8Ftips"><span class="post-toc-number">2.</span> <span class="post-toc-text">小tips</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="post-toc-number">3.</span> <span class="post-toc-text">基本的数据库操作命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="post-toc-number">4.</span> <span class="post-toc-text">操作数据库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5%E5%88%86%E7%B1%BB"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">结构化查询语句分类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">基本操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B1%BB%E5%9E%8B"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">数据库类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E2%80%BB%E5%AD%97%E6%AE%B5%E5%B1%9E%E6%80%A7"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">※字段属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">创建数据库表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%B1%BB%E5%9E%8B"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">数据表类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BF%AE%E6%94%B9%E3%80%81%E5%88%A0%E9%99%A4%E8%A1%A8"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">修改、删除表</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MySQL%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86"><span class="post-toc-number">5.</span> <span class="post-toc-text">MySQL数据管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%A4%96%E9%94%AE"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">外键</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">增删改查</span></a></li></ol></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1NJ411J79W/?share_source=copy_web&vd_source=15214a7977f78540f7402494fb912cda">狂神说MySQL</a></p>
+<hr>
+<h1 id="小tips"><a href="#小tips" class="headerlink" title="小tips"></a>小tips</h1><p>–表示注释；&#x2F;**&#x2F;为多行注释</p>
+<p>所有语句使用分号<kbd>;</kbd>结尾</p>
+<p>如果表名或者字段名是一个特殊字符。就需要带<kbd>`</kbd></p>
+<h1 id="基本的数据库操作命令"><a href="#基本的数据库操作命令" class="headerlink" title="基本的数据库操作命令"></a>基本的数据库操作命令</h1><p>show database：查看所有的数据库</p>
+<p>use 数据库名：切换数据库</p>
+<p>show tables：查看数据库中所有的表</p>
+<p>describe 表名：显示数据库中所有的表的信息</p>
+<p>create database 数据库名：创建一个数据库</p>
+<p>exit：退出连接（Ctrl+C强制退出）</p>
+<h1 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h1><h2 id="结构化查询语句分类"><a href="#结构化查询语句分类" class="headerlink" title="结构化查询语句分类"></a>结构化查询语句分类</h2><table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">说明</th>
+<th align="center">命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">DDL（数据定义语言）</td>
+<td align="center">定义和管理数据对象，如数据库、数据表等</td>
+<td align="center">CREATE、DROP、ALTER</td>
+</tr>
+<tr>
+<td align="center">DML（数据操作语言）</td>
+<td align="center">用于操作数据库对象中所包含的数据</td>
+<td align="center">INSERT、UPDATE、DELETE</td>
+</tr>
+<tr>
+<td align="center">DQL（数据查询语言）</td>
+<td align="center">用于查询数据库的数据</td>
+<td align="center">SELECT</td>
+</tr>
+<tr>
+<td align="center">DCL（数据控制语言）</td>
+<td align="center">用于管理数据库的语言，包括管理权限及数据更改</td>
+<td align="center">GRANT、commit、rollback</td>
+</tr>
+</tbody></table>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><ol>
+<li>创建数据库</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> DATABASE 数据库名<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>删除数据库</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> DATABASE 数据库名<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>使用数据库</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">USE `school`<br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>查看数据库</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> DATABASES<br></code></pre></td></tr></table></figure>
+
+<h2 id="数据库类型"><a href="#数据库类型" class="headerlink" title="数据库类型"></a>数据库类型</h2><ol>
+<li>数值</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">说明</th>
+<th align="center">取值范围</th>
+<th align="center">存储需求&#x2F;字节</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">tinyint</td>
+<td align="center">非常小的数据</td>
+<td align="center">有符值：-2^7^ ~2^7^-1<br>无符号值：0~2^8^-1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">smallint</td>
+<td align="center">较小的数据</td>
+<td align="center">有符值：-2^15^ ~2^15^-1<br>无符号值：0~2^16^-1</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">mediumint</td>
+<td align="center">中等大小的数据</td>
+<td align="center">有符值：-2^23^ ~2^23^-1<br>无符号值：0~2^24^-1</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">&#x3D;&#x3D;int&#x3D;&#x3D;</td>
+<td align="center">标准的整数</td>
+<td align="center">有符值：-2^31^ ~2^31^-1<br>无符号值：0~2^32^-1</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">bigint</td>
+<td align="center">较大的数据</td>
+<td align="center">有符值：-2^63^ ~2^63^-1<br>无符号值：0~2^64^-1</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">单精度浮点数</td>
+<td align="center">±1.17e -38</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">双精度浮点数</td>
+<td align="center">±2.22e -308</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">decimal</td>
+<td align="center">字符串形式的浮点数<br>金融计算时常用</td>
+<td align="center">decimal(m,d) <br>参数m&lt;65 是总个数，d&lt;30且 d&lt;m 是小数位</td>
+<td align="center">m个字节</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li>字符串</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">说明</th>
+<th align="center">最大长度&#x2F;字节</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&#x3D;&#x3D;char&#x3D;&#x3D;</td>
+<td align="center">固定长字符串</td>
+<td align="center">0-255</td>
+</tr>
+<tr>
+<td align="center">&#x3D;&#x3D;varchar&#x3D;&#x3D;</td>
+<td align="center">可变字符串</td>
+<td align="center">0-65535</td>
+</tr>
+<tr>
+<td align="center">tinytext</td>
+<td align="center">微型文本</td>
+<td align="center">2^8^-1</td>
+</tr>
+<tr>
+<td align="center">text</td>
+<td align="center">文本串</td>
+<td align="center">2^16^-1</td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li>时间日期</li>
+</ol>
+<p>java.util.Date</p>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">DATE</td>
+<td align="center">YYYY-MM-DD</td>
+</tr>
+<tr>
+<td align="center">TIME</td>
+<td align="center">Hh:mm:ss</td>
+</tr>
+<tr>
+<td align="center">&#x3D;&#x3D;DATETIME&#x3D;&#x3D;</td>
+<td align="center">YYYY-MM-DD HH:mm:ss</td>
+</tr>
+<tr>
+<td align="center">&#x3D;&#x3D;TIMESTAMP&#x3D;&#x3D;</td>
+<td align="center">时间戳（1970.1.1到现在的毫秒数）</td>
+</tr>
+<tr>
+<td align="center">YEAR</td>
+<td align="center">表示年份</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>yyyy-MM-dd HH:mm:ss年-月-日 时:分:秒 大写是区分“ 月 ”与“ 分 ”  HH为什么大写，是为了区分 12小时制 与 24小时制 。 小写的h是12小时制，大写的H是24小时制</p>
+</blockquote>
+<ol start="4">
+<li>null</li>
+</ol>
+<p>没有值，未知</p>
+<p>&#x3D;&#x3D;不要使用null进行算术运算，结果仍为null&#x3D;&#x3D;</p>
+<blockquote>
+<p>MySQL数据类型的长度和范围</p>
+</blockquote>
+<p><img src="/2023/08/04/MySQL/MySQL%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E9%95%BF%E5%BA%A6%E5%92%8C%E8%8C%83%E5%9B%B4.jpg" alt="MySQL数据类型的长度和范围"></p>
+<h2 id="※字段属性"><a href="#※字段属性" class="headerlink" title="※字段属性"></a>※字段属性</h2><ul>
+<li>Unsigned</li>
+</ul>
+<p>无符号的</p>
+<p>声明该数据列不允许负数</p>
+<ul>
+<li>Zerofill</li>
+</ul>
+<p>0填充的</p>
+<p>不足位数的用0来填充 , 如int(3),5则为005</p>
+<ul>
+<li>Auto_InCrement</li>
+</ul>
+<p>自动增长 , 每添加一条数据 , 自动在上一个记录数上加 1（默认）</p>
+<p>通常用于设置<strong>主键</strong> , 且为整数类型</p>
+<p>可自定义设计主键自增的起始值和步长</p>
+<blockquote>
+<p>当前表设置步长(AUTO_INCREMENT&#x3D;100)：只影响当前表</p>
+<p>SET @@auto_increment_increment&#x3D;5;影响所有使用自增的表（全局）</p>
+</blockquote>
+<ul>
+<li>NULL 和 NOT NULL</li>
+</ul>
+<p>默认为NULL , 即没有插入该列的数值</p>
+<p>如果设置为NOT NULL , 则该列必须有值</p>
+<ul>
+<li>Default</li>
+</ul>
+<p>设置默认的值</p>
+<h2 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">--目标 : 创建一个school数据库</span><br><span class="hljs-comment">--创建学生表(列,字段)</span><br><span class="hljs-comment">--学号int 登录密码varchar(20) 姓名,性别varchar(2),出生日期(datatime),家庭住址,email</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> `student` (<br>`id` <span class="hljs-type">int</span>(<span class="hljs-number">4</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;学号&#x27;</span>,<br>`name` <span class="hljs-type">varchar</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;匿名&#x27;</span> COMMENT <span class="hljs-string">&#x27;姓名&#x27;</span>,<br>`pwd` <span class="hljs-type">varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;123456&#x27;</span> COMMENT <span class="hljs-string">&#x27;密码&#x27;</span>,<br>`sex` <span class="hljs-type">varchar</span>(<span class="hljs-number">2</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;男&#x27;</span> COMMENT <span class="hljs-string">&#x27;性别&#x27;</span>,<br>`birthday` datetime <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;生日&#x27;</span>,<br>`address` <span class="hljs-type">varchar</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;地址&#x27;</span>,<br>`email` <span class="hljs-type">varchar</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;邮箱&#x27;</span>,<br><span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8<br></code></pre></td></tr></table></figure>
+
+<p>格式</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> [IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span>] `表名`(<br>    `字段名` 列类型 [属性] [索引] [注释],<br>    `字段名` 列类型 [属性] [索引] [注释],<br>    ...<br>    `字段名` 列类型 [属性] [索引] [注释]<br>)[表类型][字符集设置][注释]<br></code></pre></td></tr></table></figure>
+
+<p>常用命令</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 查看数据库的定义</span><br><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">CREATE</span> DATABASE school;<br><span class="hljs-comment">-- 查看数据表的定义</span><br><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> student;<br><span class="hljs-comment">-- 显示表结构</span><br><span class="hljs-keyword">DESC</span> student;  <span class="hljs-comment">-- 设置严格检查模式(不能容错了)SET sql_mode=&#x27;STRICT_TRANS_TABLES&#x27;;</span><br><span class="hljs-comment">-- 查看mysql所支持的引擎类型 (表类型)</span><br><span class="hljs-keyword">SHOW</span> ENGINES;<br></code></pre></td></tr></table></figure>
+
+<h2 id="数据表类型"><a href="#数据表类型" class="headerlink" title="数据表类型"></a>数据表类型</h2><p>InnoDB：默认使用</p>
+<p>MyISAM：早些年使用的</p>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">MyISAM</th>
+<th align="center">InnoDB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">事务处理</td>
+<td align="center">不支持</td>
+<td align="center">支持</td>
+</tr>
+<tr>
+<td align="center">数据行锁定</td>
+<td align="center">不支持</td>
+<td align="center">支持</td>
+</tr>
+<tr>
+<td align="center">外键约束</td>
+<td align="center">不支持</td>
+<td align="center">支持</td>
+</tr>
+<tr>
+<td align="center">全文索引</td>
+<td align="center">支持</td>
+<td align="center">不支持</td>
+</tr>
+<tr>
+<td align="center">表空间大小</td>
+<td align="center">较小</td>
+<td align="center">较大，约2倍</td>
+</tr>
+</tbody></table>
+<p>常规使用操作</p>
+<ul>
+<li>MYISAM	节约空间，速度较快</li>
+<li>INNODB	安全性高，支持事务的处理，支持多表多用户操作</li>
+</ul>
+<blockquote>
+<p>数据表的存储位置</p>
+</blockquote>
+<p>位置：Mysql安装目录\data\下存放数据表。目录名对应数据库名 , 该目录下文件名对应数据表</p>
+<p>每个库目录存在一个保存当前数据库的选项文件db.opt</p>
+<blockquote>
+<p>注意</p>
+</blockquote>
+<ul>
+<li><p>*.frm	表结构定义文件</p>
+</li>
+<li><p>*.MYD	数据文件 ( data )</p>
+</li>
+<li><p>*.MYI	索引文件 ( index )</p>
+</li>
+<li><p>InnoDB类型数据表只有一个 *.frm文件 , 以及上一级目录的ibdata1文件</p>
+</li>
+<li><p>MyISAM类型数据表对应三个文件：<br>*.frm	表结构定义文件<br>*.MYD	数据文件 ( data )<br>*.MYI	索引文件 ( index )</p>
+</li>
+</ul>
+<blockquote>
+<p>设置数据库表的字符集编码</p>
+</blockquote>
+<p>我们可为数据库、数据表、数据列设定不同的字符集，设定方法：</p>
+<ul>
+<li><p>创建时通过命令来设置</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名()CHARSET<span class="hljs-operator">=</span>utf8;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>如无设定 , 则根据MySQL数据库配置文件 my.ini 中的参数设定</p>
+</li>
+</ul>
+<p>参考链接：<a target="_blank" rel="noopener" href="http://t.csdn.cn/Vy9j2">http://t.csdn.cn/Vy9j2</a></p>
+<h2 id="修改、删除表"><a href="#修改、删除表" class="headerlink" title="修改、删除表"></a>修改、删除表</h2><ul>
+<li>修改表（ALTER TABLE）</li>
+</ul>
+<p>修改表名：ALTER TABLE 旧表名 RENAME AS 新表名</p>
+<p>添加字段：ALTER TABLE 表名 ADD 字段名 列属性[属性]</p>
+<p>修改字段</p>
+<p>​	ALTER TABLE 表名 MODIFY 字段名 列类型[属性]</p>
+<p>​	ALTER TABLE 表名 CHANGE 旧字段名 新字段名 列属性[属性]</p>
+<p>删除字段：ALTER TABLE 表名 DROP 字段名</p>
+<ul>
+<li>删除表</li>
+</ul>
+<p>DROP TABLE [IF EXISTS] 表名</p>
+<h1 id="MySQL数据管理"><a href="#MySQL数据管理" class="headerlink" title="MySQL数据管理"></a>MySQL数据管理</h1><h2 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h2><p>如果公共关键字在一个关系中是主关键字，那么这个公共关键字被称为另一个关系的外键。由此可见，外键表示了两个关系之间的相关联系。以另一个关系的外键作主关键字的表被称为<strong>主表</strong>，具有此外键的表被称为主表的<strong>从表</strong>。</p>
+<p>在实际操作中，将一个表的值放入第二个表来表示关联，所使用的值是第一个表的主键值(在必要时可包括复合主键值)。此时，第二个表中保存这些值的属性称为外键(<strong>foreign key</strong>)。</p>
+<p><strong>外部作用</strong></p>
+<p>保持数据<strong>一致性</strong>，<strong>完整性</strong>，主要目的是控制存储在外键表中的数据,<strong>约束</strong>。使两张表形成关联，外键只能引用外表中的列的值或使用空值。</p>
+<ol>
+<li>创建子表同时创建外键</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 创建外键的方式一 : 创建子表同时创建外键</span><br><span class="hljs-comment">-- 年级表 (id\年级名称)</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `grade` (<br>`gradeid` <span class="hljs-type">INT</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="hljs-string">&#x27;年级ID&#x27;</span>,<br><span class="hljs-keyword">PRIMARY</span> KEY (`gradeid`)<br>) ENGINE<span class="hljs-operator">=</span>INNODB <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8<br><br><span class="hljs-comment">-- 学生信息表 (学号,姓名,性别,年级,手机,地址,出生日期,邮箱,身份证号)</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `student` (<br>`studentno` <span class="hljs-type">INT</span>(<span class="hljs-number">4</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;学号&#x27;</span>,<br>`gradeid` <span class="hljs-type">INT</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span> COMMENT <span class="hljs-string">&#x27;年级&#x27;</span>,<br><span class="hljs-keyword">PRIMARY</span> KEY (`studentno`),<br>KEY `FK_gradeid` (`gradeid`),<br><span class="hljs-keyword">CONSTRAINT</span> `FK_gradeid` <span class="hljs-keyword">FOREIGN</span> KEY (`gradeid`) <span class="hljs-keyword">REFERENCES</span> `grade` (`gradeid`)<br>) ENGINE<span class="hljs-operator">=</span>INNODB <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8<br></code></pre></td></tr></table></figure>
+
+<p><strong>删除具有主外键关系的表时 , 要先删子表 , 后删主表</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 删除外键</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> student <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">FOREIGN</span> KEY FK_gradeid;<br><span class="hljs-comment">-- 发现执行完上面的,索引还在,所以还要删除索引</span><br><span class="hljs-comment">-- 注:这个索引是建立外键的时候默认生成的</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> student <span class="hljs-keyword">DROP</span> INDEX FK_gradeid;<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>创建子表完毕后,修改子表添加外键</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> `student`<br><span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> `FK_gradeid` <span class="hljs-keyword">FOREIGN</span> KEY (`gradeid`) <span class="hljs-keyword">REFERENCES</span> `grade` (`gradeid`);<br></code></pre></td></tr></table></figure>
+
+<p>ALTER TABLE `表名` ADD CONSTRAINT `约束名` FOREIGN KEY (`作为外键的列`) REFERENCES (`哪个字段`)</p>
+<p>&#x3D;&#x3D;不建议使用（避免数据库过多造成困扰）&#x3D;&#x3D;</p>
+<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2><ul>
+<li>Insert 添加</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> 表名[(字段<span class="hljs-number">1</span>,字段<span class="hljs-number">2</span>,字段<span class="hljs-number">3</span>,...)] <span class="hljs-keyword">VALUES</span>(<span class="hljs-string">&#x27;值1&#x27;</span>),(<span class="hljs-string">&#x27;值2&#x27;</span>),(<span class="hljs-string">&#x27;值3&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>例</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> `student`(name,sex,age) <span class="hljs-keyword">values</span>(<span class="hljs-string">&#x27;张三&#x27;</span>,<span class="hljs-number">18</span>,<span class="hljs-string">&#x27;男&#x27;</span>)<br><span class="hljs-comment">--另一种形式</span><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-keyword">Set</span> name<span class="hljs-operator">=</span><span class="hljs-string">&#x27;张三&#x27;</span>,age<span class="hljs-operator">=</span><span class="hljs-number">18</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>Update 修改</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> 表名 <span class="hljs-keyword">SET</span> column_name<span class="hljs-operator">=</span><span class="hljs-keyword">value</span> [,column_name1<span class="hljs-operator">=</span>value1,...] [<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">condition</span>];<br></code></pre></td></tr></table></figure>
+
+<p>例</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> student <span class="hljs-keyword">set</span> name<span class="hljs-operator">=</span><span class="hljs-string">&#x27;张三&#x27;</span> <span class="hljs-keyword">where</span> id<span class="hljs-operator">=</span><span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>Delete 删除</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> 表名 [<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">condition</span>];<br></code></pre></td></tr></table></figure>
+
+<p>例</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DELETE</span> FOTM student <span class="hljs-keyword">WHERE</span> id<span class="hljs-operator">=</span><span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>TRUNCATE</li>
+</ul>
+<p>作用：用于完全清空表数据，但表结构、索引、约束等不变</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">TRUNCATE</span> [<span class="hljs-keyword">TABLE</span>] table_name;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>DELETE与TRUNCATE区别</p>
+<ul>
+<li>相同：都能删除数据，不删除表结构，但TRUNCATE速度更快 </li>
+<li>不同：<ul>
+<li>TRUNCATE TABLE 重新设置AUTO_INCREMENT计数器</li>
+<li>使用TRUNCATE TABLE不会对事务有影响</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>DELETE删除的问题</strong></p>
+<ul>
+<li>InnoDB     自增列会重新从1开始（存在于内存当中，断电即失）</li>
+<li>MyISAM    继续从上一个自增量开始（存在于文件中，不会丢失）</li>
+</ul>
+</blockquote>
+<ul>
+<li>SELECT</li>
+</ul>
+
+                    </article>
+                    
+
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2023-08-04T14:30:31.000Z" itemprop="datePublished">2023-08-04</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+<span class="post-tags-list mt-2">
+
+<a class="post-tags-list-item" href="/tags/summary/" rel="tag">#&nbsp;summary</a>
+
+</span>
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2023/08/04/C++/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">C++</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2023/08/04/Docker/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Docker</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <!-- <a class="footer-copyright-a" href="http://example.com">Jackie's Blog</a> -->
+            <a class="footer-copyright-a" target="_blank" rel="noopener" href="https://github.com/Wu-Jackie">Jackie's Blog</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+    <!-- Busuanzi Post Views -->
+    <span id="busuanzi_container_site_pv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_pv"></span>
+        <span>Views</span>
+        
+    </span>
+
+
+
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站访客数<span id="busuanzi_value_site_uv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+(function() {
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.getElementById('copyright-year');
+    var copyrightSince = 2023;
+    if (copyrightSince === copyrightNow) {
+        copyrightContent.textContent = copyrightNow;
+    } else {
+        copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
+    }
+})();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

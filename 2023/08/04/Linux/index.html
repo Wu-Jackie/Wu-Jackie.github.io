@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+    <link rel="dns-prefetch" href="//hm.baidu.com">
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Linux | Jackie&#39;s Blog</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/obsidian.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/obsidian.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Jackie's Blog"><meta name="msapplication-starturl" content="http://example.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jackie's Blog"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Linux | Jackie&#39;s Blog"><meta property="og:site_name" content="Jackie&#39;s Blog"><meta property="og:type" content="article"><meta property="og:url" content="http://example.com/2023/08/04/Linux/"><meta property="og:locale" content="zh-CN"><meta name="description" content="Linux狂神说Linux 文章  Linux目录划分  &amp;#x2F;bin：binary缩写，此目录存放着最经常使用的命令 &amp;#x2F;boot：存放启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件 &amp;#x2F;dev：device的缩写，存放Linux的外部设备，在Linux中访问设备的方式和访问文件的方式是相同的 &amp;#x3D;&amp;#x3D;&amp;#x2F;etc：存放所有的系统管理 - Jackie - Jackie&#39;s Blog"><meta name="keywords" content="summary"><meta property="og:image" content="http://example.com/2023/08/04/Linux/Linux%E7%9B%AE%E5%BD%95%E5%88%92%E5%88%86.png"><meta property="og:image" content="http://example.com/2023/08/04/Linux/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7.jpg"><meta property="og:image" content="http://example.com/2023/08/04/Linux/vim%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F.png"><meta property="article:published_time" content="2023-08-04T14:30:06.000Z"><meta property="article:modified_time" content="2023-08-04T14:38:40.773Z"><meta property="og:updated_time" content="2023-08-04T14:38:40.773Z"><meta property="article:author" content="Jackie"><meta property="article:tag" content="summary"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://example.com/2023/08/04/Linux/">
+
+    <meta name="generator" content="Hexo 6.3.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?6fa63450abd362f22fde7934382733b4';
+    var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://example.com/2023/08/04/Linux/",
+    "@type": "BlogPosting",
+    "logo": "http://example.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://example.com/2023/08/04/Linux/"
+    },
+    "headline": "Linux | Jackie&#39;s Blog",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://example.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2023-08-04T14:30:06.000Z",
+    "dateModified": "2023-08-04T14:38:40.773Z",
+    "author": {
+        "@type": "Person",
+        "name": "Jackie",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/default_avatar.png"
+        },
+        "description": "Welcome To My Blog!,無限進步！"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Jackie&#39;s Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://example.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "summary",
+    "description": "Linux狂神说Linux 文章  Linux目录划分  &amp;amp;#x2F;bin：binary缩写，此目录存放着最经常使用的命令 &amp;amp;#x2F;boot：存放启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件 &amp;amp;#x2F;dev：device的缩写，存放Linux的外部设备，在Linux中访问设备的方式和访问文件的方式是相同的 &amp;amp;#x3D;&amp;amp;#x3D;&amp;amp;#x2F;etc：存放所有的系统管理 - Jackie - Jackie&#39;s Blog"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Jackie&#39;s Blog</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Welcome To My Blog!<br>無限進步！
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about" class="navbar-link">About</a>
+    
+        <a href="/links" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+
+        <!-- Share Twitter -->
+        
+
+        <!-- Share Facebook -->
+        
+
+        <!-- Share Google+ -->
+        
+
+        <!-- Share LinkedIn -->
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=Linux&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABh0lEQVR42u3aQQ7CMAxE0d7/0rBFUHvGpbQT9LtBClXykEJiO9keAc8GAgSIJRBb87x+/9HBTttru+oXRDai66yDVIPZ/YKIRqhO3lEVZNIviDURzqLUtYP4f4Ta5ED8D0IFJ1WbeveUXRTE5QgV6B79PDXaBnEZQiatg0F+lpWDuBTRBSVO8NptaF0fILIR3cbUBiU7E/KrFRNEBKIb3CmKuAFMOzFBRCGqxcidfE7CU/5YENEIZ+BqQ5ok021QAyIKoQZ3g9zqndG/A8TtiOnAbmFdFV9B5CImG5l6v1uwxhsYiFsQ7qDqILYLesvJCiISoS5sqO+6gEYlVSAyESqhOVJUq5LoNisHEYlwi2RuMGsnxCCiEM4BnFsU6Yqo48NZELchnIM4J7BRGyCIdRDTi8IqITp8sQdEFEJewBlc8FIFFxDrIJwLPZMDeufADsSaCGfBmhzKHpqYIKIR7kUfp9ACIhuhJpcqnE+KaSDyEdNAVwU41cUgWWAHEYG48wEBAkQ04glhaZqKbyH+bgAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Linux</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="Jackie's Avatar">
+        <span>2023-08-04</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=Jackie's Blog&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com/2023/08/04/Linux/" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABh0lEQVR42u3aQQ7CMAxE0d7/0rBFUHvGpbQT9LtBClXykEJiO9keAc8GAgSIJRBb87x+/9HBTttru+oXRDai66yDVIPZ/YKIRqhO3lEVZNIviDURzqLUtYP4f4Ta5ED8D0IFJ1WbeveUXRTE5QgV6B79PDXaBnEZQiatg0F+lpWDuBTRBSVO8NptaF0fILIR3cbUBiU7E/KrFRNEBKIb3CmKuAFMOzFBRCGqxcidfE7CU/5YENEIZ+BqQ5ok021QAyIKoQZ3g9zqndG/A8TtiOnAbmFdFV9B5CImG5l6v1uwxhsYiFsQ7qDqILYLesvJCiISoS5sqO+6gEYlVSAyESqhOVJUq5LoNisHEYlwi2RuMGsnxCCiEM4BnFsU6Yqo48NZELchnIM4J7BRGyCIdRDTi8IqITp8sQdEFEJewBlc8FIFFxDrIJwLPZMDeufADsSaCGfBmhzKHpqYIKIR7kUfp9ACIhuhJpcqnE+KaSDyEdNAVwU41cUgWWAHEYG48wEBAkQ04glhaZqKbyH+bgAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Linux"><span class="post-toc-number">1.</span> <span class="post-toc-text">Linux</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Linux%E7%9B%AE%E5%BD%95%E5%88%92%E5%88%86"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Linux目录划分</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">文件属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">基本属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BF%AE%E6%94%B9%E5%B1%9E%E6%80%A7"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">修改属性</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B8%B8%E7%94%A8%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">常用基本命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">文件内容查看</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">查找命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%93%BE%E6%8E%A5"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">链接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vim"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">vim</span></a></li></ol></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV187411y7hF/?share_source=copy_web&vd_source=15214a7977f78540f7402494fb912cda">狂神说Linux</a></p>
+<p><a target="_blank" rel="noopener" href="http://dwz.date/UDf">文章</a></p>
+<hr>
+<h2 id="Linux目录划分"><a href="#Linux目录划分" class="headerlink" title="Linux目录划分"></a>Linux目录划分</h2><p><img src="/2023/08/04/Linux/Linux%E7%9B%AE%E5%BD%95%E5%88%92%E5%88%86.png" alt="Linux目录划分"></p>
+<ul>
+<li><strong>&#x2F;bin</strong>：binary缩写，此目录存放着最经常使用的命令</li>
+<li><strong>&#x2F;boot</strong>：存放启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件</li>
+<li><strong>&#x2F;dev</strong>：device的缩写，存放Linux的外部设备，在Linux中访问设备的方式和访问文件的方式是相同的</li>
+<li>&#x3D;&#x3D;<strong>&#x2F;etc</strong>：存放所有的系统管理所需要的配置文件和子目录&#x3D;&#x3D;</li>
+<li>&#x3D;&#x3D;<strong>&#x2F;home</strong>：用户主目录，Linux中每个用户都有一个自己的目录，一般以用户的账号命名&#x3D;&#x3D;</li>
+<li><strong>&#x2F;lib</strong>：存放系统最基本的动态连接共享库，作用类似于Windows里的dll文件</li>
+<li><strong>&#x2F;lost+found</strong>：一般情况为空，当系统非法关机后这里就存放了一些文件</li>
+<li><strong>&#x2F;media</strong>：Linux系统会自动识别一些设备，例如U盘、光驱等等，当识别后Linux会把识别的设备挂载到这个目录下</li>
+<li><strong>&#x2F;mnt</strong>：系统提供该目录是为了让用户临时挂载别的文件系统的，我们可将光驱挂载在&#x2F;mnt&#x2F;上，然后进入该目录就可以看到光驱里的内容了</li>
+<li>&#x3D;&#x3D;<strong>&#x2F;opt</strong>：给主机额外安装软件所摆放的目录。李荣安装一个Oracle数据库就可以放到这个目录下，默认为空&#x3D;&#x3D;</li>
+<li><strong>&#x2F;proc</strong>：虚拟目录，是系统内存的映射，可通过直接访问这个目录获取系统信息</li>
+<li><strong>&#x2F;root</strong>：为系统管理员，也称作超级权限者的用户主目录</li>
+<li><strong>&#x2F;sbin</strong>：s是super user的意思，这里存放的是系统管理员使用的系统管理程序</li>
+<li><strong>&#x2F;srv</strong>：存放一些服务启动之后需要提取的数据</li>
+<li><strong>&#x2F;sys</strong>：这是Linux2.6内核的一个很大的变化，该目录下安装了2.6内核中新出现的一个文件系统sysfs</li>
+<li><strong>&#x2F;tmp</strong>：存放一些临时文件</li>
+<li>&#x3D;&#x3D;<strong>&#x2F;usr</strong>：非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于Windows下的program files目录&#x3D;&#x3D;</li>
+<li><strong>&#x2F;usr&#x2F;bin</strong>：系统用户使用的应用程序</li>
+<li><strong>&#x2F;usr&#x2F;sbin</strong>：超级用户使用的比较高级的管理程序和系统守护程序</li>
+<li><strong>&#x2F;usr&#x2F;src</strong>：内核源代码默认的放置目录</li>
+<li><strong>&#x2F;var</strong>：存放着在不断扩充着的东西，我们习惯讲那些经常被修改的目录放在这个目录下。包括各种日志文件</li>
+<li><strong>&#x2F;run</strong>：一个临时文件系统，存储系统启动以来的信息，当系统重启时，这个目录下的文件应该被删掉或清除</li>
+<li>&#x3D;&#x3D;<strong>&#x2F;www</strong>：存放服务器网站相关的资源、环境、网站的项目&#x3D;&#x3D;</li>
+</ul>
+<h3 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h3><h4 id="基本属性"><a href="#基本属性" class="headerlink" title="基本属性"></a>基本属性</h4><p><img src="/2023/08/04/Linux/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7.jpg" alt="文件属性"></p>
+<p>第0位确定文件类型：</p>
+<ul>
+<li>[ d ]：目录</li>
+<li>[ - ]：文件</li>
+<li>[ l ]：链接文档（link file）</li>
+<li>[ b ]：装置文件里面的可供储存的接口设备（可随机存取装置）</li>
+<li>[ c ]：装置文件里面的串行端口设备，例如键盘、鼠标（一次性读取装置）</li>
+</ul>
+<p>后为相关权限：</p>
+<p>[ r ]：可读（read）、[ w ]：可写（write）、[ x ]：可执行（execute）；若无权限则会出现[ - ]</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dr-xr-xr-x. 5 root root 4096 5月 16 18:15 boot<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>数字为文件个数</li>
+<li>第一个root为<strong>属主</strong></li>
+<li>第二个root为<strong>属组</strong></li>
+</ul>
+<h4 id="修改属性"><a href="#修改属性" class="headerlink" title="修改属性"></a>修改属性</h4><ul>
+<li>chgrp：更改文件属组</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chgrp</span> -R 属主名 文件名<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>chown：更改文件属主，也可同时更改文件属组</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chown</span> -R 属主名 文件名<br><span class="hljs-built_in">chown</span> -R 属主名:属组名 文件名<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>chmod：更改文件九个属性</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> 数字 文件或目录名<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>数字代表权限</p>
+<p>r：4	w：2	x：1</p>
+</blockquote>
+<h2 id="常用基本命令"><a href="#常用基本命令" class="headerlink" title="常用基本命令"></a>常用基本命令</h2><ul>
+<li><p>cd：切换目录</p>
+<ul>
+<li>~：切换到home目录</li>
+<li>-：切换到上次访问的目录</li>
+</ul>
+</li>
+<li><p>ls：列出目录</p>
+<ul>
+<li>-a：全部的文件，连同隐藏文件( 开头为 . 的文件) 一起列出来</li>
+<li>-l ：长数据串列出，包含文件的属性与权限等等数据；</li>
+</ul>
+</li>
+<li><p>pwd：显示目前所在的目录</p>
+<p><strong>Print Working Directory</strong> 的缩写，也就是显示目前所在目录的命令</p>
+<ul>
+<li>-p：显示出确实的路径，而非连接（link）路径</li>
+</ul>
+</li>
+<li><p>mkdir：创建新目录</p>
+<ul>
+<li>-m：配置文件的权限喔！直接配置，不需要看默认权限 (umask) 的脸色</li>
+<li>-p ：帮助你直接将所需要的目录(包含上一级目录)递归创建起来！</li>
+</ul>
+</li>
+<li><p>rmdir：删除空的目录</p>
+<ul>
+<li>-p：连同上一级<strong>空的</strong>目录也一起删除</li>
+</ul>
+</li>
+<li><p>cp：复制文件或目录</p>
+<p>cp  原来的地方  新的地方</p>
+<ul>
+<li><p>-a：相当于-pdr</p>
+</li>
+<li><p>-p：连同文件的属性一起复制过去，而非使用默认属性（备份常用）</p>
+</li>
+<li><p>-d：若来源裆为连结档的属性（link file），则复制连结档属性而非文件本身</p>
+</li>
+<li><p>-r：递归持续复制，用于目录的复制行为</p>
+</li>
+<li><p>-f：强制的意思，若目标文件已存在且无法开启，则移除后再尝试一次</p>
+</li>
+<li><p>-i：若目标档（destination）已存在时，在覆盖时会先询问动作的进行</p>
+</li>
+<li><p>-l：进行硬式连结（hard link）的连结档创建，而非复制文件本身</p>
+</li>
+<li><p>-s：复制成为符号连结档（symbolic link），亦即<strong>捷径</strong>文件</p>
+</li>
+<li><p>-u：若destination比source旧才升级destination</p>
+</li>
+</ul>
+</li>
+<li><p>rm：移除文件或目录</p>
+<ul>
+<li>-f：忽略不存在的文件，不会出现警告，强制删除</li>
+<li>-r：递归删除目录</li>
+<li>-i：互动模式，删除前询问是否删除</li>
+</ul>
+</li>
+<li><p>mv：移动文件与目录，或修改名称</p>
+<ul>
+<li>-f ：force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖</li>
+<li>-i ：若目标文件（destination）已经存在时，就会询问是否覆盖</li>
+<li>-u ：若目标文件已经存在，且source比较新，才会升级（update）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 开启防火墙端口</span><br>firewall-cmd --zone=public --add-port=9000/tcp --permanent<br><span class="hljs-comment"># 重启防火墙</span><br>systemctl restart firewalld.service<br><span class="hljs-comment"># 查看所有开启的端口（若为阿里云还需配置安全组规则）</span><br>firewall-cmd --list-ports<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>firewall-cmd：防火墙相关<ul>
+<li>–zone：作用域</li>
+<li>–add-port&#x3D;80&#x2F;tcp：添加端口，格式为：端口&#x2F;通讯协议</li>
+<li>–permanent：永久生效，无此参数重启后失效</li>
+</ul>
+</li>
+<li>netstat -an：查看当前系统端口</li>
+<li>netstat -an|grep ：指定端口（搜索指定端口）</li>
+<li>su - 用户名：切换用户</li>
+</ul>
+<h2 id="文件内容查看"><a href="#文件内容查看" class="headerlink" title="文件内容查看"></a>文件内容查看</h2><ul>
+<li><p>cat：正序显示文件内容</p>
+<ul>
+<li><p>-A：相当于-vET的整合选项，可列出一些特殊字符而不是空白</p>
+</li>
+<li><p>-b：列出行号，仅针对非空白行做行号显示，空白行不标行号</p>
+</li>
+<li><p>-E：将结尾的断行字节$显示出来</p>
+</li>
+<li><p>-n：列印出行号，连同空白行也会有行号，与-b的选项不同</p>
+</li>
+<li><p>-T：将[tab]按键以^I显示出来</p>
+</li>
+<li><p>-v：列出一些看不出来的特殊字符</p>
+</li>
+</ul>
+</li>
+<li><p>tac：倒序显示文件内容</p>
+</li>
+<li><p>nl：显示行号</p>
+<ul>
+<li>-b：指定行号指定的方式，主要有两种：<ul>
+<li>-b a：表示不论是否为空行，也同样列出行号（类似cat -n）</li>
+<li>-b t：如果有空行，空的那一行不要列出行号（默认值）</li>
+</ul>
+</li>
+<li>-n：列出行号表示的方法，主要有三种：<ul>
+<li>-n ln：行号在荧幕的最左方显示</li>
+<li>-n rn：行号在自己栏位的最右方显示，且不加0</li>
+<li>-n rz：行号在自己栏位的最右方显示，且加0</li>
+</ul>
+</li>
+<li>-w：行号栏位的占用的位数</li>
+</ul>
+</li>
+<li><p>more：一页一页翻动</p>
+<p>有以下按键：</p>
+<ul>
+<li>空格：向下翻一页</li>
+<li>enter：向下翻一行</li>
+<li>&#x2F;字符串：向下搜寻『字符串』这个关键字</li>
+<li>:f：立刻显示出档名以及目前显示的行数</li>
+<li>q：立刻离开more，不再显示该文件内容</li>
+<li>b或Ctrl b：代表往回翻页，不过这动作只对文件有用，对管线无用</li>
+</ul>
+</li>
+<li><p>less</p>
+<p>基本同上，多向上的功能</p>
+<ul>
+<li>?字符串：向上搜寻『字符串』这个关键字</li>
+<li>n：重复前一个搜寻（与&#x2F;或?有关）</li>
+<li>N：反向的重复前一个搜寻（与&#x2F;或?有关）</li>
+</ul>
+</li>
+<li><p>head：取文件前几行</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">head</span> -n 数字 文件<br></code></pre></td></tr></table></figure>
+
+<p>-n后的数字代表显示几行，默认10行</p>
+<ul>
+<li>tail：取文件后几行</li>
+</ul>
+<p>同上</p>
+<h3 id="查找命令"><a href="#查找命令" class="headerlink" title="查找命令"></a>查找命令</h3><ul>
+<li>grep</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">ps -ef | grep sshd                  <span class="hljs-comment">#查找指定ssh服务进程</span><br>ps -ef | grep sshd | grep -v grep   <span class="hljs-comment">#查找指定服务进程，排除gerp本身</span><br>ps -ef | grep sshd -c               <span class="hljs-comment">#查找指定进程个数</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>find</li>
+</ul>
+<p>find命令在目录结构中搜索文件，并对搜索结果执行指定的操作。 <strong>find 默认搜索当前目录及其子目录</strong>，并且不过滤任何结果（也就是返回所有文件），将它们全都显示在屏幕上。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">find . -name <span class="hljs-string">&quot;*.log&quot;</span> -<span class="hljs-built_in">ls</span>       <span class="hljs-comment">#在当前目录查找以.log结尾的文件，并显示详细信息。</span><br>find /root/ -perm 600          <span class="hljs-comment">#查找/root/目录下权限为600的文件</span><br>find . -<span class="hljs-built_in">type</span> f -name <span class="hljs-string">&quot;*.log&quot;</span>   <span class="hljs-comment">#查找当目录，以.log结尾的普通文件</span><br>find . -<span class="hljs-built_in">type</span> d | <span class="hljs-built_in">sort</span>          <span class="hljs-comment">#查找当前所有目录并排序</span><br>find . -size +100M             <span class="hljs-comment">#查找当前目录大于100M的文件</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>locate</li>
+</ul>
+<p>locate 让使用者可以很快速的搜寻某个路径。默认每天自动更新一次，所以使用locate 命令查不到最新变动过的文件。为了避免这种情况，我们在使用locate查找文件之前可以先使用updatedb命令，手动更新数据库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">updatedb<br>locate /etc/sh    <span class="hljs-comment">#搜索etc目录下所有以sh开头的文件</span><br>locate <span class="hljs-built_in">pwd</span>        <span class="hljs-comment">#查找和pwd相关的所有文件</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>whereis</li>
+</ul>
+<p>whereis命令是定位可执行文件、源代码文件、帮助文件在文件系统中的位置。这些文件的属性应属于原始代码，二进制文件，或是帮助文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">whereis <span class="hljs-built_in">ls</span>    <span class="hljs-comment">#将和ls文件相关的文件都查找出来</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>which</li>
+</ul>
+<p>which命令的作用是在PATH变量指定的路径中，搜索某个系统命令的位置，并且返回第一个搜索结果。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">which</span> <span class="hljs-built_in">pwd</span>    <span class="hljs-comment">#查找pwd命令所在路径</span><br><span class="hljs-built_in">which</span> java   <span class="hljs-comment">#查找path中java的路径</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><ul>
+<li>硬链接</li>
+</ul>
+<p>A–B，假设B是A的硬链接，那么他们两个指向了同一个文件，允许一个文件拥有多个路径，用户可通过这种机制建立硬链接到一些重要文件上，防止误删</p>
+<ul>
+<li>软链接</li>
+</ul>
+<p>类似Windows下的快捷方式，删除源文件则快捷方式也无法访问</p>
+<blockquote>
+<p>硬链接相当于镜像，软链接相当于快捷方式</p>
+</blockquote>
+<p>touch命令创建文件</p>
+<p>echo输入字符串</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;内容&quot;</span> &gt;&gt;file1<br></code></pre></td></tr></table></figure>
+
+<p>创建链接 ln命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ln</span> 原文件名 新文件名<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>-s：创建一个软链接（符号链接）</li>
+</ul>
+<h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2><p><img src="/2023/08/04/Linux/vim%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F.png" alt="vim工作模式"></p>
+<blockquote>
+<p>filename存在则打开，不存在则新建</p>
+<p>&#x3D;&#x3D;会出现路径不一致的问题！&#x3D;&#x3D;</p>
+</blockquote>
+<ul>
+<li><p><strong>命令模式（Command mode）</strong></p>
+<p>用户刚刚启动 vi&#x2F;vim，便进入了命令模式</p>
+<p>常用命令：</p>
+<ul>
+<li><strong>i</strong>:切换到输入模式且在光标所在字符前开始插入</li>
+<li><strong>a</strong>:切换到输入模式且在光标所在字符后开始插入</li>
+<li><strong>o</strong>:切换到输入模式且在光标所在行的下面另起一新行插入</li>
+<li><strong>x</strong> 删除当前光标所在处的字符</li>
+<li><strong>:</strong> 切换到底线命令模式以在最底一行输入命令</li>
+</ul>
+<p>命令模式只有一些最基本的命令，因此仍要依靠底线命令模式输入更多命令</p>
+</li>
+<li><p><strong>输入模式（Insert mode）</strong></p>
+<p>在命令模式下按下i就进入了输入模式</p>
+<ul>
+<li><strong>字符按键以及Shift组合</strong>：输入字符</li>
+<li><strong>ENTER</strong>：回车键，换行</li>
+<li><strong>BACK SPACE</strong>：退格键，删除光标前一个字符</li>
+<li><strong>DEL</strong>：删除键，删除光标后一个字符</li>
+<li><strong>h(←)j（↓）k（↑）l（→）</strong>：在文本中移动光标</li>
+<li><strong>HOME</strong>&#x2F;<strong>END</strong>：移动光标到行首&#x2F;行尾</li>
+<li><strong>Page Up</strong>&#x2F;<strong>Page Down</strong>：上&#x2F;下翻页</li>
+<li><strong>Insert</strong>：切换光标为输入&#x2F;替换模式，光标将变成竖线&#x2F;下划线</li>
+<li><strong>ESC</strong>：退出输入模式，切换到命令模式</li>
+</ul>
+</li>
+<li><p><strong>底线命令模式（Last line mode）</strong></p>
+<p>在命令模式下按下:（英文冒号）就进入了底线命令模式</p>
+<p>基本命令（已省略冒号）</p>
+<ul>
+<li>w 保存文件</li>
+<li>q 退出程序</li>
+</ul>
+<p>按ESC键可随时退出底线命令模式</p>
+</li>
+</ul>
+<p><strong>常用命令</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:set nu</td>
+<td align="center">设置行号</td>
+</tr>
+<tr>
+<td align="center">:wq</td>
+<td align="center">储存后离开（若为:wq!<br>则为强制储存后离开）</td>
+</tr>
+<tr>
+<td align="center">u</td>
+<td align="center">复原前一个动作</td>
+</tr>
+<tr>
+<td align="center">数字&lt;space&gt;</td>
+<td align="center">光标向右移动这一行的 n 个字符</td>
+</tr>
+<tr>
+<td align="center">数字&lt;enter&gt;</td>
+<td align="center">光标向下移动n行</td>
+</tr>
+<tr>
+<td align="center">&#x2F;word</td>
+<td align="center">向光标之下寻找一个名称为 word 的字符串</td>
+</tr>
+<tr>
+<td align="center">n</td>
+<td align="center">重复前一个搜寻的动作</td>
+</tr>
+<tr>
+<td align="center">N</td>
+<td align="center">与 n 刚好相反，为『反向』进行前一个搜寻动作</td>
+</tr>
+</tbody></table>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-vim.html">其他vim按键</a></p>
+
+                    </article>
+                    
+
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2023-08-04T14:30:06.000Z" itemprop="datePublished">2023-08-04</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+<span class="post-tags-list mt-2">
+
+<a class="post-tags-list-item" href="/tags/summary/" rel="tag">#&nbsp;summary</a>
+
+</span>
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2023/08/04/Docker/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Docker</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2023/08/04/Git/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Git</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <!-- <a class="footer-copyright-a" href="http://example.com">Jackie's Blog</a> -->
+            <a class="footer-copyright-a" target="_blank" rel="noopener" href="https://github.com/Wu-Jackie">Jackie's Blog</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+    <!-- Busuanzi Post Views -->
+    <span id="busuanzi_container_site_pv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_pv"></span>
+        <span>Views</span>
+        
+    </span>
+
+
+
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站访客数<span id="busuanzi_value_site_uv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+(function() {
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.getElementById('copyright-year');
+    var copyrightSince = 2023;
+    if (copyrightSince === copyrightNow) {
+        copyrightContent.textContent = copyrightNow;
+    } else {
+        copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
+    }
+})();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

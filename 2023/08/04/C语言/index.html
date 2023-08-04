@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+    <link rel="dns-prefetch" href="//hm.baidu.com">
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>C语言 | Jackie&#39;s Blog</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/obsidian.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/obsidian.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Jackie's Blog"><meta name="msapplication-starturl" content="http://example.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jackie's Blog"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="C语言 | Jackie&#39;s Blog"><meta property="og:site_name" content="Jackie&#39;s Blog"><meta property="og:type" content="article"><meta property="og:url" content="http://example.com/2023/08/04/C%E8%AF%AD%E8%A8%80/"><meta property="og:locale" content="zh-CN"><meta name="description" content="复习C语言 - Jackie - Jackie&#39;s Blog"><meta name="keywords" content="summary"><meta property="article:published_time" content="2023-08-04T14:20:06.000Z"><meta property="article:modified_time" content="2023-08-04T14:21:45.921Z"><meta property="og:updated_time" content="2023-08-04T14:21:45.921Z"><meta property="article:author" content="Jackie"><meta property="article:tag" content="summary"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://example.com/2023/08/04/C%E8%AF%AD%E8%A8%80/">
+
+    <meta name="generator" content="Hexo 6.3.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?6fa63450abd362f22fde7934382733b4';
+    var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://example.com/2023/08/04/C%E8%AF%AD%E8%A8%80/",
+    "@type": "BlogPosting",
+    "logo": "http://example.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://example.com/2023/08/04/C%E8%AF%AD%E8%A8%80/"
+    },
+    "headline": "C语言 | Jackie&#39;s Blog",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://example.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2023-08-04T14:20:06.000Z",
+    "dateModified": "2023-08-04T14:21:45.921Z",
+    "author": {
+        "@type": "Person",
+        "name": "Jackie",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/default_avatar.png"
+        },
+        "description": "Welcome To My Blog!,無限進步！"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Jackie&#39;s Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://example.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "summary",
+    "description": "复习C语言 - Jackie - Jackie&#39;s Blog"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Jackie&#39;s Blog</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Welcome To My Blog!<br>無限進步！
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about" class="navbar-link">About</a>
+    
+        <a href="/links" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+
+        <!-- Share Twitter -->
+        
+
+        <!-- Share Facebook -->
+        
+
+        <!-- Share Google+ -->
+        
+
+        <!-- Share LinkedIn -->
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=C语言&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB5UlEQVR42u3bQY6DMBBE0dz/0jOrSMzIrqq2soDKZ4MESXhIdttud14/NzxeoECBArVAvcTxvv/ni5d712vqnDwHVBdq2eguP/wfufrODpI+B1QfSjXwE5DqBNvngPoK1DbQLa7tAiYoUC4IroAnLwmqG6UGylXgTIOrCqygelHJwuET54+vZkDdEmWTDmKBOQmeH826gLo1ahX4pkkONyFMgy2oDtRkIZB2CpfgiIMnqEeidkmxXZCcJMciCKg6VJJI3SU31EA9Ta6B6kElE/zJ5C7pHNsXAVWLmgZLFRB3v7Uc/EHVoNzA6RYX6cTQLU5BdaBONhlVB1CDtx2wQVWgVKBLNiDdpHC0MAFVgZokKE4WrmknAdWFco1WbTAmRRTxhiWoCpQqAlSNO9nsdp3CJmJB1aDSYtM06ZoURYPqQqVBTxXXnHaQUaUZqEegkknZ9HNJkdfRxjaox6BcItUNtMlLqEEaVBcqKexzi8kk2RFtQIGqQCVFNZM/U7gJokrwg+pApQXNbjMpCZRuMxxUD0olZdMJW5IwsQEXVBXKNeD0rBImtuGD+gqUu+YS+MmAD+o7UUnR1qTA4igRC+pRKNkATZI+LZiwyRNQNah04HQPcgk0G0hBVaDudIACBQrU5fgFTzdPfnG3Q+EAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">C语言</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="Jackie's Avatar">
+        <span>2023-08-04</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=Jackie's Blog&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com/2023/08/04/C%E8%AF%AD%E8%A8%80/" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB5UlEQVR42u3bQY6DMBBE0dz/0jOrSMzIrqq2soDKZ4MESXhIdttud14/NzxeoECBArVAvcTxvv/ni5d712vqnDwHVBdq2eguP/wfufrODpI+B1QfSjXwE5DqBNvngPoK1DbQLa7tAiYoUC4IroAnLwmqG6UGylXgTIOrCqygelHJwuET54+vZkDdEmWTDmKBOQmeH826gLo1ahX4pkkONyFMgy2oDtRkIZB2CpfgiIMnqEeidkmxXZCcJMciCKg6VJJI3SU31EA9Ta6B6kElE/zJ5C7pHNsXAVWLmgZLFRB3v7Uc/EHVoNzA6RYX6cTQLU5BdaBONhlVB1CDtx2wQVWgVKBLNiDdpHC0MAFVgZokKE4WrmknAdWFco1WbTAmRRTxhiWoCpQqAlSNO9nsdp3CJmJB1aDSYtM06ZoURYPqQqVBTxXXnHaQUaUZqEegkknZ9HNJkdfRxjaox6BcItUNtMlLqEEaVBcqKexzi8kk2RFtQIGqQCVFNZM/U7gJokrwg+pApQXNbjMpCZRuMxxUD0olZdMJW5IwsQEXVBXKNeD0rBImtuGD+gqUu+YS+MmAD+o7UUnR1qTA4igRC+pRKNkATZI+LZiwyRNQNah04HQPcgk0G0hBVaDudIACBQrU5fgFTzdPfnG3Q+EAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#C%E8%AF%AD%E8%A8%80"><span class="post-toc-number">1.</span> <span class="post-toc-text">C语言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="post-toc-number">2.</span> <span class="post-toc-text">优先级</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="post-toc-number">3.</span> <span class="post-toc-text">分支结构</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%BE%AA%E7%8E%AF"><span class="post-toc-number">4.</span> <span class="post-toc-text">循环</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97"><span class="post-toc-number">5.</span> <span class="post-toc-text">布尔运算</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%95%B0%E7%BB%84"><span class="post-toc-number">6.</span> <span class="post-toc-text">数组</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="post-toc-number">7.</span> <span class="post-toc-text">字符串函数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%9E%9A%E4%B8%BE"><span class="post-toc-number">8.</span> <span class="post-toc-text">枚举</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%98%93%E6%B7%B7%E6%B7%86"><span class="post-toc-number">9.</span> <span class="post-toc-text">易混淆</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%9D%82%E9%A1%B9"><span class="post-toc-number">10.</span> <span class="post-toc-text">杂项</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h1 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h1><p>复习C语言</p>
+<p><a target="_blank" rel="noopener" href="https://www.icourse163.org/course/ZJU-199001">程序设计入门——C语言</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.icourse163.org/course/ZJU-200001">C语言程序设计进阶</a></p>
+<hr>
+<h1 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h1><p>赋值运算符&lt;条件运算符&lt;关系运算符&lt;算术运算符</p>
+<table>
+<thead>
+<tr>
+<th align="center">优先级</th>
+<th align="center">运算符</th>
+<th align="center">结合性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">()</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">! + - ++ –</td>
+<td align="center">从右到左<br>单目的+和-</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">* &#x2F; %</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">+ -</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">&lt; &lt;&#x3D; &gt; &gt;&#x3D;</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">&#x3D;&#x3D; !&#x3D;</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">&amp;&amp;</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">||</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">&#x3D; +&#x3D; -&#x3D; *&#x3D; &#x2F;&#x3D; %&#x3D;</td>
+<td align="center">从右到左</td>
+</tr>
+</tbody></table>
+<p><strong>不要把赋值、包括复合赋值组合进表达式</strong></p>
+<h1 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h1><p>switch-case</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">switch</span>(表达式)&#123;<br>    <span class="hljs-keyword">case</span> 常量:<br>        <br>        <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>:<br>        <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>break：跳出循环</p>
+</li>
+<li><p>continue：跳过循环这一轮剩下的语句进入下一轮</p>
+</li>
+<li><p>goto：多重循环的内层跳到最外面的时候（但是少用）</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c">	<span class="hljs-keyword">goto</span> out;<br>	···<br>out:<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+
+<h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><p>while语句是一个循环语句，它会首先判断一个条件是否满足，如果条件满足，则执行后面紧跟着的语句或语句括号，然后再次判断条件是否满足，如果条件满足则再次执行，直到条件不满足为止。后面紧跟的语句或语句括号，就是循环体。</p>
+<hr>
+<p>do-while循环和while循环很像，唯一的区别是我们在循环体执行结束的时候才来判断条件。也就是说，无论如何，循环都会执行至少一遍，然后再来判断条件。与while循环相同的是，条件满足时执行循环，条件不满足时结束循环。 </p>
+<h1 id="布尔运算"><a href="#布尔运算" class="headerlink" title="布尔运算"></a>布尔运算</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdbool.h&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<p>之后就可以使用bool和true、false</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdbool.h&gt;</span></span><br><br><span class="hljs-type">bool</span> b=<span class="hljs-number">6</span>&gt;<span class="hljs-number">5</span>;<br><span class="hljs-type">bool</span> c=<span class="hljs-literal">true</span>;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,b);<br></code></pre></td></tr></table></figure>
+
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> number[<span class="hljs-number">100</span>];<br><span class="hljs-type">int</span> a[]=&#123;<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">63</span>,<span class="hljs-number">27</span>,<span class="hljs-number">8</span>,<span class="hljs-number">6</span>,<span class="hljs-number">2</span>,<span class="hljs-number">9</span>,<span class="hljs-number">8</span>,<span class="hljs-number">23</span>,<span class="hljs-number">7</span>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>数组变量本身表达地址，所以</p>
+<ul>
+<li>int a[10];int *p&#x3D;a;&#x2F;&#x2F;无需用&amp;取地址</li>
+</ul>
+<p>但是数组的单元表达的是变量，需要用&amp;取地址</p>
+<ul>
+<li>a&#x3D;&#x3D;&amp;a[0]</li>
+</ul>
+<p>[]运算符可以对数组做，也可以对指针做：</p>
+<ul>
+<li>p[0]&lt;&#x3D;&#x3D;&gt;a[0]</li>
+</ul>
+<p>*运算符可以对指针做，也可以对数组做：</p>
+<ul>
+<li>*a&#x3D;25;</li>
+</ul>
+<p>数组变量是const的指针，不能被赋值</p>
+<ul>
+<li>int a[]&lt;&#x3D;&#x3D;&gt;int * const a&#x3D;</li>
+</ul>
+<blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c">&gt;<span class="hljs-type">int</span> i<br>&gt;<span class="hljs-type">const</span> <span class="hljs-type">int</span>* p1=&amp;i;<br>&gt;<span class="hljs-type">int</span> <span class="hljs-type">const</span>* p2=&amp;i;<br>&gt;<span class="hljs-type">int</span> *<span class="hljs-type">const</span> p3=&amp;i;<br></code></pre></td></tr></table></figure>
+
+<p>判断哪个被const了的标志是const在*的前面还是后面</p>
+</blockquote>
+<ol>
+<li>格式控制符的形式</li>
+</ol>
+<p>%、[-]、[0]、[m&#x2F;m.n]、[l&#x2F;h]格式控制符</p>
+<p>其中[ ]里面的内容是可选的</p>
+<ul>
+<li><p>-：表示左对齐，缺省情况下为右对齐（若没规定输出数据的宽度则为左对齐）。</p>
+</li>
+<li><p>0：当规定输出数据的宽度时，所输出数据实际的宽度小于规定的宽度，则在左边用“0”补齐。</p>
+</li>
+<li><p>m&#x2F;m.n：m规定了输出数据的宽度（位数），若数据实际的宽度大于m，则突破m的限制全部输出，反之将数据全部输出之后用空格进行左补齐；对于实数n是指小数点后的位数，若n小于小数点后实际的位数，则按四舍五入原则进行截取；对于字符串，n表示从左至右截取的字符个数。</p>
+</li>
+<li><p>l&#x2F;h：l表示长整型数据（可用于%ld、%lo、%lx、%lu）以及double型数据（%lf或%le）；h表示短整型数据（可用于%hd、%ho、%hx）。</p>
+</li>
+</ul>
+<ol start="2">
+<li>格式控制符及其功能（以输出为例）</li>
+</ol>
+<ul>
+<li>%d：用来输出有符号的十进制整数（包括char类型）</li>
+<li>%u：用来输出无符号的十进制整数（包括char类型）</li>
+<li>%o：用来输出无符号的八进制整数</li>
+<li>%x：用来输出无符号的十六进制整数</li>
+<li>%c：用来输出单个字符</li>
+<li>%s：用来输出一个字符串（%和s之间加数字控制只读这么多数字）</li>
+<li>%f：用来输出小数形式的十进制浮点数（输入时小数形式和指数形式都可以识别）</li>
+<li>%e：用来输出指数形式的十进制浮点数（输入时小数形式和指数形式都可以识别）</li>
+<li>%g：用来输出指数形式和小数形式两者中较短的十进制浮点数（输入时小数形式和指数形式都可以识别）</li>
+<li>%p：用来输出值的地址</li>
+</ul>
+<h1 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>strlen：返回字符串的长度（不包括结尾的0）</p>
+</li>
+<li><p>strcmp：比较两个字符串，返回：</p>
+<ul>
+<li>0：s1&#x3D;&#x3D;s2</li>
+<li>1：s1&gt;s2</li>
+<li>-1：s1&lt;s2</li>
+</ul>
+</li>
+<li><p>strcpy：把后者的字符串覆写拷贝到前者</p>
+</li>
+<li><p>strcat：把后者的字符串拷贝到前者的后面，接成一个长的字符串</p>
+</li>
+<li><p>strchr：在一个字符串中查找给定字符的第一个匹配之处，返回null表示没找到</p>
+</li>
+<li><p>strstr：判断字符串后者是否是前者的子串。如是则返回前者字符串从后者第一次出现的位置开始到结尾，否则返回null</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<p>malloc：向malloc申请的空间大小是以字节为单位的</p>
+<p>用完要free</p>
+<h1 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h1><p>enum 枚举类型名字{名字0,…,名字n};</p>
+<blockquote>
+<p>声明枚举量也可以指定值</p>
+</blockquote>
+<p>和数组不同，结构变量的名字并不是结构变量的地址，必须使用&amp;运算符</p>
+<h1 id="易混淆"><a href="#易混淆" class="headerlink" title="易混淆"></a>易混淆</h1><table>
+<thead>
+<tr>
+<th align="center">表达式</th>
+<th align="center">值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a++</td>
+<td align="center">a原来的值</td>
+</tr>
+<tr>
+<td align="center">++a</td>
+<td align="center">a+1以后的值</td>
+</tr>
+<tr>
+<td align="center">a–</td>
+<td align="center">a原来的值</td>
+</tr>
+<tr>
+<td align="center">–a</td>
+<td align="center">a-1以后的值</td>
+</tr>
+</tbody></table>
+<p>++a：先加再用</p>
+<p>a++：先用再加</p>
+<h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><ul>
+<li>随机数的生成</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;time.h&gt;</span></span><br>srand(time(<span class="hljs-number">0</span>));<br><span class="hljs-type">int</span> num=rand();<br></code></pre></td></tr></table></figure>
+
+
+                    </article>
+                    
+
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2023-08-04T14:20:06.000Z" itemprop="datePublished">2023-08-04</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+<span class="post-tags-list mt-2">
+
+<a class="post-tags-list-item" href="/tags/summary/" rel="tag">#&nbsp;summary</a>
+
+</span>
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2023/08/04/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">个人笔记</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2023/07/29/%E7%AC%AC%E4%B8%80%E5%91%A8/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">第一周</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <!-- <a class="footer-copyright-a" href="http://example.com">Jackie's Blog</a> -->
+            <a class="footer-copyright-a" target="_blank" rel="noopener" href="https://github.com/Wu-Jackie">Jackie's Blog</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+    <!-- Busuanzi Post Views -->
+    <span id="busuanzi_container_site_pv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_pv"></span>
+        <span>Views</span>
+        
+    </span>
+
+
+
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站访客数<span id="busuanzi_value_site_uv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+(function() {
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.getElementById('copyright-year');
+    var copyrightSince = 2023;
+    if (copyrightSince === copyrightNow) {
+        copyrightContent.textContent = copyrightNow;
+    } else {
+        copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
+    }
+})();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>
