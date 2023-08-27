@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+    <link rel="dns-prefetch" href="//hm.baidu.com">
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>笔记&amp;感悟 | Jackie&#39;s Blog</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/obsidian.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/obsidian.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Jackie's Blog"><meta name="msapplication-starturl" content="http://example.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jackie's Blog"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="笔记&amp;感悟 | Jackie&#39;s Blog"><meta property="og:site_name" content="Jackie&#39;s Blog"><meta property="og:type" content="article"><meta property="og:url" content="http://example.com/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/"><meta property="og:locale" content="zh-CN"><meta name="description" content="读书笔记&amp;感悟 - Jackie - Jackie&#39;s Blog"><meta name="keywords" content="summary"><meta property="og:image" content="http://example.com/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/%E7%99%BD%E5%B8%BD%E5%AD%90%E8%AE%B2Web%E5%AE%89%E5%85%A8.jpg"><meta property="og:image" content="http://example.com/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/STRIDE%E6%A8%A1%E5%9E%8B.png"><meta property="og:image" content="http://example.com/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/DREAD%E6%A8%A1%E5%9E%8B.png"><meta property="og:image" content="http://example.com/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/%E4%BB%8E0%E5%88%B01CTFer%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF.png"><meta property="og:image" content="http://example.com/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/%E5%AE%8C%E7%BE%8E%E4%B8%BB%E4%B9%89%E6%89%BC%E6%9D%80%E6%95%88%E7%8E%87.jpg"><meta property="article:published_time" content="2023-08-12T12:07:00.000Z"><meta property="article:modified_time" content="2023-08-27T13:40:04.421Z"><meta property="og:updated_time" content="2023-08-27T13:40:04.421Z"><meta property="article:author" content="Jackie"><meta property="article:tag" content="summary"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://example.com/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/">
+
+    <meta name="generator" content="Hexo 6.3.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?6fa63450abd362f22fde7934382733b4';
+    var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://example.com/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/",
+    "@type": "BlogPosting",
+    "logo": "http://example.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://example.com/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/"
+    },
+    "headline": "笔记&amp;感悟 | Jackie&#39;s Blog",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://example.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2023-08-12T12:07:00.000Z",
+    "dateModified": "2023-08-27T13:40:04.421Z",
+    "author": {
+        "@type": "Person",
+        "name": "Jackie",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/default_avatar.png"
+        },
+        "description": "Welcome To My Blog!,無限進步！"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Jackie&#39;s Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://example.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "summary",
+    "description": "读书笔记&amp;amp;感悟 - Jackie - Jackie&#39;s Blog"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Jackie&#39;s Blog</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Welcome To My Blog!<br>無限進步！
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about" class="navbar-link">About</a>
+    
+        <a href="/links" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+
+        <!-- Share Twitter -->
+        
+
+        <!-- Share Facebook -->
+        
+
+        <!-- Share Google+ -->
+        
+
+        <!-- Share LinkedIn -->
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=笔记&amp;感悟&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACMElEQVR42u2a0Y6DMAwE+f+fvns6qe0l3jH0dG09eUGCEAYUh/U6x9cbtENIIYUU8gUgj6L9XL+78eba7bnVWI/nqr6P/YScDbmctItBV33uBt302b1s9VwhhUwTPAGmsTp9hRQydd4t1KnfMhiKRV1IIc8GznLA4v50FFLIjsDY/vyL+3YvkQSLkEJ2ErG/OD49WxTyIyBbBlJoKYB2AvqprpqQbw+5EwnUvCLGVZWU7YSGkLMhSWLVMbRWY1aJ2Tb4hBwNWQ3aCbAkTqiRJeRcyDMm/O5BZ4pM5ccSciRkEgLVZE+FqCRCkukg5EzIjuHUEa/Vi9IiqpAzIdOiSg1/AkLuFVJIUuCkyRlJrogBJuRsSPSjhwKXBB8Rw0IKSQqTyfBPiRoBjMa+kCMgyQ+/K3bTByAFViFnQxIzKvUlm0Q6CZ2QcyGTWZVMJrr5s1vUF3I2JBUMnWSNBGH8EEKOhaStY4xWAYgXfiHHQtINSaRon8arhIaQQpLORNieNabSj0TIuZCdSb7d/AaNVGJUCSlkV8SmQlI3YLZBKuRYSFq0TCYALZRW4wgpZGcB7yzeRHhccjCE/FjITnEzbThKZmtK1H5dE3IkZGdCk0DoLtpl4UnIsZBVwNAFuwoGUrhvmahCjoAkCzMx56loRiJbSCHBQ0mg7IIsnb8UOEKOgUxG1FWDC29eEnIcZNosQovqVwWvkEJ2NoZ0jFGyASoaEEKOhHzlJqSQQgr5j+0bWTVW9RtL/80AAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">笔记&感悟</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="Jackie's Avatar">
+        <span>2023-08-12</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=Jackie's Blog&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACMElEQVR42u2a0Y6DMAwE+f+fvns6qe0l3jH0dG09eUGCEAYUh/U6x9cbtENIIYUU8gUgj6L9XL+78eba7bnVWI/nqr6P/YScDbmctItBV33uBt302b1s9VwhhUwTPAGmsTp9hRQydd4t1KnfMhiKRV1IIc8GznLA4v50FFLIjsDY/vyL+3YvkQSLkEJ2ErG/OD49WxTyIyBbBlJoKYB2AvqprpqQbw+5EwnUvCLGVZWU7YSGkLMhSWLVMbRWY1aJ2Tb4hBwNWQ3aCbAkTqiRJeRcyDMm/O5BZ4pM5ccSciRkEgLVZE+FqCRCkukg5EzIjuHUEa/Vi9IiqpAzIdOiSg1/AkLuFVJIUuCkyRlJrogBJuRsSPSjhwKXBB8Rw0IKSQqTyfBPiRoBjMa+kCMgyQ+/K3bTByAFViFnQxIzKvUlm0Q6CZ2QcyGTWZVMJrr5s1vUF3I2JBUMnWSNBGH8EEKOhaStY4xWAYgXfiHHQtINSaRon8arhIaQQpLORNieNabSj0TIuZCdSb7d/AaNVGJUCSlkV8SmQlI3YLZBKuRYSFq0TCYALZRW4wgpZGcB7yzeRHhccjCE/FjITnEzbThKZmtK1H5dE3IkZGdCk0DoLtpl4UnIsZBVwNAFuwoGUrhvmahCjoAkCzMx56loRiJbSCHBQ0mg7IIsnb8UOEKOgUxG1FWDC29eEnIcZNosQovqVwWvkEJ2NoZ0jFGyASoaEEKOhHzlJqSQQgr5j+0bWTVW9RtL/80AAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">1.</span> <span class="post-toc-text">白帽子讲Web安全</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">第一章 我的安全世界观</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1.6.2 威胁分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">1.6.3 风险分析</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">2.</span> <span class="post-toc-text">从0到1CTFer成长之路</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">3.</span> <span class="post-toc-text">完美主义扼杀效率</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">序言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">第一章 短时高效地完成工作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">第二章 通过“高效可行的准备”提供成果</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">第三章 不畏惧失败，敢于行动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">第四章 创造“精神上”的富裕</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">第五章 巧妙利用“他人的力量”</span></a></li></ol></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h1><span id="白帽子讲web安全">白帽子讲Web安全</span></h1><p><img src="/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/%E7%99%BD%E5%B8%BD%E5%AD%90%E8%AE%B2Web%E5%AE%89%E5%85%A8.jpg" alt="白帽子讲Web安全"></p>
+<h2><span id="第一章-我的安全世界观">第一章 我的安全世界观</span></h2><h3><span id="162-威胁分析">1.6.2 威胁分析</span></h3><p>威胁建模的方法——STRIDE模型</p>
+<p><img src="/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/STRIDE%E6%A8%A1%E5%9E%8B.png" alt="STRIDE模型"></p>
+<h3><span id="163-风险分析">1.6.3 风险分析</span></h3><p>风险分析模型——DREAD模型</p>
+<p><img src="/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/DREAD%E6%A8%A1%E5%9E%8B.png" alt="DREAD模型"></p>
+<h1><span id="从0到1ctfer成长之路">从0到1CTFer成长之路</span></h1><p><img src="/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/%E4%BB%8E0%E5%88%B01CTFer%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF.png" alt="从0到1CTFer成长之路"></p>
+<h1><span id="完美主义扼杀效率">完美主义扼杀效率</span></h1><p><img src="/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/%E5%AE%8C%E7%BE%8E%E4%B8%BB%E4%B9%89%E6%89%BC%E6%9D%80%E6%95%88%E7%8E%87.jpg" alt="完美主义扼杀效率"></p>
+<h2><span id="序言">序言</span></h2><p>懂得何时该用尽全力、何时该有所退让</p>
+<p>抓住了工作的本质，能够有针对性地在可以做出成绩的核心部分拼尽全力，在其它部分有意地放松精力，适时“偷懒”。</p>
+<p>追求完美的思维方式会降低工作效率，产生巨大的精神压力，让人畏惧失败，是使人陷入自我厌恶的元凶。</p>
+<h2><span id="第一章-短时高效地完成工作">第一章 短时高效地完成工作</span></h2><ol>
+<li><strong>完美主义者从努力本身体会到成就感；时效主义者从做出成绩体会到成就感</strong></li>
+</ol>
+<p>做到张弛有度，避免做无用功，以实现结果的最大化为目的。</p>
+<p>我们需要随时调整各项工作的优秀级，优化工作过程，在有限的时间内做出成果。</p>
+<p>从减少对努力本身的”美德感“，认识到即使没有多余的努力也能收获成果做起，从下定决心为拿出成绩而思考做起，效率就会有所提升。</p>
+<ol start="2">
+<li><strong>完美主义者在“努力”上不设限；时效主义者有节制地努力</strong></li>
+</ol>
+<p>提高单位时间内的专注力</p>
+<p>单位时间内注意力不够集中的人和高度集中的人，他们的工作效率是完全不同的。</p>
+<p>如果在这个时间段内没能完成工作的话，就要思考原因是什么，是否需要改进，以此来不断优化工作方式。正式因为这样，才能保持效率不断提升。</p>
+<p>设定限制时间，保持坚定的决心，并想尽各种方法在限制时间内完成任务，如此一来，工作效率就会有大的转变。</p>
+<ol start="3">
+<li><strong>完美主义者过于严谨，导致速度慢；时效主义者多少有些粗枝大叶，但速度快</strong></li>
+</ol>
+<blockquote>
+<p>①不拘泥于形式，在快速高效完成上下功夫。</p>
+<p>②从风险低的工作开始做起。</p>
+</blockquote>
+<ol start="4">
+<li><strong>完美主义者讨厌时间压力；时效主义者巧妙利用deadline所激发的极限潜能</strong></li>
+</ol>
+<p>在工作中灵活运用“deadline效应”有以下优点：</p>
+<ul>
+<li>专注力立刻得到大幅提升</li>
+<li>能够开动脑筋思考如何省去多余的工作</li>
+</ul>
+<ol start="5">
+<li><strong>完美主义者见树不见林的工作方式；时效主义者拥有全局观的工作方式</strong></li>
+</ol>
+<p>以自我为主体，灵活调整各项工作的优先度。</p>
+<p>完美主义者容易将焦点放在小事上，因此有时会忽略整体情况。解决这一问题的要点就在于是否拥有全局观是否能看到一棵树背后的整片森林。</p>
+<blockquote>
+<p>①站在比自己高两级的领导的角度思考。<br>②想象如果自己是上司会怎么做。</p>
+</blockquote>
+<ol start="6">
+<li><strong>完美主义者活在未来，杞人忧天；时效主义者活在当下，关注眼前</strong></li>
+</ol>
+<p>时效主义者习惯于单任务工作方式，即只专注于某一项工作。</p>
+<p>一旦开始着手某项工作，即使有人打扰，或是有其他事情打扰，也会直接回复“不好意思，现在腾不出手来”，等忙完手上的事再去处理。如果是比较紧急的事情，虽然会应允下来，但还是会明确地告诉对方“下午再给您回复哦”，依旧能够优先完成手上正在进行的工作。</p>
+<p>提高工作效率的关键在于，一心一意把注意力集中在某一项工作上。</p>
+<p>&#x3D;&#x3D;<strong>如果正在做某一项非常重要的工作时，脑海中复现了其他领你担忧的事，那么就先把那架势写在纸上，放在一边吧。倘若还能写下“需要做些什么”“何时着手”，那么就放下心来，专注于眼前正在进行的工作。</strong>&#x3D;&#x3D;</p>
+<ol start="7">
+<li><strong>完美主义者琐事也要全力以赴；时效主义者琐事就想办法省时省力地完成</strong></li>
+</ol>
+<p>做到有张有弛、有紧有慢。</p>
+<ol start="8">
+<li><p><strong>完美主义者总是被邮件分散注意力；时效主义者活用邮箱使用规则</strong></p>
+</li>
+<li><p><strong>完美主义者习惯于在一段完整的时间内工作；时效主义者倾向于用零碎时间做小型事务</strong></p>
+</li>
+</ol>
+<p>尤其是外勤比较多的工作，能否有效利用碎片化的时间，对加班时间的长短起决定性作用。</p>
+<ol start="10">
+<li><strong>完美主义者开始得晚，习惯拖延；时效主义者从细微处着手，立刻行动</strong></li>
+</ol>
+<p>将最开始的一步化解为最小单位，然后立刻行动。</p>
+<blockquote>
+<p>①拆解工作任务</p>
+</blockquote>
+<ul>
+<li>重点回顾 习惯05 只顾眼前的人很危险！</li>
+</ul>
+<p>在职场中，推挤工作时，我们要有全局观，宏观地全面把握工作任务；否则就有可能错过重要工作的完成期限，造成无法挽救的后果。</p>
+<p>一旦接到了紧急的任务，就需要与对方沟通完成期限，从而及时调整优先度。</p>
+<h2><span id="第二章-通过高效可行的准备提供成果">第二章 通过“高效可行的准备”提供成果</span></h2><ol start="11">
+<li><strong>完美主义者不轻易妥协；时效主义者策略性妥协，追球最佳成果</strong></li>
+</ol>
+<p>靠自己一个人的力量去完成所有的事是不可能的，所以决定借助他人的力量。</p>
+<p>克制想要自己独自按照起初计划完成所有工作的冲动，懂得只有妥协才能让问题圆满解决。</p>
+<ol start="12">
+<li><strong>完美主义者试图全面覆盖；时效主义者专注于与成果直接相关的核心部分</strong></li>
+</ol>
+<p>正所谓鱼和熊掌不可兼得，无论是人生还是职场，一旦想要把自己想做的事、应该做的事全部做好或者全部做完，最后只会两手皆空，很难在有限的时间内收获成果。</p>
+<p>二八定律（帕累托法则）：80%的结果都是由20%的原因造成的。</p>
+<ol start="13">
+<li><strong>完美主义者重视过程；时效主义者重视目的</strong></li>
+</ol>
+<p>招待的目的是让客户开心。你的过度关心，反倒会让对方感到不自在。</p>
+<p>以目的为中心的思维习惯</p>
+<p>关于目的，能够准确地用语言表达清楚是很关键的。因此，建议大家养成多向自己提问的习惯</p>
+<ol start="14">
+<li><strong>完美主义者立足于自己的坚持；时效主义者立足于对方的诉求</strong></li>
+</ol>
+<p>“坐在台下听演讲的人，他们的目的是什么？”立足于这一点思考的话，就会想到完成目标的能力、解决问题的能力、管理下属的能力等必需的要素。</p>
+<p>从对方诉求出发的思维</p>
+<blockquote>
+<p>①思考对方的诉求是什么</p>
+<p>②从需求出发逆向思考</p>
+</blockquote>
+<ol start="15">
+<li><p><strong>完美主义者沿袭前人之法；时效主义者在创新上下功夫</strong></p>
+</li>
+<li><p><strong>完美主义者试图克服弱点；时效主义者擅长发挥优势</strong></p>
+</li>
+<li><p><strong>完美主义者墨守成规；时效主义者勇于尝试新方法</strong></p>
+</li>
+</ol>
+<p>建议大家可以在平时就尝试着一点点去挑战新鲜事物。</p>
+<ul>
+<li>重点回顾 习惯17 何为“舒适区”和“挑战区”</li>
+</ul>
+<p>舒适区，指没有变化的世界，安心、安全的领域。</p>
+<p>与之相反的，挑战区指的是未知的世界。</p>
+<h2><span id="第三章-不畏惧失败敢于行动">第三章 不畏惧失败，敢于行动</span></h2><ol start="18">
+<li><strong>完美主义者遇事三思而后行；时效主义者做事雷厉风行</strong></li>
+</ol>
+<p>即便是面对没有经验的新事物，也会在试错中不断推进。</p>
+<blockquote>
+<p>①首先下定决心，然后列出行动计划。</p>
+<p>②先尝试性地行动，然后再动真格的。</p>
+</blockquote>
+<ol start="19">
+<li><strong>完美主义者追求一次就达到完美状态；时效主义者习惯先做草案</strong></li>
+</ol>
+<p>做草案时不要追求过度完美。而且，如果能粗略地做一个大纲或者框架，对方也容易提出相应的修改意见。</p>
+<p>在做草案的过程中，必不可少的是明确区分细节和框架，并有果断省去细节的勇气。</p>
+<ol start="20">
+<li><strong>完美主义者一招定胜负的思维模式；时效主义者从概率论的角度思考问题</strong></li>
+</ol>
+<p>勇于试错</p>
+<ol start="21">
+<li><strong>完美主义者内心脆弱，容易受挫；时效主义者慢慢提升精确度</strong></li>
+</ol>
+<p>人们常常将努力与成果直接联系在一起，只有当你坚持不懈地去努力、不放弃，才会迎来收获的季节（翻盘点），在那之前都是“失望期”。</p>
+<p>当你尝试挑战新事物时。只有在一次又一次的试错中，才能慢慢摸清其中的原理，让工作顺利进行。</p>
+<p>即便眼下进展并不是很顺利，但只要继续坚持了，不断学习，肯定会慢慢进步，有所前进。</p>
+<ol start="22">
+<li><strong>完美主义者为自己无法掌控的事苦恼；时效主义者专注于可控的事情</strong></li>
+</ol>
+<p>做自己力所能及的事情。</p>
+<ol start="23">
+<li><strong>完美主义者为全面应对所有风险做准备；时效主义者只为较大风险做好万全准备</strong></li>
+</ol>
+<p>集中应对有较大风险的部分，就能够防患于未然。</p>
+<ul>
+<li>重点回顾 习惯21 成果曲线</li>
+</ul>
+<p>以长远的目光保持精益求精的思维方式。</p>
+<h2><span id="第四章-创造精神上的富裕">第四章 创造“精神上”的富裕</span></h2><ol start="24">
+<li><p><strong>完美主义者缺乏充足的时间；时效主义者创造充裕的时间</strong></p>
+</li>
+<li><p><strong>完美主义者不轻易原谅自己；时效主义者懂得自我肯定</strong></p>
+</li>
+</ol>
+<p>在适当的范围内反省和改进</p>
+<p>总是半途而废的大多是过度追求完美的人，他们总是倾向于过度否定自我。</p>
+<p>之所以不想继续坚持下去，是因为每一天都要持续面对失败的自己，这对他们来说是一件无比痛苦的事。</p>
+<p>&#x3D;&#x3D;<strong>所谓的完美不过是一种幻想而已。人本身就是不完美的。只有在接受自己的不完美时，才能完全接纳真正的自己。</strong>&#x3D;&#x3D;</p>
+<blockquote>
+<p>①降低行动难度，给自己小小的肯定。</p>
+<p>②学会接受自己的任何一面。</p>
+</blockquote>
+<ol start="26">
+<li><strong>完美主义者盲目包揽所有责任，并为之沮丧；时效主义者甚至任何事都不需要自己负全责</strong></li>
+</ol>
+<p>不对责任大包大揽，才能获得内心的安定。</p>
+<ol start="27">
+<li><p><strong>完美主义者用义务感驱使自己行动；时效主义者用兴奋感驱使自己行动</strong></p>
+</li>
+<li><p><strong>完美主义者评判标准只有满分或零分；时效主义者柔性思维，接受灰色区域的存在</strong></p>
+</li>
+</ol>
+<p>如果不能做到完美，就没有任何意义。这种认识有时会转化为一种正向的积极性，但同时也会给自己太多压力，太过逼迫自己。</p>
+<ol start="29">
+<li><strong>完美主义者为了不时之需而囤积物品；时效主义者多余的东西就主动“断舍离”</strong></li>
+</ol>
+<p>“断舍离”是成为时效主义者的重要练习</p>
+<p>争取每次旅行时的行囊都比上次小一圈</p>
+<ul>
+<li>重点回顾 习惯26 学会用饼图法分散责任</li>
+</ul>
+<p>绘制饼图时，先标注清楚他人的责任，然后再填写自己的责任，填写自己责任的时候可以划分得细致一些。</p>
+<h2><span id="第五章-巧妙利用他人的力量">第五章 巧妙利用“他人的力量”</span></h2><ol start="30">
+<li><strong>完美主义者苛责他人的失败；时效主义者对他人的失败宽容以待</strong></li>
+</ol>
+<p>不拿对自己的要求去衡量他人</p>
+<ol start="31">
+<li><strong>完美主义者八面玲珑，试图讨好所有人；时效主义者从一部分人那里获得绝对的支持</strong></li>
+</ol>
+<p>&#x3D;&#x3D;<strong>学会拒绝！</strong>&#x3D;&#x3D;</p>
+<ol start="32">
+<li><strong>完美主义者希望能从所有人那里获得赞成票；时效主义者彻底做好与核心人物的沟通工作</strong></li>
+</ol>
+<p>要想灵活巧妙地打动组织和团队，关键就在于和那些具有影响力的核心人物保持良好的关系，掌握能让他认可的窍门，尊重全院的立场，不要让大家产生“越级了”或“自己被忽视了”的不适感是非常重要的。</p>
+<ol start="33">
+<li><strong>完美主义者凭一己之力不断拼搏；时效主义者巧妙借用他人的力量</strong></li>
+</ol>
+<p>要想收获大的成果就必须把一些无关痛痒的消失交给别人，让自己能够专注于更有价值的工作。</p>
+
+                    </article>
+                    
+
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2023-08-12T12:07:00.000Z" itemprop="datePublished">2023-08-12</time>
+
+    , 最后修改于&nbsp;<time datetime="2023-08-27T13:40:04.421Z" itemprop="dateModified">2023-08-27</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+<span class="post-tags-list mt-2">
+
+<a class="post-tags-list-item" href="/tags/summary/" rel="tag">#&nbsp;summary</a>
+
+</span>
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2023/08/22/CTF%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">CTF常见编码</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2023/08/04/Java/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Java</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <!-- <a class="footer-copyright-a" href="http://example.com">Jackie's Blog</a> -->
+            <a class="footer-copyright-a" target="_blank" rel="noopener" href="https://github.com/Wu-Jackie">Jackie's Blog</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+    <!-- Busuanzi Post Views -->
+    <span id="busuanzi_container_site_pv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_pv"></span>
+        <span>Views</span>
+        
+    </span>
+
+
+
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站访客数<span id="busuanzi_value_site_uv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+(function() {
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.getElementById('copyright-year');
+    var copyrightSince = 2023;
+    if (copyrightSince === copyrightNow) {
+        copyrightContent.textContent = copyrightNow;
+    } else {
+        copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
+    }
+})();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

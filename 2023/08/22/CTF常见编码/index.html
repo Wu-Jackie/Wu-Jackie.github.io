@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+    <link rel="dns-prefetch" href="//hm.baidu.com">
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>CTF常见编码 | Jackie&#39;s Blog</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/obsidian.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/obsidian.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Jackie's Blog"><meta name="msapplication-starturl" content="http://example.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jackie's Blog"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="CTF常见编码 | Jackie&#39;s Blog"><meta property="og:site_name" content="Jackie&#39;s Blog"><meta property="og:type" content="article"><meta property="og:url" content="http://example.com/2023/08/22/CTF%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/"><meta property="og:locale" content="zh-CN"><meta name="description" content="CTF常见编码小总结 - Jackie - Jackie&#39;s Blog"><meta name="keywords" content="summary"><meta property="og:image" content="http://example.com/2023/08/22/CTF%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/ASCII%E7%A0%81%E5%AF%B9%E7%85%A7%E8%A1%A8.png"><meta property="article:published_time" content="2023-08-22T03:26:59.000Z"><meta property="article:modified_time" content="2023-08-22T05:02:41.919Z"><meta property="og:updated_time" content="2023-08-22T05:02:41.919Z"><meta property="article:author" content="Jackie"><meta property="article:tag" content="summary"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://example.com/2023/08/22/CTF%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/">
+
+    <meta name="generator" content="Hexo 6.3.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?6fa63450abd362f22fde7934382733b4';
+    var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://example.com/2023/08/22/CTF%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/",
+    "@type": "BlogPosting",
+    "logo": "http://example.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://example.com/2023/08/22/CTF%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/"
+    },
+    "headline": "CTF常见编码 | Jackie&#39;s Blog",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://example.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2023-08-22T03:26:59.000Z",
+    "dateModified": "2023-08-22T05:02:41.919Z",
+    "author": {
+        "@type": "Person",
+        "name": "Jackie",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/default_avatar.png"
+        },
+        "description": "Welcome To My Blog!,無限進步！"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Jackie&#39;s Blog",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://example.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://example.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "summary",
+    "description": "CTF常见编码小总结 - Jackie - Jackie&#39;s Blog"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Jackie&#39;s Blog</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Welcome To My Blog!<br>無限進步！
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">首页</a>
+    
+    
+        <a href="/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/search" class="navbar-link">搜索</a>
+    
+    
+        <a href="/about" class="navbar-link">About</a>
+    
+        <a href="/links" class="navbar-link">Friends</a>
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+
+        <!-- Share Twitter -->
+        
+
+        <!-- Share Facebook -->
+        
+
+        <!-- Share Google+ -->
+        
+
+        <!-- Share LinkedIn -->
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=CTF常见编码&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACQElEQVR42u2a0U7DQAwE+/8/DU9IFfR2x4UKiCcvFJrczUnYWa99e/sH101IIYUU8g9A3sL18X1d7O7e+2fv/5bufbSvkLshycbpc1vr83pkXyGFPAXMI5gT1OmZU0ClfYUUsiXxRxvR+05wQgr5bOC0xEwC77SukEJOBQYJqtPz9IDfVkFCXg6SFGKv+Pnj1aKQl4BExtGh2D8t3sTES1w1IS8DeUraTeQ2AZyeJwWZkLshSQAk4yoVWxOT68t3Qq6EJBs1QdCg6O9H0SvkOsiWaL9j/KdDVqNLyLWQyYBKh5mYo6eXQPws5FpI2tAk5v/p/iZeqsAQchUkaVYmQUEb9q1BiqJbyMtDNgOJNIomz1IBLeRuSDrUQYRv+p4O2gkpZHvRT8zTaWKPhxRyJSQp9KlRn5oArXGAVZCQKyCpUG3FVRsSRQNLQq6HJMZTSuYtEJpZEI0DIVdCNnOUNjxTA3QamEIKSRrkE7GKmpvPvHGEXAFJk3U6EDUISJNASCGTACBGPx0maS+M8aCIkJeFbOYTbWYSk5+IjuiqCbkGclLkt2KLGqtIkAi5FvIEQZM9Fc10HSGFfKYR3wxTKjxGylzIFZDtagOdaaApmbEk2ITcCUn+oZP4GA+4l2ZUVUFCroBshRMZVErBMB0yEVJIakKlBNySOTW0sDIXcjVkG+5IxhRN8KMhTyFXQ5JiPxV0zcwfd8SEXANJRAI1BeihalNLyLWQtBAjg0jTwWU8KCLkGsi/fAkppJBC/uL1Dl21FVNVcpGxAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">CTF常见编码</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="Jackie's Avatar">
+        <span>2023-08-22</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=Jackie's Blog&title=Jackie's Blog&summary=&pics=http://example.com/img/suka-favicon.ico&url=http://example.com/2023/08/22/CTF%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAAAAAA83tqdAAACQElEQVR42u2a0U7DQAwE+/8/DU9IFfR2x4UKiCcvFJrczUnYWa99e/sH101IIYUU8g9A3sL18X1d7O7e+2fv/5bufbSvkLshycbpc1vr83pkXyGFPAXMI5gT1OmZU0ClfYUUsiXxRxvR+05wQgr5bOC0xEwC77SukEJOBQYJqtPz9IDfVkFCXg6SFGKv+Pnj1aKQl4BExtGh2D8t3sTES1w1IS8DeUraTeQ2AZyeJwWZkLshSQAk4yoVWxOT68t3Qq6EJBs1QdCg6O9H0SvkOsiWaL9j/KdDVqNLyLWQyYBKh5mYo6eXQPws5FpI2tAk5v/p/iZeqsAQchUkaVYmQUEb9q1BiqJbyMtDNgOJNIomz1IBLeRuSDrUQYRv+p4O2gkpZHvRT8zTaWKPhxRyJSQp9KlRn5oArXGAVZCQKyCpUG3FVRsSRQNLQq6HJMZTSuYtEJpZEI0DIVdCNnOUNjxTA3QamEIKSRrkE7GKmpvPvHGEXAFJk3U6EDUISJNASCGTACBGPx0maS+M8aCIkJeFbOYTbWYSk5+IjuiqCbkGclLkt2KLGqtIkAi5FvIEQZM9Fc10HSGFfKYR3wxTKjxGylzIFZDtagOdaaApmbEk2ITcCUn+oZP4GA+4l2ZUVUFCroBshRMZVErBMB0yEVJIakKlBNySOTW0sDIXcjVkG+5IxhRN8KMhTyFXQ5JiPxV0zcwfd8SEXANJRAI1BeihalNLyLWQtBAjg0jTwWU8KCLkGsi/fAkppJBC/uL1Dl21FVNVcpGxAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">1.</span> <span class="post-toc-text">补充</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">2.</span> <span class="post-toc-text">ASCII编码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">3.</span> <span class="post-toc-text">Base家族编码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">4.</span> <span class="post-toc-text">MD5、SHA1、HMAC、NTLM等类似加密型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">MD5</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">SHA1</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">HMAC</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">NTLM</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">类似加密穷举</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">5.</span> <span class="post-toc-text">AES、DES、RC4、Rabbit、3DES型加密</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">6.</span> <span class="post-toc-text">Unicode编码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">7.</span> <span class="post-toc-text">HTML实体编码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">8.</span> <span class="post-toc-text">Escape、Unescape编码（%u）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">9.</span> <span class="post-toc-text">URL编码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">10.</span> <span class="post-toc-text">Hex编码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">11.</span> <span class="post-toc-text">js专用加密</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">JS颜文字加密</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">Jother编码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">11.3.</span> <span class="post-toc-text">JSFuck编码</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">12.</span> <span class="post-toc-text">Quoted-printable编码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">13.</span> <span class="post-toc-text">XXencode</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">13.1.</span> <span class="post-toc-text">UUencode</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">13.2.</span> <span class="post-toc-text">aaencode编码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link"><span class="post-toc-number">13.3.</span> <span class="post-toc-text">jjencode编码</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">14.</span> <span class="post-toc-text">brainfuck编码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">15.</span> <span class="post-toc-text">摩斯电码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">16.</span> <span class="post-toc-text">社会主义编码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-number">17.</span> <span class="post-toc-text">与佛论禅</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h1><span id="补充">补充</span></h1><p>计算机中的数据都是按字节存储。一个字节(Byte)由8个二进制位组成(bit)。（组成范围是0~255(2^8^)) 一个字节一共可以用来表示256种不同的状态，每一个状态对应一个符号，就是256个符号，从00000000到11111111。</p>
+<h1><span id="ascii编码">ASCII编码</span></h1><p>ASCII 码是对<strong>英语字符与二进制位之间</strong>的关系，做了统一规定。基本的 ASCII 字符集共有 128 个字符，其中有 96 个可打印字符，包括常用的字母、数字、标点符号等。如：</p>
+<p>空格SPACE 是32（二进制：00100000）；数字0是48（二进制：00110000）；大写字母A是65（二进制：01000001）。</p>
+<p>另外还有 32 个控制字符（不能打印出来）。</p>
+<p>这128个符号，只占用了一个字节的后面7位，最前面的一位统一规定为0。</p>
+<p><strong>特征：</strong> <strong>只含有数字</strong></p>
+<ul>
+<li>0-9：49-57</li>
+<li>A-Z：65-90</li>
+<li>a-z：97-122</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">明文：hello,world.<br>十六进制：0x680x650x6c0x6c0x6f0xff0c0x770x6f0x720x6c0x640x2e<br>十进制：1041011081081112551211911111410810046<br>二进制：011010000110010101101100011011000110111100101100011101110110111101110010011011000110010000101110<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.107000.com/T-Ascii/">解码链接1</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.ab126.com/goju/1711.html">解码链接2</a></p>
+<p style="text-align:center">ASCII码对照表</p>
+
+<p><img src="/2023/08/22/CTF%E5%B8%B8%E8%A7%81%E7%BC%96%E7%A0%81/ASCII%E7%A0%81%E5%AF%B9%E7%85%A7%E8%A1%A8.png" alt="ASCII码对照表"></p>
+<h1><span id="base家族编码">Base家族编码</span></h1><blockquote>
+<p>base16&#x2F;base32&#x2F;base64&#x2F;base58&#x2F;base85&#x2F;base100</p>
+</blockquote>
+<p>**Base16编码是将二进制文件转换成由16个字符组成的文本 **</p>
+<p><strong>Base32的编码表是由（A-Z、2-7）32个可见字符构成，“&#x3D;”符号用作后缀填充。</strong></p>
+<p><strong>Base64的编码表是由（A-Z、a-z、0-9、+、&#x2F;）64个可见字符构成，“&#x3D;”符号用作后缀填充。</strong></p>
+<p><strong>Base58的编码表相比base64少了数字0，大写字母I，O，小写字母 l (这个是L），以及符号‘+’和‘&#x2F;’</strong></p>
+<p><strong>Base91的密文由91个字符（0-9，a-z，A-Z,!#$%&amp;()*+,.&#x2F;:;&lt;=&gt;?@[]^_`{|}~”）组成</strong></p>
+<p>**Base100编码&#x2F;解码工具（又名：Emoji表情符号编码&#x2F;解码），可将文本内容编码为Emoji表情符号；同时也可以将编码后的Emoji表情符号内容解码为文本。 **</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">明文：hello，world.123456<br>base16: 68656C6C6F2C776F726C642E313233343635<br>特征：大写字母(A-Z)和数字(0-9)，不用‘=’补齐。<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">base32: NBSWY3DPFR3W64TMMQXDCMRTGQ3DK===<br>特征：大写字母(A-Z)和数字(2-7)，不满5的倍数，用‘=’补齐。<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">base64: aGVsbG8sd29ybGQuMTIzNDY1<br>特征：大小写字母（A-Z，a-z）和数字（0-9）以及特殊字符‘+’，‘/’，不满3的倍数，用‘=’补齐。<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">base58: 2smDFYXWKE8vc8XA8dadEYcSqcQb<br>特征：相比Base64，Base58不使用数字&quot;0&quot;，字母大写&quot;O&quot;，字母大写&quot;I&quot;，和字母小写&quot;l&quot;，以及&quot;+&quot;和&quot;/&quot;符号，最主要的是后面不会出现&#x27;=&#x27;。<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">base85: BOu!rDst&gt;tGAhM&lt;A1fSl1GgsI<br>特征：特点是奇怪的字符比较多，但是很难出现等号<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">base91: TPwJh&gt;go2Tv!_,aRA2IbLmA<br>特征：由91个字符（0-9，a-z，A-Z,!#$%&amp;()*+,./:;&lt;=&gt;?@[]^_`&#123;|&#125;~”）组成<br>不支持中文。<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">base100: 👟👜👣👣👦📦💳💃👮👦👩👣👛🐥🐨🐩🐪🐫🐬🐭<br>特征：就是一堆Emoji表情<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/base64.htm">base16 &#x2F; base32 &#x2F; base64</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.atoolbox.net/Tool.php?Id=932">base58</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.atoolbox.net/Tool.php?Id=934">base85</a></p>
+<p><a target="_blank" rel="noopener" href="https://ruoli-s.github.io/posts/ctf.ssleye.com/base91.html">base91</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.atoolbox.net/Tool.php?Id=936">base100</a></p>
+<h1><span id="md5-sha1-hmac-ntlm等类似加密型">MD5、SHA1、HMAC、NTLM等类似加密型</span></h1><h2><span id="md5">MD5</span></h2><p>一般MD5值是32位由数字“0-9”和字母“a-f”所组成的字符串，字母大小写统一；如果出现这个范围以外的字符说明这可能是个错误的md5值，就没必要再拿去解密了。</p>
+<p>16位值是取的是8~24位。</p>
+<p><strong>特征：</strong></p>
+<p> 有固定长度，一般是32位或者16位</p>
+<p> 由数字“0-9”和字母“a-f”组成</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">明文：hello，world.123456<br>md5(hello，world.123456,32) = 5189503aae1b1c0a6fbf7ea9e3128ab0<br>md5(hello，world.123456,16) = ae1b1c0a6fbf7ea9<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://www.ttmd5.com/">MD5解密1</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cmd5.com/">MD5解密2</a></p>
+<h2><span id="sha1">SHA1</span></h2><p><strong>简述</strong></p>
+<p>SHA1是一种密码散列函数，SHA1可以生成一个被称为消息摘要的160位，20字节的散列值，散列值通常的呈现形式为<strong>40位十六进制数</strong>。这种加密和MD5类似。</p>
+<p><strong>特征：</strong></p>
+<p>有固定长度，为40位的字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">明文：hello，world.123456<br>sha1（hello，world.123456）= 0179303b8f08fbc3d16cd23a4be5828790e12375<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://www.ttmd5.com/hash.php?type=5">SHA1加解密1</a></p>
+<p><a target="_blank" rel="noopener" href="https://tool.oschina.net/encrypt?type=2">SHA1加解密2</a></p>
+<h2><span id="hmac">HMAC</span></h2><p><strong>简述：</strong></p>
+<p>HMAC（Hash-based Message Authentication Code）常用于接口签名验证，这种算法就是在前两种加密的基础上引入了秘钥，而秘钥又只有传输双方才知道，所以基本上是破解不了的。</p>
+<p><strong>特征：</strong></p>
+<p>和MD5类似，但是有秘钥。</p>
+<p><a target="_blank" rel="noopener" href="http://encode.chahuo.com/">HAMC加解密</a></p>
+<h2><span id="ntlm">NTLM</span></h2><p><strong>简述：</strong></p>
+<p>这种加密是Windows的哈希密码，是Windows NT早期版本的标准安全协议。与它相同的还有Domain Cached Credentials（域哈希）。</p>
+<p><a target="_blank" rel="noopener" href="https://www.jisuan.mobi/p11BbzHum6b3uyJW.html">NTML加解密</a></p>
+<h2><span id="类似加密穷举">类似加密穷举</span></h2><table>
+<thead>
+<tr>
+<th align="center">#</th>
+<th align="center">算法</th>
+<th align="center">长度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">md5</td>
+<td align="center">32&#x2F;16</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">sha1</td>
+<td align="center">40</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">sha256</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">sha512</td>
+<td align="center">128</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">adler32</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">crc32</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">crc32b</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">fnv132</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">fnv164</td>
+<td align="center">16</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">fnv1a32</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">fnv1a64</td>
+<td align="center">16</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">gost</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">gost-crypto</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="center">haval128,3</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">haval128,4</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">haval128,5</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">haval160,3</td>
+<td align="center">40</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td align="center">haval160,4</td>
+<td align="center">40</td>
+</tr>
+<tr>
+<td align="center">19</td>
+<td align="center">haval160,5</td>
+<td align="center">40</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="center">haval192,3</td>
+<td align="center">48</td>
+</tr>
+<tr>
+<td align="center">21</td>
+<td align="center">haval192,4</td>
+<td align="center">48</td>
+</tr>
+<tr>
+<td align="center">22</td>
+<td align="center">haval192,5</td>
+<td align="center">48</td>
+</tr>
+<tr>
+<td align="center">23</td>
+<td align="center">haval224,3</td>
+<td align="center">56</td>
+</tr>
+<tr>
+<td align="center">24</td>
+<td align="center">haval224,4</td>
+<td align="center">56</td>
+</tr>
+<tr>
+<td align="center">25</td>
+<td align="center">haval224,5</td>
+<td align="center">56</td>
+</tr>
+<tr>
+<td align="center">26</td>
+<td align="center">haval256,3</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">27</td>
+<td align="center">haval256,4</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">28</td>
+<td align="center">haval256,5</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">29</td>
+<td align="center">joaat</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">30</td>
+<td align="center">md2</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">31</td>
+<td align="center">md4</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">32</td>
+<td align="center">ripemd128</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">33</td>
+<td align="center">ripemd160</td>
+<td align="center">40</td>
+</tr>
+<tr>
+<td align="center">34</td>
+<td align="center">ripemd256</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">35</td>
+<td align="center">ripemd320</td>
+<td align="center">80</td>
+</tr>
+<tr>
+<td align="center">36</td>
+<td align="center">sha224</td>
+<td align="center">56</td>
+</tr>
+<tr>
+<td align="center">37</td>
+<td align="center">sha3-224</td>
+<td align="center">56</td>
+</tr>
+<tr>
+<td align="center">38</td>
+<td align="center">sha3-256</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">39</td>
+<td align="center">sha3-384</td>
+<td align="center">96</td>
+</tr>
+<tr>
+<td align="center">40</td>
+<td align="center">sha3-512</td>
+<td align="center">128</td>
+</tr>
+<tr>
+<td align="center">41</td>
+<td align="center">sha384</td>
+<td align="center">96</td>
+</tr>
+<tr>
+<td align="center">42</td>
+<td align="center">sha512&#x2F;224</td>
+<td align="center">56</td>
+</tr>
+<tr>
+<td align="center">43</td>
+<td align="center">sha512&#x2F;256</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">44</td>
+<td align="center">snefru</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">45</td>
+<td align="center">snefru256</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">46</td>
+<td align="center">tiger128,3</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">47</td>
+<td align="center">tiger128,4</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">48</td>
+<td align="center">tiger160,3</td>
+<td align="center">40</td>
+</tr>
+<tr>
+<td align="center">49</td>
+<td align="center">tiger160,4</td>
+<td align="center">40</td>
+</tr>
+<tr>
+<td align="center">50</td>
+<td align="center">tiger192,3</td>
+<td align="center">48</td>
+</tr>
+<tr>
+<td align="center">51</td>
+<td align="center">tiger192,4</td>
+<td align="center">48</td>
+</tr>
+<tr>
+<td align="center">52</td>
+<td align="center">whirlpool</td>
+<td align="center">128</td>
+</tr>
+<tr>
+<td align="center">53</td>
+<td align="center">mysql</td>
+<td align="center">老MYSQL数据库用的，16位，且第1位和第7位必须为0-8</td>
+</tr>
+<tr>
+<td align="center">54</td>
+<td align="center">mysql5</td>
+<td align="center">40</td>
+</tr>
+<tr>
+<td align="center">55</td>
+<td align="center">NTLM</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">56</td>
+<td align="center">Domain Cached Credentials</td>
+<td align="center">32</td>
+</tr>
+</tbody></table>
+<h1><span id="aes-des-rc4-rabbit-3des型加密">AES、DES、RC4、Rabbit、3DES型加密</span></h1><p><strong>简述：</strong></p>
+<p>以上都是非对称性加密算法，就是引入了密钥，密文特征与Base64类似。</p>
+<p><a target="_blank" rel="noopener" href="https://www.sojson.com/encrypt_aes.html">非对称加密</a></p>
+<h1><span id="unicode编码">Unicode编码</span></h1><p><strong>简述：</strong></p>
+<p>Unicode（统一码、万国码、单一码）是一种在计算机上使用的字符编码。</p>
+<p>它用两个字节来编码一个字符,字符编码一般用十六进制来表示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">明文：hello，world.<br>&amp;#x [hex]：&amp;#x0068;&amp;#x0065;&amp;#x006C;&amp;#x006C;&amp;#x006F;&amp;#xFF0C;&amp;#x0077;&amp;#x006F;&amp;#x0072;&amp;#x006C;&amp;#x0064;&amp;#x002E;<br><br>&amp;# [hex]：&amp;#00104;&amp;#00101;&amp;#00108;&amp;#00108;&amp;#00111;&amp;#65292;&amp;#00119;&amp;#00111;&amp;#00114;&amp;#00108;&amp;#00100;&amp;#00046;<br><br>\u [hex]：\U0068\U0065\U006C\U006C\U006F\U002C\U0077\U006F\U0072\U006C\U0064\U002E<br><br>\u+ [hex]：\U+0068\U+0065\U+006C\U+006C\U+006F\U+FF0C\U+0077\U+006F\U+0072\U+006C\U+0064\U+002E<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://www.mxcz.net/tools/Unicode.aspx">四种方式都有</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.msxindl.com/tools/unicode16.asp">unicode16进制</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.sojson.com/unicode.html">unicode</a></p>
+<p><a target="_blank" rel="noopener" href="http://tool.chinaz.com/tools/unicode.aspx">常见\u方式</a></p>
+<h1><span id="html实体编码">HTML实体编码</span></h1><p><strong>简述：</strong></p>
+<p>字符实体是用一个编号写入HTML代码中来代替一个字符，在使用浏览器访问网页时会将这个编号解析还原为字符以供阅读。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">明文：hello，world.<br>十进制：&amp;#104;&amp;#101;&amp;#108;&amp;#108;&amp;#111;&amp;#65292;&amp;#119;&amp;#111;&amp;#114;&amp;#108;&amp;#100;&amp;#46;<br>十六进制：&amp;#x68;&amp;#x65;&amp;#x6C;&amp;#x6C;&amp;#x6F;&amp;#xFF0C;&amp;#x77;&amp;#x6F;&amp;#x72;&amp;#x6C;&amp;#x64;&amp;#x2E;<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://www.toolzl.com/tools/htmlende.html">HTML实体加解密1</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/zifushiti.php">HTML实体加解密2</a></p>
+<h1><span id="escape-unescape编码u">Escape、Unescape编码（%u）</span></h1><p><strong>简述：</strong></p>
+<p><strong>Escape&#x2F;Unescape加密解码&#x2F;编码解码</strong>,又叫%u编码，其实就是字符对应UTF-16 16进制表示方式前面加%u。<strong>Unescape解码&#x2F;解密</strong>，就是去掉”%u”后，将16进制字符还原后，由utf-16转码到自己目标字符。如：字符“中”，UTF-16BE是：“6d93”，因此Escape是“%u6d93”，反之也一样.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">明文：hello，world.<br>密文：%u0068%u0065%u006c%u006c%u006f%uff0c%u0077%u006f%u0072%u006c%u0064%u002e<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://web.chacuo.net/charsetescape/">Escape编码&#x2F;解码</a></p>
+<h1><span id="url编码">URL编码</span></h1><p><strong>简述：</strong></p>
+<p>url编码又叫百分号编码，是统一资源定位(URL)编码方式。URL地址（常说网址）规定了常用地数字，字母可以直接使用，另外一批作为特殊用户字符也可以直接用（&#x2F;,:@等），剩下的其它所有字符必须通过%xx编码处理。现在已经成为一种规范了，基本所有程序语言都有这种编码，如js：有encodeURL、encodeURIComponent，PHP有 urlencode、urldecode等。编码方法很简单，在该字节ascii码的的16进制字符前面加%如空格字符，ascii码是32，对应16进制是20，那么urlencode编码结果是：%20。</p>
+<p><a target="_blank" rel="noopener" href="http://web.chacuo.net/charseturlencode">URL加解密</a></p>
+<h1><span id="hex编码">Hex编码</span></h1><p><strong>简述：</strong></p>
+<p>Hex全称是Intel HEX。Hex文件是由一行行符合Intel HEX文件格式的文本所构成的ASCII文本文件。在Intel HEX文件中，每一行包含一个HEX记录。这些记录由对应机器语言码和&#x2F;或常量数据的<strong>十六进制编码数字</strong>组成。</p>
+<p><strong>特征：</strong></p>
+<p>十六进制（Hexadecimal）</p>
+<p>它是计算机中数据的一种表示方法，<strong>由0-9，A-F组成，字母不区分大小写</strong>。</p>
+<p>与10进制的对应关系是：0-9不变，A-F对应10-15。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">明文：hello，world.<br>密文（带%）：%68%65%6c%6c%6f%ef%bc%8c%77%6f%72%6c%64%2e<br>密文（不带%）：68656C6C6FEFBC8C776F726C642E<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.107000.com/T-Hex">不带%</a></p>
+<p><a target="_blank" rel="noopener" href="http://stool.chinaz.com/hex">带%</a></p>
+<h1><span id="js专用加密">js专用加密</span></h1><h2><span id="js颜文字加密">JS颜文字加密</span></h2><p><strong>特征：</strong></p>
+<p>一堆颜文字构成的js代码，在F12中可直接解密执行</p>
+<p><a target="_blank" rel="noopener" href="https://utf-8.jp/public/aaencode.html">JS颜文字加密</a></p>
+<p>解密在F12的console中</p>
+<h2><span id="jother编码">Jother编码</span></h2><p><strong>简述：</strong></p>
+<p>jother是一种运用于javascript语言中利用少量字符构造精简的匿名函数方法对于字符串进行的编码方式。</p>
+<p><strong>特征：</strong></p>
+<p>只用<strong>!+()[]{}</strong>这八个字符就能完成对任意字符串的编码。可在F12中解密执行</p>
+<p><a target="_blank" rel="noopener" href="http://tmxk.org/jother/">Jother</a></p>
+<h2><span id="jsfuck编码">JSFuck编码</span></h2><p><strong>特征：</strong></p>
+<p>与jother很像，只是少了{}</p>
+<p><a target="_blank" rel="noopener" href="http://www.jsfuck.com/">JSFuck加密</a></p>
+<p>解密在F12的console中</p>
+<h1><span id="quoted-printable编码">Quoted-printable编码</span></h1><p>简述：</p>
+<p>它是多用途互联网邮件扩展（MIME）一种实现方式。有时候我们可以邮件头里面能够看到这样的编码。</p>
+<p><strong>特征：</strong></p>
+<p>任何一个8位的字节值可编码为3个字符：一个等号”&#x3D;“后跟随两个十六进制数字(0–9或A–F)表示该字节的数值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">明文：天上掉下了个猪八戒<br>密文：=E5=A4=A9=E4=B8=8A=E6=8E=89=E4=B8=8B=E4=BA=86=E4=B8=AA=E7=8C=AA=E5=85=AB=E6=88=92<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://www.mxcz.net/tools/QuotedPrintable.aspx">在线编码</a></p>
+<h1><span id="xxencode">XXencode</span></h1><p><strong>简述：</strong></p>
+<p>XXencode将输入文本以每三个字节为单位进行编码。如果最后剩下的资料少于三个字节，不够的部分用零补齐。这三个字节共有24个Bit，以6bit为单位分为4个组，每个组以十进制来表示所出现的数值只会落在0到63之间。以所对应值的位置字符代替。</p>
+<p><strong>特征：</strong></p>
+<p>字符范围是：</p>
+<p> 0-9，A-Z，a-z，</p>
+<p> 一共64个字符。跟base64打印字符相比，就是UUencode多一个“-”字符，少一个”&#x2F;”字符。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">明文：hello，world.<br>密文：BO4JgP4yXf5RjQalY9U++<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://web.chacuo.net/charsetxxencode">UUencode加解密</a></p>
+<h2><span id="uuencode">UUencode</span></h2><p><strong>简述：</strong></p>
+<p>UUencode是一种二进制到文字的编码，最早在unix邮件系统中使用，全称：Unix-to-Unix encoding，UUencode将输入文本以每三个字节为单位进行编码，如果最后剩下的资料少于三个字节，不够的部份用零补齐。三个字节共有24个Bit，以6-bit为单位分为4个组，每个组以十进制来表示所出现的字节的数值。这个数值只会落在0到63之间。然后将每个数加上32，所产生的结果刚好落在ASCII字符集中可打印字符（32-空白…95-底线）的范围之中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">明文：hello,world.<br>密文：,:&amp;5L;&amp;\L=V]R;&amp;0N<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://web.chacuo.net/charsetuuencode">UUencode1</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/uuencode.php">UUencode2</a></p>
+<h2><span id="aaencode编码">aaencode编码</span></h2><p><strong>特征：</strong></p>
+<p>将JS代码转换成常用的<strong>网络表情</strong>。</p>
+<p><a target="_blank" rel="noopener" href="http://www.atoolbox.net/Tool.php?Id=703">aaencode1</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.qtool.net/decode">aaencode2</a></p>
+<p><a target="_blank" rel="noopener" href="https://utf-8.jp/public/aaencode.html">aaencode3</a></p>
+<h2><span id="jjencode编码">jjencode编码</span></h2><p><strong>特征：</strong></p>
+<p>将JS代码转换成<strong>只有符号</strong>的字符串。</p>
+<p><a target="_blank" rel="noopener" href="http://www.atoolbox.net/Tool.php?Id=704">jjencode加密</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.qtool.net/decode">jjencode解密</a></p>
+<h1><span id="brainfuck编码">brainfuck编码</span></h1><p><strong>简述：</strong></p>
+<p>Brainfuck是一种极小化的计算机语言，按照”Turing complete（完整图灵机）”思想设计的语言，它的主要设计思路是：用最小的概念实现一种“简单”的语言。</p>
+<p><strong>特征：</strong></p>
+<p>BrainFuck语言只有八种符号，所有的操作都由这八种符号 <strong>(&gt; &lt; + - . , [ ])</strong> 的组合来完成。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">明文：hello,world.<br>密文：+++++ +++++ [-&gt;++ +++++ +++&lt;] &gt;++++ .---. +++++ ++..+ ++.&lt;+ +++++ ++[-&gt;<br>----- ---&lt;] &gt;---. &lt;++++ ++++[ -&gt;+++ +++++ &lt;]&gt;++ +++++ ++++. ----- ---.+<br>++.-- ----. ----- ---.&lt; +++++ ++[-&gt; ----- --&lt;]&gt; ----- .&lt;<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.splitbrain.org/services/ook">Brainfuck1</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.nayuki.io/page/brainfuck-interpreter-javascript">Brainfuck2</a></p>
+<h1><span id="摩斯电码">摩斯电码</span></h1><p><strong>简述：</strong></p>
+<p>摩尔斯电码(Morse Code)是由美国人萨缪尔·摩尔斯在1836年发明的一种时通时断的且通过不同的排列顺序来表达不同英文字母、数字和标点符号的信号代码，摩尔斯电码主要由以下5种它的代码组成：</p>
+<ol>
+<li>点（.）</li>
+<li>划（-）</li>
+<li>每个字符间短的停顿（通常用空格表示停顿）</li>
+<li>每个词之间中等的停顿（通常用 <code>/</code> 划分）</li>
+<li>以及句子之间长的停顿</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">A <strong>.-</strong></td>
+<td align="center">B <strong>-…</strong></td>
+<td align="center">C <strong>-.-.</strong></td>
+<td align="center">D <strong>-..</strong></td>
+<td align="center">E <strong>.</strong></td>
+<td align="center">F <strong>..-.</strong></td>
+<td align="center">G <strong>–.</strong></td>
+<td align="center">H <strong>….</strong></td>
+<td align="center">I <strong>..</strong></td>
+<td align="center">J <strong>.—</strong></td>
+</tr>
+<tr>
+<td align="center">K <strong>-.-</strong></td>
+<td align="center">L <strong>.-..</strong></td>
+<td align="center">M <strong>–</strong></td>
+<td align="center">N <strong>-.</strong></td>
+<td align="center">O <strong>—</strong></td>
+<td align="center">P <strong>.–.</strong></td>
+<td align="center">Q <strong>–.-</strong></td>
+<td align="center">R <strong>.-.</strong></td>
+<td align="center">S <strong>…</strong></td>
+<td align="center">T <strong>-</strong></td>
+</tr>
+<tr>
+<td align="center">U <strong>..-</strong></td>
+<td align="center">V <strong>…-</strong></td>
+<td align="center">W <strong>.–</strong></td>
+<td align="center">X <strong>-..-</strong></td>
+<td align="center">Y <strong>-.–</strong></td>
+<td align="center">Z <strong>–..</strong></td>
+<td align="center">0 <strong>—–</strong></td>
+<td align="center">1 <strong>.—-</strong></td>
+<td align="center">2 <strong>..—</strong></td>
+<td align="center">3 <strong>…–</strong></td>
+</tr>
+<tr>
+<td align="center">4 <strong>….-</strong></td>
+<td align="center">5 <strong>…..</strong></td>
+<td align="center">6 <strong>-….</strong></td>
+<td align="center">7 <strong>–…</strong></td>
+<td align="center">8 <strong>—..</strong></td>
+<td align="center">9 <strong>—-.</strong></td>
+<td align="center">. <strong>.-.-.-</strong></td>
+<td align="center">, <strong>–..–</strong></td>
+<td align="center">? <strong>..–..</strong></td>
+<td align="center">- <strong>-….-</strong></td>
+</tr>
+<tr>
+<td align="center">&#x3D; <strong>-…-</strong></td>
+<td align="center">: <strong>—…</strong></td>
+<td align="center">; <strong>-.-.-.</strong></td>
+<td align="center">( <strong>-.–.</strong></td>
+<td align="center">) <strong>-.–.-</strong></td>
+<td align="center">&#x2F; <strong>-..-.</strong></td>
+<td align="center">“ <strong>.-..-.</strong></td>
+<td align="center">$ <strong>…-..-</strong></td>
+<td align="center">‘ <strong>.—-.</strong></td>
+<td align="center">¶ <strong>.-.-..</strong></td>
+</tr>
+<tr>
+<td align="center">_ <strong>..–.-</strong></td>
+<td align="center">@ <strong>.–.-.</strong></td>
+<td align="center">! <strong>—.</strong></td>
+<td align="center">! <strong>-.-.–</strong></td>
+<td align="center">+ <strong>.-.-.</strong></td>
+<td align="center">~ <strong>.-…</strong></td>
+<td align="center"># <strong>…-.-</strong></td>
+<td align="center">&amp; <strong>. …</strong></td>
+<td align="center">⁄ <strong>-..-.</strong></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p><strong>特征：</strong></p>
+<p>由 **. - “空格” &#x2F; **表示。</p>
+<p><a target="_blank" rel="noopener" href="http://rumkin.com/tools/cipher/morse.php">莫斯电码1</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.zhongguosou.com/zonghe/moErSiCodeConverter.aspx">莫斯电码2</a></p>
+<h1><span id="社会主义编码">社会主义编码</span></h1><p><strong>特征：</strong></p>
+<p>字符全部是社会主义核心价值观。</p>
+<p><a target="_blank" rel="noopener" href="https://sym233.github.io/core-values-encoder/">社会主义编码</a></p>
+<h1><span id="与佛论禅">与佛论禅</span></h1><p><strong>特征：</strong></p>
+<p>密文以”佛曰：如是我闻：”开头，密文一般是与关佛经的汉字</p>
+<p><a target="_blank" rel="noopener" href="http://www.keyfc.net/bbs/tools/tudoucode.aspx">与佛论禅</a></p>
+
+                    </article>
+                    
+
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2023-08-22T03:26:59.000Z" itemprop="datePublished">2023-08-22</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+<span class="post-tags-list mt-2">
+
+<a class="post-tags-list-item" href="/tags/summary/" rel="tag">#&nbsp;summary</a>
+
+</span>
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2023/08/12/%E7%AC%94%E8%AE%B0-%E6%84%9F%E6%82%9F/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">笔记&amp;感悟</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <!-- <a class="footer-copyright-a" href="http://example.com">Jackie's Blog</a> -->
+            <a class="footer-copyright-a" target="_blank" rel="noopener" href="https://github.com/Wu-Jackie">Jackie's Blog</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+    <!-- Busuanzi Post Views -->
+    <span id="busuanzi_container_site_pv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_pv"></span>
+        <span>Views</span>
+        
+    </span>
+
+
+
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本站访客数<span id="busuanzi_value_site_uv"></span>次
+        </span>
+        <span id="busuanzi_container_site_pv" style='display:none'>
+            本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+(function() {
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.getElementById('copyright-year');
+    var copyrightSince = 2023;
+    if (copyrightSince === copyrightNow) {
+        copyrightContent.textContent = copyrightNow;
+    } else {
+        copyrightContent.textContent = copyrightSince + ' - ' + copyrightNow;
+    }
+})();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>
