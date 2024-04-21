@@ -254,7 +254,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Sun Apr 14 2024 17:17:43 GMT+0800">2024-04-14</span>
+                <span class="datetime" data-updated="Sun Apr 21 2024 15:48:49 GMT+0800">2024-04-21</span>
             </span>
         
 
@@ -408,21 +408,19 @@
 <h2 id="GitHub-Actions"><a href="#GitHub-Actions" class="headerlink" title="GitHub Actions"></a>GitHub Actions</h2><p>【Github Action题目world.execute.me 出题人讲解】 <a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1jm411d7Jk/?share_source=copy_web&vd_source=15214a7977f78540f7402494fb912cda" >https://www.bilibili.com/video/BV1jm411d7Jk/?share_source=copy_web&amp;vd_source=15214a7977f78540f7402494fb912cda<i class="fas fa-external-link-alt"></i></a></p>
 <h2 id="拓展链接"><a href="#拓展链接" class="headerlink" title="拓展链接"></a>拓展链接</h2><p><a class="link"   target="_blank" rel="noopener" href="http://t.csdn.cn/N467a" >Git _ 报错信息<i class="fas fa-external-link-alt"></i></a></p>
 <p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/iini/p/16300299.html" >https://www.cnblogs.com/iini/p/16300299.html<i class="fas fa-external-link-alt"></i></a></p>
-<h1 id="撤回已-Push-的代码"><a href="#撤回已-Push-的代码" class="headerlink" title="撤回已 Push 的代码"></a>撤回已 Push 的代码</h1><p>IDEA中Git较为优雅的方法</p>
-<ol>
-<li>Reset Current Branch 到你想要恢复的commit记录</li>
-</ol>
-<p>这个时候会跳出四个选项供你选择，我这里是选择hard。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Soft：#你之前写的不会改变，你之前暂存过的文件还在暂存。</span><br><span class="line">Mixed：#你之前写的不会改变，你之前暂存过的文件不会暂存。</span><br><span class="line">Hard：#文件恢复到所选提交状态，任何更改都会丢失。你已经提交了，然后你又在本地更改了，如果你选hard，那么提交的内容和你提交后又本地修改未提交的内容都会丢失。</span><br><span class="line">keep：#任何本地更改都将丢失，文件将恢复到所选提交的状态，但本地更改将保持不变。你已经提交了，然后你又在本地更改了，如果你选keep，那么提交的内容会丢失，你提交后又本地修改未提交的内容不会丢失。</span><br></pre></td></tr></table></figure>
+<h1 id="撤回已-Push-的代码"><a href="#撤回已-Push-的代码" class="headerlink" title="撤回已 Push 的代码"></a>撤回已 Push 的代码</h1><p>IDEA中Git较为优雅的方法：Reset Current Branch 到你想要恢复的commit记录</p>
+<p>这个时候会跳出四个选项供选择</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Soft：#之前写的不会改变，之前暂存过的文件还在暂存。</span><br><span class="line">Mixed：#之前写的不会改变，之前暂存过的文件不会暂存。</span><br><span class="line">Hard：#文件恢复到所选提交状态，任何更改都会丢失。你已经提交了，然后你又在本地更改了，如果选hard，那么提交的内容和提交后又本地修改未提交的内容都会丢失。</span><br><span class="line">keep：#任何本地更改都将丢失，文件将恢复到所选提交的状态，但本地更改将保持不变。你已经提交了，然后你又在本地更改了，如果选keep，那么提交的内容会丢失，提交后又本地修改未提交的内容不会丢失。</span><br></pre></td></tr></table></figure>
 
 <p>然后，之前错误提交的commit就在本地给干掉了。但是远程仓库中的提交还是原来的样子，你要把目前状态同步到远程仓库。也就是需要把那几个commit删除的操作push过去。</p>
 <p>打开push界面，虽然没有commit需要提交，需要点击<kbd>Force Push</kbd>，强推过去。</p>
 <blockquote>
 <p>需要注意的是对于一些被保护的分支，这个操作是不能进行的。需要自行查看配置，我这里因为不是master分支，所以没有保护。</p>
 </blockquote>
-<h1 id="git"><a href="#git" class="headerlink" title=".git"></a>.git</h1><blockquote>
-<p>简单地说，git 只是一堆通过文件名相互链接的文本文件。</p>
-</blockquote>
+<p><strong>实操</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git reset --hard &lt;所需要恢复到位置的hash值&gt;</span><br><span class="line">git push --force origin</span><br></pre></td></tr></table></figure>
+
+<h1 id="git"><a href="#git" class="headerlink" title=".git"></a>.git</h1><p>简单地说，git 只是一堆通过文件名相互链接的文本文件。</p>
 <h2 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tree .git</span><br><span class="line"></span><br><span class="line">.git</span><br><span class="line">├── config</span><br><span class="line">├── HEAD</span><br><span class="line">├── hooks</span><br><span class="line">│   └── prepare-commit-msg.msample</span><br><span class="line">├── objects</span><br><span class="line">│   ├── info</span><br><span class="line">│   └── pack</span><br><span class="line">└── refs</span><br><span class="line">    ├── heads</span><br><span class="line">    └── tags</span><br></pre></td></tr></table></figure>
 
 <ul>
