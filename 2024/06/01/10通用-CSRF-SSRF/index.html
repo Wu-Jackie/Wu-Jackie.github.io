@@ -9,7 +9,7 @@
     
     <title>
         
-            归档 |
+            10通用-CSRF&amp;SSRF |
         
         Jackie&#39;s Blog
     </title>
@@ -97,7 +97,7 @@
                     
                         
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/archives"
                             >
                                 
@@ -173,7 +173,7 @@
             
                 
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/archives"
                     >归档</a>
                 </li>
@@ -214,82 +214,331 @@
             <div class="main-content border-box">
                 
 
-                    <div class="fade-in-down-animation">
-    <div class="archives-container">
-        <div class="archives-timeline border-box">
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
             
-<div class="archive-list-container border-box">
-    
-        <section class="archive-item border-box">
-            <div class="archive-item-header border-box">
-                <span class="archive-year">2024</span>
-            </div>
-            <ul class="archive-item-body border-box">
+
+            <div class="post-content-bottom border-box">
                 
-                    <li class="post-item border-box">
-                        <span class="post-date border-box">04-14</span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="/2024/04/14/Linux/"
-                        >Linux</a>
-                    </li>
+                    <div class="post-title">
+                        10通用-CSRF&amp;SSRF
+                    </div>
                 
-                    <li class="post-item border-box">
-                        <span class="post-date border-box">04-14</span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="/2024/04/14/C++/"
-                        >C++</a>
-                    </li>
+
                 
-                    <li class="post-item border-box">
-                        <span class="post-date border-box">04-14</span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="/2024/04/14/C%E8%AF%AD%E8%A8%80/"
-                        >C语言</a>
-                    </li>
-                
-                    <li class="post-item border-box">
-                        <span class="post-date border-box">04-12</span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="/2024/04/12/hello-world/"
-                        >Hello World</a>
-                    </li>
-                
-            </ul>
-        </section>
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/nemo.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Jackie</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-06-01</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Sat Jun 01 2024 18:59:15 GMT+0800">2024-06-01</span>
+            </span>
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%B0%8F%E8%BF%AA/">小迪</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>571 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+            </span>
+        
+        
+    </div>
+
     
 </div>
 
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <h1 id="CSRF-SSRF"><a href="#CSRF-SSRF" class="headerlink" title="CSRF&amp;SSRF"></a>CSRF&amp;SSRF</h1><p>在已有CSRF&amp;SSRF知识上做的一些补充</p>
+<h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><ul>
+<li>黑盒如何判断：</li>
+</ul>
+<ol>
+<li><p>看来源（<strong>同源策略</strong>）</p>
+<blockquote>
+<p>Referer头</p>
+</blockquote>
+<p>如果直接访问目标网址访问成功，即来源为空，则没有同源策略</p>
+</li>
+<li><p>看凭据有无token</p>
+</li>
+<li><p>看关键操作有无验证</p>
+</li>
+</ol>
+<ul>
+<li><p>白盒审计：</p>
+<p>直接复现有没有</p>
+<p>成功→有漏洞</p>
+<p>失败→代码→缺陷过滤（绕过）→有漏洞</p>
+<p>失败→代码→完整过滤→没有漏洞</p>
+</li>
+</ul>
+<h2 id="SSRF"><a href="#SSRF" class="headerlink" title="SSRF"></a>SSRF</h2><ul>
+<li>可能出现的地方</li>
+</ul>
+<ol>
+<li><p>社交分享功能：获取超链接的标题等内容进行显示</p>
+</li>
+<li><p>转码服务：通过URL地址把原地址的网页内容调优使其适合手机屏幕浏览</p>
+</li>
+<li><p>在线翻译：给网址翻译对应网页的内容</p>
+</li>
+<li><p>图片加载&#x2F;下载：例如富文本编辑器中的点击下载图片到本地；通过URL地址加载或下载图片</p>
+</li>
+<li><p>图片&#x2F;文章收藏功能：主要其会取URL地址中title以及文本的内容作为显示以求一个好的用户体验</p>
+</li>
+<li><p>云服务厂商：它会远程执行一些命令来判断网站是否存活等，所以如果可以捕获相应的信息，就可进行SSRF测试</p>
+</li>
+<li><p>网站采集、网站抓取的地方：一些网站会针对你输入的URL进行一些信息采集工作</p>
+</li>
+<li><p>数据库内置功能：数据库的比如MongoDB的copyDatabase函数</p>
+</li>
+<li><p>邮件系统：比如接收邮件服务器地址</p>
+</li>
+<li><p>编码处理、属性信息处理、文件处理：比如ffmpeg、ImageMagick、docx、PDF、xml处理器等</p>
+</li>
+<li><p>未公开的api实现以及其他拓展调用URL的功能：可以利用Google语法加上这些关键字取寻找SSRF漏洞</p>
+<p>一些URL中的关键字：share、wap、url、link、src、source、target、u、3g、display、sourceURL、imageURL、domain……</p>
+</li>
+<li><p>从远程服务器请求资源（upload from url如discuz！；import &amp; expost rss feed如web blog；使用了xml引擎对象的地方，如wordpress xmlrpc.php）</p>
+</li>
+</ol>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.t00ls.com/articles-41070.html" >参考文章<i class="fas fa-external-link-alt"></i></a></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/06/01/10%E9%80%9A%E7%94%A8-CSRF-SSRF/%E5%8E%9F%E7%90%86%E5%9B%BE%E8%A7%A3.png"
+                        alt="原理图解"
+                 ></p>
+<p>搭配Metasploit打内网</p>
+<ul>
+<li><p>SSRF可能出现的地方：</p>
+<p>功能点抓包指向代码块审计</p>
+<p>功能点函数定位代码块审计</p>
+</li>
+<li><p>修复：</p>
+</li>
+</ul>
+<ol>
+<li>禁用跳转</li>
+<li>禁用不需要的协议</li>
+<li>固定或限制资源地址</li>
+<li>错误信息统一信息处理</li>
+</ol>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%B0%8F%E8%BF%AA/">小迪</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/05/31/09%E9%80%9A%E7%94%A8-XSS/"
+                                   title="09通用-XSS"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">09通用-XSS</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
         </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="waline-comment-container">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline-meta.css"/>
+        <div id="waline-comment"></div>
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.js"
+                async
+                onerror="window.KeepCommentPlugin.loadFailHandle()"
+        ></script>
+        <script data-pjax
+                async
+        >
+          window.KeepCommentPlugin.walineOptions = JSON.parse('{&#34;login&#34;:&#34;force&#34;,&#34;copyright&#34;:false}'.replace(/&#34;/g, '"'))
+
+          window.KeepCommentPlugin.initWaline = () => {
+            if (window?.Waline) {
+              window.KeepCommentPlugin.walineOptions.el = '#waline-comment'
+              window.KeepCommentPlugin.walineOptions.comment = '.post-comments-count'
+              window.KeepCommentPlugin.walineOptions.serverURL = 'waline-for-blog-psi.vercel.app'
+              window.KeepCommentPlugin.walineOptions.lang = 'zh-CN' || 'zh-CN'
+              window.KeepCommentPlugin.walineOptions.reaction = 'false' === 'true'
+              window.Waline.init(window.KeepCommentPlugin.walineOptions)
+              window.KeepCommentPlugin.hideLoading()
+            } else {
+              setTimeout(() => {
+                window.KeepCommentPlugin.initWaline()
+              }, 1000)
+            }
+          }
+
+          if ('true' === 'true') {
+            setTimeout(() => {
+              window.KeepCommentPlugin.initWaline()
+            }, 1200)
+          } else {
+            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initWaline)
+          }
+        </script>
     </div>
-    
-    <div class="paginator border-box flex-center">
-        <div class="btn-wrap allowed">
-            <a class="jump-btn"
-               href="/archives/page/2/"
-            ><i class="fa-solid fa-chevron-left"></i></a>
-        </div>
 
 
-        <div class="page-number-box border-box flex-center">
-            <input class="page-number-input border-box base-color-size"
-                   type="number"
-                   value="3"
-                   min="1"
-                   max="3"
-            ><span class="delimiter base-color-size">/</span><span class="base-color-size">3</span>
-        </div>
-
-
-        <div class="btn-wrap">
-            <a class="jump-btn"
-               href="/"
-            ><i class="fa-solid fa-chevron-right"></i></a>
-        </div>
+        
     </div>
 
 
 
 
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSRF-SSRF"><span class="nav-text">CSRF&amp;SSRF</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF"><span class="nav-text">CSRF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSRF"><span class="nav-text">SSRF</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
 </div>
 
 
@@ -333,6 +582,33 @@
 
     <!-- post tools -->
     
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
 
     <!-- side tools -->
     <div class="side-tools">
@@ -360,7 +636,15 @@
 
     <ul class="exposed-tools-list border-box">
         
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
         
 
         <li class="tools-item tool-toggle-show flex-center">
@@ -416,6 +700,17 @@
 
     <!-- tablet toc -->
     
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSRF-SSRF"><span class="nav-text">CSRF&amp;SSRF</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF"><span class="nav-text">CSRF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSRF"><span class="nav-text">SSRF</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
 </main>
 
 
@@ -452,6 +747,28 @@
 
 
 <div class="pjax">
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            
+<script src="/js/post/share.js"></script>
+
+        
     
 
     <!-- categories page -->
