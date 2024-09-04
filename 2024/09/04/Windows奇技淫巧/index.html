@@ -9,7 +9,7 @@
     
     <title>
         
-            对于求素数的一些个人思考 |
+            Windows奇技淫巧 |
         
         Jackie&#39;s Blog
     </title>
@@ -268,7 +268,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        对于求素数的一些个人思考
+                        Windows奇技淫巧
                     </div>
                 
 
@@ -294,12 +294,12 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2024-04-14</span>
+                <span class="datetime">2024-09-04</span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Wed Sep 04 2024 11:55:31 GMT+0800">2024-09-04</span>
+                <span class="datetime" data-updated="Wed Sep 04 2024 11:55:59 GMT+0800">2024-09-04</span>
             </span>
         
 
@@ -319,12 +319,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>473 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>904 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
             </span>
         
         
@@ -342,25 +342,241 @@
                     
 
                     
-                         <p>看到一道题</p>
+                         <h1 id="Windows特殊文件夹"><a href="#Windows特殊文件夹" class="headerlink" title="Windows特殊文件夹"></a>Windows特殊文件夹</h1><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">shell:desktop</td>
+<td align="center">用户桌面文件夹</td>
+</tr>
+<tr>
+<td align="center">shell:sendto</td>
+<td align="center">“发送到”菜单中的文件夹</td>
+</tr>
+<tr>
+<td align="center">shell:[common] startup</td>
+<td align="center">启动文件夹，用户登录时会自动运行这个文件夹中的程序</td>
+</tr>
+<tr>
+<td align="center">shell:[common] programs</td>
+<td align="center">“开始”菜单中的程序文件夹<br/>（在快捷方式前加!使其置顶显示）</td>
+</tr>
+<tr>
+<td align="center">shell:appdata</td>
+<td align="center">应用程序数据文件夹，存储应用程序的配置文件等</td>
+</tr>
+<tr>
+<td align="center">shell:recent</td>
+<td align="center">最近使用的文件列表</td>
+</tr>
+<tr>
+<td align="center">shell:favorites</td>
+<td align="center">收藏夹文件夹</td>
+</tr>
+<tr>
+<td align="center">shell:fonts</td>
+<td align="center">字体文件夹</td>
+</tr>
+<tr>
+<td align="center">shell:templates</td>
+<td align="center">模版文件夹</td>
+</tr>
+<tr>
+<td align="center">shell:my music</td>
+<td align="center">用户音乐文件夹</td>
+</tr>
+<tr>
+<td align="center">shell:my pictures</td>
+<td align="center">用户图片文件夹</td>
+</tr>
+<tr>
+<td align="center">shell:my videos</td>
+<td align="center">用户视频文件夹</td>
+</tr>
+<tr>
+<td align="center">shell:start menu</td>
+<td align="center">用户开始菜单</td>
+</tr>
+<tr>
+<td align="center">shell:appsfolder</td>
+<td align="center">电脑安装的所有应用</td>
+</tr>
+<tr>
+<td align="center">shell:quick launch</td>
+<td align="center">快速启用功能<br/>（隐藏的子文件夹User Pinned的TaskBar是所有固定到底部任务栏的软件，可添加启动参数）</td>
+</tr>
+<tr>
+<td align="center">shell:RecycleBinFolder</td>
+<td align="center">回收站</td>
+</tr>
+<tr>
+<td align="center">shell:UsersFilesFolder</td>
+<td align="center">用户的配置文件夹</td>
+</tr>
+</tbody></table>
 <blockquote>
-<p>求100之内的素数</p>
+<p>Win11：Shift+右键可直接打开完整的右键菜单</p>
 </blockquote>
-<p>动手尝试后查阅相关资料看到一篇文章：<a class="link"   target="_blank" rel="noopener" href="http://t.csdn.cn/TIo4L" >求质数算法的N种境界-试除法和初级筛法<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/caiminfeng/p/4805544.html" >原文链接<i class="fas fa-external-link-alt"></i></a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//法一。当数据不是素数时需要算很多才能停:(</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main() &#123;</span><br><span class="line">    int x;</span><br><span class="line">    scanf_s(&quot;%d&quot;, &amp;x);</span><br><span class="line">    int i;</span><br><span class="line">    for (i = 2; i &lt; x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (x % i == 0)</span><br><span class="line">        &#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (i &lt; x)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%d不是素数\n&quot;,x);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        printf(&quot;%d是素数\n&quot;,x);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="隐藏文件夹"><a href="#隐藏文件夹" class="headerlink" title="隐藏文件夹"></a>隐藏文件夹</h1><p>文件删除后会被移到回收站（C盘下的$Recyle.Bin文件夹）</p>
+<blockquote>
+<ol>
+<li>打开文件夹选项——查看面板</li>
+<li>取消勾选隐藏受保护的操作系统文件</li>
+<li>勾选显示隐藏文件、文件夹和驱动器</li>
+</ol>
+</blockquote>
+<h2 id="物理隐藏"><a href="#物理隐藏" class="headerlink" title="物理隐藏"></a>物理隐藏</h2><p>选中文件夹重命名——右键插入Unicode控制字符PDF——右键属性——自定义中更改图标——选择一个空白图标</p>
+<blockquote>
+<p>切换文件查看方式后（递增排序）就很容易发现这个文件夹</p>
+</blockquote>
+<h2 id="伪装成系统文件（仅适用于文件夹）"><a href="#伪装成系统文件（仅适用于文件夹）" class="headerlink" title="伪装成系统文件（仅适用于文件夹）"></a>伪装成系统文件（仅适用于文件夹）</h2><p>在当前文件夹创建一个文本文件，输入</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">attrib</span> +s +h &quot;文件夹名称&quot;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//法二。:)</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="type">int</span> isPrime = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">2</span>; i &lt; x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (x % i == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            isPrime = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (isPrime == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d不是素数\n&quot;</span>,x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d是素数\n&quot;</span>,x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>attrib：attribute缩写，意思是属性</p>
+<p>+s +h：赋予文件夹系统和隐藏的属性</p>
+</blockquote>
+<p>文件另存为.bat后缀的脚本文件，编码为ANSI</p>
+<p>查看方式同文章开头</p>
+<p>恢复只需将+变为-即可</p>
+<h2 id="伪装成图片"><a href="#伪装成图片" class="headerlink" title="伪装成图片"></a>伪装成图片</h2><p>准备一张图片和要隐藏的文件一起压缩，新建文本文件，输入</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">copy</span> /b 原图片.png + 压缩包.zip 新图片.png</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//法三。=)</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 15000</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a, i, j, k, num, sum = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Q1:要求多少以内的素数?\nQ2:要多少个素数?\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Q1请输入0,Q2请输入1\n请输入:&quot;</span>);</span><br><span class="line">	scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">	<span class="keyword">while</span> (a != <span class="number">1</span> &amp;&amp; a != <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请重新输入:&quot;</span>);</span><br><span class="line">		scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (a == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入数字:&quot;</span>);</span><br><span class="line">		scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;num);</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">2</span>; i &lt;= num; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			k = <span class="built_in">sqrt</span>(i);</span><br><span class="line">			<span class="keyword">for</span> (j = <span class="number">2</span>; j &lt;= k; j += <span class="number">1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i % j == <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (j &gt; k)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;%d\t&quot;</span>, i);</span><br><span class="line">				sum++;</span><br><span class="line">				<span class="keyword">if</span> (sum % <span class="number">10</span> == <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;\n%d内一共有%d个素数&quot;</span>, num, sum);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (a == <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入数字:&quot;</span>);</span><br><span class="line">		scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;num);</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">2</span>; i &lt;= N; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			k = <span class="built_in">sqrt</span>(i);</span><br><span class="line">			<span class="keyword">for</span> (j = <span class="number">2</span>; j &lt;= k; j += <span class="number">1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i % j == <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (j &gt; k)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;%d\t&quot;</span>, i);</span><br><span class="line">				sum++;</span><br><span class="line">				<span class="keyword">if</span> (sum % <span class="number">10</span> == <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (sum == num)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>文件另存为.bat后缀的脚本文件，编码为ANSI</p>
+<p>恢复只需修改后缀为.zip即可</p>
+<h2 id="幻影坦克"><a href="#幻影坦克" class="headerlink" title="幻影坦克"></a>幻影坦克</h2><p>文件夹重命名在名字后方加上后缀</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">此电脑.&#123;20D04FE0-3AEA-1069-A2D8-08002B30309D&#125;</span><br><span class="line">回收站&#123;645ff040-5081-101b-9f08-00aaO02f954e&#125;</span><br><span class="line">拔号网络.&#123;992CFFA0-F557-101A-88EC-00DD010CCC48&#125;</span><br><span class="line">打印机.&#123;2227a280-3aea-1069-a2de-08002b30309d&#125;</span><br><span class="line">控制面板.&#123;21ec2020-3aea-1069-a2dd-08002b30309d&#125;</span><br><span class="line">网上邻居.&#123;208D2C60-3AEA-1069-A2D7-08002B30309D&#125;</span><br></pre></td></tr></table></figure>
 
-<p>附质数筛法工作过程GIF图</p>
-<p><img  
-                       lazyload
-                       alt="image"
-                       data-src="/2024/04/14/%E5%AF%B9%E4%BA%8E%E6%B1%82%E7%B4%A0%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/%E8%B4%A8%E6%95%B0%E7%AD%9B%E6%B3%95%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B.gif"
-                        alt="质数筛法工作过程"
-                 ></p>
+<p>刷新后变成我的电脑，双击后会进入我的电脑</p>
+<p>恢复在当前文件夹输入CMD</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ren</span> <span class="string">&quot;此电脑.&#123;20D04FE0-3AEA-1069-A2D8-08002B30309D&#125;&quot;</span> <span class="string">&quot;新文件夹名称&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="隐藏盘符"><a href="#隐藏盘符" class="headerlink" title="隐藏盘符"></a>隐藏盘符</h2><p>打开注册表编辑器，进入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer</span><br></pre></td></tr></table></figure>
+
+<p>页面内右侧窗口空白处右键新建“DWORD（32位）值”，将其重命名为“Nodrives”，打开修改界面，修改为十进制，输入隐藏盘对应数字</p>
+<table>
+<thead>
+<tr>
+<th align="center">隐藏盘名称</th>
+<th align="center">对应十进制数字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">A盘</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">B盘</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">C盘</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">D盘</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">E盘</td>
+<td align="center">16</td>
+</tr>
+<tr>
+<td align="center">F盘</td>
+<td align="center">32</td>
+</tr>
+<tr>
+<td align="center">G盘</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">H盘</td>
+<td align="center">128</td>
+</tr>
+<tr>
+<td align="center">I盘</td>
+<td align="center">256</td>
+</tr>
+<tr>
+<td align="center">J盘</td>
+<td align="center">512</td>
+</tr>
+<tr>
+<td align="center">K盘</td>
+<td align="center">1024</td>
+</tr>
+<tr>
+<td align="center">L盘</td>
+<td align="center">2048</td>
+</tr>
+<tr>
+<td align="center">M盘</td>
+<td align="center">4096</td>
+</tr>
+<tr>
+<td align="center">N盘</td>
+<td align="center">8192</td>
+</tr>
+<tr>
+<td align="center">O盘</td>
+<td align="center">16384</td>
+</tr>
+<tr>
+<td align="center">P盘</td>
+<td align="center">32768</td>
+</tr>
+<tr>
+<td align="center">Q盘</td>
+<td align="center">65536</td>
+</tr>
+<tr>
+<td align="center">R盘</td>
+<td align="center">131072</td>
+</tr>
+<tr>
+<td align="center">S盘</td>
+<td align="center">262144</td>
+</tr>
+<tr>
+<td align="center">T盘</td>
+<td align="center">524288</td>
+</tr>
+<tr>
+<td align="center">U盘</td>
+<td align="center">1048576</td>
+</tr>
+<tr>
+<td align="center">V盘</td>
+<td align="center">2097152</td>
+</tr>
+<tr>
+<td align="center">W盘</td>
+<td align="center">4194304</td>
+</tr>
+<tr>
+<td align="center">X盘</td>
+<td align="center">8388608</td>
+</tr>
+<tr>
+<td align="center">Y盘</td>
+<td align="center">16777216</td>
+</tr>
+<tr>
+<td align="center">Z盘</td>
+<td align="center">33554432</td>
+</tr>
+<tr>
+<td align="center">隐藏所有盘符</td>
+<td align="center">67108863</td>
+</tr>
+</tbody></table>
+<p>重启电脑即可隐藏，地址栏中输入盘符地址E:\即可进入</p>
+<p>恢复将注册表新建的文件删除，重启即可</p>
 
                     
                 </div>
@@ -415,14 +631,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2024/04/14/MySQL/"
-                                   title="MySQL"
+                                   href="/2024/09/04/%E5%88%A9%E7%94%A8ToDesk%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E4%B8%8E%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/"
+                                   title="利用ToDesk内网渗透与应急响应"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">MySQL</span>
+                                        <span class="post-nav-title-item text-ellipsis">利用ToDesk内网渗透与应急响应</span>
                                         <span class="post-nav-item">上一篇</span>
                                     </span>
                                 </a>
@@ -432,11 +648,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2024/04/14/Git/"
-                                   title="Git"
+                                   href="/2024/09/03/Apache-Solr%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E/"
+                                   title="Apache Solr任意文件读取漏洞"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Git</span>
+                                        <span class="post-nav-title-item text-ellipsis">Apache Solr任意文件读取漏洞</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -542,7 +758,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-text">Windows特殊文件夹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-text">隐藏文件夹</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E9%9A%90%E8%97%8F"><span class="nav-text">物理隐藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E8%A3%85%E6%88%90%E7%B3%BB%E7%BB%9F%E6%96%87%E4%BB%B6%EF%BC%88%E4%BB%85%E9%80%82%E7%94%A8%E4%BA%8E%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%89"><span class="nav-text">伪装成系统文件（仅适用于文件夹）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E8%A3%85%E6%88%90%E5%9B%BE%E7%89%87"><span class="nav-text">伪装成图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B"><span class="nav-text">幻影坦克</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%90%E8%97%8F%E7%9B%98%E7%AC%A6"><span class="nav-text">隐藏盘符</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -711,7 +927,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-text">Windows特殊文件夹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-text">隐藏文件夹</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E9%9A%90%E8%97%8F"><span class="nav-text">物理隐藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E8%A3%85%E6%88%90%E7%B3%BB%E7%BB%9F%E6%96%87%E4%BB%B6%EF%BC%88%E4%BB%85%E9%80%82%E7%94%A8%E4%BA%8E%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%89"><span class="nav-text">伪装成系统文件（仅适用于文件夹）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E8%A3%85%E6%88%90%E5%9B%BE%E7%89%87"><span class="nav-text">伪装成图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%BB%E5%BD%B1%E5%9D%A6%E5%85%8B"><span class="nav-text">幻影坦克</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%90%E8%97%8F%E7%9B%98%E7%AC%A6"><span class="nav-text">隐藏盘符</span></a></li></ol></li></ol>
     </div>
 </div>
 

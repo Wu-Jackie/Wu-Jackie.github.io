@@ -9,7 +9,7 @@
     
     <title>
         
-            对于求素数的一些个人思考 |
+            利用ToDesk内网渗透与应急响应 |
         
         Jackie&#39;s Blog
     </title>
@@ -268,7 +268,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        对于求素数的一些个人思考
+                        利用ToDesk内网渗透与应急响应
                     </div>
                 
 
@@ -294,12 +294,12 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2024-04-14</span>
+                <span class="datetime">2024-09-04</span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Wed Sep 04 2024 11:55:31 GMT+0800">2024-09-04</span>
+                <span class="datetime" data-updated="Wed Sep 04 2024 17:35:00 GMT+0800">2024-09-04</span>
             </span>
         
 
@@ -319,12 +319,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>473 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>742 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
             </span>
         
         
@@ -342,25 +342,61 @@
                     
 
                     
-                         <p>看到一道题</p>
-<blockquote>
-<p>求100之内的素数</p>
+                         <h1 id="利用ToDesk内网渗透"><a href="#利用ToDesk内网渗透" class="headerlink" title="利用ToDesk内网渗透"></a>利用ToDesk内网渗透</h1><blockquote>
+<p>测试环境：控制端Windows11，被控端Windows7</p>
+<p>测试版本：ToDeskV4.7.4.8</p>
+<p>重点关注路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Program Files\ToDesk</span><br><span class="line">C:\Users\主机名\AppData\Local\ToDesk</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>动手尝试后查阅相关资料看到一篇文章：<a class="link"   target="_blank" rel="noopener" href="http://t.csdn.cn/TIo4L" >求质数算法的N种境界-试除法和初级筛法<i class="fas fa-external-link-alt"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/caiminfeng/p/4805544.html" >原文链接<i class="fas fa-external-link-alt"></i></a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//法一。当数据不是素数时需要算很多才能停:(</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main() &#123;</span><br><span class="line">    int x;</span><br><span class="line">    scanf_s(&quot;%d&quot;, &amp;x);</span><br><span class="line">    int i;</span><br><span class="line">    for (i = 2; i &lt; x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (x % i == 0)</span><br><span class="line">        &#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (i &lt; x)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%d不是素数\n&quot;,x);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        printf(&quot;%d是素数\n&quot;,x);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>查阅<a class="link"   target="_blank" rel="noopener" href="https://www.todesk.com/helpcenter/enterprise-89.html" >官方文档<i class="fas fa-external-link-alt"></i></a>可发现ToDesk支持命令行静默安装&amp;绑定设备</p>
+<p>ToDesk_Setup.exe的&#x2F;S参数可以实现静默安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ToDesk_Setup.exe /S</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//法二。:)</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="type">int</span> isPrime = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">2</span>; i &lt; x; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (x % i == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            isPrime = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (isPrime == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d不是素数\n&quot;</span>,x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d是素数\n&quot;</span>,x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序会安装到如下的默认路径</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Program Files\ToDesk</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//法三。=)</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 15000</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a, i, j, k, num, sum = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Q1:要求多少以内的素数?\nQ2:要多少个素数?\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Q1请输入0,Q2请输入1\n请输入:&quot;</span>);</span><br><span class="line">	scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">	<span class="keyword">while</span> (a != <span class="number">1</span> &amp;&amp; a != <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请重新输入:&quot;</span>);</span><br><span class="line">		scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (a == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入数字:&quot;</span>);</span><br><span class="line">		scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;num);</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">2</span>; i &lt;= num; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			k = <span class="built_in">sqrt</span>(i);</span><br><span class="line">			<span class="keyword">for</span> (j = <span class="number">2</span>; j &lt;= k; j += <span class="number">1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i % j == <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (j &gt; k)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;%d\t&quot;</span>, i);</span><br><span class="line">				sum++;</span><br><span class="line">				<span class="keyword">if</span> (sum % <span class="number">10</span> == <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;\n%d内一共有%d个素数&quot;</span>, num, sum);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (a == <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入数字:&quot;</span>);</span><br><span class="line">		scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;num);</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">2</span>; i &lt;= N; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			k = <span class="built_in">sqrt</span>(i);</span><br><span class="line">			<span class="keyword">for</span> (j = <span class="number">2</span>; j &lt;= k; j += <span class="number">1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i % j == <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (j &gt; k)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;%d\t&quot;</span>, i);</span><br><span class="line">				sum++;</span><br><span class="line">				<span class="keyword">if</span> (sum % <span class="number">10</span> == <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (sum == num)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>附质数筛法工作过程GIF图</p>
+<p>该路径下会有一个<strong>config.ini</strong>文件，这个文件里面有着连接ToDesk的<strong>临时密码</strong></p>
 <p><img  
                        lazyload
                        alt="image"
-                       data-src="/2024/04/14/%E5%AF%B9%E4%BA%8E%E6%B1%82%E7%B4%A0%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/%E8%B4%A8%E6%95%B0%E7%AD%9B%E6%B3%95%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B.gif"
-                        alt="质数筛法工作过程"
+                       data-src="/2024/09/04/%E5%88%A9%E7%94%A8ToDesk%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E4%B8%8E%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/config.png"
+                        alt="config"
                  ></p>
+<p>此处的ClientId是被控端设备代码、tempAuthPassEx是加密后的临时密码，将其复制到本地ToDesk配置文件中替换我们的本地密码，即可获得对方连接密码</p>
+<p>如果对方登录了账号，还会有意外之喜</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">NewToken</span>=Token1</span><br><span class="line"><span class="attr">Token</span>=Token2</span><br><span class="line"><span class="attr">LoginType</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">user</span>=</span><br><span class="line"><span class="attr">LoginPhone</span>=电话号</span><br><span class="line"><span class="attr">LoginEmail</span>=</span><br><span class="line"><span class="attr">AreaCode</span>=<span class="number">86</span></span><br><span class="line"><span class="attr">IsFirstConnect</span>=<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>此外C:\Program Files\ToDesk\Logs中的日志还会记录本机用户名、GPU等信息，时间及测试样本不足原因不再细究</p>
+<p>在如下目录中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Users\主机名\AppData\Local\ToDesk</span><br></pre></td></tr></table></figure>
+
+<p>存在advInfo.json和devlist_xxxxxxxx.json文件，其中list中保存历史的连接记录，具体存放如下信息（无用信息及隐私信息已删），可使用这些信息解密PassEx以获取明文</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">   <span class="attr">&quot;DeviceInfo&quot;</span> <span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">         <span class="attr">&quot;AutoLockScreenTip&quot;</span> <span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;Clipboard&quot;</span> <span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;PassEx&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;加密后的密码&quot;</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;Height&quot;</span> <span class="punctuation">:</span> <span class="number">988</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;UserId&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;xxxxxxxxx&quot;</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;UserImage&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;用户图片链接&quot;</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;UserName&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;用户名&quot;</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;Width&quot;</span> <span class="punctuation">:</span> <span class="number">1706</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">   <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中UserName即为设备列表中存储的设备名字，UserId为存储的设备Id</p>
+<h2 id="清除痕迹"><a href="#清除痕迹" class="headerlink" title="清除痕迹"></a>清除痕迹</h2><figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im ToDesk_Lite.exe /im ToDesk_Service.exe /im ToDesk.exe</span><br><span class="line"><span class="built_in">del</span> /s /q C:\Windows\Prefetch\TODESK*.pf</span><br><span class="line"><span class="built_in">del</span> /s /q C:\Users\Public\Desktop\ToDesk.lnk</span><br><span class="line"><span class="built_in">del</span> /s /q &quot;<span class="variable">%userprofile%</span>\AppData\Roaming\Microsoft\Windows\Recent\*TODESK*.lnk&quot;</span><br><span class="line"><span class="built_in">rmdir</span> /s /q &quot;C:\Program Files (x86)\ToDesk&quot;</span><br><span class="line"><span class="built_in">rmdir</span> /s /q &quot;C:\ProgramData\Microsoft\Windows\<span class="built_in">Start</span> Menu\Programs\ToDesk&quot;</span><br><span class="line"><span class="built_in">rmdir</span> /s /q &quot;<span class="variable">%userprofile%</span>\AppData\Local\ToDesk&quot;</span><br><span class="line"><span class="built_in">rmdir</span> /s /q &quot;C:\WINDOWS\SysWOW64\config\systemprofile\AppData\Local\ToDesk&quot;</span><br><span class="line">reg delete &quot;HKLM\SOFTWARE\ToDesk&quot; /f</span><br><span class="line">reg delete &quot;HKLM\SYSTEM\CurrentControlSet\Services\ToDesk_Service&quot; /f</span><br><span class="line">reg delete &quot;HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\ToDesk&quot; /f</span><br><span class="line">sc delete ToDesk_Service</span><br></pre></td></tr></table></figure>
+
+<h1 id="应急响应"><a href="#应急响应" class="headerlink" title="应急响应"></a>应急响应</h1><p>被控端会在安装目录下的Logs文件夹中生成如下六个文件</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/09/04/%E5%88%A9%E7%94%A8ToDesk%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E4%B8%8E%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/ProgramLogs.png"
+                        alt="ProgramLogs"
+                 ></p>
+<p>其中重点位于session和service开头的两个log文件中</p>
+<ul>
+<li>session</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">2024-09-04 14:28:10,785: INFO infoCategory : CRTCClientWork openScreen 0 控制端设备代码</span><br><span class="line">2024-09-04 14:28:50,479: INFO infoCategory : host licode linkreport = [&#123;</span><br></pre></td></tr></table></figure>
+
+<p>第二条关键句中有<strong>&quot;LocalIpport&quot;:</strong>和<strong>&quot;RemotePort&quot;:</strong>可快速定位得知控制端设备IP</p>
+<ul>
+<li>service</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">2024-09-04 14:16:54,754: INFO infoCategory : [setting] hearbeat config:&#123;&quot;platform&quot;:&quot;对方设备类型</span><br><span class="line">2024-09-04 14:20:13,911: INFO infoCategory : host recv connect request, myid=被控端设备代码 destid=控制端设备代码</span><br><span class="line">2024-09-04 14:20:13,911: INFO infoCategory : client recv connect request  message wParam=247</span><br></pre></td></tr></table></figure>
+
+<p>第三句解释：客户端接收连接请求消息参数为247，表示被控端被上传文件</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.freebuf.com/articles/system/397790.html" >另外几个远控软件的应急响应分析<i class="fas fa-external-link-alt"></i></a></p>
 
                     
                 </div>
@@ -412,31 +448,15 @@
                 
                     <div class="post-nav border-box">
                         
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2024/04/14/MySQL/"
-                                   title="MySQL"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">MySQL</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2024/04/14/Git/"
-                                   title="Git"
+                                   href="/2024/09/04/Windows%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/"
+                                   title="Windows奇技淫巧"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Git</span>
+                                        <span class="post-nav-title-item text-ellipsis">Windows奇技淫巧</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -542,7 +562,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8ToDesk%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F"><span class="nav-text">利用ToDesk内网渗透</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E7%97%95%E8%BF%B9"><span class="nav-text">清除痕迹</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94"><span class="nav-text">应急响应</span></a></li></ol>
     </div>
 </div>
 
@@ -711,7 +731,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8ToDesk%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F"><span class="nav-text">利用ToDesk内网渗透</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E7%97%95%E8%BF%B9"><span class="nav-text">清除痕迹</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94"><span class="nav-text">应急响应</span></a></li></ol>
     </div>
 </div>
 
