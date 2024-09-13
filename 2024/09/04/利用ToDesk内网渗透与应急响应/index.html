@@ -299,7 +299,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Wed Sep 04 2024 17:35:00 GMT+0800">2024-09-04</span>
+                <span class="datetime" data-updated="Fri Sep 13 2024 11:10:16 GMT+0800">2024-09-13</span>
             </span>
         
 
@@ -319,7 +319,7 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>742 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>790 字</span>
             </span>
         
         
@@ -374,6 +374,14 @@
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">   <span class="attr">&quot;DeviceInfo&quot;</span> <span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">         <span class="attr">&quot;AutoLockScreenTip&quot;</span> <span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;Clipboard&quot;</span> <span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;PassEx&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;加密后的密码&quot;</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;Height&quot;</span> <span class="punctuation">:</span> <span class="number">988</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;UserId&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;xxxxxxxxx&quot;</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;UserImage&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;用户图片链接&quot;</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;UserName&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;用户名&quot;</span><span class="punctuation">,</span></span><br><span class="line">         <span class="attr">&quot;Width&quot;</span> <span class="punctuation">:</span> <span class="number">1706</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">   <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
 <p>其中UserName即为设备列表中存储的设备名字，UserId为存储的设备Id</p>
+<h2 id="一键提取密码工具"><a href="#一键提取密码工具" class="headerlink" title="一键提取密码工具"></a>一键提取密码工具</h2><p><a class="link"   target="_blank" rel="noopener" href="https://github.com/flydyyg" >flydyyg大佬<i class="fas fa-external-link-alt"></i></a>的github的开源项目<a class="link"   target="_blank" rel="noopener" href="https://github.com/flydyyg/readTdose-xiangrikui" >readTdose-xiangrikui<i class="fas fa-external-link-alt"></i></a></p>
+<p>Go语言编写，go build编译成exe程序即可使用，一键自动提取ToDesk以及向日葵密码</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/09/04/%E5%88%A9%E7%94%A8ToDesk%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E4%B8%8E%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/%E5%B7%A5%E5%85%B7%E6%B5%8B%E8%AF%95.png"
+                        alt="工具测试"
+                 ></p>
 <h2 id="清除痕迹"><a href="#清除痕迹" class="headerlink" title="清除痕迹"></a>清除痕迹</h2><figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">taskkill</span> /f /im ToDesk_Lite.exe /im ToDesk_Service.exe /im ToDesk.exe</span><br><span class="line"><span class="built_in">del</span> /s /q C:\Windows\Prefetch\TODESK*.pf</span><br><span class="line"><span class="built_in">del</span> /s /q C:\Users\Public\Desktop\ToDesk.lnk</span><br><span class="line"><span class="built_in">del</span> /s /q &quot;<span class="variable">%userprofile%</span>\AppData\Roaming\Microsoft\Windows\Recent\*TODESK*.lnk&quot;</span><br><span class="line"><span class="built_in">rmdir</span> /s /q &quot;C:\Program Files (x86)\ToDesk&quot;</span><br><span class="line"><span class="built_in">rmdir</span> /s /q &quot;C:\ProgramData\Microsoft\Windows\<span class="built_in">Start</span> Menu\Programs\ToDesk&quot;</span><br><span class="line"><span class="built_in">rmdir</span> /s /q &quot;<span class="variable">%userprofile%</span>\AppData\Local\ToDesk&quot;</span><br><span class="line"><span class="built_in">rmdir</span> /s /q &quot;C:\WINDOWS\SysWOW64\config\systemprofile\AppData\Local\ToDesk&quot;</span><br><span class="line">reg delete &quot;HKLM\SOFTWARE\ToDesk&quot; /f</span><br><span class="line">reg delete &quot;HKLM\SYSTEM\CurrentControlSet\Services\ToDesk_Service&quot; /f</span><br><span class="line">reg delete &quot;HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\ToDesk&quot; /f</span><br><span class="line">sc delete ToDesk_Service</span><br></pre></td></tr></table></figure>
 
 <h1 id="应急响应"><a href="#应急响应" class="headerlink" title="应急响应"></a>应急响应</h1><p>被控端会在安装目录下的Logs文件夹中生成如下六个文件</p>
@@ -562,7 +570,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8ToDesk%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F"><span class="nav-text">利用ToDesk内网渗透</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E7%97%95%E8%BF%B9"><span class="nav-text">清除痕迹</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94"><span class="nav-text">应急响应</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8ToDesk%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F"><span class="nav-text">利用ToDesk内网渗透</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E6%8F%90%E5%8F%96%E5%AF%86%E7%A0%81%E5%B7%A5%E5%85%B7"><span class="nav-text">一键提取密码工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E7%97%95%E8%BF%B9"><span class="nav-text">清除痕迹</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94"><span class="nav-text">应急响应</span></a></li></ol>
     </div>
 </div>
 
@@ -731,7 +739,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8ToDesk%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F"><span class="nav-text">利用ToDesk内网渗透</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E7%97%95%E8%BF%B9"><span class="nav-text">清除痕迹</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94"><span class="nav-text">应急响应</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8ToDesk%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F"><span class="nav-text">利用ToDesk内网渗透</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E6%8F%90%E5%8F%96%E5%AF%86%E7%A0%81%E5%B7%A5%E5%85%B7"><span class="nav-text">一键提取密码工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E7%97%95%E8%BF%B9"><span class="nav-text">清除痕迹</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94"><span class="nav-text">应急响应</span></a></li></ol>
     </div>
 </div>
 
