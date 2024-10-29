@@ -1262,17 +1262,12 @@ img[lazyload]::after {
   border-collapse: collapse;
   border-spacing: 0;
 }
-@media (max-width: 500px) {
-  .keep-markdown-body > .table-container table,
-  .keep-markdown-body > .post > .table-container table {
-    table-layout: fixed;
-  }
-}
 .keep-markdown-body > .table-container table td,
 .keep-markdown-body > .post > .table-container table td,
 .keep-markdown-body > .table-container table th,
 .keep-markdown-body > .post > .table-container table th {
   padding: 0;
+  white-space: nowrap;
 }
 .keep-markdown-body > .table-container table td,
 .keep-markdown-body > .post > .table-container table td {
