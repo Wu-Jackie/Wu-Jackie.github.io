@@ -307,7 +307,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Thu Oct 24 2024 20:27:01 GMT+0800">2024-10-24</span>
+                <span class="datetime" data-updated="Wed Oct 30 2024 22:37:58 GMT+0800">2024-10-30</span>
             </span>
         
 
@@ -330,12 +330,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>4.2k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>6.5k 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>16 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>27 分钟</span>
             </span>
         
         
@@ -990,6 +990,655 @@
 <p>JAVA：JAR&amp;CLASS文件</p>
 <p>举例：Zend  ILSpy  IDEA</p>
 <p>应用场景：版权代码加密，开发特性等</p>
+<h1 id="poem-code"><a class="markdownIt-Anchor" href="#poem-code"></a> Poem Code</h1>
+<blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/Clover_pofu/article/details/124860986" >链接<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h2 id="加密原理"><a class="markdownIt-Anchor" href="#加密原理"></a> 加密原理</h2>
+<ol>
+<li>选诗歌和关键词</li>
+</ol>
+<p>首先，选好一首诗，不要求完整，可以只是片段。PoemCode加密本质上只是想在这首诗里找几个词作为关键词，为后面的加密做准备</p>
+<blockquote>
+<p>选一首《Right Here Waiting》的歌词做加密用的诗歌，再选几个关键词（下面标成黄色的）：</p>
+<p>Oceans apart <mark>day</mark> after day</p>
+<p>And I <mark>slowly</mark> go insane</p>
+<p>I <mark>hear</mark> your voice on the <mark>line</mark></p>
+<p>But it doesn’t stop the pain</p>
+<p>If I see you next to never</p>
+<p>How can we say forever</p>
+</blockquote>
+<ol start="2">
+<li>给关键词的每个字母标号</li>
+</ol>
+<ul>
+<li>把所有关键词按照在诗歌中出现的顺序排在一起，中间不要空格，如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">d</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">y</th>
+<th style="text-align:center">s</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">o</th>
+<th style="text-align:center">w</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">y</th>
+<th style="text-align:center">h</th>
+<th style="text-align:center">e</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">r</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">i</th>
+<th style="text-align:center">n</th>
+<th style="text-align:center">e</th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>
+<p>按照字母表的顺序，从a开始，用1，2，…依次给每个字母编号（注意：相同的字母按从左到右的顺序依次标号）</p>
+<p>先标a</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">d</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">y</th>
+<th style="text-align:center">s</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">o</th>
+<th style="text-align:center">w</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">y</th>
+<th style="text-align:center">h</th>
+<th style="text-align:center">e</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">r</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">i</th>
+<th style="text-align:center">n</th>
+<th style="text-align:center">e</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>没b，c就到d：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">d</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">y</th>
+<th style="text-align:center">s</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">o</th>
+<th style="text-align:center">w</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">y</th>
+<th style="text-align:center">h</th>
+<th style="text-align:center">e</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">r</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">i</th>
+<th style="text-align:center">n</th>
+<th style="text-align:center">e</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>再到e：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">d</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">y</th>
+<th style="text-align:center">s</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">o</th>
+<th style="text-align:center">w</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">y</th>
+<th style="text-align:center">h</th>
+<th style="text-align:center">e</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">r</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">i</th>
+<th style="text-align:center">n</th>
+<th style="text-align:center">e</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">5</td>
+</tr>
+</tbody>
+</table>
+<p>最后结果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">d</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">y</th>
+<th style="text-align:center">s</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">o</th>
+<th style="text-align:center">w</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">y</th>
+<th style="text-align:center">h</th>
+<th style="text-align:center">e</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">r</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">i</th>
+<th style="text-align:center">n</th>
+<th style="text-align:center">e</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">14</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">13</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">5</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>
+<p>密文对号入座</p>
+<blockquote>
+<p>设我们要传的密文是：Remember me though I have to say goodbye.</p>
+</blockquote>
+<ol>
+<li>
+<p>去掉空格和特殊符号</p>
+<blockquote>
+<p>很多时候，还会统一大小写</p>
+</blockquote>
+<p>明文经过这一步处理得到的是：remembermethoughihavetosaygoodbye</p>
+</li>
+<li>
+<p>对号入座</p>
+<p>首先，看关键词一共有多少个字母，day：3个，slowly：6个，hear：4个，line：4个，一共17个。</p>
+<p>这个从上一步的标号也可以看出，因为标号最大是17</p>
+<p>创建一个这样的表格，列数为字母个数，分别标上1-17，再把需要加密的内容从左到右，从上到下依次放进去。如果最后一行没满，就随机填充字母，一般都默认用abcdef…下面第二行最后那个a就是填充字符</p>
+</li>
+</ol>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">8</th>
+<th style="text-align:center">9</th>
+<th style="text-align:center">10</th>
+<th style="text-align:center">11</th>
+<th style="text-align:center">12</th>
+<th style="text-align:center">13</th>
+<th style="text-align:center">14</th>
+<th style="text-align:center">15</th>
+<th style="text-align:center">16</th>
+<th style="text-align:center">17</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">r</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">m</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">m</td>
+<td style="text-align:center">b</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">r</td>
+<td style="text-align:center">m</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">t</td>
+<td style="text-align:center">h</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">u</td>
+<td style="text-align:center">g</td>
+<td style="text-align:center">h</td>
+<td style="text-align:center">i</td>
+</tr>
+<tr>
+<td style="text-align:center">h</td>
+<td style="text-align:center">a</td>
+<td style="text-align:center">v</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">t</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">s</td>
+<td style="text-align:center">a</td>
+<td style="text-align:center">y</td>
+<td style="text-align:center">g</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">d</td>
+<td style="text-align:center">b</td>
+<td style="text-align:center">y</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">a</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>
+<p>明文转密文</p>
+<p>用上面每列字母去代替关键词（dayslowlyhearline）中相应标号的字母，即：</p>
+<p>关键词中第一个字母（d）的标号是3，那我们就用第3列的mv取代之</p>
+<p>关键词中第二个字母（a）的标号是1，那我们就用第1列的rh取代之</p>
+<p>关键词中第三个字母（y）的标号是16，那我们就用第16列的he取代之</p>
+<p>以此类推</p>
+<p>原本的关键词就会被替换成：mvrhheubrahogymyiaboeeeaodegestomt</p>
+<blockquote>
+<p>一般习惯把密文以4个字母为一组分块（PS：几个字母一组不影响解密，但是每块里面的字母个数必须可以被总数整除，否则最后一块就缺了）</p>
+<p>此例中，有17列，2行，所以字母总数是34，选2为因子分组</p>
+</blockquote>
+<p>分块后就长这样：mv rh he ub ra ho gy my ia bo ee ea od eg es to mt</p>
+</li>
+<li>
+<p>添加密钥</p>
+<blockquote>
+<p>要让对方收到你的密文之后可以解密，别忘了还得告诉他你选了哪几个关键词</p>
+</blockquote>
+<p>实现方法就是在上面分好块的密文前面再加上一块字母</p>
+<blockquote>
+<p>这块字母的个数为关键词的个数，与密文每块字母的个数无关</p>
+</blockquote>
+<p>这块字母在字母表中的顺序就代表关键词在诗歌中的顺序</p>
+<blockquote>
+<p>比如acm代表选择了诗歌中的第1、第3和第13个单词作为关键词。此例中，day是第3个词，slowly是第8个词，hear是第12个词，line是第17个词，所以加上的字母块就是chlq</p>
+</blockquote>
+<p>接收方收到的密文就是： chlq mv rh he ub ra ho gy my ia bo ee ea od eg es to mt</p>
+<hr />
+<p>如果选了大于字母表中的字母个数个词作为关键词，模26</p>
+<p>例如选第33个词作为关键词，用第33%26=7个字母，也就是’g’来表示</p>
+</li>
+</ol>
+<h2 id="解密原理"><a class="markdownIt-Anchor" href="#解密原理"></a> 解密原理</h2>
+<p>收到的诗歌+密文如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Oceans apart day after day</span><br><span class="line">And I slowly go insane</span><br><span class="line">I hear your voice on the line</span><br><span class="line">But it doesn&#x27;t stop the pain</span><br><span class="line">If I see you next to never</span><br><span class="line">How can we say forever</span><br><span class="line"></span><br><span class="line">cypher text: chlq mv rh he ub ra ho gy my ia bo ee ea od eg es to mt</span><br></pre></td></tr></table></figure>
+<ol>
+<li>
+<p>根据第一块字母提取出关键词</p>
+<p>第一块字母为：chlq，在字母表中的顺序分别为：3,8,12,17，诗歌中一共有35个单词，所以</p>
+<p>第一个关键词可能是第3个词“day”，也可能是第3+26=29个词“to”</p>
+<p>第二个关键词可能是第8个词“slowly”，也可能是第8+26=34个词“say”</p>
+<p>第三个关键词只可能是第12个词“hear”，因为诗歌没有第12+26=38个单词</p>
+<p>第四个关键词只可能是第17个词“line”，因为诗歌没有第17+26=43个单词</p>
+<p>综上，关键词的组合有2 *2 *1 *1=4种</p>
+</li>
+<li>
+<p>筛选可能的关键词组合</p>
+<p>根据上一步得到四种关键词组合：<code>1.dayslowlyhearline 2.daysayhearline 3.toslowlyhearline 4.tosayhearline</code></p>
+<p>为方便讲述，定义几个量：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CN=明文数据字母数+填充数据字母数</span><br><span class="line">KN=关键词字母数</span><br></pre></td></tr></table></figure>
+<p>密文除了第一块表示密钥，后面都是<code>经加密的明文数据</code>+<code>填充数据</code>。所以根据3.2中的表格和2.2节我们知道：</p>
+<p><mark>KN*行数=CN</mark>，即<code>CN</code>为<code>KN</code>的倍数</p>
+<blockquote>
+<p>上面例子中密文内容除掉提示关键词的<code>chlq</code>，剩下的<code>经加密的明文数据</code>+<code>填充数据</code>一共有34个字母（<code>CN</code>=34），为<code>mv rh he ub ra ho gy my ia bo ee ea od eg es to mt</code></p>
+<p>意味着，所有的关键词的字母加起来的个数（<code>KN</code>），应该可以被34整除<br />
+一个个来看刚刚的4个组合：<br />
+第一个，<code>dayslowlyhearline</code>，<code>KN</code>=17，17可以被34整除，可能是解密的关键词组合<br />
+第二个，<code>daysayhearline</code>，<code>KN</code>=14，14不可以被34整除，所以这不是解密的关键词组合<br />
+第三个，<code>toslowlyhearline</code>，<code>KN</code>=15，15不可以被34整除，所以这不是解密的关键词组合<br />
+第四个，<code>tosayhearline</code>，<code>KN</code>=13，13不可以被34整除，所以这不是解密的关键词组合</p>
+</blockquote>
+</li>
+<li>
+<p>给筛选出来的关键词字母标号</p>
+<p>标号规则和加密的步骤2一样，得到的结果如下：</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">d</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">y</th>
+<th style="text-align:center">s</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">o</th>
+<th style="text-align:center">w</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">y</th>
+<th style="text-align:center">h</th>
+<th style="text-align:center">e</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">r</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">i</th>
+<th style="text-align:center">n</th>
+<th style="text-align:center">e</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">14</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">12</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">13</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">5</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>
+<p>找到密文和标号的对应关系</p>
+<ol>
+<li>以<code>KN</code>为列数，列的标号顺序同关键词字母标号顺序，<code>CN/KN</code>为行数，列一个表格如下</li>
+</ol>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">3</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">16</th>
+<th style="text-align:center">14</th>
+<th style="text-align:center">8</th>
+<th style="text-align:center">12</th>
+<th style="text-align:center">15</th>
+<th style="text-align:center">9</th>
+<th style="text-align:center">17</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">13</th>
+<th style="text-align:center">10</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">11</th>
+<th style="text-align:center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>
+<p>把密文从左到右按列的填入（不用管标号）</p>
+<p>密文：mv rh he ub ra ho gy my ia bo ee ea od eg es to mt</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">3</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">16</th>
+<th style="text-align:center">14</th>
+<th style="text-align:center">8</th>
+<th style="text-align:center">12</th>
+<th style="text-align:center">15</th>
+<th style="text-align:center">9</th>
+<th style="text-align:center">17</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">13</th>
+<th style="text-align:center">10</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">11</th>
+<th style="text-align:center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">m</td>
+<td style="text-align:center">r</td>
+<td style="text-align:center">h</td>
+<td style="text-align:center">u</td>
+<td style="text-align:center">r</td>
+<td style="text-align:center">h</td>
+<td style="text-align:center">g</td>
+<td style="text-align:center">m</td>
+<td style="text-align:center">i</td>
+<td style="text-align:center">b</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">t</td>
+<td style="text-align:center">m</td>
+</tr>
+<tr>
+<td style="text-align:center">v</td>
+<td style="text-align:center">h</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">b</td>
+<td style="text-align:center">a</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">y</td>
+<td style="text-align:center">y</td>
+<td style="text-align:center">a</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">a</td>
+<td style="text-align:center">d</td>
+<td style="text-align:center">g</td>
+<td style="text-align:center">s</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">t</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>将表格列数标号从小到大重排</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">8</th>
+<th style="text-align:center">9</th>
+<th style="text-align:center">10</th>
+<th style="text-align:center">11</th>
+<th style="text-align:center">12</th>
+<th style="text-align:center">13</th>
+<th style="text-align:center">14</th>
+<th style="text-align:center">15</th>
+<th style="text-align:center">16</th>
+<th style="text-align:center">17</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">r</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">m</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">m</td>
+<td style="text-align:center">b</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">r</td>
+<td style="text-align:center">m</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">t</td>
+<td style="text-align:center">h</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">u</td>
+<td style="text-align:center">g</td>
+<td style="text-align:center">h</td>
+<td style="text-align:center">i</td>
+</tr>
+<tr>
+<td style="text-align:center">h</td>
+<td style="text-align:center">a</td>
+<td style="text-align:center">v</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">t</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">s</td>
+<td style="text-align:center">a</td>
+<td style="text-align:center">y</td>
+<td style="text-align:center">g</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">d</td>
+<td style="text-align:center">b</td>
+<td style="text-align:center">y</td>
+<td style="text-align:center">e</td>
+<td style="text-align:center">a</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>按行读取得到明文</li>
+</ol>
+<h2 id="解密代码"><a class="markdownIt-Anchor" href="#解密代码"></a> 解密代码</h2>
+<blockquote>
+<p>需要两个参数：</p>
+<ol>
+<li>诗歌的路径，诗歌文本要去掉逗号之类的特殊字符，但空格不能去掉</li>
+<li>密文的路径，密文文本要去掉前面冗余的数据（比如&quot;cypher text:&quot;），只留下密文内容</li>
+</ol>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> listdir</span><br><span class="line"><span class="keyword">from</span> os.path <span class="keyword">import</span> isfile, join</span><br><span class="line"><span class="comment"># modified by Clover on 2022/05/23</span></span><br><span class="line">abc=<span class="string">&#x27;abcdefghijklmnopqrstuvwxyz&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">loadlist</span>(<span class="params">infile</span>):</span><br><span class="line">	tlist = []</span><br><span class="line">	<span class="keyword">for</span> line <span class="keyword">in</span> <span class="built_in">open</span>(infile,<span class="string">&#x27;r&#x27;</span>):</span><br><span class="line">		<span class="keyword">for</span> w <span class="keyword">in</span> line.split(): tlist.append(w.lower())</span><br><span class="line">	<span class="keyword">return</span> tlist</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">poem, cip</span>):</span><br><span class="line">	<span class="comment"># Load all words of the poem into a temporary list</span></span><br><span class="line">	twords = loadlist(poem)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># Load all cipher chunks of the ciphertext into a list</span></span><br><span class="line">	cwords = loadlist(cip)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># Get the code rom the first chunk and remove it from the ciphertext list</span></span><br><span class="line">	code = []</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> cwords.pop(<span class="number">0</span>): <span class="comment">#get keywords tips</span></span><br><span class="line">		code.append(abc.index(i))</span><br><span class="line">	<span class="comment"># Select only those words specified in the code in a new multi-arrayed list</span></span><br><span class="line">	xwords = [[] <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(code))]</span><br><span class="line">	<span class="keyword">for</span> xcount, c <span class="keyword">in</span> <span class="built_in">enumerate</span>(code):</span><br><span class="line">		tlen = c</span><br><span class="line">		<span class="keyword">while</span>(c&lt;<span class="built_in">len</span>(twords)):</span><br><span class="line">			xwords[xcount].append(twords[c].lower())</span><br><span class="line">			c+=<span class="number">26</span></span><br><span class="line"></span><br><span class="line">	<span class="comment"># Get all possible combinations</span></span><br><span class="line">	CN=<span class="built_in">len</span>(cwords)*<span class="built_in">len</span>(cwords[<span class="number">0</span>])</span><br><span class="line">	<span class="keyword">for</span> comb <span class="keyword">in</span> itertools.product(*xwords):</span><br><span class="line">		pwords = <span class="string">&#x27;&#x27;</span></span><br><span class="line">		<span class="keyword">for</span> c <span class="keyword">in</span> comb: pwords+=c</span><br><span class="line">		KN = <span class="built_in">len</span>(pwords)</span><br><span class="line">		<span class="keyword">if</span> CN%KN!=<span class="number">0</span> : <span class="keyword">continue</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">#re-devide the cyber text by CN/KN</span></span><br><span class="line">		c_text=<span class="string">&#x27;&#x27;</span></span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(cwords)):</span><br><span class="line">			c_text+=cwords[i]</span><br><span class="line"></span><br><span class="line">		c_text_list = re.findall(<span class="string">r&#x27;\w&#123;&#x27;</span>+<span class="built_in">str</span>(CN/KN)+<span class="string">&#x27;&#125;&#x27;</span>, c_text)</span><br><span class="line"></span><br><span class="line">		<span class="comment"># Rearrange the chunks according to the key</span></span><br><span class="line">		pcode = [<span class="literal">None</span>] * KN<span class="comment">#len of pcode is equal to the numbers in keywords group</span></span><br><span class="line">		count = <span class="number">0</span></span><br><span class="line">		<span class="keyword">while</span>(count&lt;KN):</span><br><span class="line">			<span class="keyword">for</span> al <span class="keyword">in</span> abc:</span><br><span class="line">				<span class="keyword">for</span> pc, pl <span class="keyword">in</span> <span class="built_in">enumerate</span>(pwords):</span><br><span class="line">					</span><br><span class="line">					<span class="keyword">if</span> al!=pl: <span class="keyword">continue</span></span><br><span class="line">					pcode[count]=c_text_list[pc]<span class="comment">#put cyber-text blocks in the right position</span></span><br><span class="line">					count+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">		<span class="comment"># Decrypt the ciphertext</span></span><br><span class="line">		msg = <span class="string">&#x27;&#x27;</span></span><br><span class="line">		<span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, CN/KN):</span><br><span class="line">			<span class="keyword">for</span> word <span class="keyword">in</span> pcode:</span><br><span class="line">				msg+=word[c]</span><br><span class="line">		<span class="built_in">print</span> msg</span><br><span class="line"></span><br><span class="line"><span class="comment"># first argument = poem</span></span><br><span class="line"><span class="comment"># second argument = ciphertxt or msg</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) != <span class="number">3</span>: sys.exit(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">decrypt(sys.argv[<span class="number">1</span>], sys.argv[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
 
                     
                 </div>
@@ -1175,7 +1824,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-text"> 补充</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ascii%E7%BC%96%E7%A0%81"><span class="nav-text"> ASCII编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#base%E5%AE%B6%E6%97%8F%E7%BC%96%E7%A0%81"><span class="nav-text"> Base家族编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#md5-sha1-hmac-ntlm%E7%AD%89%E7%B1%BB%E4%BC%BC%E5%8A%A0%E5%AF%86%E5%9E%8B"><span class="nav-text"> MD5、SHA1、HMAC、NTLM等类似加密型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#md5"><span class="nav-text"> MD5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sha1"><span class="nav-text"> SHA1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hmac"><span class="nav-text"> HMAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ntlm"><span class="nav-text"> NTLM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E4%BC%BC%E5%8A%A0%E5%AF%86%E7%A9%B7%E4%B8%BE"><span class="nav-text"> 类似加密穷举</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%83%E7%89%B9%E5%B7%B4%E4%BB%80%E7%A0%81"><span class="nav-text"> 埃特巴什码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#aes-des-rc4-rabbit-3des%E5%9E%8B%E5%8A%A0%E5%AF%86"><span class="nav-text"> AES、DES、RC4、Rabbit、3DES型加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unicode%E7%BC%96%E7%A0%81"><span class="nav-text"> Unicode编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#html%E5%AE%9E%E4%BD%93%E7%BC%96%E7%A0%81"><span class="nav-text"> HTML实体编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#escape-unescape%E7%BC%96%E7%A0%81u"><span class="nav-text"> Escape、Unescape编码（%u）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#url%E7%BC%96%E7%A0%81"><span class="nav-text"> URL编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hex%E7%BC%96%E7%A0%81"><span class="nav-text"> Hex编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E9%9A%90%E8%97%8F%E5%8A%A0%E5%AF%86"><span class="nav-text"> 文本隐藏加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%B6%E5%AE%BD%E9%9A%90%E5%86%99"><span class="nav-text"> 零宽隐写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js%E4%B8%93%E7%94%A8%E5%8A%A0%E5%AF%86"><span class="nav-text"> js专用加密</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E9%A2%9C%E6%96%87%E5%AD%97%E5%8A%A0%E5%AF%86"><span class="nav-text"> JS颜文字加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jother%E7%BC%96%E7%A0%81"><span class="nav-text"> Jother编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsfuck%E7%BC%96%E7%A0%81"><span class="nav-text"> JSFuck编码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#quoted-printable%E7%BC%96%E7%A0%81"><span class="nav-text"> Quoted-printable编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#xxencode"><span class="nav-text"> XXencode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#uuencode"><span class="nav-text"> UUencode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aaencode%E7%BC%96%E7%A0%81"><span class="nav-text"> aaencode编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jjencode%E7%BC%96%E7%A0%81"><span class="nav-text"> jjencode编码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#brainfuck%E7%BC%96%E7%A0%81"><span class="nav-text"> brainfuck编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ook%E7%BC%96%E7%A0%81"><span class="nav-text"> Ook!编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%A9%E6%96%AF%E7%94%B5%E7%A0%81"><span class="nav-text"> 摩斯电码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%BC%96%E7%A0%81"><span class="nav-text"> 社会主义编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8E%E4%BD%9B%E8%AE%BA%E7%A6%85"><span class="nav-text"> 与佛论禅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E4%B8%8E%E4%BD%9B%E8%AE%BA%E7%A6%85"><span class="nav-text"> 新与佛论禅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%99%BE%E5%AE%B6%E5%A7%93%E6%9A%97%E5%8F%B7"><span class="nav-text"> 百家姓暗号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%A1%E5%B0%94%E8%BE%BE%E8%AF%BA%E6%A0%85%E6%A0%BC%E7%A0%81"><span class="nav-text"> 卡尔达诺栅格码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E5%8A%A0%E5%AF%86%E4%B8%BA%E6%B1%89%E5%AD%97"><span class="nav-text"> 文本加密为汉字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B1%89%E4%BF%A1%E7%A0%81"><span class="nav-text"> 汉信码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#whitespace%E5%8A%A0%E5%AF%86"><span class="nav-text"> Whitespace加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%E5%8A%A0%E5%AF%86"><span class="nav-text"> 后端代码加密</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-text"> 补充</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ascii%E7%BC%96%E7%A0%81"><span class="nav-text"> ASCII编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#base%E5%AE%B6%E6%97%8F%E7%BC%96%E7%A0%81"><span class="nav-text"> Base家族编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#md5-sha1-hmac-ntlm%E7%AD%89%E7%B1%BB%E4%BC%BC%E5%8A%A0%E5%AF%86%E5%9E%8B"><span class="nav-text"> MD5、SHA1、HMAC、NTLM等类似加密型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#md5"><span class="nav-text"> MD5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sha1"><span class="nav-text"> SHA1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hmac"><span class="nav-text"> HMAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ntlm"><span class="nav-text"> NTLM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E4%BC%BC%E5%8A%A0%E5%AF%86%E7%A9%B7%E4%B8%BE"><span class="nav-text"> 类似加密穷举</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%83%E7%89%B9%E5%B7%B4%E4%BB%80%E7%A0%81"><span class="nav-text"> 埃特巴什码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#aes-des-rc4-rabbit-3des%E5%9E%8B%E5%8A%A0%E5%AF%86"><span class="nav-text"> AES、DES、RC4、Rabbit、3DES型加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unicode%E7%BC%96%E7%A0%81"><span class="nav-text"> Unicode编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#html%E5%AE%9E%E4%BD%93%E7%BC%96%E7%A0%81"><span class="nav-text"> HTML实体编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#escape-unescape%E7%BC%96%E7%A0%81u"><span class="nav-text"> Escape、Unescape编码（%u）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#url%E7%BC%96%E7%A0%81"><span class="nav-text"> URL编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hex%E7%BC%96%E7%A0%81"><span class="nav-text"> Hex编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E9%9A%90%E8%97%8F%E5%8A%A0%E5%AF%86"><span class="nav-text"> 文本隐藏加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%B6%E5%AE%BD%E9%9A%90%E5%86%99"><span class="nav-text"> 零宽隐写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js%E4%B8%93%E7%94%A8%E5%8A%A0%E5%AF%86"><span class="nav-text"> js专用加密</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E9%A2%9C%E6%96%87%E5%AD%97%E5%8A%A0%E5%AF%86"><span class="nav-text"> JS颜文字加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jother%E7%BC%96%E7%A0%81"><span class="nav-text"> Jother编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsfuck%E7%BC%96%E7%A0%81"><span class="nav-text"> JSFuck编码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#quoted-printable%E7%BC%96%E7%A0%81"><span class="nav-text"> Quoted-printable编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#xxencode"><span class="nav-text"> XXencode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#uuencode"><span class="nav-text"> UUencode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aaencode%E7%BC%96%E7%A0%81"><span class="nav-text"> aaencode编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jjencode%E7%BC%96%E7%A0%81"><span class="nav-text"> jjencode编码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#brainfuck%E7%BC%96%E7%A0%81"><span class="nav-text"> brainfuck编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ook%E7%BC%96%E7%A0%81"><span class="nav-text"> Ook!编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%A9%E6%96%AF%E7%94%B5%E7%A0%81"><span class="nav-text"> 摩斯电码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%BC%96%E7%A0%81"><span class="nav-text"> 社会主义编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8E%E4%BD%9B%E8%AE%BA%E7%A6%85"><span class="nav-text"> 与佛论禅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E4%B8%8E%E4%BD%9B%E8%AE%BA%E7%A6%85"><span class="nav-text"> 新与佛论禅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%99%BE%E5%AE%B6%E5%A7%93%E6%9A%97%E5%8F%B7"><span class="nav-text"> 百家姓暗号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%A1%E5%B0%94%E8%BE%BE%E8%AF%BA%E6%A0%85%E6%A0%BC%E7%A0%81"><span class="nav-text"> 卡尔达诺栅格码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E5%8A%A0%E5%AF%86%E4%B8%BA%E6%B1%89%E5%AD%97"><span class="nav-text"> 文本加密为汉字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B1%89%E4%BF%A1%E7%A0%81"><span class="nav-text"> 汉信码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#whitespace%E5%8A%A0%E5%AF%86"><span class="nav-text"> Whitespace加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%E5%8A%A0%E5%AF%86"><span class="nav-text"> 后端代码加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#poem-code"><span class="nav-text"> Poem Code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E5%AF%86%E5%8E%9F%E7%90%86"><span class="nav-text"> 加密原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%AF%86%E5%8E%9F%E7%90%86"><span class="nav-text"> 解密原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%AF%86%E4%BB%A3%E7%A0%81"><span class="nav-text"> 解密代码</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -1344,7 +1993,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-text"> 补充</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ascii%E7%BC%96%E7%A0%81"><span class="nav-text"> ASCII编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#base%E5%AE%B6%E6%97%8F%E7%BC%96%E7%A0%81"><span class="nav-text"> Base家族编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#md5-sha1-hmac-ntlm%E7%AD%89%E7%B1%BB%E4%BC%BC%E5%8A%A0%E5%AF%86%E5%9E%8B"><span class="nav-text"> MD5、SHA1、HMAC、NTLM等类似加密型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#md5"><span class="nav-text"> MD5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sha1"><span class="nav-text"> SHA1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hmac"><span class="nav-text"> HMAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ntlm"><span class="nav-text"> NTLM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E4%BC%BC%E5%8A%A0%E5%AF%86%E7%A9%B7%E4%B8%BE"><span class="nav-text"> 类似加密穷举</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%83%E7%89%B9%E5%B7%B4%E4%BB%80%E7%A0%81"><span class="nav-text"> 埃特巴什码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#aes-des-rc4-rabbit-3des%E5%9E%8B%E5%8A%A0%E5%AF%86"><span class="nav-text"> AES、DES、RC4、Rabbit、3DES型加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unicode%E7%BC%96%E7%A0%81"><span class="nav-text"> Unicode编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#html%E5%AE%9E%E4%BD%93%E7%BC%96%E7%A0%81"><span class="nav-text"> HTML实体编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#escape-unescape%E7%BC%96%E7%A0%81u"><span class="nav-text"> Escape、Unescape编码（%u）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#url%E7%BC%96%E7%A0%81"><span class="nav-text"> URL编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hex%E7%BC%96%E7%A0%81"><span class="nav-text"> Hex编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E9%9A%90%E8%97%8F%E5%8A%A0%E5%AF%86"><span class="nav-text"> 文本隐藏加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%B6%E5%AE%BD%E9%9A%90%E5%86%99"><span class="nav-text"> 零宽隐写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js%E4%B8%93%E7%94%A8%E5%8A%A0%E5%AF%86"><span class="nav-text"> js专用加密</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E9%A2%9C%E6%96%87%E5%AD%97%E5%8A%A0%E5%AF%86"><span class="nav-text"> JS颜文字加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jother%E7%BC%96%E7%A0%81"><span class="nav-text"> Jother编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsfuck%E7%BC%96%E7%A0%81"><span class="nav-text"> JSFuck编码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#quoted-printable%E7%BC%96%E7%A0%81"><span class="nav-text"> Quoted-printable编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#xxencode"><span class="nav-text"> XXencode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#uuencode"><span class="nav-text"> UUencode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aaencode%E7%BC%96%E7%A0%81"><span class="nav-text"> aaencode编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jjencode%E7%BC%96%E7%A0%81"><span class="nav-text"> jjencode编码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#brainfuck%E7%BC%96%E7%A0%81"><span class="nav-text"> brainfuck编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ook%E7%BC%96%E7%A0%81"><span class="nav-text"> Ook!编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%A9%E6%96%AF%E7%94%B5%E7%A0%81"><span class="nav-text"> 摩斯电码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%BC%96%E7%A0%81"><span class="nav-text"> 社会主义编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8E%E4%BD%9B%E8%AE%BA%E7%A6%85"><span class="nav-text"> 与佛论禅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E4%B8%8E%E4%BD%9B%E8%AE%BA%E7%A6%85"><span class="nav-text"> 新与佛论禅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%99%BE%E5%AE%B6%E5%A7%93%E6%9A%97%E5%8F%B7"><span class="nav-text"> 百家姓暗号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%A1%E5%B0%94%E8%BE%BE%E8%AF%BA%E6%A0%85%E6%A0%BC%E7%A0%81"><span class="nav-text"> 卡尔达诺栅格码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E5%8A%A0%E5%AF%86%E4%B8%BA%E6%B1%89%E5%AD%97"><span class="nav-text"> 文本加密为汉字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B1%89%E4%BF%A1%E7%A0%81"><span class="nav-text"> 汉信码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#whitespace%E5%8A%A0%E5%AF%86"><span class="nav-text"> Whitespace加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%E5%8A%A0%E5%AF%86"><span class="nav-text"> 后端代码加密</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-text"> 补充</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ascii%E7%BC%96%E7%A0%81"><span class="nav-text"> ASCII编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#base%E5%AE%B6%E6%97%8F%E7%BC%96%E7%A0%81"><span class="nav-text"> Base家族编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#md5-sha1-hmac-ntlm%E7%AD%89%E7%B1%BB%E4%BC%BC%E5%8A%A0%E5%AF%86%E5%9E%8B"><span class="nav-text"> MD5、SHA1、HMAC、NTLM等类似加密型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#md5"><span class="nav-text"> MD5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sha1"><span class="nav-text"> SHA1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hmac"><span class="nav-text"> HMAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ntlm"><span class="nav-text"> NTLM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E4%BC%BC%E5%8A%A0%E5%AF%86%E7%A9%B7%E4%B8%BE"><span class="nav-text"> 类似加密穷举</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%83%E7%89%B9%E5%B7%B4%E4%BB%80%E7%A0%81"><span class="nav-text"> 埃特巴什码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#aes-des-rc4-rabbit-3des%E5%9E%8B%E5%8A%A0%E5%AF%86"><span class="nav-text"> AES、DES、RC4、Rabbit、3DES型加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unicode%E7%BC%96%E7%A0%81"><span class="nav-text"> Unicode编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#html%E5%AE%9E%E4%BD%93%E7%BC%96%E7%A0%81"><span class="nav-text"> HTML实体编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#escape-unescape%E7%BC%96%E7%A0%81u"><span class="nav-text"> Escape、Unescape编码（%u）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#url%E7%BC%96%E7%A0%81"><span class="nav-text"> URL编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hex%E7%BC%96%E7%A0%81"><span class="nav-text"> Hex编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E9%9A%90%E8%97%8F%E5%8A%A0%E5%AF%86"><span class="nav-text"> 文本隐藏加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%B6%E5%AE%BD%E9%9A%90%E5%86%99"><span class="nav-text"> 零宽隐写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js%E4%B8%93%E7%94%A8%E5%8A%A0%E5%AF%86"><span class="nav-text"> js专用加密</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E9%A2%9C%E6%96%87%E5%AD%97%E5%8A%A0%E5%AF%86"><span class="nav-text"> JS颜文字加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jother%E7%BC%96%E7%A0%81"><span class="nav-text"> Jother编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsfuck%E7%BC%96%E7%A0%81"><span class="nav-text"> JSFuck编码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#quoted-printable%E7%BC%96%E7%A0%81"><span class="nav-text"> Quoted-printable编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#xxencode"><span class="nav-text"> XXencode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#uuencode"><span class="nav-text"> UUencode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aaencode%E7%BC%96%E7%A0%81"><span class="nav-text"> aaencode编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jjencode%E7%BC%96%E7%A0%81"><span class="nav-text"> jjencode编码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#brainfuck%E7%BC%96%E7%A0%81"><span class="nav-text"> brainfuck编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ook%E7%BC%96%E7%A0%81"><span class="nav-text"> Ook!编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%A9%E6%96%AF%E7%94%B5%E7%A0%81"><span class="nav-text"> 摩斯电码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%BC%96%E7%A0%81"><span class="nav-text"> 社会主义编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8E%E4%BD%9B%E8%AE%BA%E7%A6%85"><span class="nav-text"> 与佛论禅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E4%B8%8E%E4%BD%9B%E8%AE%BA%E7%A6%85"><span class="nav-text"> 新与佛论禅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%99%BE%E5%AE%B6%E5%A7%93%E6%9A%97%E5%8F%B7"><span class="nav-text"> 百家姓暗号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%A1%E5%B0%94%E8%BE%BE%E8%AF%BA%E6%A0%85%E6%A0%BC%E7%A0%81"><span class="nav-text"> 卡尔达诺栅格码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E5%8A%A0%E5%AF%86%E4%B8%BA%E6%B1%89%E5%AD%97"><span class="nav-text"> 文本加密为汉字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B1%89%E4%BF%A1%E7%A0%81"><span class="nav-text"> 汉信码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#whitespace%E5%8A%A0%E5%AF%86"><span class="nav-text"> Whitespace加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%E5%8A%A0%E5%AF%86"><span class="nav-text"> 后端代码加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#poem-code"><span class="nav-text"> Poem Code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E5%AF%86%E5%8E%9F%E7%90%86"><span class="nav-text"> 加密原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%AF%86%E5%8E%9F%E7%90%86"><span class="nav-text"> 解密原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%AF%86%E4%BB%A3%E7%A0%81"><span class="nav-text"> 解密代码</span></a></li></ol></li></ol>
     </div>
 </div>
 
