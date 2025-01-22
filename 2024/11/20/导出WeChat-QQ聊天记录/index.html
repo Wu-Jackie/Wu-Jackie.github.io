@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jackie">
+    
+    <title>
+        
+            导出WeChat&amp;QQ聊天记录 |
+        
+        Jackie&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logoow.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+                
+<link rel="stylesheet" href="/css/hide.css">
+
+            
+        
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Jackie's Blog","author":"Jackie","avatar":"/images/nemo.svg","logo":"/images/logoow.svg","favicon":"/images/logoow.svg"},"menu":{"home":"/ || fa-solid fa-home","tags":"/tags || fa-solid fa-tags","links":"/links || fa-solid fa-link","about":"/about || fa-solid fa-user-graduate"},"first_screen":{"enable":true,"background_img":"/images/bg2.svg","background_img_dark":"/images/bg2.svg","description":"Welcome To My Blog! || 無限進步！","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":null},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"waline","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":"waline-for-blog-psi.vercel.app","reaction":false,"version":"3.3.2","options":{"login":"force","copyright":false}},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":["/css/hide.css"],"js":[null]},"root":"","source_data":{"links":[{"title":"Web"},{"name":"小小邵同学","link":"https://swq111.online/","description":null,"avatar":"https://swq111.online/wp-content/uploads/2024/01/3.jpg"},{"name":"yxhhyy","link":"https://yxhhyy.github.io/","description":null,"avatar":"https://yxhhyy.github.io/images/1.jpg"},{"title":"Pwn"},{"name":"jwjlearning","link":"https://jwjlearning.github.io/","description":null,"avatar":"https://jwjlearning.github.io/img/avatar.png"},{"name":"yw-by","link":"https://yw-by.github.io/","description":null,"avatar":"https://yw-by.github.io/images/avatar.jpg"},{"title":"Reverse"},{"name":"FeowmAomr","link":"https://feowmaomr.github.io/","description":null,"avatar":"https://FeowmAomr.github.io/picx-images-hosting/Aomr.webp"},{"name":"Yigod","link":"https://hexo-beta-fawn.vercel.app/","description":null,"avatar":"https://hexo-beta-fawn.vercel.app/images/avatar.jpg"},{"title":"Crypto"},{"name":"Waiting a destined person","link":"\\#","description":null,"avatar":"https://wu-jackie.github.io/images/nemo.svg"}]},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logoow.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Jackie&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-home"></i>
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-tags"></i>
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/links">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-link"></i>
+                                
+                                友链
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-home"></i>
+                                </span>
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-tags"></i>
+                                </span>
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/links">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-link"></i>
+                                </span>
+                            
+                            友链
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                </span>
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        导出WeChat&amp;QQ聊天记录
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/nemo.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Jackie</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-11-20</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Wed Jan 22 2025 18:29:48 GMT+0800">2025-01-22</span>
+                </span>
+            
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Cyber-Security/">Cyber Security</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.4k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>12 分钟</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="导出wechatqq聊天记录"><a class="markdownIt-Anchor" href="#导出wechatqq聊天记录"></a> 导出WeChat&amp;QQ聊天记录</h1>
+<p>本文仅供学习交流使用，严禁用于商业用途及非法用途，否则后果自负！</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://saucer-man.com/information_security/1038.html" >参考资料<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="微信"><a class="markdownIt-Anchor" href="#微信"></a> 微信</h1>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/tom-snow/wechat-windows-versions" >微信历史版本下载<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/AdminTest0/SharpWxDump" >SharpWxDump<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/shenhunluo/wx_dump_rs" >wx_dump_rs<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/0xlane/wechat-dump-rs" >wechat-dump-rs（支持微信4.0版本）<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/LC044/WeChatMsg" >留痕<i class="fas fa-external-link-alt"></i></a></p>
+<blockquote>
+<p>获取基址、密钥详见如下（有逆向基础最好）</p>
+<ul>
+<li>
+<p>SharpWxDump：./CE获取基址.md</p>
+</li>
+<li>
+<p>留痕：./app/decrypt/get_bias_addr.py</p>
+</li>
+<li>
+<p>wechat-dump-rs</p>
+</li>
+<li>
+<p>wx_dump_rs</p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="获取基址"><a class="markdownIt-Anchor" href="#获取基址"></a> 获取基址</h2>
+<p>拿VisualStudio2022打开SharpWxDump项目后报错缺少.NET4.0，在此<a class="link"   target="_blank" rel="noopener" href="https://www.nuget.org/packages/Microsoft.NETFramework.ReferenceAssemblies/" >链接<i class="fas fa-external-link-alt"></i></a>下载对应版本（右侧的Download package）</p>
+<p>下载完之后修改后缀名为.zip然后直接解压</p>
+<p>打开如下地址</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">microsoft.netframework.referenceassemblies.net48.1.0.3\build\.NETFramework</span><br></pre></td></tr></table></figure>
+<p>将v4.n文件夹复制到</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework</span><br></pre></td></tr></table></figure>
+<p>此处提供如下三种方法获取基址</p>
+<ol>
+<li>可根据<a class="link"   target="_blank" rel="noopener" href="https://github.com/AdminTest0/SharpWxDump/blob/master/CE%E8%8E%B7%E5%8F%96%E5%9F%BA%E5%9D%80.md" >SharpWxDump帮助文档<i class="fas fa-external-link-alt"></i></a>利用CE手动获取基址（建议参考上面提到的其他几个项目）</li>
+</ol>
+<p>获取到后打开Program.cs仿照格式填写，保存，选择release、x86编译运行可得到key</p>
+<ol start="2">
+<li>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/0xlane/wechat-dump-rs" >wechat-dump-rs<i class="fas fa-external-link-alt"></i></a>一键获取密钥Key</p>
+</li>
+<li>
+<p>自用代码（微信昵称、微信账号、微信手机号、微信KEY都有）</p>
+<blockquote>
+<p>致谢：<a class="link"   target="_blank" rel="noopener" href="https://github.com/LC044/WeChatMsg" >留痕<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> ctypes</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> psutil</span><br><span class="line"><span class="keyword">from</span> win32com.client <span class="keyword">import</span> Dispatch</span><br><span class="line"><span class="keyword">from</span> pymem <span class="keyword">import</span> Pymem</span><br><span class="line"><span class="keyword">import</span> pymem</span><br><span class="line"><span class="keyword">import</span> hmac</span><br><span class="line"></span><br><span class="line">ReadProcessMemory = ctypes.windll.kernel32.ReadProcessMemory</span><br><span class="line">void_p = ctypes.c_void_p</span><br><span class="line">KEY_SIZE = <span class="number">32</span></span><br><span class="line">DEFAULT_PAGESIZE = <span class="number">4096</span></span><br><span class="line">DEFAULT_ITER = <span class="number">64000</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">validate_key</span>(<span class="params">key, salt, first, mac_salt</span>):</span><br><span class="line">    byteKey = hashlib.pbkdf2_hmac(<span class="string">&quot;sha1&quot;</span>, key, salt, DEFAULT_ITER, KEY_SIZE)</span><br><span class="line">    mac_key = hashlib.pbkdf2_hmac(<span class="string">&quot;sha1&quot;</span>, byteKey, mac_salt, <span class="number">2</span>, KEY_SIZE)</span><br><span class="line">    hash_mac = hmac.new(mac_key, first[:-<span class="number">32</span>], hashlib.sha1)</span><br><span class="line">    hash_mac.update(<span class="string">b&#x27;\x01\x00\x00\x00&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> hash_mac.digest() == first[-<span class="number">32</span>:-<span class="number">12</span>]:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_exe_bit</span>(<span class="params">file_path</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    获取 PE 文件的位数: 32 位或 64 位</span></span><br><span class="line"><span class="string">    :param file_path:  PE 文件路径(可执行文件)</span></span><br><span class="line"><span class="string">    :return: 如果遇到错误则返回 64</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            dos_header = f.read(<span class="number">2</span>)</span><br><span class="line">            <span class="keyword">if</span> dos_header != <span class="string">b&#x27;MZ&#x27;</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;get exe bit error: Invalid PE file&#x27;</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="number">64</span></span><br><span class="line">            <span class="comment"># Seek to the offset of the PE signature</span></span><br><span class="line">            f.seek(<span class="number">60</span>)</span><br><span class="line">            pe_offset_bytes = f.read(<span class="number">4</span>)</span><br><span class="line">            pe_offset = <span class="built_in">int</span>.from_bytes(pe_offset_bytes, byteorder=<span class="string">&#x27;little&#x27;</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># Seek to the Machine field in the PE header</span></span><br><span class="line">            f.seek(pe_offset + <span class="number">4</span>)</span><br><span class="line">            machine_bytes = f.read(<span class="number">2</span>)</span><br><span class="line">            machine = <span class="built_in">int</span>.from_bytes(machine_bytes, byteorder=<span class="string">&#x27;little&#x27;</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> machine == <span class="number">0x14c</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">32</span></span><br><span class="line">            <span class="keyword">elif</span> machine == <span class="number">0x8664</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">64</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;get exe bit error: Unknown architecture: %s&#x27;</span> % <span class="built_in">hex</span>(machine))</span><br><span class="line">                <span class="keyword">return</span> <span class="number">64</span></span><br><span class="line">    <span class="keyword">except</span> IOError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;get exe bit error: File not found or cannot be opened&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">64</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_exe_version</span>(<span class="params">file_path</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    获取 PE 文件的版本号</span></span><br><span class="line"><span class="string">    :param file_path:  PE 文件路径(可执行文件)</span></span><br><span class="line"><span class="string">    :return: 如果遇到错误则返回</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    file_version = Dispatch(<span class="string">&quot;Scripting.FileSystemObject&quot;</span>).GetFileVersion(file_path)</span><br><span class="line">    <span class="keyword">return</span> file_version</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_all</span>(<span class="params">c: <span class="built_in">bytes</span>, string: <span class="built_in">bytes</span>, base_addr=<span class="number">0</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    查找字符串中所有子串的位置</span></span><br><span class="line"><span class="string">    :param c: 子串 b&#x27;123&#x27;</span></span><br><span class="line"><span class="string">    :param string: 字符串 b&#x27;123456789123&#x27;</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> [base_addr + m.start() <span class="keyword">for</span> m <span class="keyword">in</span> re.finditer(re.escape(c), string)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BiasAddr</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, account, mobile, name, key, db_path</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[+] 初始化参数:&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;    账号: <span class="subst">&#123;account&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;    手机: <span class="subst">&#123;mobile&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;    名称: <span class="subst">&#123;name&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;    密钥: <span class="subst">&#123;key[:<span class="number">10</span>]&#125;</span>...&quot;</span> <span class="keyword">if</span> key <span class="keyword">else</span> <span class="string">&quot;    密钥: 无&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;    数据库路径: <span class="subst">&#123;db_path&#125;</span>\n&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        self.account = account.encode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">        self.mobile = mobile.encode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">        self.name = name.encode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">        self.key = <span class="built_in">bytes</span>.fromhex(key) <span class="keyword">if</span> key <span class="keyword">else</span> <span class="string">b&quot;&quot;</span></span><br><span class="line">        self.db_path = db_path <span class="keyword">if</span> db_path <span class="keyword">and</span> os.path.exists(db_path) <span class="keyword">else</span> <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">        self.process_name = <span class="string">&quot;WeChat.exe&quot;</span></span><br><span class="line">        self.module_name = <span class="string">&quot;WeChatWin.dll&quot;</span></span><br><span class="line"></span><br><span class="line">        self.pm = <span class="literal">None</span>  <span class="comment"># Pymem 对象</span></span><br><span class="line">        self.is_WoW64 = <span class="literal">None</span>  <span class="comment"># True: 32位进程运行在64位系统上 False: 64位进程运行在64位系统上</span></span><br><span class="line">        self.process_handle = <span class="literal">None</span>  <span class="comment"># 进程句柄</span></span><br><span class="line">        self.pid = <span class="literal">None</span>  <span class="comment"># 进程ID</span></span><br><span class="line">        self.version = <span class="literal">None</span>  <span class="comment"># 微信版本号</span></span><br><span class="line">        self.process = <span class="literal">None</span>  <span class="comment"># 进程对象</span></span><br><span class="line">        self.exe_path = <span class="literal">None</span>  <span class="comment"># 微信路径</span></span><br><span class="line">        self.address_len = <span class="literal">None</span>  <span class="comment"># 4 if self.bits == 32 else 8  # 4字节或8字节</span></span><br><span class="line">        self.bits = <span class="number">64</span> <span class="keyword">if</span> sys.maxsize &gt; <span class="number">2</span> ** <span class="number">32</span> <span class="keyword">else</span> <span class="number">32</span>  <span class="comment"># 系统：32位或64位</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_process_handle</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;[+] 正在获取微信进程...&quot;</span>)</span><br><span class="line">            self.pm = Pymem(self.process_name)</span><br><span class="line">            self.pm.check_wow64()</span><br><span class="line">            self.is_WoW64 = self.pm.is_WoW64</span><br><span class="line">            self.process_handle = self.pm.process_handle</span><br><span class="line">            self.pid = self.pm.process_id</span><br><span class="line">            self.process = psutil.Process(self.pid)</span><br><span class="line">            self.exe_path = self.process.exe()</span><br><span class="line">            self.version = get_exe_version(self.exe_path)</span><br><span class="line"></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;[+] 进程信息:&quot;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;    PID: <span class="subst">&#123;self.pid&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;    路径: <span class="subst">&#123;self.exe_path&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;    版本: <span class="subst">&#123;self.version&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;    WoW64: <span class="subst">&#123;self.is_WoW64&#125;</span>\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">            version_nums = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, self.version.split(<span class="string">&quot;.&quot;</span>)))  <span class="comment"># 将版本号拆分为数字列表</span></span><br><span class="line">            <span class="keyword">if</span> version_nums[<span class="number">0</span>] &lt;= <span class="number">3</span> <span class="keyword">and</span> version_nums[<span class="number">1</span>] &lt;= <span class="number">9</span> <span class="keyword">and</span> version_nums[<span class="number">2</span>] &lt;= <span class="number">2</span>:</span><br><span class="line">                self.address_len = <span class="number">4</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.address_len = <span class="number">8</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span>, <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">except</span> pymem.exception.ProcessNotFound:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span>, <span class="string">&quot;[-] WeChat No Run&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">search_memory_value</span>(<span class="params">self, value: <span class="built_in">bytes</span>, module_name=<span class="string">&quot;WeChatWin.dll&quot;</span></span>):</span><br><span class="line">        <span class="comment"># 创建 Pymem 对象</span></span><br><span class="line">        module = pymem.process.module_from_name(self.pm.process_handle, module_name)</span><br><span class="line">        ret = self.pm.pattern_scan_module(value, module, return_multiple=<span class="literal">True</span>)</span><br><span class="line">        ret = ret[-<span class="number">1</span>] - module.lpBaseOfDll <span class="keyword">if</span> <span class="built_in">len</span>(ret) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> ret</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_key_bias1</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            byteLen = self.address_len  <span class="comment"># 4 if self.bits == 32 else 8  # 4字节或8字节</span></span><br><span class="line"></span><br><span class="line">            keyLenOffset = <span class="number">0x8c</span> <span class="keyword">if</span> self.bits == <span class="number">32</span> <span class="keyword">else</span> <span class="number">0xd0</span></span><br><span class="line">            keyWindllOffset = <span class="number">0x90</span> <span class="keyword">if</span> self.bits == <span class="number">32</span> <span class="keyword">else</span> <span class="number">0xd8</span></span><br><span class="line"></span><br><span class="line">            module = pymem.process.module_from_name(self.process_handle, self.module_name)</span><br><span class="line">            keyBytes = <span class="string">b&#x27;-----BEGIN PUBLIC KEY-----\n...&#x27;</span></span><br><span class="line">            publicKeyList = pymem.pattern.pattern_scan_all(self.process_handle, keyBytes, return_multiple=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">            keyaddrs = []</span><br><span class="line">            <span class="keyword">for</span> addr <span class="keyword">in</span> publicKeyList:</span><br><span class="line">                keyBytes = addr.to_bytes(byteLen, byteorder=<span class="string">&quot;little&quot;</span>, signed=<span class="literal">True</span>)  <span class="comment"># 低位在前</span></span><br><span class="line">                may_addrs = pymem.pattern.pattern_scan_module(self.process_handle, module, keyBytes,</span><br><span class="line">                                                              return_multiple=<span class="literal">True</span>)</span><br><span class="line">                <span class="keyword">if</span> may_addrs != <span class="number">0</span> <span class="keyword">and</span> <span class="built_in">len</span>(may_addrs) &gt; <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">for</span> addr <span class="keyword">in</span> may_addrs:</span><br><span class="line">                        keyLen = self.pm.read_uchar(addr - keyLenOffset)</span><br><span class="line">                        <span class="keyword">if</span> keyLen != <span class="number">32</span>:</span><br><span class="line">                            <span class="keyword">continue</span></span><br><span class="line">                        keyaddrs.append(addr - keyWindllOffset)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> keyaddrs[-<span class="number">1</span>] - module.lpBaseOfDll <span class="keyword">if</span> <span class="built_in">len</span>(keyaddrs) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">search_key</span>(<span class="params">self, key: <span class="built_in">bytes</span></span>):</span><br><span class="line">        key = re.escape(key)  <span class="comment"># 转义特殊字符</span></span><br><span class="line">        key_addr = self.pm.pattern_scan_all(key, return_multiple=<span class="literal">False</span>)</span><br><span class="line">        key = key_addr.to_bytes(self.address_len, byteorder=<span class="string">&#x27;little&#x27;</span>, signed=<span class="literal">True</span>)</span><br><span class="line">        result = self.search_memory_value(key, self.module_name)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_key_bias2</span>(<span class="params">self, wx_db_path</span>):</span><br><span class="line"></span><br><span class="line">        addr_len = get_exe_bit(self.exe_path) // <span class="number">8</span></span><br><span class="line">        db_path = wx_db_path</span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">read_key_bytes</span>(<span class="params">h_process, address, address_len=<span class="number">8</span></span>):</span><br><span class="line">            array = ctypes.create_string_buffer(address_len)</span><br><span class="line">            <span class="keyword">if</span> ReadProcessMemory(h_process, void_p(address), array, address_len, <span class="number">0</span>) == <span class="number">0</span>: <span class="keyword">return</span> <span class="string">&quot;None&quot;</span></span><br><span class="line">            address = <span class="built_in">int</span>.from_bytes(array, byteorder=<span class="string">&#x27;little&#x27;</span>)  <span class="comment"># 逆序转换为int地址（key地址）</span></span><br><span class="line">            key = ctypes.create_string_buffer(<span class="number">32</span>)</span><br><span class="line">            <span class="keyword">if</span> ReadProcessMemory(h_process, void_p(address), key, <span class="number">32</span>, <span class="number">0</span>) == <span class="number">0</span>: <span class="keyword">return</span> <span class="string">&quot;None&quot;</span></span><br><span class="line">            key_bytes = <span class="built_in">bytes</span>(key)</span><br><span class="line">            <span class="keyword">return</span> key_bytes</span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">verify_key</span>(<span class="params">key, wx_db_path</span>):</span><br><span class="line">            KEY_SIZE = <span class="number">32</span></span><br><span class="line">            DEFAULT_PAGESIZE = <span class="number">4096</span></span><br><span class="line">            DEFAULT_ITER = <span class="number">64000</span></span><br><span class="line">            <span class="keyword">with</span> <span class="built_in">open</span>(wx_db_path, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> file:</span><br><span class="line">                blist = file.read(<span class="number">5000</span>)</span><br><span class="line">            salt = blist[:<span class="number">16</span>]</span><br><span class="line">            byteKey = hashlib.pbkdf2_hmac(<span class="string">&quot;sha1&quot;</span>, key, salt, DEFAULT_ITER, KEY_SIZE)</span><br><span class="line">            first = blist[<span class="number">16</span>:DEFAULT_PAGESIZE]</span><br><span class="line"></span><br><span class="line">            mac_salt = <span class="built_in">bytes</span>([(salt[i] ^ <span class="number">58</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">16</span>)])</span><br><span class="line">            mac_key = hashlib.pbkdf2_hmac(<span class="string">&quot;sha1&quot;</span>, byteKey, mac_salt, <span class="number">2</span>, KEY_SIZE)</span><br><span class="line">            hash_mac = hmac.new(mac_key, first[:-<span class="number">32</span>], hashlib.sha1)</span><br><span class="line">            hash_mac.update(<span class="string">b&#x27;\x01\x00\x00\x00&#x27;</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> hash_mac.digest() != first[-<span class="number">32</span>:-<span class="number">12</span>]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        phone_type1 = <span class="string">&quot;iphone\x00&quot;</span></span><br><span class="line">        phone_type2 = <span class="string">&quot;android\x00&quot;</span></span><br><span class="line">        phone_type3 = <span class="string">&quot;ipad\x00&quot;</span></span><br><span class="line"></span><br><span class="line">        pm = pymem.Pymem(<span class="string">&quot;WeChat.exe&quot;</span>)</span><br><span class="line">        module_name = <span class="string">&quot;WeChatWin.dll&quot;</span></span><br><span class="line"></span><br><span class="line">        MicroMsg_path = os.path.join(db_path, <span class="string">&quot;MSG&quot;</span>, <span class="string">&quot;MicroMsg.db&quot;</span>)</span><br><span class="line"></span><br><span class="line">        module = pymem.process.module_from_name(pm.process_handle, module_name)</span><br><span class="line"></span><br><span class="line">        type1_addrs = pm.pattern_scan_module(phone_type1.encode(), module, return_multiple=<span class="literal">True</span>)</span><br><span class="line">        type2_addrs = pm.pattern_scan_module(phone_type2.encode(), module, return_multiple=<span class="literal">True</span>)</span><br><span class="line">        type3_addrs = pm.pattern_scan_module(phone_type3.encode(), module, return_multiple=<span class="literal">True</span>)</span><br><span class="line">        type_addrs = type1_addrs <span class="keyword">if</span> <span class="built_in">len</span>(type1_addrs) &gt;= <span class="number">2</span> <span class="keyword">else</span> type2_addrs <span class="keyword">if</span> <span class="built_in">len</span>(</span><br><span class="line">            type2_addrs) &gt;= <span class="number">2</span> <span class="keyword">else</span> type3_addrs <span class="keyword">if</span> <span class="built_in">len</span>(type3_addrs) &gt;= <span class="number">2</span> <span class="keyword">else</span> <span class="string">&quot;None&quot;</span></span><br><span class="line">        <span class="keyword">if</span> type_addrs == <span class="string">&quot;None&quot;</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> type_addrs[::-<span class="number">1</span>]:</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i, i - <span class="number">2000</span>, -addr_len):</span><br><span class="line">                key_bytes = read_key_bytes(pm.process_handle, j, addr_len)</span><br><span class="line">                <span class="keyword">if</span> key_bytes == <span class="string">&quot;None&quot;</span>:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">if</span> verify_key(key_bytes, MicroMsg_path):</span><br><span class="line">                    <span class="keyword">return</span> j - module.lpBaseOfDll</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self, logging_path=<span class="literal">False</span>, version_list_path=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.get_process_handle()[<span class="number">0</span>]:</span><br><span class="line">            <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">            </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[+] 开始搜索内存偏移...&quot;</span>)</span><br><span class="line">        mobile_bias = self.search_memory_value(self.mobile, self.module_name)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;    手机号偏移: 0x<span class="subst">&#123;mobile_bias:X&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        name_bias = self.search_memory_value(self.name, self.module_name)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;    用户名偏移: 0x<span class="subst">&#123;name_bias:X&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        account_bias = self.search_memory_value(self.account, self.module_name)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;    账号偏移: 0x<span class="subst">&#123;account_bias:X&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[+] 开始搜索密钥偏移...&quot;</span>)</span><br><span class="line">        key_bias = <span class="number">0</span></span><br><span class="line">        key_bias = self.get_key_bias1()</span><br><span class="line">        <span class="keyword">if</span> key_bias &lt;= <span class="number">0</span> <span class="keyword">and</span> self.key:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;    方法1失败，尝试方法2...&quot;</span>)</span><br><span class="line">            key_bias = self.search_key(self.key)</span><br><span class="line">        <span class="keyword">if</span> key_bias &lt;= <span class="number">0</span> <span class="keyword">and</span> self.db_path:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;    方法2失败，尝试方法3...&quot;</span>)</span><br><span class="line">            key_bias = self.get_key_bias2(self.db_path)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;    密钥偏移: 0x<span class="subst">&#123;key_bias:X&#125;</span>\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">        rdata = &#123;self.version: [name_bias, account_bias, mobile_bias, <span class="number">0</span>, key_bias]&#125;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[+] 搜索完成!&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;    结果: <span class="subst">&#123;json.dumps(rdata, indent=<span class="number">4</span>)&#125;</span>\n&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> rdata</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_info_without_key</span>(<span class="params">h_process, address, n_size=<span class="number">64</span></span>):</span><br><span class="line">    array = ctypes.create_string_buffer(n_size)</span><br><span class="line">    <span class="keyword">if</span> ReadProcessMemory(h_process, void_p(address), array, n_size, <span class="number">0</span>) == <span class="number">0</span>: <span class="keyword">return</span> <span class="string">&quot;None&quot;</span></span><br><span class="line">    array = <span class="built_in">bytes</span>(array).split(<span class="string">b&quot;\x00&quot;</span>)[<span class="number">0</span>] <span class="keyword">if</span> <span class="string">b&quot;\x00&quot;</span> <span class="keyword">in</span> array <span class="keyword">else</span> <span class="built_in">bytes</span>(array)</span><br><span class="line">    text = array.decode(<span class="string">&#x27;utf-8&#x27;</span>, errors=<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> text.strip() <span class="keyword">if</span> text.strip() != <span class="string">&quot;&quot;</span> <span class="keyword">else</span> <span class="string">&quot;None&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_user_input</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n[*] 请输入以下信息:&quot;</span>)</span><br><span class="line">    account = <span class="built_in">input</span>(<span class="string">&quot;微信账号: &quot;</span>).strip()</span><br><span class="line">    mobile = <span class="built_in">input</span>(<span class="string">&quot;手机号码: &quot;</span>).strip()</span><br><span class="line">    name = <span class="built_in">input</span>(<span class="string">&quot;用户名称: &quot;</span>).strip()</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n[*] 以下信息为可选，直接回车可跳过:&quot;</span>)</span><br><span class="line">    key = <span class="built_in">input</span>(<span class="string">&quot;密钥(可选): &quot;</span>).strip()</span><br><span class="line">    db_path = <span class="built_in">input</span>(<span class="string">&quot;数据库路径(可选): &quot;</span>).strip()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> account, mobile, name, key, db_path</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        account, mobile, name, key, db_path = get_user_input()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">all</span>([account, mobile, name]):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;\n[-] 错误: 账号、手机号和用户名为必填项&quot;</span>)</span><br><span class="line">            sys.exit(<span class="number">1</span>)</span><br><span class="line">            </span><br><span class="line">        bias = BiasAddr(</span><br><span class="line">            account=account,</span><br><span class="line">            mobile=mobile,</span><br><span class="line">            name=name,</span><br><span class="line">            key=key,</span><br><span class="line">            db_path=db_path</span><br><span class="line">        )</span><br><span class="line">        result = bias.run()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;\n[-] 未找到微信进程或搜索失败&quot;</span>)</span><br><span class="line">            sys.exit(<span class="number">1</span>)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;\n\n[-] 用户取消操作&quot;</span>)</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;\n[-] 发生错误: <span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>数据库文件在Document\WeChat Files\&lt;微信原始ID&gt;\Msg\Multi下，这里是<a class="link"   target="_blank" rel="noopener" href="https://github.com/xaoyaoo/PyWxDump/blob/master/doc/wx%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E8%BF%B0.md" >各个数据库简述<i class="fas fa-external-link-alt"></i></a></p>
+<p>使用如下脚本解密数据库</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install psutil pymem pywin32 pycryptodome</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"><span class="keyword">import</span> ctypes</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> hmac</span><br><span class="line"></span><br><span class="line">SQLITE_FILE_HEADER = <span class="built_in">bytes</span>(<span class="string">&#x27;SQLite format 3&#x27;</span>, encoding=<span class="string">&#x27;ASCII&#x27;</span>) + <span class="built_in">bytes</span>(<span class="number">1</span>)</span><br><span class="line">IV_SIZE = <span class="number">16</span></span><br><span class="line">HMAC_SHA1_SIZE = <span class="number">20</span></span><br><span class="line">KEY_SIZE = <span class="number">32</span></span><br><span class="line">DEFAULT_PAGESIZE = <span class="number">4096</span></span><br><span class="line">DEFAULT_ITER = <span class="number">64000</span></span><br><span class="line"></span><br><span class="line">input_pass = <span class="built_in">input</span>(<span class="string">&#x27;请输入密钥: &#x27;</span>)</span><br><span class="line">input_dir = <span class="built_in">input</span>(<span class="string">&#x27;请输入数据库文件路径: &#x27;</span>)</span><br><span class="line"></span><br><span class="line">password = <span class="built_in">bytes</span>.fromhex(input_pass.replace(<span class="string">&#x27; &#x27;</span>, <span class="string">&#x27;&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(input_dir, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> (f):</span><br><span class="line">    blist = f.read()</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(blist))</span><br><span class="line">salt = blist[:<span class="number">16</span>]</span><br><span class="line">key = hashlib.pbkdf2_hmac(<span class="string">&#x27;sha1&#x27;</span>, password, salt, DEFAULT_ITER, KEY_SIZE)</span><br><span class="line">first = blist[<span class="number">16</span>:DEFAULT_PAGESIZE]</span><br><span class="line">mac_salt = <span class="built_in">bytes</span>([x ^ <span class="number">58</span> <span class="keyword">for</span> x <span class="keyword">in</span> salt])</span><br><span class="line">mac_key = hashlib.pbkdf2_hmac(<span class="string">&#x27;sha1&#x27;</span>, key, mac_salt, <span class="number">2</span>, KEY_SIZE)</span><br><span class="line">hash_mac = hmac.new(mac_key, digestmod=<span class="string">&#x27;sha1&#x27;</span>)</span><br><span class="line">hash_mac.update(first[:-<span class="number">32</span>])</span><br><span class="line">hash_mac.update(<span class="built_in">bytes</span>(ctypes.c_int(<span class="number">1</span>)))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> hash_mac.digest() == first[-<span class="number">32</span>:-<span class="number">12</span>]:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Decryption Success&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Password Error&#x27;</span>)</span><br><span class="line">blist = [blist[i:i + DEFAULT_PAGESIZE] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(DEFAULT_PAGESIZE, <span class="built_in">len</span>(blist), DEFAULT_PAGESIZE)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(input_dir, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> (f):</span><br><span class="line">    f.write(SQLITE_FILE_HEADER)</span><br><span class="line">    t = AES.new(key, AES.MODE_CBC, first[-<span class="number">48</span>:-<span class="number">32</span>])</span><br><span class="line">    f.write(t.decrypt(first[:-<span class="number">48</span>]))</span><br><span class="line">    f.write(first[-<span class="number">48</span>:])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> blist:</span><br><span class="line">        t = AES.new(key, AES.MODE_CBC, i[-<span class="number">48</span>:-<span class="number">32</span>])</span><br><span class="line">        f.write(t.decrypt(i[:-<span class="number">48</span>]))</span><br><span class="line">        f.write(i[-<span class="number">48</span>:])</span><br></pre></td></tr></table></figure>
+<p>可使用Navicat等软件打开，有了<a class="link"   target="_blank" rel="noopener" href="https://github.com/xaoyaoo/PyWxDump/blob/master/doc/wx%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E8%BF%B0.md" >各个数据库<i class="fas fa-external-link-alt"></i></a>的基础后直接查询，或者使用<a class="link"   target="_blank" rel="noopener" href="https://github.com/shenhunluo/wx_dump_rs" >wx_dump_rs<i class="fas fa-external-link-alt"></i></a>、<a class="link"   target="_blank" rel="noopener" href="https://github.com/LC044/WeChatMsg" >留痕<i class="fas fa-external-link-alt"></i></a>可视化查看</p>
+<h1 id="qq"><a class="markdownIt-Anchor" href="#qq"></a> QQ</h1>
+<p>因无RE进阶知识，此处放相关链接</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://bbs.kanxue.com/thread-250509.htm" >[讨论]qq数据库逆向有什么好方法？<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1370802-1-1.html" >[调试逆向] 撬开PC QQ的本地SQLite数据库（适用于Msg3.0.db等）<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://bbs.kanxue.com/thread-266370.html" >[原创]某聊天工具消息记录数据库文件解密逆向分析<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/QQBackup/qq-win-db-key" >qq-win-db-key<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Cyber-Security/">Cyber Security</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2024/11/26/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/"
+                                   title="最小二乘法"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">最小二乘法</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/11/16/%E6%8F%92%E5%80%BC%E6%B3%95/"
+                                   title="插值法"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">插值法</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="waline-comment-container">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline-meta.css"/>
+        <div id="waline-comment"></div>
+        <script data-pjax>
+          window.KeepCommentPlugin.walineOptions = JSON.parse('{&#34;login&#34;:&#34;force&#34;,&#34;copyright&#34;:false}'.replace(/&#34;/g, '"'))
+          window.KeepCommentPlugin.walineOptions.el = '#waline-comment'
+          window.KeepCommentPlugin.walineOptions.comment = '.post-comments-count'
+          window.KeepCommentPlugin.walineOptions.serverURL = 'waline-for-blog-psi.vercel.app'
+          window.KeepCommentPlugin.walineOptions.lang = 'zh-CN' || 'zh-CN'
+          window.KeepCommentPlugin.walineOptions.reaction = 'false' === 'true'
+        </script>
+
+        
+
+        
+            <script data-pjax
+                    async
+                    type="module"
+            >
+              import { init } from '//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline.js'
+              window.KeepCommentPlugin.initWaline = () => {
+                if (init) {
+                  init(window.KeepCommentPlugin.walineOptions)
+                  window.KeepCommentPlugin.hideLoading()
+                } else {
+                  setTimeout(() => {
+                    window.KeepCommentPlugin.initWaline()
+                  }, 1000)
+                }
+              }
+
+              if ('true' === 'true') {
+                setTimeout(() => {
+                  window.KeepCommentPlugin.initWaline()
+                }, 1200)
+              } else {
+                window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initWaline)
+              }
+            </script>
+        
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%BC%E5%87%BAwechatqq%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95"><span class="nav-text"> 导出WeChat&amp;QQ聊天记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1"><span class="nav-text"> 微信</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%9F%BA%E5%9D%80"><span class="nav-text"> 获取基址</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#qq"><span class="nav-text"> QQ</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Jackie</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%BC%E5%87%BAwechatqq%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95"><span class="nav-text"> 导出WeChat&amp;QQ聊天记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1"><span class="nav-text"> 微信</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%9F%BA%E5%9D%80"><span class="nav-text"> 获取基址</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#qq"><span class="nav-text"> QQ</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            
+<script src="/js/post/share.js"></script>
+
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+
+</body>
+</html>
