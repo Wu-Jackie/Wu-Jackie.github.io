@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jackie">
+    
+    <title>
+        
+            哈希表 |
+        
+        Jackie&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logoow.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+                
+<link rel="stylesheet" href="/css/hide.css">
+
+            
+        
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Jackie's Blog","author":"Jackie","avatar":"/images/nemo.svg","logo":"/images/logoow.svg","favicon":"/images/logoow.svg"},"menu":{"home":"/ || fa-solid fa-home","tags":"/tags || fa-solid fa-tags","links":"/links || fa-solid fa-link","about":"/about || fa-solid fa-user-graduate"},"first_screen":{"enable":true,"background_img":"/images/bg2.svg","background_img_dark":"/images/bg2.svg","description":"Welcome To My Blog! || 無限進步！","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":null},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"waline","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":"waline-for-blog-psi.vercel.app","reaction":false,"version":"3.3.2","options":{"login":"force","copyright":false}},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":["/css/hide.css"],"js":[null]},"root":"","source_data":{"links":[{"title":"Web"},{"name":"小小邵同学","link":"https://swq111.online/","description":null,"avatar":"https://swq111.online/wp-content/uploads/2024/01/3.jpg"},{"name":"yxhhyy","link":"https://yxhhyy.github.io/","description":null,"avatar":"https://yxhhyy.github.io/images/1.jpg"},{"title":"Pwn"},{"name":"jwjlearning","link":"https://jwjlearning.github.io/","description":null,"avatar":"https://jwjlearning.github.io/img/avatar.png"},{"name":"yw-by","link":"https://yw-by.github.io/","description":null,"avatar":"https://yw-by.github.io/images/avatar.jpg"},{"title":"Reverse"},{"name":"FeowmAomr","link":"https://feowmaomr.github.io/","description":null,"avatar":"https://FeowmAomr.github.io/picx-images-hosting/Aomr.webp"},{"name":"Yigod","link":"https://hexo-beta-fawn.vercel.app/","description":null,"avatar":"https://hexo-beta-fawn.vercel.app/images/avatar.jpg"},{"title":"Crypto"},{"name":"Waiting a destined person","link":"\\#","description":null,"avatar":"https://wu-jackie.github.io/images/nemo.svg"}]},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logoow.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Jackie&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-home"></i>
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-tags"></i>
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/links">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-link"></i>
+                                
+                                友链
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-home"></i>
+                                </span>
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-tags"></i>
+                                </span>
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/links">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-link"></i>
+                                </span>
+                            
+                            友链
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                </span>
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        哈希表
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/nemo.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Jackie</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-02-10</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Mon Feb 10 2025 12:29:30 GMT+0800">2025-02-10</span>
+                </span>
+            
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/LeetCode/">LeetCode</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>5.9k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>26 分钟</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="哈希表"><a class="markdownIt-Anchor" href="#哈希表"></a> 哈希表</h1>
+<h2 id="定义"><a class="markdownIt-Anchor" href="#定义"></a> 定义</h2>
+<p>根据关键码的值而直接进行访问的数据结构</p>
+<blockquote>
+<p>数组也是一张哈希表</p>
+<p>哈希表中关键码就是数组的索引下标，然后通过下标直接访问数组中的元素</p>
+</blockquote>
+<p><strong>哈希表用来快速判断一个元素是否出现集合里</strong></p>
+<h3 id="哈希函数"><a class="markdownIt-Anchor" href="#哈希函数"></a> 哈希函数</h3>
+<p>以查询学生名字是否属于该学校为例，枚举的时间复杂度为O(n)，而哈希表只需O(1)。将学生姓名映射到哈希表上就涉及到了<strong>哈希函数</strong>：</p>
+<p>通过hashCode把名字转化为数值，一般hashcode是通过特定编码方式，可以将其他数据格式转化为不同的数值，这样就把学生名字映射为哈希表上的索引数字了</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0.png"
+                        alt="哈希函数" 
+                 ></p>
+<blockquote>
+<p>数据规模是dataSize， 哈希表大小是tableSize</p>
+</blockquote>
+<p>对数值<strong>取模</strong>保证映射出来的索引数值都落在哈希表</p>
+<p>以下代码实现了一个简单哈希表。其中，将key和value封装成一个类Pair以表示键值对</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 键值对 */</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Pair</span> &#123;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> key;</span><br><span class="line">    string val;</span><br><span class="line">    <span class="built_in">Pair</span>(<span class="type">int</span> key, string val) &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;key = key;</span><br><span class="line">        <span class="keyword">this</span>-&gt;val = val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 基于数组实现的哈希表 */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ArrayHashMap</span> &#123;</span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    vector&lt;Pair *&gt; buckets;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">ArrayHashMap</span>() &#123;</span><br><span class="line">        <span class="comment">// 初始化数组，包含 100 个桶</span></span><br><span class="line">        buckets = <span class="built_in">vector</span>&lt;Pair *&gt;(<span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ~<span class="built_in">ArrayHashMap</span>() &#123;</span><br><span class="line">        <span class="comment">// 释放内存</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span> &amp;bucket : buckets) &#123;</span><br><span class="line">            <span class="keyword">delete</span> bucket;</span><br><span class="line">        &#125;</span><br><span class="line">        buckets.<span class="built_in">clear</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 哈希函数 */</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">hashFunc</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> index = key % <span class="number">100</span>;</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 查询操作 */</span></span><br><span class="line">    <span class="function">string <span class="title">get</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> index = <span class="built_in">hashFunc</span>(key);</span><br><span class="line">        Pair *pair = buckets[index];</span><br><span class="line">        <span class="keyword">if</span> (pair == <span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> pair-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 添加操作 */</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">put</span><span class="params">(<span class="type">int</span> key, string val)</span> </span>&#123;</span><br><span class="line">        Pair *pair = <span class="keyword">new</span> <span class="built_in">Pair</span>(key, val);</span><br><span class="line">        <span class="type">int</span> index = <span class="built_in">hashFunc</span>(key);</span><br><span class="line">        buckets[index] = pair;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 删除操作 */</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">remove</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> index = <span class="built_in">hashFunc</span>(key);</span><br><span class="line">        <span class="comment">// 释放内存并置为 nullptr</span></span><br><span class="line">        <span class="keyword">delete</span> buckets[index];</span><br><span class="line">        buckets[index] = <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 获取所有键值对 */</span></span><br><span class="line">    <span class="function">vector&lt;Pair *&gt; <span class="title">pairSet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        vector&lt;Pair *&gt; pairSet;</span><br><span class="line">        <span class="keyword">for</span> (Pair *pair : buckets) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pair != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                pairSet.<span class="built_in">push_back</span>(pair);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pairSet;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 获取所有键 */</span></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">keySet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; keySet;</span><br><span class="line">        <span class="keyword">for</span> (Pair *pair : buckets) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pair != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                keySet.<span class="built_in">push_back</span>(pair-&gt;key);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> keySet;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 获取所有值 */</span></span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">valueSet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; valueSet;</span><br><span class="line">        <span class="keyword">for</span> (Pair *pair : buckets) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pair != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                valueSet.<span class="built_in">push_back</span>(pair-&gt;val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> valueSet;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 打印哈希表 */</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (Pair *kv : <span class="built_in">pairSet</span>()) &#123;</span><br><span class="line">            cout &lt;&lt; kv-&gt;key &lt;&lt; <span class="string">&quot; -&gt; &quot;</span> &lt;&lt; kv-&gt;val &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a class="link"   target="_blank" rel="noopener" href="https://gallery.selfboot.cn/zh/algorithms/hashtable" >哈希表的可视化页面<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="哈希碰撞"><a class="markdownIt-Anchor" href="#哈希碰撞"></a> 哈希碰撞</h3>
+<p>如果学生的数量大于哈希表，此时就算哈希函数计算的再均匀，也避免不了会有几位学生的名字同时映射到哈希表同一个索引下标的位置</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E5%93%88%E5%B8%8C%E7%A2%B0%E6%92%9E.png"
+                        alt="哈希碰撞" 
+                 ></p>
+<h4 id="链式地址"><a class="markdownIt-Anchor" href="#链式地址"></a> 链式地址</h4>
+<p>将单个元素转换为链表，将键值对作为链表节点，将所有发生冲突的键值对都存储在同一链表中</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E9%93%BE%E5%BC%8F%E5%9C%B0%E5%9D%80.png"
+                        alt="链式地址" 
+                 ></p>
+<ul>
+<li>操作
+<ul>
+<li><strong>查询元素</strong>：输入key，经过哈希函数得到<strong>桶索引</strong>，即可访问链表头节点，然后遍历链表并对比key以查找目标键值对</li>
+<li><strong>添加元素</strong>：首先通过哈希函数访问链表头节点，然后将节点（键值对）添加到链表中</li>
+<li><strong>删除元素</strong>：根据哈希函数的结果访问链表头部，接着遍历链表以查找目标节点并将其删除</li>
+</ul>
+</li>
+<li>局限性
+<ul>
+<li><strong>占用空间增大</strong>：链表包含节点指针，它相比数组更加耗费内存空间</li>
+<li><strong>查询效率降低</strong>：因为需要线性遍历链表来查找对应元素</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 链式地址哈希表 */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HashMapChaining</span> &#123;</span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> size;                       <span class="comment">// 键值对数量</span></span><br><span class="line">    <span class="type">int</span> capacity;                   <span class="comment">// 哈希表容量</span></span><br><span class="line">    <span class="type">double</span> loadThres;               <span class="comment">// 触发扩容的负载因子阈值</span></span><br><span class="line">    <span class="type">int</span> extendRatio;                <span class="comment">// 扩容倍数</span></span><br><span class="line">    vector&lt;vector&lt;Pair *&gt;&gt; buckets; <span class="comment">// 桶数组</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/* 构造方法 */</span></span><br><span class="line">    <span class="built_in">HashMapChaining</span>() : <span class="built_in">size</span>(<span class="number">0</span>), <span class="built_in">capacity</span>(<span class="number">4</span>), <span class="built_in">loadThres</span>(<span class="number">2.0</span> / <span class="number">3.0</span>), <span class="built_in">extendRatio</span>(<span class="number">2</span>) &#123;</span><br><span class="line">        buckets.<span class="built_in">resize</span>(capacity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 析构方法 */</span></span><br><span class="line">    ~<span class="built_in">HashMapChaining</span>() &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;bucket : buckets) &#123;</span><br><span class="line">            <span class="keyword">for</span> (Pair *pair : bucket) &#123;</span><br><span class="line">                <span class="comment">// 释放内存</span></span><br><span class="line">                <span class="keyword">delete</span> pair;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 哈希函数 */</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">hashFunc</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> key % capacity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 负载因子 */</span></span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">loadFactor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="type">double</span>)size / (<span class="type">double</span>)capacity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 查询操作 */</span></span><br><span class="line">    <span class="function">string <span class="title">get</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> index = <span class="built_in">hashFunc</span>(key);</span><br><span class="line">        <span class="comment">// 遍历桶，若找到 key ，则返回对应 val</span></span><br><span class="line">        <span class="keyword">for</span> (Pair *pair : buckets[index]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pair-&gt;key == key) &#123;</span><br><span class="line">                <span class="keyword">return</span> pair-&gt;val;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 若未找到 key ，则返回空字符串</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 添加操作 */</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">put</span><span class="params">(<span class="type">int</span> key, string val)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 当负载因子超过阈值时，执行扩容</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">loadFactor</span>() &gt; loadThres) &#123;</span><br><span class="line">            <span class="built_in">extend</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> index = <span class="built_in">hashFunc</span>(key);</span><br><span class="line">        <span class="comment">// 遍历桶，若遇到指定 key ，则更新对应 val 并返回</span></span><br><span class="line">        <span class="keyword">for</span> (Pair *pair : buckets[index]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pair-&gt;key == key) &#123;</span><br><span class="line">                pair-&gt;val = val;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 若无该 key ，则将键值对添加至尾部</span></span><br><span class="line">        buckets[index].<span class="built_in">push_back</span>(<span class="keyword">new</span> <span class="built_in">Pair</span>(key, val));</span><br><span class="line">        size++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 删除操作 */</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">remove</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> index = <span class="built_in">hashFunc</span>(key);</span><br><span class="line">        <span class="keyword">auto</span> &amp;bucket = buckets[index];</span><br><span class="line">        <span class="comment">// 遍历桶，从中删除键值对</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; bucket.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (bucket[i]-&gt;key == key) &#123;</span><br><span class="line">                Pair *tmp = bucket[i];</span><br><span class="line">                bucket.<span class="built_in">erase</span>(bucket.<span class="built_in">begin</span>() + i); <span class="comment">// 从中删除键值对</span></span><br><span class="line">                <span class="keyword">delete</span> tmp;                       <span class="comment">// 释放内存</span></span><br><span class="line">                size--;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 扩容哈希表 */</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">extend</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 暂存原哈希表</span></span><br><span class="line">        vector&lt;vector&lt;Pair *&gt;&gt; bucketsTmp = buckets;</span><br><span class="line">        <span class="comment">// 初始化扩容后的新哈希表</span></span><br><span class="line">        capacity *= extendRatio;</span><br><span class="line">        buckets.<span class="built_in">clear</span>();</span><br><span class="line">        buckets.<span class="built_in">resize</span>(capacity);</span><br><span class="line">        size = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 将键值对从原哈希表搬运至新哈希表</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;bucket : bucketsTmp) &#123;</span><br><span class="line">            <span class="keyword">for</span> (Pair *pair : bucket) &#123;</span><br><span class="line">                <span class="built_in">put</span>(pair-&gt;key, pair-&gt;val);</span><br><span class="line">                <span class="comment">// 释放内存</span></span><br><span class="line">                <span class="keyword">delete</span> pair;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 打印哈希表 */</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;bucket : buckets) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;[&quot;</span>;</span><br><span class="line">            <span class="keyword">for</span> (Pair *pair : bucket) &#123;</span><br><span class="line">                cout &lt;&lt; pair-&gt;key &lt;&lt; <span class="string">&quot; -&gt; &quot;</span> &lt;&lt; pair-&gt;val &lt;&lt; <span class="string">&quot;, &quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;]\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="开放寻址"><a class="markdownIt-Anchor" href="#开放寻址"></a> 开放寻址</h4>
+<p>不引入额外的数据结构，而是通过<strong>多次探测</strong>来处理哈希冲突，探测方式主要包括线性探测、平方探测和多次哈希等</p>
+<p>开放寻址哈希表都存在<strong>不能直接删除元素</strong>的问题</p>
+<h5 id="线性探测"><a class="markdownIt-Anchor" href="#线性探测"></a> 线性探测</h5>
+<blockquote>
+<p>前提：tableSize&gt;dataSize。需要依靠哈希表中的空位来解决碰撞问题</p>
+</blockquote>
+<p>采用固定步长的线性搜索来进行探测</p>
+<ul>
+<li><strong>插入元素</strong>：通过哈希函数计算桶索引，若发现桶内已有元素，则从冲突位置向后线性遍历（步长通常为1），直至找到空桶，将元素插入其中</li>
+<li><strong>查找元素</strong>：若发现哈希冲突，则使用相同步长向后进行线性遍历，直到找到对应元素，返回value即可；如果遇到空桶，说明目标元素不在哈希表中，返回None</li>
+</ul>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B.png"
+                        alt="线性探测" 
+                 ></p>
+<ul>
+<li>局限</li>
+</ul>
+<p>线性探测容易产生<strong>聚集现象</strong></p>
+<blockquote>
+<p>数组中连续被占用的位置越长，这些连续位置发生哈希冲突的可能性越大，从而进一步促使该位置的聚堆生长，形成恶性循环，最终导致增删查改操作效率劣化</p>
+</blockquote>
+<p>不能在开放寻址哈希表中<strong>直接删除</strong>元素</p>
+<blockquote>
+<p>删除元素会在数组内产生一个空桶None，而当查询元素时，线性探测到该空桶就会返回，因此在该空桶之下的元素都无法再被访问到，程序可能误判这些元素不存在</p>
+<p>可以采用<strong>懒删除</strong>机制：它不直接从哈希表中移除元素，而是利用一个常量TOMBSTONE来标记这个桶。该机制下，None和TOMBSTONE都代表空桶，都可以放置键值对。但不同的是，线性探测到TOMBSTONE时应该<strong>继续遍历</strong>，因为其之下可能还存在键值对</p>
+<p>懒删除可能会<strong>加速哈希表的性能退化</strong>。这是因为每次删除操作都会产生一个删除标记，随着TOMBSTONE的增加，搜索时间也会增加，因为线性探测可能需要跳过多个TOMBSTONE才能找到目标元素</p>
+<p>为此，考虑在线性探测中记录遇到的首个TOMBSTONE的索引，并将搜索到的目标元素与该TOMBSTONE<strong>交换位置</strong>。这样做的好处是当每次查询或添加元素时元素会被移动至距离理想位置（探测起始点）更近的桶，从而优化查询效率</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 开放寻址哈希表 */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HashMapOpenAddressing</span> &#123;</span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> size;                             <span class="comment">// 键值对数量</span></span><br><span class="line">    <span class="type">int</span> capacity = <span class="number">4</span>;                     <span class="comment">// 哈希表容量</span></span><br><span class="line">    <span class="type">const</span> <span class="type">double</span> loadThres = <span class="number">2.0</span> / <span class="number">3.0</span>;     <span class="comment">// 触发扩容的负载因子阈值</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> extendRatio = <span class="number">2</span>;            <span class="comment">// 扩容倍数</span></span><br><span class="line">    vector&lt;Pair *&gt; buckets;               <span class="comment">// 桶数组</span></span><br><span class="line">    Pair *TOMBSTONE = <span class="keyword">new</span> <span class="built_in">Pair</span>(<span class="number">-1</span>, <span class="string">&quot;-1&quot;</span>); <span class="comment">// 删除标记</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/* 构造方法 */</span></span><br><span class="line">    <span class="built_in">HashMapOpenAddressing</span>() : <span class="built_in">size</span>(<span class="number">0</span>), <span class="built_in">buckets</span>(capacity, <span class="literal">nullptr</span>) &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 析构方法 */</span></span><br><span class="line">    ~<span class="built_in">HashMapOpenAddressing</span>() &#123;</span><br><span class="line">        <span class="keyword">for</span> (Pair *pair : buckets) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pair != <span class="literal">nullptr</span> &amp;&amp; pair != TOMBSTONE) &#123;</span><br><span class="line">                <span class="keyword">delete</span> pair;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">delete</span> TOMBSTONE;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 哈希函数 */</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">hashFunc</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> key % capacity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 负载因子 */</span></span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">loadFactor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="type">double</span>)size / capacity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 搜索 key 对应的桶索引 */</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findBucket</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> index = <span class="built_in">hashFunc</span>(key);</span><br><span class="line">        <span class="type">int</span> firstTombstone = <span class="number">-1</span>;</span><br><span class="line">        <span class="comment">// 线性探测，当遇到空桶时跳出</span></span><br><span class="line">        <span class="keyword">while</span> (buckets[index] != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="comment">// 若遇到 key ，返回对应的桶索引</span></span><br><span class="line">            <span class="keyword">if</span> (buckets[index]-&gt;key == key) &#123;</span><br><span class="line">                <span class="comment">// 若之前遇到了删除标记，则将键值对移动至该索引处</span></span><br><span class="line">                <span class="keyword">if</span> (firstTombstone != <span class="number">-1</span>) &#123;</span><br><span class="line">                    buckets[firstTombstone] = buckets[index];</span><br><span class="line">                    buckets[index] = TOMBSTONE;</span><br><span class="line">                    <span class="keyword">return</span> firstTombstone; <span class="comment">// 返回移动后的桶索引</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> index; <span class="comment">// 返回桶索引</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 记录遇到的首个删除标记</span></span><br><span class="line">            <span class="keyword">if</span> (firstTombstone == <span class="number">-1</span> &amp;&amp; buckets[index] == TOMBSTONE) &#123;</span><br><span class="line">                firstTombstone = index;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 计算桶索引，越过尾部则返回头部</span></span><br><span class="line">            index = (index + <span class="number">1</span>) % capacity;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 若 key 不存在，则返回添加点的索引</span></span><br><span class="line">        <span class="keyword">return</span> firstTombstone == <span class="number">-1</span> ? index : firstTombstone;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 查询操作 */</span></span><br><span class="line">    <span class="function">string <span class="title">get</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 搜索 key 对应的桶索引</span></span><br><span class="line">        <span class="type">int</span> index = <span class="built_in">findBucket</span>(key);</span><br><span class="line">        <span class="comment">// 若找到键值对，则返回对应 val</span></span><br><span class="line">        <span class="keyword">if</span> (buckets[index] != <span class="literal">nullptr</span> &amp;&amp; buckets[index] != TOMBSTONE) &#123;</span><br><span class="line">            <span class="keyword">return</span> buckets[index]-&gt;val;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 若键值对不存在，则返回空字符串</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 添加操作 */</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">put</span><span class="params">(<span class="type">int</span> key, string val)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 当负载因子超过阈值时，执行扩容</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">loadFactor</span>() &gt; loadThres) &#123;</span><br><span class="line">            <span class="built_in">extend</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 搜索 key 对应的桶索引</span></span><br><span class="line">        <span class="type">int</span> index = <span class="built_in">findBucket</span>(key);</span><br><span class="line">        <span class="comment">// 若找到键值对，则覆盖 val 并返回</span></span><br><span class="line">        <span class="keyword">if</span> (buckets[index] != <span class="literal">nullptr</span> &amp;&amp; buckets[index] != TOMBSTONE) &#123;</span><br><span class="line">            buckets[index]-&gt;val = val;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 若键值对不存在，则添加该键值对</span></span><br><span class="line">        buckets[index] = <span class="keyword">new</span> <span class="built_in">Pair</span>(key, val);</span><br><span class="line">        size++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 删除操作 */</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">remove</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 搜索 key 对应的桶索引</span></span><br><span class="line">        <span class="type">int</span> index = <span class="built_in">findBucket</span>(key);</span><br><span class="line">        <span class="comment">// 若找到键值对，则用删除标记覆盖它</span></span><br><span class="line">        <span class="keyword">if</span> (buckets[index] != <span class="literal">nullptr</span> &amp;&amp; buckets[index] != TOMBSTONE) &#123;</span><br><span class="line">            <span class="keyword">delete</span> buckets[index];</span><br><span class="line">            buckets[index] = TOMBSTONE;</span><br><span class="line">            size--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 扩容哈希表 */</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">extend</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 暂存原哈希表</span></span><br><span class="line">        vector&lt;Pair *&gt; bucketsTmp = buckets;</span><br><span class="line">        <span class="comment">// 初始化扩容后的新哈希表</span></span><br><span class="line">        capacity *= extendRatio;</span><br><span class="line">        buckets = <span class="built_in">vector</span>&lt;Pair *&gt;(capacity, <span class="literal">nullptr</span>);</span><br><span class="line">        size = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 将键值对从原哈希表搬运至新哈希表</span></span><br><span class="line">        <span class="keyword">for</span> (Pair *pair : bucketsTmp) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pair != <span class="literal">nullptr</span> &amp;&amp; pair != TOMBSTONE) &#123;</span><br><span class="line">                <span class="built_in">put</span>(pair-&gt;key, pair-&gt;val);</span><br><span class="line">                <span class="keyword">delete</span> pair;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 打印哈希表 */</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (Pair *pair : buckets) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pair == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                cout &lt;&lt; <span class="string">&quot;nullptr&quot;</span> &lt;&lt; endl;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (pair == TOMBSTONE) &#123;</span><br><span class="line">                cout &lt;&lt; <span class="string">&quot;TOMBSTONE&quot;</span> &lt;&lt; endl;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                cout &lt;&lt; pair-&gt;key &lt;&lt; <span class="string">&quot; -&gt; &quot;</span> &lt;&lt; pair-&gt;val &lt;&lt; endl;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="平方探测"><a class="markdownIt-Anchor" href="#平方探测"></a> 平方探测</h5>
+<p>发生冲突时，平方探测跳过“探测次数的平方”的步数，即1、4、9…步</p>
+<ul>
+<li>优势</li>
+</ul>
+<p>平方探测通过跳过探测次数平方的距离，试图<strong>缓解线性探测的聚集效应</strong></p>
+<p>平方探测会跳过更大的距离来寻找空位置，有助于<strong>数据分布得更加均匀</strong></p>
+<ul>
+<li>局限</li>
+</ul>
+<p>仍然<strong>存在聚集</strong>现象，即某些位置比其他位置更容易被占用</p>
+<p>由于平方的增长，平方探测可能不会探测整个哈希表，这意味着即使哈希表中有空桶，平方探测也可能无法访问到它</p>
+<h5 id="多次哈希"><a class="markdownIt-Anchor" href="#多次哈希"></a> 多次哈希</h5>
+<p>使用多个哈希函数f<sub>1</sub>(x)、f<sub>2</sub>(x)、f<sub>3</sub>(x)…进行探测</p>
+<ul>
+<li><strong>插入元素</strong>：若哈希函数f<sub>1</sub>(x)出现冲突，则尝试f<sub>2</sub>(x)，以此类推，直到找到空位后插入元素</li>
+<li><strong>查找元素</strong>：在相同的哈希函数顺序下进行查找，直到找到目标元素时返回；若遇到空位或已尝试所有哈希函数，说明哈希表中不存在该元素，则返回None</li>
+</ul>
+<p>多个哈希函数会带来额外的计算量</p>
+<h3 id="常见的三种哈希结构"><a class="markdownIt-Anchor" href="#常见的三种哈希结构"></a> 常见的三种哈希结构</h3>
+<ul>
+<li>数组</li>
+<li>set （集合）</li>
+<li>map（映射）</li>
+</ul>
+<blockquote>
+<p>map的空间消耗比数组大一些，因为map要维护红黑树或者哈希表，而且还要做哈希函数，会更加费时</p>
+</blockquote>
+<h4 id="set"><a class="markdownIt-Anchor" href="#set"></a> set</h4>
+<p>使用<strong>集合</strong>来解决哈希问题优先使用unordered_set</p>
+<blockquote>
+<p>它的查询和增删效率是最优的</p>
+</blockquote>
+<p>集合<strong>有序</strong>用set</p>
+<p>集合不仅<strong>有序</strong>还<strong>有重复数据</strong>用multiset</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">集合</th>
+<th style="text-align:center">底层实现</th>
+<th style="text-align:center">是否有序</th>
+<th style="text-align:center">数值是否可以重复</th>
+<th style="text-align:center">能否更改数值</th>
+<th style="text-align:center">查询效率</th>
+<th style="text-align:center">增删效率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">std::set</td>
+<td style="text-align:center">红黑树</td>
+<td style="text-align:center">有序</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+</tr>
+<tr>
+<td style="text-align:center">std::multiset</td>
+<td style="text-align:center">红黑树</td>
+<td style="text-align:center">有序</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+</tr>
+<tr>
+<td style="text-align:center">std::unordered_set</td>
+<td style="text-align:center">哈希表</td>
+<td style="text-align:center">无序</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">O(1)</td>
+</tr>
+</tbody>
+</table>
+<p>std::unordered_set底层实现为哈希表，<strong>std::set和std::multiset的底层实现是红黑树</strong></p>
+<blockquote>
+<p>红黑树是一种平衡二叉搜索树，所以key值是有序的，但key不可以修改，改动key值会导致整棵树的错乱，所以只能删除和增加</p>
+</blockquote>
+<p>虽然std::set和std::multiset的底层实现基于<strong>红黑树</strong>而非哈希表，它们通过红黑树来索引和存储数据。不过给我们的使用方式，还是哈希法的使用方式，即依靠键（key）来访问值（value）。所以使用这些数据结构来解决映射问题的方法，我们依然称之为哈希法。std::map也是一样的道理</p>
+<blockquote>
+<p>Q：hash_set、hash_map与unordered_set、unordered_map的关系？</p>
+<p>A：实际功能一样，但是unordered_set在C++11的时候被引入标准库了，而hash_set并没有，所以建议还是使用unordered_set比较好，这就好比一个是官方认证的，hash_set，hash_map是C++11标准之前民间高手自发造的轮子</p>
+</blockquote>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="set.png"
+                        alt="set" 
+                 ></p>
+<h4 id="map"><a class="markdownIt-Anchor" href="#map"></a> map</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">映射</th>
+<th style="text-align:center">底层实现</th>
+<th style="text-align:center">是否有序</th>
+<th style="text-align:center">数值是否可以重复</th>
+<th style="text-align:center">能否更改数值</th>
+<th style="text-align:center">查询效率</th>
+<th style="text-align:center">增删效率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">std::map</td>
+<td style="text-align:center">红黑树</td>
+<td style="text-align:center">key有序</td>
+<td style="text-align:center">key不可重复</td>
+<td style="text-align:center">key不可修改</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+</tr>
+<tr>
+<td style="text-align:center">std::multimap</td>
+<td style="text-align:center">红黑树</td>
+<td style="text-align:center">key有序</td>
+<td style="text-align:center">key可重复</td>
+<td style="text-align:center">key不可修改</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+</tr>
+<tr>
+<td style="text-align:center">std::unordered_map</td>
+<td style="text-align:center">哈希表</td>
+<td style="text-align:center">key无序</td>
+<td style="text-align:center">key不可重复</td>
+<td style="text-align:center">key不可修改</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">O(1)</td>
+</tr>
+</tbody>
+</table>
+<p>std::unordered_map底层实现为哈希表，std::map和std::multimap的底层实现是红黑树</p>
+<p>同理，<strong>std::map和std::multimap的key也是有序的</strong></p>
+<p>map是一个<strong>key value</strong>的数据结构，map中对key有限制，对value没有限制</p>
+<blockquote>
+<p>因为key的存储方式使用红黑树实现的</p>
+</blockquote>
+<p>unordered_map的迭代器<strong>iterator</strong>遍历容器中的键值对。迭代器指向的是一个键值对（pair），可以通过迭代器访问键和值：</p>
+<ul>
+<li>iter-&gt;first：表示键（key）</li>
+<li>iter-&gt;second：表示值（value）</li>
+</ul>
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+<p>数据小用数组，数据大用set，数据比较散用map</p>
+<p>遇到了要快速<strong>判断一个元素是否出现集合</strong>里的时候，就要考虑哈希法</p>
+<p>哈希法<strong>牺牲了空间换取了时间</strong></p>
+<blockquote>
+<p>因为要用额外的数组set或map来存数据才能实现快速查找</p>
+</blockquote>
+<h2 id="有效的字母异位词"><a class="markdownIt-Anchor" href="#有效的字母异位词"></a> 有效的字母异位词</h2>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-anagram/" >242. 有效的字母异位词<i class="fas fa-external-link-alt"></i></a></p>
+<blockquote>
+<p>字母异位词：通过重新排列不同单词或短语的字母而形成的单词或短语，并使用所有原字母一次</p>
+<p><strong>同分异构体</strong></p>
+</blockquote>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D.gif"
+                        alt="有效的字母异位词" 
+                 ></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isAnagram</span><span class="params">(string s, string t)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> record[<span class="number">26</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;s.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            record[s[i]-<span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;s.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            record[t[i]-<span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(record[i]!=<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n)</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+<h2 id="两个数组的交集"><a class="markdownIt-Anchor" href="#两个数组的交集"></a> 两个数组的交集</h2>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/intersection-of-two-arrays/" >349. 两个数组的交集<i class="fas fa-external-link-alt"></i></a></p>
+<p>题目特意说明：输出结果中的<strong>每个元素一定是唯一</strong>的，即输出的结果的<strong>去重</strong>的且可不考虑输出结果的顺序</p>
+<p><mark><a href="">unordered_set</a></mark></p>
+<p><mark><a href="">范围for循环</a></mark></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">intersection</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums1, vector&lt;<span class="type">int</span>&gt;&amp; nums2)</span> </span>&#123;</span><br><span class="line">        unordered_set&lt;<span class="type">int</span>&gt; result_set;</span><br><span class="line">        <span class="function">unordered_set&lt;<span class="type">int</span>&gt; <span class="title">nums_set</span><span class="params">(nums1.begin(),nums1.end())</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num:nums2)&#123;</span><br><span class="line">            <span class="comment">//发现nums2的元素在nums_set里又出现过</span></span><br><span class="line">            <span class="keyword">if</span>(nums_set.<span class="built_in">find</span>(num)!=nums_set.<span class="built_in">end</span>())&#123;</span><br><span class="line">                result_set.<span class="built_in">insert</span>(num);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(result_set.<span class="built_in">begin</span>(),result_set.<span class="built_in">end</span>());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n+m)，m是最后要把set转成vector</li>
+<li>空间复杂度：O(n)</li>
+</ul>
+<h2 id="快乐数"><a class="markdownIt-Anchor" href="#快乐数"></a> 快乐数</h2>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/happy-number/" >202. 快乐数<i class="fas fa-external-link-alt"></i></a></p>
+<blockquote>
+<ul>
+<li>快乐数</li>
+</ul>
+<p>对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为1，也可能是<strong>无限循环</strong>但始终变不到1。如果可以变为1，那么这个数就是快乐数</p>
+</blockquote>
+<p><strong>无限循环</strong>说明求和的过程中sum会<strong>重复出现</strong></p>
+<p>使用哈希法判断sum是否重复出现，如果重复return false， 否则一直找到sum为1为止</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isHappy</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        unordered_set&lt;<span class="type">int</span>&gt; set;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="type">int</span> sum=<span class="built_in">GetSum</span>(n);</span><br><span class="line">            <span class="keyword">if</span>(sum==<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//sum曾经出现过说明已陷入死循环</span></span><br><span class="line">            <span class="keyword">if</span>(set.<span class="built_in">find</span>(sum)!=set.<span class="built_in">end</span>())&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                set.<span class="built_in">insert</span>(sum);</span><br><span class="line">            &#125;</span><br><span class="line">            n=sum;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">GetSum</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n)&#123;</span><br><span class="line">            sum+=(n%<span class="number">10</span>)*(n%<span class="number">10</span>);</span><br><span class="line">            n/=<span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(logn)</li>
+<li>空间复杂度：O(logn)</li>
+</ul>
+<h2 id="两数之和"><a class="markdownIt-Anchor" href="#两数之和"></a> 两数之和</h2>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/two-sum/" >1. 两数之和<i class="fas fa-external-link-alt"></i></a></p>
+<p>本题不仅要知道元素<strong>有没有遍历</strong>过，还要知道这个<strong>元素对应的下标</strong>，需要使用<strong>key value结构</strong>来存放，key存元素，value存下标，那么使用<strong>map</strong>正合适</p>
+<blockquote>
+<ul>
+<li>此题数组&amp;set的局限</li>
+</ul>
+<p>数组大小受限制，且若元素很少，而哈希值太大会造成内存空间的浪费</p>
+<p>set是一个集合，里面放的元素只能是一个key，而此题不仅要判断y是否存在且还要记录y的下标位置，因为要返回x和y的下标，所以set也不能用</p>
+</blockquote>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C1.png"
+                        alt="两数之和1" 
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C2.png"
+                        alt="两数之和2" 
+                 ></p>
+<p><mark><a href="">iterator</a></mark></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; map;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            unordered_map&lt;<span class="type">int</span>, <span class="type">int</span>&gt;::iterator iter=map.<span class="built_in">find</span>(target-nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(iter!=map.<span class="built_in">end</span>())&#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;iter-&gt;second,i&#125;;</span><br><span class="line">             &#125;</span><br><span class="line">            map.<span class="built_in">insert</span>(<span class="built_in">pair</span>&lt;<span class="type">int</span>,<span class="type">int</span>&gt;(nums[i],i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n)</li>
+<li>空间复杂度：O(n)</li>
+</ul>
+<h2 id="四数相加ii"><a class="markdownIt-Anchor" href="#四数相加ii"></a> 四数相加II</h2>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/4sum-ii/" >454. 四数相加 II<i class="fas fa-external-link-alt"></i></a></p>
+<p>key：a+b的数值，value：a+b数值出现的次数</p>
+<p>count：统计a+b+c+d=0出现的次数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">fourSumCount</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums1, vector&lt;<span class="type">int</span>&gt;&amp; nums2, vector&lt;<span class="type">int</span>&gt;&amp; nums3, vector&lt;<span class="type">int</span>&gt;&amp; nums4)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; umap;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> a:nums1)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> b:nums2)&#123;</span><br><span class="line">                umap[a+b]++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> count=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> c:nums3)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> d:nums4)&#123;</span><br><span class="line">                <span class="keyword">if</span>(umap.<span class="built_in">find</span>(<span class="number">0</span>-(c+d))!=umap.<span class="built_in">end</span>())&#123;</span><br><span class="line">                    count+=umap[<span class="number">0</span>-(c+d)];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n<sup>2</sup>)</li>
+<li>空间复杂度：O(n<sup>2</sup>)，最坏情况下A和B的值各不相同，相加产生的数字个数为n<sup>2</sup></li>
+</ul>
+<h2 id="赎金信"><a class="markdownIt-Anchor" href="#赎金信"></a> 赎金信</h2>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/ransom-note/" >383. 赎金信<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li>“为了不暴露赎金信字迹，要从杂志上搜索各个需要的字母，组成单词来表达意思”这里说明杂志里面的字母<strong>不可重复</strong>使用</li>
+<li>“你可以假设两个字符串均只含有小写字母”说明<strong>只有小写字母</strong></li>
+</ul>
+<h3 id="暴力法"><a class="markdownIt-Anchor" href="#暴力法"></a> 暴力法</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">canConstruct</span><span class="params">(string ransomNote, string magazine)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;magazine.<span class="built_in">length</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;ransomNote.<span class="built_in">length</span>();j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(magazine[i]==ransomNote[j])&#123;</span><br><span class="line">                    ransomNote.<span class="built_in">erase</span>(ransomNote.<span class="built_in">begin</span>()+j);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(ransomNote.<span class="built_in">length</span>()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n<sup>2</sup>)</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+<h3 id="哈希法"><a class="markdownIt-Anchor" href="#哈希法"></a> 哈希法</h3>
+<p>只有小写字母，则可以空间换时间，用长度26的数组记录magazine里字母出现的次数</p>
+<p>再用ransomNote验证数组是否包含ransomNote所需要的字母</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">canConstruct</span><span class="params">(string ransomNote, string magazine)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> record[<span class="number">26</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">if</span>(ransomNote.<span class="built_in">size</span>()&gt;magazine.<span class="built_in">size</span>())&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;magazine.<span class="built_in">length</span>();i++)&#123;</span><br><span class="line">            record[magazine[i]-<span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;ransomNote.<span class="built_in">length</span>();j++)&#123;</span><br><span class="line">            record[ransomNote[j]-<span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">            <span class="keyword">if</span>(record[ransomNote[j]-<span class="string">&#x27;a&#x27;</span>]&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n)</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+<h2 id="三数之和"><a class="markdownIt-Anchor" href="#三数之和"></a> 三数之和</h2>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/3sum/" >15. 三数之和<i class="fas fa-external-link-alt"></i></a></p>
+<p>三元组不重复，但是三元组里面的元素可以重复： {0,0,0}</p>
+<p>nums[i]==nums[i-1]：{-1,-1,2}</p>
+<blockquote>
+<p>如果是nums[i]与nums[i+1]</p>
+<p>此时把三元组中出现重复元素的情况直接pass掉了。如{-1,-1,2}这组数据，当遍历到第一个-1的时候，判断下一个也是-1，那这组数据就pass了</p>
+</blockquote>
+<h3 id="哈希法-2"><a class="markdownIt-Anchor" href="#哈希法-2"></a> 哈希法</h3>
+<p><mark><a href="">vector&lt;vector&lt;int&gt;&gt; result</a></mark></p>
+<blockquote>
+<p>剪枝：减少搜索空间，提高算法的效率</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">threeSum</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&gt;<span class="number">0</span>)&#123;<span class="comment">//第一个最小的元素都大于0，则后面的数不可能三个数相加为0</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i&gt;<span class="number">0</span>&amp;&amp;nums[i]==nums[i<span class="number">-1</span>])&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            unordered_set&lt;<span class="type">int</span>&gt; set;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=i+<span class="number">1</span>;k&lt;nums.<span class="built_in">size</span>();k++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(k&gt;i+<span class="number">2</span>&amp;&amp;nums[k]==nums[k<span class="number">-1</span>]&amp;&amp;nums[k<span class="number">-1</span>]==nums[k<span class="number">-2</span>])&#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="type">int</span> target=<span class="number">0</span>-(nums[i]+nums[k]);</span><br><span class="line">                <span class="keyword">if</span>(set.<span class="built_in">find</span>(target)!=set.<span class="built_in">end</span>())&#123;</span><br><span class="line">                    result.<span class="built_in">push_back</span>(&#123;nums[i],target,nums[k]&#125;);</span><br><span class="line">                    set.<span class="built_in">erase</span>(target);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    set.<span class="built_in">insert</span>(nums[k]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n<sup>2</sup>)</li>
+<li>空间复杂度：O(n)，额外的set开销</li>
+</ul>
+<h3 id="双指针法"><a class="markdownIt-Anchor" href="#双指针法"></a> 双指针法</h3>
+<p>这道题目使用双指针法要比哈希法高效</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C.gif"
+                        alt="三数之和" 
+                 ></p>
+<p>将数组排序，这里相当于a=nums[i]，b=nums[left]，c=nums[right]</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">threeSum</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums.<span class="built_in">size</span>()&lt;<span class="number">3</span>||nums[i]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i&gt;<span class="number">0</span>&amp;&amp;nums[i]==nums[i<span class="number">-1</span>])&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">int</span> left=i+<span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> right=nums.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">while</span>(right&gt;left)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[i]+nums[left]+nums[right]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                    right--;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[i]+nums[left]+nums[right]&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                    left++;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    result.<span class="built_in">push_back</span>(vector&lt;<span class="type">int</span>&gt;&#123;nums[i],nums[left],nums[right]&#125;);</span><br><span class="line">                    <span class="comment">//0 -1 -1 -1 -1 1 1 1 1</span></span><br><span class="line">                    <span class="comment">//i  l                r</span></span><br><span class="line">                    <span class="comment">//去重的逻辑一定要放在收获结果的下面，即至少要收获一个符合条件的结果</span></span><br><span class="line">                    <span class="keyword">while</span>(right&gt;left&amp;&amp;nums[right]==nums[right<span class="number">-1</span>])&#123;</span><br><span class="line">                        right--;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">while</span>(right&gt;left&amp;&amp;nums[left]==nums[left+<span class="number">1</span>])&#123;</span><br><span class="line">                        left++;</span><br><span class="line">                    &#125;</span><br><span class="line">                    right--;</span><br><span class="line">                    left++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n<sup>2</sup>)</li>
+<li>空间复杂度：O(logn)排序额外使用了空间</li>
+</ul>
+<h2 id="四数之和"><a class="markdownIt-Anchor" href="#四数之和"></a> 四数之和</h2>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode.cn/problems/4sum/" >18. 四数之和<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="双指针法-2"><a class="markdownIt-Anchor" href="#双指针法-2"></a> 双指针法</h3>
+<p>在三数之和基础上多加一层循环及一级二级剪枝、去重</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">fourSum</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target) &#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k=<span class="number">0</span>;k&lt;nums.<span class="built_in">size</span>();k++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[k]&gt;target&amp;&amp;nums[k]&gt;=<span class="number">0</span>)&#123;<span class="comment">//traget可能为负数</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(k&gt;<span class="number">0</span>&amp;&amp;nums[k]==nums[k<span class="number">-1</span>])&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=k+<span class="number">1</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[k]+nums[i]&gt;target&amp;&amp;nums[k]+nums[i]&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(i&gt;k+<span class="number">1</span>&amp;&amp;nums[i]==nums[i<span class="number">-1</span>])&#123;<span class="comment">//对nums[i]去重</span></span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="type">int</span> left=i+<span class="number">1</span>;</span><br><span class="line">                <span class="type">int</span> right=nums.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">                <span class="keyword">while</span>(right&gt;left)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(nums[k]+nums[i]+nums[left]+nums[right]&gt;target)&#123;</span><br><span class="line">                        right--;</span><br><span class="line">                    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[k]+nums[i]+nums[left]+nums[right]&lt;target)&#123;</span><br><span class="line">                        left++;</span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        result.<span class="built_in">push_back</span>(vector&lt;<span class="type">int</span>&gt;&#123;nums[k],nums[i],nums[left],nums[right]&#125;);</span><br><span class="line">                        <span class="comment">//对nums[left]和nums[right]去重</span></span><br><span class="line">                        <span class="keyword">while</span>(right&gt;left&amp;&amp;nums[right]==nums[right<span class="number">-1</span>])&#123;</span><br><span class="line">                            right--;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">while</span>(right&gt;left&amp;&amp;nums[left]==nums[left+<span class="number">1</span>])&#123;</span><br><span class="line">                            left++;</span><br><span class="line">                        &#125;</span><br><span class="line">                        right--;</span><br><span class="line">                        left++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n<sup>3</sup>)</li>
+<li>空间复杂度：O(logn)排序额外使用了空间</li>
+</ul>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/LeetCode/">LeetCode</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2025/02/06/%E9%93%BE%E8%A1%A8/"
+                                   title="链表"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">链表</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="waline-comment-container">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline-meta.css"/>
+        <div id="waline-comment"></div>
+        <script data-pjax>
+          window.KeepCommentPlugin.walineOptions = JSON.parse('{&#34;login&#34;:&#34;force&#34;,&#34;copyright&#34;:false}'.replace(/&#34;/g, '"'))
+          window.KeepCommentPlugin.walineOptions.el = '#waline-comment'
+          window.KeepCommentPlugin.walineOptions.comment = '.post-comments-count'
+          window.KeepCommentPlugin.walineOptions.serverURL = 'waline-for-blog-psi.vercel.app'
+          window.KeepCommentPlugin.walineOptions.lang = 'zh-CN' || 'zh-CN'
+          window.KeepCommentPlugin.walineOptions.reaction = 'false' === 'true'
+        </script>
+
+        
+
+        
+            <script data-pjax
+                    async
+                    type="module"
+            >
+              import { init } from '//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline.js'
+              window.KeepCommentPlugin.initWaline = () => {
+                if (init) {
+                  init(window.KeepCommentPlugin.walineOptions)
+                  window.KeepCommentPlugin.hideLoading()
+                } else {
+                  setTimeout(() => {
+                    window.KeepCommentPlugin.initWaline()
+                  }, 1000)
+                }
+              }
+
+              if ('true' === 'true') {
+                setTimeout(() => {
+                  window.KeepCommentPlugin.initWaline()
+                }, 1200)
+              } else {
+                window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initWaline)
+              }
+            </script>
+        
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-text"> 哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text"> 定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0"><span class="nav-text"> 哈希函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E7%A2%B0%E6%92%9E"><span class="nav-text"> 哈希碰撞</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%93%BE%E5%BC%8F%E5%9C%B0%E5%9D%80"><span class="nav-text"> 链式地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%80%E6%94%BE%E5%AF%BB%E5%9D%80"><span class="nav-text"> 开放寻址</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B"><span class="nav-text"> 线性探测</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B9%B3%E6%96%B9%E6%8E%A2%E6%B5%8B"><span class="nav-text"> 平方探测</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E6%AC%A1%E5%93%88%E5%B8%8C"><span class="nav-text"> 多次哈希</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%89%E7%A7%8D%E5%93%88%E5%B8%8C%E7%BB%93%E6%9E%84"><span class="nav-text"> 常见的三种哈希结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#set"><span class="nav-text"> set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#map"><span class="nav-text"> map</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text"> 总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D"><span class="nav-text"> 有效的字母异位词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86"><span class="nav-text"> 两个数组的交集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E4%B9%90%E6%95%B0"><span class="nav-text"> 快乐数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-text"> 两数之和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%95%B0%E7%9B%B8%E5%8A%A0ii"><span class="nav-text"> 四数相加II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%8E%E9%87%91%E4%BF%A1"><span class="nav-text"> 赎金信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9A%B4%E5%8A%9B%E6%B3%95"><span class="nav-text"> 暴力法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E6%B3%95"><span class="nav-text"> 哈希法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-text"> 三数之和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E6%B3%95-2"><span class="nav-text"> 哈希法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95"><span class="nav-text"> 双指针法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-text"> 四数之和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95-2"><span class="nav-text"> 双指针法</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Jackie</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-text"> 哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text"> 定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0"><span class="nav-text"> 哈希函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E7%A2%B0%E6%92%9E"><span class="nav-text"> 哈希碰撞</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%93%BE%E5%BC%8F%E5%9C%B0%E5%9D%80"><span class="nav-text"> 链式地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%80%E6%94%BE%E5%AF%BB%E5%9D%80"><span class="nav-text"> 开放寻址</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%B5%8B"><span class="nav-text"> 线性探测</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B9%B3%E6%96%B9%E6%8E%A2%E6%B5%8B"><span class="nav-text"> 平方探测</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E6%AC%A1%E5%93%88%E5%B8%8C"><span class="nav-text"> 多次哈希</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%89%E7%A7%8D%E5%93%88%E5%B8%8C%E7%BB%93%E6%9E%84"><span class="nav-text"> 常见的三种哈希结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#set"><span class="nav-text"> set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#map"><span class="nav-text"> map</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text"> 总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D"><span class="nav-text"> 有效的字母异位词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86"><span class="nav-text"> 两个数组的交集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E4%B9%90%E6%95%B0"><span class="nav-text"> 快乐数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-text"> 两数之和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%95%B0%E7%9B%B8%E5%8A%A0ii"><span class="nav-text"> 四数相加II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%8E%E9%87%91%E4%BF%A1"><span class="nav-text"> 赎金信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9A%B4%E5%8A%9B%E6%B3%95"><span class="nav-text"> 暴力法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E6%B3%95"><span class="nav-text"> 哈希法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-text"> 三数之和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E6%B3%95-2"><span class="nav-text"> 哈希法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95"><span class="nav-text"> 双指针法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-text"> 四数之和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95-2"><span class="nav-text"> 双指针法</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            
+<script src="/js/post/share.js"></script>
+
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+
+</body>
+</html>

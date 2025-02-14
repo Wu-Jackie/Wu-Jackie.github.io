@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jackie">
+    
+    <title>
+        
+            LeetCode知识补充 |
+        
+        Jackie&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logoow.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+                
+<link rel="stylesheet" href="/css/hide.css">
+
+            
+        
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Jackie's Blog","author":"Jackie","avatar":"/images/nemo.svg","logo":"/images/logoow.svg","favicon":"/images/logoow.svg"},"menu":{"home":"/ || fa-solid fa-home","tags":"/tags || fa-solid fa-tags","links":"/links || fa-solid fa-link","about":"/about || fa-solid fa-user-graduate"},"first_screen":{"enable":true,"background_img":"/images/bg2.svg","background_img_dark":"/images/bg2.svg","description":"Welcome To My Blog! || 無限進步！","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":null},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"waline","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":"waline-for-blog-psi.vercel.app","reaction":false,"version":"3.3.2","options":{"login":"force","copyright":false}},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":["/css/hide.css"],"js":[null]},"root":"","source_data":{"links":[{"title":"Web"},{"name":"小小邵同学","link":"https://swq111.online/","description":null,"avatar":"https://swq111.online/wp-content/uploads/2024/01/3.jpg"},{"name":"yxhhyy","link":"https://yxhhyy.github.io/","description":null,"avatar":"https://yxhhyy.github.io/images/1.jpg"},{"title":"Pwn"},{"name":"jwjlearning","link":"https://jwjlearning.github.io/","description":null,"avatar":"https://jwjlearning.github.io/img/avatar.png"},{"name":"yw-by","link":"https://yw-by.github.io/","description":null,"avatar":"https://yw-by.github.io/images/avatar.jpg"},{"title":"Reverse"},{"name":"FeowmAomr","link":"https://feowmaomr.github.io/","description":null,"avatar":"https://FeowmAomr.github.io/picx-images-hosting/Aomr.webp"},{"name":"Yigod","link":"https://hexo-beta-fawn.vercel.app/","description":null,"avatar":"https://hexo-beta-fawn.vercel.app/images/avatar.jpg"},{"title":"Crypto"},{"name":"Waiting a destined person","link":"\\#","description":null,"avatar":"https://wu-jackie.github.io/images/nemo.svg"}]},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logoow.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Jackie&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-home"></i>
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-tags"></i>
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/links">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-link"></i>
+                                
+                                友链
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-home"></i>
+                                </span>
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-tags"></i>
+                                </span>
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/links">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-link"></i>
+                                </span>
+                            
+                            友链
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                </span>
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        LeetCode知识补充
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/nemo.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Jackie</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-01-24</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Feb 09 2025 19:00:42 GMT+0800">2025-02-09</span>
+                </span>
+            
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/LeetCode/">LeetCode</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>4.3k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>18 分钟</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="leetcode知识补充"><a class="markdownIt-Anchor" href="#leetcode知识补充"></a> LeetCode知识补充</h1>
+<p>对还不清楚的知识作补充，每个点中自己熟悉的部分已略过</p>
+<ul>
+<li>部分参考资料</li>
+</ul>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.hello-algo.com/" >Hello算法<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="时间复杂度"><a class="markdownIt-Anchor" href="#时间复杂度"></a> 时间复杂度</h2>
+<p><a class="link"   target="_blank" rel="noopener" href="https://wu-jackie.github.io/2024/04/14/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/#%E5%90%84%E4%B8%AA%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E7%A9%BA%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%8F%8A%E7%A8%B3%E5%AE%9A%E6%80%A7" >时间复杂度<i class="fas fa-external-link-alt"></i></a></p>
+<p>O(1)常数阶&lt;O(logn)对数阶&lt;O(n)线性阶&lt;O(nlogn)线性对数阶&lt;O(n<sup>2</sup>)平方阶&lt;O(n<sup>3</sup>)立方阶&lt;O(2<sup>n</sup>)指数阶</p>
+<p><strong>常对幂指阶</strong></p>
+<p><mark>待补充</mark></p>
+<h2 id="内存管理"><a class="markdownIt-Anchor" href="#内存管理"></a> 内存管理</h2>
+<blockquote>
+<p>以C++为例来介绍一下编程语言的内存管理</p>
+</blockquote>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="C++%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.png"
+                        alt="C++内存管理" 
+                 ></p>
+<ul>
+<li>栈区（Stack）：由编译器自动分配释放，存放函数的参数值，局部变量的值等，其操作方式类似于数据结构中的栈</li>
+<li>堆区（Heap）：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS收回</li>
+<li>未初始化数据区（UninitializedData）：存放未初始化的全局变量和静态变量</li>
+<li>初始化数据区（InitializedData）：存放已经初始化的全局变量和静态变量</li>
+<li>程序代码区（Text）：存放函数体的二进制代码</li>
+</ul>
+<h3 id="计算程序占用多大内存"><a class="markdownIt-Anchor" href="#计算程序占用多大内存"></a> 计算程序占用多大内存</h3>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="C++%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%A4%A7%E5%B0%8F.png"
+                        alt="C++数据类型的大小" 
+                 ></p>
+<p>为什么64位的指针就占用了8个字节，而32位的指针占用4个字节呢？</p>
+<p>1个字节占8个比特，那么4个字节就是32个比特，可存放数据的大小为2<sup>32</sup>，也就是4G空间的大小，即：可以寻找4G空间大小的内存地址</p>
+<p>安装64位的操作系统的计算机内存都已经超过了4G，也就是指针大小如果还是4个字节的话，就已经不能寻址全部的内存地址，所以64位编译器使用8个字节的指针才能寻找所有的内存地址</p>
+<blockquote>
+<p>2<sup>64</sup>是一个非常巨大的数，对于寻找地址来说已经足够用了</p>
+</blockquote>
+<h3 id="内存对齐"><a class="markdownIt-Anchor" href="#内存对齐"></a> 内存对齐</h3>
+<ol>
+<li>平台原因：不是所有的硬件平台都能访问任意内存地址上的任意数据，某些硬件平台只能在某些地址处取某些特定类型的数据，否则抛出硬件异常。为了同一个程序可以在多平台运行，需要内存对齐</li>
+<li>硬件原因：经过内存对齐后，CPU访问内存的速度大大提升</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">   <span class="type">int</span> num;</span><br><span class="line">   <span class="type">char</span> cha;</span><br><span class="line">&#125;a;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">sizeof</span>(a) &lt;&lt; endl;<span class="comment">//8而不是5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相对来说计算机内存资源一般都是充足的，我们更希望的是提高运行速度</p>
+<p><strong>编译器一般都会做内存对齐的优化操作，也就是说当考虑程序真正占用的内存大小的时候，也需要认识到内存对齐的影响</strong></p>
+<h2 id="vector"><a class="markdownIt-Anchor" href="#vector"></a> vector</h2>
+<p>C++标准模板库（STL）中的一个容器类，用于表示一个动态数组。它可以存储多个元素，并且可以根据需要自动调整大小。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt;&amp; nums</span><br></pre></td></tr></table></figure>
+<p>接收一个引用参数，这个参数是一个存储整数的动态数组。在函数内部，可以通过nums这个名字直接访问和操作传入的数组，而不会对数组进行复制</p>
+<h3 id="vectorvectorint-result"><a class="markdownIt-Anchor" href="#vectorvectorint-result"></a> vector&lt;vector&lt;int&gt;&gt; result</h3>
+<p>二维向量</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; matrix=&#123;</span><br><span class="line">    &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;,</span><br><span class="line">    &#123;<span class="number">4</span>, <span class="number">5</span>&#125;,</span><br><span class="line">    &#123;<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; matrix=&#123;</span><br><span class="line">    &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,</span><br><span class="line">    &#123;<span class="number">4</span>,<span class="number">5</span>&#125;,</span><br><span class="line">    &#123;<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//增加一行</span></span><br><span class="line">    matrix.<span class="built_in">push_back</span>(&#123;<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>&#125;);</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;增加一行后：&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">const</span> <span class="keyword">auto</span>&amp; row:matrix)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num:row)&#123;</span><br><span class="line">            cout&lt;&lt;num&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除一行</span></span><br><span class="line">    matrix.<span class="built_in">erase</span>(matrix.<span class="built_in">begin</span>()+<span class="number">1</span>);<span class="comment">//删除第二行</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;删除第二行后&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">const</span> <span class="keyword">auto</span>&amp; row:matrix)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num:row)&#123;</span><br><span class="line">            cout&lt;&lt;num&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//修改一行</span></span><br><span class="line">    matrix[<span class="number">1</span>]=&#123;<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>&#125;;<span class="comment">//修改第二行</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;修改第二行后：&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">const</span> <span class="keyword">auto</span>&amp; row:matrix)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num:row)&#123;</span><br><span class="line">            cout&lt;&lt;num&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//修改一个元素</span></span><br><span class="line">    matrix[<span class="number">2</span>][<span class="number">0</span>]=<span class="number">99</span>;<span class="comment">//修改第三行的第一个元素</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;修改第三行的第一个元素后：&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">const</span> <span class="keyword">auto</span>&amp; row:matrix)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num:row)&#123;</span><br><span class="line">            cout&lt;&lt;num&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//查询一个元素</span></span><br><span class="line">    <span class="type">int</span> element=matrix[<span class="number">2</span>][<span class="number">0</span>];</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;矩阵元素[2][0]=&quot;</span>&lt;&lt;element&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="区别普通数组-stdarray-vector"><a class="markdownIt-Anchor" href="#区别普通数组-stdarray-vector"></a> 区别普通数组、std::array、vector</h3>
+<ul>
+<li>普通数组</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数据类型 数组名[数组大小];</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    cout &lt;&lt; array[<span class="number">0</span>] &lt;&lt; endl;<span class="comment">//1</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">sizeof</span>(array) / <span class="built_in">sizeof</span>(array[<span class="number">0</span>]) &lt;&lt; endl;<span class="comment">//5</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>std::array</li>
+</ul>
+<p>数组大小在编译时确定，不可改变，但它是C++标准库中的一个类模板，提供了更多成员函数和方法</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//array&lt;数据类型, 数组大小&gt; 数组名;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;array&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    array&lt;<span class="type">int</span>, 5&gt; array = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    cout &lt;&lt; array[<span class="number">0</span>] &lt;&lt; endl;<span class="comment">//1</span></span><br><span class="line">    cout &lt;&lt; array.<span class="built_in">at</span>(<span class="number">0</span>) &lt;&lt; endl;<span class="comment">//1，会边界检查，提高健壮性</span></span><br><span class="line">    cout &lt;&lt; array.<span class="built_in">size</span>() &lt;&lt; endl;<span class="comment">//5</span></span><br><span class="line">    <span class="comment">//支持拷贝赋值</span></span><br><span class="line">    array&lt;<span class="type">int</span>, 5&gt; arr;</span><br><span class="line">    arr = array;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>vector</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    cout &lt;&lt; vec.<span class="built_in">size</span>() &lt;&lt; endl;<span class="comment">//5</span></span><br><span class="line">    cout &lt;&lt; vec[<span class="number">0</span>] &lt;&lt; endl;<span class="comment">//1</span></span><br><span class="line">    vec.<span class="built_in">push_back</span>(<span class="number">7</span>);<span class="comment">//添加一个元素</span></span><br><span class="line">    cout &lt;&lt; vec[<span class="number">5</span>] &lt;&lt; endl;<span class="comment">//7</span></span><br><span class="line">    vec.<span class="built_in">pop_back</span>();<span class="comment">//删除最后一个元素</span></span><br><span class="line">    vec.<span class="built_in">insert</span>(vec.<span class="built_in">begin</span>() + <span class="number">2</span>, <span class="number">10</span>);<span class="comment">//插入一个元素</span></span><br><span class="line">    cout &lt;&lt; vec[<span class="number">2</span>] &lt;&lt; endl;<span class="comment">//10</span></span><br><span class="line">    vec.<span class="built_in">erase</span>(vec.<span class="built_in">begin</span>() + <span class="number">2</span>);<span class="comment">//删除一个元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id=""><a class="markdownIt-Anchor" href="#"></a> &gt;&gt;&lt;&lt;</h2>
+<ul>
+<li>&gt;&gt;：右移运算符</li>
+</ul>
+<p>a&gt;&gt;b表示将a的二进制表示向<mark>右</mark>移动b位</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a=20;//二进制10100</span><br><span class="line">a&gt;&gt;1//10100向右移动一位，得到1010，即十进制的10</span><br><span class="line">a&gt;&gt;2//10100向右移动二位，得到101，即十进制的5</span><br></pre></td></tr></table></figure>
+<p><mark>快速除以2的幂次方</mark></p>
+<blockquote>
+<p>右移运算符在处理有符号数和无符号数时有所不同：</p>
+<ul>
+<li>有符号数：<mark>算术右移</mark>，对于一个负数，右移后空出的位会被1填充，保持数的符号不变</li>
+<li>无符号数：<mark>逻辑右移</mark>，空出的位会被0填充</li>
+</ul>
+</blockquote>
+<ul>
+<li>&lt;&lt;：左移运算符</li>
+</ul>
+<p>a&lt;&lt;b表示将a的二进制表示向<mark>左</mark>移动b位</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a=5;//二进制101</span><br><span class="line">a&lt;&lt;1//101向左移动一位，得到1010，即十进制的10</span><br><span class="line">a&lt;&lt;2//101向左移动二位，得到10100，即十进制的20</span><br></pre></td></tr></table></figure>
+<p><mark>快速乘以2的幂次方</mark></p>
+<h2 id="delete"><a class="markdownIt-Anchor" href="#delete"></a> delete</h2>
+<p>用于释放动态分配的内存的关键字，与new操作符相对应，new用于分配内存并构造对象，而delete用于销毁对象并释放其占用的内存</p>
+<ul>
+<li>释放单个对象</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>* ptr=<span class="keyword">new</span> <span class="built_in">int</span>(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">delete</span> ptr;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>释放数组</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>* arr=<span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>];</span><br><span class="line"><span class="keyword">delete</span>[] arr;</span><br></pre></td></tr></table></figure>
+<h3 id="delete后的指针tmp的变化"><a class="markdownIt-Anchor" href="#delete后的指针tmp的变化"></a> ※delete后的指针tmp的变化</h3>
+<p>使用delete或delete[]释放指针tmp指向的内存后，tmp本身并<strong>不会</strong>自动变为nullptr。tmp仍然会保留原来的内存地址值，但这个地址所指向的内存已经不再有效。此时，tmp被称为“野指针”</p>
+<p>为了避免野指针问题，建议在释放内存后<strong>立即将指针设置为nullptr</strong></p>
+<h2 id="unordered_set"><a class="markdownIt-Anchor" href="#unordered_set"></a> unordered_set</h2>
+<ul>
+<li>构造函数</li>
+</ul>
+<p>可以接受一个范围（如两个迭代器），直接将该范围内的元素初始化为集合中的元素</p>
+<ul>
+<li>find function</li>
+</ul>
+<p>unordered_set的find方法用于查找指定元素。如果找到了元素，返回指向该元素的迭代器；如果没有找到，返回end()</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_set&gt;</span></span></span><br><span class="line"></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; nums=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="function">unordered_set&lt;<span class="type">int</span>&gt; <span class="title">s</span><span class="params">(nums.begin(),nums.end())</span></span>; <span class="comment">//s=&#123;1,2,3,4,5&#125;</span></span><br><span class="line">s.<span class="built_in">insert</span>(<span class="number">6</span>);<span class="comment">//插入元素</span></span><br><span class="line">s.<span class="built_in">erase</span>(<span class="number">3</span>);<span class="comment">//删除元素</span></span><br><span class="line"><span class="keyword">auto</span> it=s.<span class="built_in">find</span>(<span class="number">4</span>);</span><br><span class="line"><span class="keyword">if</span>(it!=s.<span class="built_in">end</span>())&#123;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;Found:&quot;</span>&lt;&lt;*it&lt;&lt;endl;<span class="comment">//输出&quot;Found:4&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="范围for循环"><a class="markdownIt-Anchor" href="#范围for循环"></a> 范围for循环</h2>
+<p>C++11引入了范围for循环，用于简化容器的遍历操作，可以直接遍历容器中的每个元素</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(范围声明:范围表达式)&#123;</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//相当于</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> it=v.<span class="built_in">begin</span>();it!=v.<span class="built_in">end</span>();++it)&#123;</span><br><span class="line">    <span class="type">int</span> num=*it;</span><br><span class="line">    <span class="comment">//循环体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt;v=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> num:v)&#123;</span><br><span class="line">    cout&lt;&lt;num&lt;&lt;<span class="string">&quot; &quot;</span>;<span class="comment">//输出&quot;1 2 3 4&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="iterator"><a class="markdownIt-Anchor" href="#iterator"></a> iterator</h2>
+<p>迭代器是一种检查容器内元素并遍历元素的数据类型，通常<strong>用于对C++中各种容器内元素的访问</strong>，但不同的容器有不同的迭代器，初学者可以将迭代器理解为<strong>指针</strong></p>
+<h3 id="beginend"><a class="markdownIt-Anchor" href="#beginend"></a> begin()&amp;end()</h3>
+<p>begin()是指向容器第一个元素的迭代器</p>
+<p>end()是指向容器最后一个元素的下一个位置的迭代器</p>
+<h3 id="迭代器"><a class="markdownIt-Anchor" href="#迭代器"></a> 迭代器</h3>
+<h4 id="通用功能"><a class="markdownIt-Anchor" href="#通用功能"></a> 通用功能</h4>
+<ul>
+<li>比较两个迭代器是否相等（==、!=）</li>
+<li>前置和后置递增运算（++）</li>
+<li>读取元素的解引用运算符（*）。只能读元素，也就是解引用只能出现在赋值运算符的右边</li>
+<li>箭头运算符（-&gt;），解引用迭代器，并提取对象的成员</li>
+</ul>
+<h4 id="类型"><a class="markdownIt-Anchor" href="#类型"></a> 类型</h4>
+<ul>
+<li>输入迭代器（input iterator）</li>
+<li>输出迭代器（output iterator）</li>
+<li>前向迭代器（forward iterator）</li>
+<li>双向迭代器（bidirectional iterator）</li>
+<li>随机访问迭代器（random-access iterator）</li>
+</ul>
+<hr />
+<ul>
+<li>输入迭代器
+<ul>
+<li>通用的四种功能</li>
+<li>只能利用迭代器进行<strong>输入</strong>功能</li>
+<li>它只能用于<strong>单遍扫描</strong>算法</li>
+</ul>
+</li>
+<li>输出迭代器
+<ul>
+<li>通用的四种功能</li>
+<li>只能利用迭代器进行<strong>输出</strong>功能</li>
+<li>只能用于<strong>单遍扫描</strong>算法</li>
+</ul>
+</li>
+<li>前向迭代器
+<ul>
+<li>通用的四种功能</li>
+<li>能利用迭代器进行<strong>输入和输出</strong>功能</li>
+<li>能用于<strong>多遍扫描</strong>算法</li>
+</ul>
+</li>
+<li>双向迭代器
+<ul>
+<li>通用的四种功能</li>
+<li>能利用迭代器进行输入和输出功能</li>
+<li>能用于多遍扫描算法</li>
+<li><strong>前置和后置递减运算</strong>（–），意味着它能够<strong>双向访问</strong></li>
+</ul>
+</li>
+<li>随机访问迭代器
+<ul>
+<li>通用的四种功能</li>
+<li>能利用迭代器进行输入和输出功能</li>
+<li>前置和后置递减运算（–），意味着它是双向移动的</li>
+<li><strong>比较两个迭代器相对位置的关系运算符（&lt;、&lt;=、&gt;、&gt;=）</strong></li>
+<li><strong>支持和一个整数值的加减运算（+、+=、-、-=）</strong></li>
+<li><strong>两个迭代器上的减法运算符（-），得到两个迭代器的距离</strong></li>
+<li><strong>支持下标运算符（iter[n]）</strong>，访问距离起始迭代器n个距离的迭代器指向的元素</li>
+<li>能用于多遍扫描算法。<strong>在支持双向移动的基础上，支持前后位置的比较、随机存取、直接移动n个距离</strong></li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">迭代器</th>
+<th style="text-align:center">功能</th>
+<th style="text-align:center">读写及支持</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">输入迭代器</td>
+<td style="text-align:center">提供对数据的<strong>只读访问</strong></td>
+<td style="text-align:center">只读，支持++、==、!=</td>
+</tr>
+<tr>
+<td style="text-align:center">输出迭代器</td>
+<td style="text-align:center">提供对数据的<strong>只写访问</strong></td>
+<td style="text-align:center">只读，支持++</td>
+</tr>
+<tr>
+<td style="text-align:center">前向迭代器</td>
+<td style="text-align:center">提供<strong>读写</strong>操作，能<strong>向前</strong>推进迭代器</td>
+<td style="text-align:center">读写，支持++</td>
+</tr>
+<tr>
+<td style="text-align:center">双向迭代器</td>
+<td style="text-align:center">提供<strong>读写</strong>操作，能<strong>向前和向后</strong>操作</td>
+<td style="text-align:center">读写，支持++、–</td>
+</tr>
+<tr>
+<td style="text-align:center">随机访问迭代器</td>
+<td style="text-align:center">提供<strong>读写</strong>操作，能以<strong>跳跃</strong>的方式访问容器任意数据，是功能最强的迭代器</td>
+<td style="text-align:center">读写，支持++、–、[n]、-n、&lt;、&lt;=、&gt;、&gt;=</td>
+</tr>
+</tbody>
+</table>
+<h4 id="常用容器的迭代器"><a class="markdownIt-Anchor" href="#常用容器的迭代器"></a> 常用容器的迭代器</h4>
+<ul>
+<li>vector——随机访问迭代器</li>
+<li>deque——随机访问迭代器</li>
+<li>list——双向迭代器</li>
+<li>set/multiset——双向迭代器</li>
+<li>map/multimap——双向迭代器</li>
+<li>stack——不支持迭代器</li>
+<li>queue——不支持迭代器</li>
+</ul>
+<h4 id="实例"><a class="markdownIt-Anchor" href="#实例"></a> 实例</h4>
+<blockquote>
+<p>双向迭代器和随机访问迭代器最为常用，下面演示这两种迭代器用法</p>
+</blockquote>
+<ul>
+<li>map</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">        m[i]=i*<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    map&lt;<span class="type">int</span>,<span class="type">int</span>&gt;::iterator iter;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;遍历m并打印：&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span>(iter=m.<span class="built_in">begin</span>();iter!=m.<span class="built_in">end</span>();++iter)&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;(&quot;</span>&lt;&lt;iter-&gt;first&lt;&lt;<span class="string">&quot;,&quot;</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="string">&quot;) &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//此时iter=m.end(),这个位置是最后一个元素的下一个位置，没有存储数据</span></span><br><span class="line">    iter--;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;\nm的最后一个元素为：(&quot;</span>&lt;&lt;iter-&gt;first&lt;&lt;<span class="string">&quot;,&quot;</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="string">&quot;)&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E5%8F%8C%E5%90%91%E8%BF%AD%E4%BB%A3%E5%99%A8.png"
+                        alt="双向迭代器" 
+                 ></p>
+<blockquote>
+<p>对于迭代器来说，虽然都是加1或者减1，但--不等同于-=1，++不等同于+=1，他们实现的是不同的功能</p>
+</blockquote>
+<ul>
+<li>vector</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">        v.<span class="built_in">push_back</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;::iterator iter;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;用!=比较两个迭代器遍历：&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span>(iter=v.<span class="built_in">begin</span>();iter!=v.<span class="built_in">end</span>();iter++)&#123;<span class="comment">//用!=比较两个迭代器</span></span><br><span class="line">        cout&lt;&lt;*iter&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">    </span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;用&lt;比较两个迭代器遍历： &quot;</span>;</span><br><span class="line">    <span class="keyword">for</span>(iter=v.<span class="built_in">begin</span>();iter&lt;v.<span class="built_in">end</span>();iter++)&#123;<span class="comment">//用&lt;比较两个迭代器</span></span><br><span class="line">        cout&lt;&lt;*iter&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    iter=v.<span class="built_in">begin</span>();<span class="comment">//让迭代器重新指向首个元素的位置</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;间隔一个输出：&quot;</span>;</span><br><span class="line">    <span class="keyword">while</span>(iter&lt;v.<span class="built_in">end</span>())&#123;<span class="comment">//间隔一个输出</span></span><br><span class="line">        cout&lt;&lt;*iter&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">        iter+=<span class="number">2</span>;<span class="comment">//用+=移动迭代器</span></span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    iter=v.<span class="built_in">begin</span>();</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;vector[5]=&quot;</span>;</span><br><span class="line">    cout&lt;&lt;iter[<span class="number">5</span>]&lt;&lt;endl;<span class="comment">//用[]访问</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AE%E8%BF%AD%E4%BB%A3%E5%99%A8.png"
+                        alt="随机访问迭代器" 
+                 ></p>
+<p>对于vector容器来说，其迭代器有<strong>失效</strong>的可能</p>
+<blockquote>
+<p>vector容器有<strong>动态扩容</strong>的功能，每当容器容量不足时，vector就会进行动态扩容，动态扩容不是在原来空间后追加空间，而是寻找一段<strong>新的更大的空间</strong>，把原来的元素复制过去</p>
+<p>但是这样容器存储元素的位置就改变了，原来的迭代器还是指向原来的位置，因此每次进行动态扩容后原来的迭代器就会失效</p>
+</blockquote>
+<h4 id="辅助函数"><a class="markdownIt-Anchor" href="#辅助函数"></a> 辅助函数</h4>
+<p>STL中有用于操作迭代器的三个函数模板，它们是：</p>
+<ul>
+<li>
+<p>advance(iter,n)</p>
+<p>使迭代器iter向前或向后移动n个元素</p>
+</li>
+<li>
+<p>distance(iter1,iter2)</p>
+<p>计算两个迭代器之间的距离，即迭代器iter1经过多少次++操作后和迭代器iter2相等。如果调用时iter1已经指向iter2的后面，则这个函数会陷入死循环</p>
+</li>
+<li>
+<p>iter_swap(iter1,iter2)</p>
+<p>用于交换两个迭代器iter1、iter2指向的值</p>
+</li>
+</ul>
+<hr />
+<ul>
+<li>map</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    map&lt;<span class="type">int</span>,<span class="type">int</span>&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">    m[i]=i*<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//1.使用advance函数</span></span><br><span class="line">    map&lt;<span class="type">int</span>,<span class="type">int</span>&gt;::iterator iter1=m.<span class="built_in">begin</span>();</span><br><span class="line">    <span class="built_in">advance</span>(iter1,<span class="number">2</span>);<span class="comment">//iter1向后移动两个元素，指向key=2的位置</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;当前iter1指向的元素:(&quot;</span>&lt;&lt;iter1-&gt;first&lt;&lt;<span class="string">&quot;,&quot;</span>&lt;&lt;iter1-&gt;second&lt;&lt;<span class="string">&quot;)&quot;</span>&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">advance</span>(iter1,<span class="number">-1</span>);<span class="comment">//iter1向前移动一个元素，指向key=1的位置</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;当前iter1指向的元素:(&quot;</span>&lt;&lt;iter1-&gt;first&lt;&lt;<span class="string">&quot;,&quot;</span>&lt;&lt;iter1-&gt;second&lt;&lt;<span class="string">&quot;)&quot;</span>&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2.使用distance函数</span></span><br><span class="line">    map&lt;<span class="type">int</span>,<span class="type">int</span>&gt;::iterator iter2=m.<span class="built_in">end</span>();</span><br><span class="line">    iter2--;<span class="comment">//iter2指向最后一个元素的位置</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;iter1和iter2的距离:&quot;</span>&lt;&lt;<span class="built_in">distance</span>(iter1,iter2)&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3.使用iter_swap函数</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;交换前打印：&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span>(iter1=m.<span class="built_in">begin</span>();iter1!=m.<span class="built_in">end</span>();iter1++)&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;(&quot;</span>&lt;&lt;iter1-&gt;first&lt;&lt;<span class="string">&quot;,&quot;</span>&lt;&lt;iter1-&gt;second&lt;&lt;<span class="string">&quot;) &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    iter1=m.<span class="built_in">begin</span>();<span class="comment">//指向第一个元素</span></span><br><span class="line">    iter2=m.<span class="built_in">end</span>();</span><br><span class="line">    iter2--;<span class="comment">//指向最后一个元素</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//iter_swap(iter1,iter2);//交换第一个元素和最后一个元素</span></span><br><span class="line">    <span class="built_in">swap</span>(iter1-&gt;second,iter2-&gt;second);<span class="comment">//交换值部分</span></span><br><span class="line"></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;交换后打印：&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span>(iter1=m.<span class="built_in">begin</span>();iter1!=m.<span class="built_in">end</span>();++iter1)&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;(&quot;</span>&lt;&lt;iter1-&gt;first&lt;&lt;<span class="string">&quot;,&quot;</span>&lt;&lt;iter1-&gt;second&lt;&lt;<span class="string">&quot;) &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在std::map中，每个元素是一个键值对（std::pair&lt;constKey,Value&gt;）。iter_swap函数会交换两个迭代器所指向的元素的内容。然而，std::map的键（Key）是常量，不能被修改。因此，当你尝试交换两个元素时，iter_swap会试图修改键的值，这会导致编译错误</p>
+</blockquote>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="map%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0.png"
+                        alt="map辅助函数" 
+                 ></p>
+<ul>
+<li>list</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;list&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> a[<span class="number">10</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">    list&lt;<span class="type">int</span>&gt;<span class="built_in">lst</span>(a,a+<span class="number">10</span>);</span><br><span class="line">    list&lt;<span class="type">int</span>&gt;::iterator iter1=lst.<span class="built_in">begin</span>();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">advance</span>(iter1,<span class="number">2</span>);<span class="comment">//it1向后移动两个元素，指向3</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;当前iter1指向的元素:&quot;</span>&lt;&lt;*iter1&lt;&lt;endl;<span class="comment">//输出3</span></span><br><span class="line">    <span class="built_in">advance</span>(iter1,<span class="number">-1</span>);<span class="comment">//it1向前移动一个元素，指向2</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;当前iter1指向的元素:&quot;</span>&lt;&lt;*iter1&lt;&lt;endl;<span class="comment">//输出2</span></span><br><span class="line"></span><br><span class="line">    list&lt;<span class="type">int</span>&gt;::iterator iter2=lst.<span class="built_in">end</span>();</span><br><span class="line">    iter2--;<span class="comment">//iter2指向最后一个元素的位置，即10的位置</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;iter1和iter2的距离&quot;</span>&lt;&lt;<span class="built_in">distance</span>(iter1,iter2)&lt;&lt;endl;<span class="comment">//输出8</span></span><br><span class="line"></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;交换前打印：&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span>(iter1=<span class="built_in">begin</span>(lst);iter1!=<span class="built_in">end</span>(lst);iter1++)&#123;</span><br><span class="line">        cout&lt;&lt;*iter1&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    iter1=<span class="built_in">begin</span>(lst);</span><br><span class="line">    <span class="built_in">iter_swap</span>(iter1,iter2);<span class="comment">//交换1和10</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;\n交换后打印：&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span>(iter1=<span class="built_in">begin</span>(lst);iter1!=<span class="built_in">end</span>(lst);iter1++)&#123;</span><br><span class="line">        cout&lt;&lt;*iter1&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="list%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0.png"
+                        alt="list辅助函数" 
+                 ></p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/LeetCode/">LeetCode</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2025/01/24/%E6%95%B0%E7%BB%84/"
+                                   title="数组"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">数组</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2025/01/12/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%88%9D%E5%80%BC%E9%97%AE%E9%A2%98%E7%9A%84%E6%95%B0%E5%80%BC%E8%A7%A3%E6%B3%95/"
+                                   title="常微分方程初值问题的数值解法"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">常微分方程初值问题的数值解法</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="waline-comment-container">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline-meta.css"/>
+        <div id="waline-comment"></div>
+        <script data-pjax>
+          window.KeepCommentPlugin.walineOptions = JSON.parse('{&#34;login&#34;:&#34;force&#34;,&#34;copyright&#34;:false}'.replace(/&#34;/g, '"'))
+          window.KeepCommentPlugin.walineOptions.el = '#waline-comment'
+          window.KeepCommentPlugin.walineOptions.comment = '.post-comments-count'
+          window.KeepCommentPlugin.walineOptions.serverURL = 'waline-for-blog-psi.vercel.app'
+          window.KeepCommentPlugin.walineOptions.lang = 'zh-CN' || 'zh-CN'
+          window.KeepCommentPlugin.walineOptions.reaction = 'false' === 'true'
+        </script>
+
+        
+
+        
+            <script data-pjax
+                    async
+                    type="module"
+            >
+              import { init } from '//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline.js'
+              window.KeepCommentPlugin.initWaline = () => {
+                if (init) {
+                  init(window.KeepCommentPlugin.walineOptions)
+                  window.KeepCommentPlugin.hideLoading()
+                } else {
+                  setTimeout(() => {
+                    window.KeepCommentPlugin.initWaline()
+                  }, 1000)
+                }
+              }
+
+              if ('true' === 'true') {
+                setTimeout(() => {
+                  window.KeepCommentPlugin.initWaline()
+                }, 1200)
+              } else {
+                window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initWaline)
+              }
+            </script>
+        
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85"><span class="nav-text"> LeetCode知识补充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text"> 时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text"> 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%A8%8B%E5%BA%8F%E5%8D%A0%E7%94%A8%E5%A4%9A%E5%A4%A7%E5%86%85%E5%AD%98"><span class="nav-text"> 计算程序占用多大内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90"><span class="nav-text"> 内存对齐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-text"> vector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vectorvectorint-result"><span class="nav-text"> vector&lt;vector&lt;int&gt;&gt; result</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%E6%99%AE%E9%80%9A%E6%95%B0%E7%BB%84-stdarray-vector"><span class="nav-text"> 区别普通数组、std::array、vector</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> &gt;&gt;&lt;&lt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete"><span class="nav-text"> delete</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delete%E5%90%8E%E7%9A%84%E6%8C%87%E9%92%88tmp%E7%9A%84%E5%8F%98%E5%8C%96"><span class="nav-text"> ※delete后的指针tmp的变化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unordered_set"><span class="nav-text"> unordered_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8C%83%E5%9B%B4for%E5%BE%AA%E7%8E%AF"><span class="nav-text"> 范围for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iterator"><span class="nav-text"> iterator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#beginend"><span class="nav-text"> begin()&amp;end()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text"> 迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD"><span class="nav-text"> 通用功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-text"> 类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text"> 常用容器的迭代器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-text"> 实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0"><span class="nav-text"> 辅助函数</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Jackie</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85"><span class="nav-text"> LeetCode知识补充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text"> 时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text"> 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%A8%8B%E5%BA%8F%E5%8D%A0%E7%94%A8%E5%A4%9A%E5%A4%A7%E5%86%85%E5%AD%98"><span class="nav-text"> 计算程序占用多大内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90"><span class="nav-text"> 内存对齐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-text"> vector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vectorvectorint-result"><span class="nav-text"> vector&lt;vector&lt;int&gt;&gt; result</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%E6%99%AE%E9%80%9A%E6%95%B0%E7%BB%84-stdarray-vector"><span class="nav-text"> 区别普通数组、std::array、vector</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> &gt;&gt;&lt;&lt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete"><span class="nav-text"> delete</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delete%E5%90%8E%E7%9A%84%E6%8C%87%E9%92%88tmp%E7%9A%84%E5%8F%98%E5%8C%96"><span class="nav-text"> ※delete后的指针tmp的变化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unordered_set"><span class="nav-text"> unordered_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8C%83%E5%9B%B4for%E5%BE%AA%E7%8E%AF"><span class="nav-text"> 范围for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iterator"><span class="nav-text"> iterator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#beginend"><span class="nav-text"> begin()&amp;end()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text"> 迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD"><span class="nav-text"> 通用功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-text"> 类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text"> 常用容器的迭代器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-text"> 实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0"><span class="nav-text"> 辅助函数</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            
+<script src="/js/post/share.js"></script>
+
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+
+</body>
+</html>
