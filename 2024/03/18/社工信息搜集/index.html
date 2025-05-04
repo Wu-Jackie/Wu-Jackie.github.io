@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jackie">
+    
+    <title>
+        
+            社工信息搜集 |
+        
+        Jackie&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logoow.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+                
+<link rel="stylesheet" href="/css/hide.css">
+
+            
+        
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Jackie's Blog","author":"Jackie","avatar":"/images/nemo.svg","logo":"/images/logoow.svg","favicon":"/images/logoow.svg"},"menu":{"home":"/ || fa-solid fa-home","archives":"/archives || fa-solid fa-box-archive","tags":"/tags || fa-solid fa-tags","links":"/links || fa-solid fa-link","about":"/about || fa-solid fa-user-graduate"},"first_screen":{"enable":true,"background_img":"/images/bg2.svg","background_img_dark":"/images/bg2.svg","description":"Welcome To My Blog! || 無限進步！","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":null},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"waline","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":"waline-for-blog-psi.vercel.app","reaction":false,"version":"3.3.2","options":{"login":"force","copyright":false}},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2022,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":["/css/hide.css"],"js":[null]},"root":"","source_data":{"links":[{"title":"Web"},{"name":"小小邵同学","link":"https://swq111.online/","description":null,"avatar":"https://swq111.online/wp-content/uploads/2024/01/3.jpg"},{"name":"yxhhyy","link":"https://yxhhyy.github.io/","description":null,"avatar":"https://yxhhyy.github.io/images/1.jpg"},{"title":"Pwn"},{"name":"jwjlearning","link":"https://jwjlearning.github.io/","description":null,"avatar":"https://jwjlearning.github.io/img/avatar.png"},{"name":"yw-by","link":"https://yw-by.github.io/","description":null,"avatar":"https://yw-by.github.io/images/avatar.jpg"},{"title":"Reverse"},{"name":"FeowmAomr","link":"https://feowmaomr.github.io/","description":null,"avatar":"https://FeowmAomr.github.io/picx-images-hosting/Aomr.webp"},{"name":"Yigod","link":"https://hexo-beta-fawn.vercel.app/","description":null,"avatar":"https://hexo-beta-fawn.vercel.app/images/avatar.jpg"},{"title":"Crypto"},{"name":"Waiting a destined person","link":"\\#","description":null,"avatar":"https://wu-jackie.github.io/images/nemo.svg"},{"title":"Embedded"},{"name":"Taboo","link":"http://taboo-sdh.top/","description":null,"avatar":"http://taboo-sdh.top/wp-content/uploads/2024/04/1712235965-%E6%A0%97%E5%AD%90%E7%90%83%E5%A4%B4%E5%83%8F.jpg"}]},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logoow.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Jackie&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-home"></i>
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-box-archive"></i>
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-tags"></i>
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/links">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-link"></i>
+                                
+                                友链
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-home"></i>
+                                </span>
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-box-archive"></i>
+                                </span>
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-tags"></i>
+                                </span>
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/links">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-link"></i>
+                                </span>
+                            
+                            友链
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                </span>
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        社工信息搜集
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/nemo.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Jackie</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-03-18</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun May 04 2025 22:09:10 GMT+0800">2025-05-04</span>
+                </span>
+            
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Summary/">Summary</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.7k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>9 分钟</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="社工信息搜集"><a class="markdownIt-Anchor" href="#社工信息搜集"></a> 社工信息搜集</h1>
+<p>BV1Jk4y1S7H7</p>
+<blockquote>
+<p>推荐up主：地图侦探、地球百科君、MU芝士语言学</p>
+</blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/Stellarium/stellarium" >Stellarium<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="星空定位经纬度"><a class="markdownIt-Anchor" href="#星空定位经纬度"></a> 星空定位经纬度</h1>
+<p>BV1YW421973A</p>
+<p>假设天上两卫星，以其中一个卫星为圆心和你的距离为半径画一个球体，这个球体和地球交线为一个圆，你只可能在这个圆上</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E7%90%83%E4%BD%93%E5%92%8C%E5%9C%B0%E7%90%83%E4%BA%A4%E7%BA%BF.png"
+                        alt="球体和地球交线" 
+                 ></p>
+<p>另一个如法炮制，则一个球和一个圆焦点只有两个点，你一定在这两个点上</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E4%B8%A4%E4%B8%AA%E5%9C%86.png"
+                        alt="两个圆" 
+                 ></p>
+<p>此时如果以你为原点，两颗卫星的相对位置会为你排除其中一个点，你的位置就能确定。如果天上卫星越多，就越精确</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E4%B8%A4%E5%8D%AB%E6%98%9F.png"
+                        alt="两卫星" 
+                 ></p>
+<p>对于星星可视作无穷远距离，我们假设它们都在一个单位球上即可</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E5%8D%95%E4%BD%8D%E7%90%83.png"
+                        alt="单位球" 
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E4%BE%8B%E5%9B%BE1.png"
+                        alt="例图1" 
+                 ></p>
+<p>以该图为例图，图中位于上方的消失点是天顶（0,0,1），再通过焦距计算出每个恒星的球坐标，因为以赤道算</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E4%BE%8B%E5%9B%BE2.png"
+                        alt="例图2" 
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E4%BE%8B%E5%9B%BE3.png"
+                        alt="例图3" 
+                 ></p>
+<p>恒星的赤经、赤纬是确定的</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="23%E5%B9%B411%E6%9C%8802%E6%97%A523h52min.png"
+                        alt="23年11月02日23h52min" 
+                 ></p>
+<p>则我们就能将赤经转换为地平线坐标下的时角，也能将赤道坐标的北极点转化为地平坐标，那么纬度和地方时就知道了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">赤经/赤纬（当前日期纪元）：10h47m41s/+7°07&#x27;51&quot;</span><br><span class="line">时角/赤纬：15h20m36s/+7°07&#x27;51&quot;</span><br><span class="line">方位角/高度角：+63°25&#x27;22&quot;/-31°35&#x27;34&quot;</span><br></pre></td></tr></table></figure>
+<p>如果知道时间，还能确定经度，当然，就算不知道时间，如果图片中能看到月亮，或者图片清晰度较高且能看到金星或者火星，也能确定位置，因为这三个离我们比较近</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E4%BE%8B%E5%9B%BE4.png"
+                        alt="例图4" 
+                 ></p>
+<p>比如金星，将位置调离当前位置10个经度、10个纬度，金星的赤经和赤纬分别变化了1秒和2秒</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">当前位置：114.514E,40.1920N</span><br><span class="line">调至124.514E,30.1920N时</span><br><span class="line">金星赤经-1秒，赤纬+2秒</span><br></pre></td></tr></table></figure>
+<h2 id="注意事项"><a class="markdownIt-Anchor" href="#注意事项"></a> 注意事项</h2>
+<p>发星空照片时</p>
+<ol>
+<li>
+<p>最好不要有任何地景，这样便无法确定天顶在哪。如果主要目的是夜景，请处理图片时将照片中的星星拉到看不见；如果主要目的是星空，一般专业的天问摄影者才会追求照片的不一致而附带地景。</p>
+<p>如果你希望带地景，最好不要发出来，或者只有树木这种不笔直的难以用来确认天顶的景物也是可以的。</p>
+</li>
+<li>
+<p>不要即拍即发。一般情况下专业的天问摄影者带地景的照片也都是回去叠加等处理之后才发出来的，你也可以在拍完回到室内后修一修，然后定时发表，不要透露拍摄的真实时间。</p>
+</li>
+<li>
+<p>如果主要目的是拍月球，不要把曝光拉太高，否则会把边上恒星拍进来。</p>
+</li>
+<li>
+<p>照片中请勿出现南门二或水委一，否则认识星星的人一眼就知道你大概率在海南（小概率在广东、福建、台湾、广西、云南）。当然要在国外旅游的话那没事。</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E5%8D%97%E9%97%A8%E4%BA%8Cor%E6%B0%B4%E5%A7%94%E4%B8%80.png"
+                        alt="南门二or水委一" 
+                 ></p>
+</li>
+</ol>
+<h1 id="植物-物候粗略定位"><a class="markdownIt-Anchor" href="#植物-物候粗略定位"></a> 植物、物候粗略定位</h1>
+<h2 id="物候"><a class="markdownIt-Anchor" href="#物候"></a> 物候</h2>
+<p>春天的时候，武汉和哈尔滨物候能差50天</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%98%A5%E5%A4%A9%E7%89%A9%E5%80%99.png"
+                        alt="春天物候" 
+                 ></p>
+<blockquote>
+<p>物候加减算法：BV1p5411o7Qi</p>
+<p><a class="link"   target="_blank" rel="noopener" href="http://ppbc.iplant.cn/" >PPBC中国植物图像库<i class="fas fa-external-link-alt"></i></a></p>
+<p>+代表比此地早相应天数，-代表比此地晚相应天数</p>
+<p>2-5月物候差：</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="2-5%E6%9C%88%E6%98%A5%E5%AD%A3%E7%89%A9%E5%80%99%E5%B7%AE.png"
+                        alt="2-5月春季物候差" 
+                 ></p>
+<p>9月物候差：</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="9%E6%9C%88%E7%89%A9%E5%80%99%E5%B7%AE.png"
+                        alt="9月物候差" 
+                 ></p>
+</blockquote>
+<p>只要算花期在范围内的地方就行，如果能从照片中看出是始花还是盛花还是开败，还能更加精确</p>
+<p>尤其是春季花卉主力军蔷薇科，从初花到开败总共就十天出头。</p>
+<blockquote>
+<p>花期最短的是紫叶稠李，只有7天左右，其他李属植物比如桃杏李大多数在十一二天，苹果属的比如各种海棠和梨属的稍微长点，绣线菊属的最长，但也不超过20天。只有月季和棣棠等一些培育品种花期可以长达几个月。</p>
+</blockquote>
+<h2 id="植被"><a class="markdownIt-Anchor" href="#植被"></a> 植被</h2>
+<p>软件推荐：<strong>形色</strong></p>
+<p>国内高原、草原、荒漠、寒温带、中温带、暖温带、亚热带、热带的典型植被网上图片一大堆</p>
+<p>用普通植物确定位置就是一个平面规划，用每种植物的分布取交集</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%A4%8D%E7%89%A9%E5%B9%B3%E9%9D%A2%E8%A7%84%E5%88%92.png"
+                        alt="植物平面规划" 
+                 ></p>
+<blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.gbif.org/" >全球生物多样性信息设施（GBIF）<i class="fas fa-external-link-alt"></i></a>：有所有植物的观察到的地点，搜索要用学名</p>
+</blockquote>
+<p>GBIF最大的问题是不能保证鉴定正确，当然对于普通人来说是完全够用的</p>
+<blockquote>
+<p>例如槭叶铁线莲，西南的这些点全部是错误鉴定</p>
+<p>但对于大多数常见的植物来说，只要正确鉴定足够多，错误鉴定的地点就能一眼看出来</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="GBIF.png"
+                        alt="GBIF" 
+                 ></p>
+</blockquote>
+<h2 id="实战"><a class="markdownIt-Anchor" href="#实战"></a> 实战</h2>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E5%AD%A4%E7%8B%AC%E6%91%87%E6%BB%9A%E7%AC%AC%E4%B9%9D%E9%9B%86.png"
+                        alt="孤独摇滚第九集" 
+                 ></p>
+<p>孤独摇滚第九集</p>
+<p>可辨认出三种植物：鹅掌柴、贯众、玉竹</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E4%B8%89%E7%A7%8D%E6%A4%8D%E7%89%A9.png"
+                        alt="三种植物" 
+                 ></p>
+<p>玉竹亚欧广泛分布不考虑。鹅掌柴是很典型的热带植物。因为现在有很多室内种植，所以GBIF上的点可信度就比较低了，我们翻国内标本，最北的是浙江平阳</p>
+<blockquote>
+<p>虽然最北的是浙江平阳，但是平均气温最低的产地是贵州紫云，故后续按照紫云算</p>
+</blockquote>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E7%B4%AB%E4%BA%91%E6%9C%88%E5%9D%87%E6%B0%94%E6%B8%A9%E5%92%8C%E9%99%8D%E6%B0%B4.png"
+                        alt="紫云月均气温和降水" 
+                 ></p>
+<p>再找到日本一月最低气温图，可以把地点确定到本州岛东南近岸以及更南</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%97%A5%E6%9C%AC%E4%B8%80%E6%9C%88%E6%9C%80%E4%BD%8E%E6%B0%94%E6%B8%A9%E5%9B%BE.png"
+                        alt="日本一月最低气温图" 
+                 ></p>
+<p>贯众是典型的温带植物，从分布可看出只要一到南亚热带就没了</p>
+<blockquote>
+<p>贯众：</p>
+<p>广东：乳源、乐昌、平远、阳山、英德</p>
+<p>广西：武鸣、马山、融水、阳朔、临桂、兴安、龙胜、资源、百色、德保、凌云、田林、隆林、东兰、珠江、龙州</p>
+</blockquote>
+<p>这样再排除琉球群岛和九州岛南部，这样面积已经缩小到约7万平方公里的区域了，相当于一个重庆</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%8E%92%E9%99%A4.png"
+                        alt="排除" 
+                 ></p>
+<h2 id="行道树"><a class="markdownIt-Anchor" href="#行道树"></a> 行道树</h2>
+<p>35种及危险等级，危险等级越高的越不要在自己发表的照片中出现</p>
+<p>下图中如果上色是暖色调为主，若非特殊说明，则红色一般代表很大可能会作为行道树的地方</p>
+<p>橙色代表有但是不太可能当做行道树大规模种植的地区</p>
+<p>如果只涂了蓝色则蓝色代表没有这种树的地区，其他地方都有可能用来做行道树</p>
+<ul>
+<li>白桦和岳桦</li>
+</ul>
+<p>红色和橙色代表白桦，深红色区域白桦岳桦都有，两种都是典型的东北行道树，危险等级高</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E7%99%BD%E6%A1%A6%E5%92%8C%E5%B2%B3%E6%A1%A6.png"
+                        alt="白桦和岳桦" 
+                 ></p>
+<ul>
+<li>白蜡树</li>
+</ul>
+<p>全国大多数地区都有，尤其是东北和西北会更多地用作行道树，但是各地会种一些具有地方特色的同属物种，比如东北的水曲柳，云南的楷叶梣，湖北的湖北梣，新疆的小叶梣等，如果能认出这些来危险度极高，所以建议拍白蜡树前用识花软件识别一下</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E7%99%BD%E8%9C%A1%E6%A0%91.png"
+                        alt="白蜡树" 
+                 ></p>
+<ul>
+<li>垂柳</li>
+</ul>
+<p>基本全国都有，水边多一些，危险程度低</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E5%9E%82%E6%9F%B3.png"
+                        alt="垂柳" 
+                 ></p>
+<ul>
+<li>刺槐</li>
+</ul>
+<p>早已入侵全国大多数地区，但只有三北这片没什么好的绿化树种的才会用作行道树，危险程度高</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E5%88%BA%E6%A7%90.png"
+                        alt="刺槐" 
+                 ></p>
+<ul>
+<li>杜仲</li>
+</ul>
+<p>中国特产，除了不耐冷，哪都能种，危险程度较低</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%9D%9C%E4%BB%B2.png"
+                        alt="杜仲" 
+                 ></p>
+<ul>
+<li>盾柱木禾银荆</li>
+</ul>
+<p>豆科的两种树，红色代表二者都有，橙色代表只有银荆，北方人甚至都没听说过这是啥，危险程度极高</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E7%9B%BE%E6%9F%B1%E6%9C%A8%E7%A6%BE%E9%93%B6%E8%8D%86.png"
+                        alt="盾柱木禾银荆" 
+                 ></p>
+<ul>
+<li>鹅掌楸</li>
+</ul>
+<p>主要在暖温带和亚热带，危险程度中</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E9%B9%85%E6%8E%8C%E6%A5%B8.png"
+                        alt="鹅掌楸" 
+                 ></p>
+<ul>
+<li>法国梧桐</li>
+</ul>
+<p>作为行道树的绝佳材料，目前几乎全国各地都栽种，危险程度低</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%B3%95%E5%9B%BD%E6%A2%A7%E6%A1%90.png"
+                        alt="法国梧桐" 
+                 ></p>
+<ul>
+<li>高山榕</li>
+</ul>
+<p>以高山榕为代表的各类榕属行道树只分布在热带，尤以闽语区较多，危险程度极高</p>
+<blockquote>
+<p>榕属重庆也很常见，小叶榕大叶榕</p>
+</blockquote>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E9%AB%98%E5%B1%B1%E6%A6%95.png"
+                        alt="高山榕" 
+                 ></p>
+<ul>
+<li>国槐</li>
+</ul>
+<p>现在很多地方也都有了，不过还是北方更倾向用，危险程度较低</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E5%9B%BD%E6%A7%90.png"
+                        alt="国槐" 
+                 ></p>
+<ul>
+<li>旱柳</li>
+</ul>
+<p>基本全国都有，但也是只有北方相对干旱才会选择较多一些，危险程度中等</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%97%B1%E6%9F%B3.png"
+                        alt="旱柳" 
+                 ></p>
+<ul>
+<li>合欢</li>
+</ul>
+<p>只有非常冷的地方没有，危险程度低</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E5%90%88%E6%AC%A2.png"
+                        alt="合欢" 
+                 ></p>
+<ul>
+<li>黑杨&amp;加杨</li>
+</ul>
+<p>前者主要以北方为主，尤其以新疆为甚，后者在南方也会种一些，危险程度是较高和较低</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E9%BB%91%E6%9D%A8&amp;%E5%8A%A0%E6%9D%A8.png"
+                        alt="黑杨&amp;加杨" 
+                 ></p>
+<ul>
+<li>黄花风铃木</li>
+</ul>
+<p>虽然整个北回归线附近都标红了，但还是广东种得最多，危险程度极高</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E9%BB%84%E8%8A%B1%E9%A3%8E%E9%93%83%E6%9C%A8.png"
+                        alt="黄花风铃木" 
+                 ></p>
+<ul>
+<li>金钱松</li>
+</ul>
+<p>典型的长江流域植物，黄淮流域也会有一点，危险程度较高</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E9%87%91%E9%92%B1%E6%9D%BE.png"
+                        alt="金钱松" 
+                 ></p>
+<ul>
+<li>辽椴&amp;椴树</li>
+</ul>
+<p>典型的以秦岭-淮河为界分布的物种，因为材貌双全，全国各地都有作为行道树，橙色是分布区边缘，种植较少，黄色是过渡带，种植也较少，危险程度偏高</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E8%BE%BD%E6%A4%B4&amp;%E6%A4%B4%E6%A0%91.png"
+                        alt="辽椴&amp;椴树" 
+                 ></p>
+<ul>
+<li>栾树</li>
+</ul>
+<p>主要区域是汉地十八省，危险程度较低</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%A0%BE%E6%A0%91.png"
+                        alt="栾树" 
+                 ></p>
+<ul>
+<li>落叶松</li>
+</ul>
+<p>典型的三北地区的行道树，一般也是因为比较冷才会种这个，危险程度高</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E8%90%BD%E5%8F%B6%E6%9D%BE.png"
+                        alt="落叶松" 
+                 ></p>
+<ul>
+<li>毛白杨</li>
+</ul>
+<p>分布比较广，但也只有北方常用来作行道树，危险程度比较高</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%AF%9B%E7%99%BD%E6%9D%A8.png"
+                        alt="毛白杨" 
+                 ></p>
+<ul>
+<li>毛泡桐&amp;兰考泡桐</li>
+</ul>
+<p>比较少见的行道树，但非常特色，比如北京地铁亦庄线两侧，红色区域二者兼有，橙色基本只有兰考桐，浅橙色基本只有毛泡桐，危险程度较高</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%AF%9B%E6%B3%A1%E6%A1%90&amp;%E5%85%B0%E8%80%83%E6%B3%A1%E6%A1%90.png"
+                        alt="毛泡桐&amp;兰考泡桐" 
+                 ></p>
+<ul>
+<li>美丽异木棉</li>
+</ul>
+<p>热带季风气候专属，危险程度极高</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E7%BE%8E%E4%B8%BD%E5%BC%82%E6%9C%A8%E6%A3%89.png"
+                        alt="美丽异木棉" 
+                 ></p>
+<ul>
+<li>木棉</li>
+</ul>
+<p>比异木棉好点，危险程度高</p>
+<blockquote>
+<p>深圳好多</p>
+</blockquote>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%9C%A8%E6%A3%89.png"
+                        alt="木棉" 
+                 ></p>
+<ul>
+<li>南洋杉</li>
+</ul>
+<p>听名字就知道不是北方的东西，危险程度高</p>
+<blockquote>
+<p>四川也有</p>
+</blockquote>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E5%8D%97%E6%B4%8B%E6%9D%89.png"
+                        alt="南洋杉" 
+                 ></p>
+<ul>
+<li>七叶树</li>
+</ul>
+<p>除了果实非常大可能会砸到人，其它都完美的行道树，现在暖温带和亚热带广泛种植，危险程度中等</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E4%B8%83%E5%8F%B6%E6%A0%91.png"
+                        alt="七叶树" 
+                 ></p>
+<ul>
+<li>梧桐</li>
+</ul>
+<p>一种不耐寒的树，主要还是南方多（但是太原和青岛也有）</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%A2%A7%E6%A1%90.png"
+                        alt="梧桐" 
+                 ></p>
+<ul>
+<li>香樟树&amp;桂花</li>
+</ul>
+<p>这俩八竿子打不着，但分布差不多都是黄河以南，危险程度中高</p>
+<blockquote>
+<p>南昌、苏州全是这两种</p>
+</blockquote>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E9%A6%99%E6%A8%9F%E6%A0%91&amp;%E6%A1%82%E8%8A%B1.png"
+                        alt="香樟树&amp;桂花" 
+                 ></p>
+<ul>
+<li>银杏</li>
+</ul>
+<p>2.7亿岁的up主，现在全国各地都有粉丝，但作为典型的温带树种，南岭以南、长城以北还是活不了</p>
+<blockquote>
+<p>赤峰、呼和浩特也有</p>
+</blockquote>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E9%93%B6%E6%9D%8F.png"
+                        alt="银杏" 
+                 ></p>
+<ul>
+<li>各类枫树</li>
+</ul>
+<p>红色代表元宝槭鸡爪槭都有，浅橙色代表只有鸡爪槭，橙色代表只有元宝槭，深红色则更多是当地的枫树物种，当然别处也有自己的，比如东北的三花槭，湖北的房县槭，云南的漾濞槭。元宝槭和鸡爪槭危险程度低，其它的建议先识花</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E5%90%84%E7%B1%BB%E6%9E%AB%E6%A0%91.png"
+                        alt="各类枫树" 
+                 ></p>
+<ul>
+<li>梓属物种</li>
+</ul>
+<p>以楸树、梓树和黄金树为代表的梓属物种，依然是除了特别冷和特别热的地方，全国都有，危险程度低</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%A2%93%E5%B1%9E%E7%89%A9%E7%A7%8D.png"
+                        alt="梓属物种" 
+                 ></p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Summary/">Summary</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2024/03/20/Docker/"
+                                   title="Docker"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Docker</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/03/17/05PHP%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"
+                                   title="05PHP个人博客"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">05PHP个人博客</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="waline-comment-container">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline-meta.css"/>
+        <div id="waline-comment"></div>
+        <script data-pjax>
+          window.KeepCommentPlugin.walineOptions = JSON.parse('{&#34;login&#34;:&#34;force&#34;,&#34;copyright&#34;:false}'.replace(/&#34;/g, '"'))
+          window.KeepCommentPlugin.walineOptions.el = '#waline-comment'
+          window.KeepCommentPlugin.walineOptions.comment = '.post-comments-count'
+          window.KeepCommentPlugin.walineOptions.serverURL = 'waline-for-blog-psi.vercel.app'
+          window.KeepCommentPlugin.walineOptions.lang = 'zh-CN' || 'zh-CN'
+          window.KeepCommentPlugin.walineOptions.reaction = 'false' === 'true'
+        </script>
+
+        
+
+        
+            <script data-pjax
+                    async
+                    type="module"
+            >
+              import { init } from '//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline.js'
+              window.KeepCommentPlugin.initWaline = () => {
+                if (init) {
+                  init(window.KeepCommentPlugin.walineOptions)
+                  window.KeepCommentPlugin.hideLoading()
+                } else {
+                  setTimeout(() => {
+                    window.KeepCommentPlugin.initWaline()
+                  }, 1000)
+                }
+              }
+
+              if ('true' === 'true') {
+                setTimeout(() => {
+                  window.KeepCommentPlugin.initWaline()
+                }, 1200)
+              } else {
+                window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initWaline)
+              }
+            </script>
+        
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A4%BE%E5%B7%A5%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86"><span class="nav-text"> 社工信息搜集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%98%9F%E7%A9%BA%E5%AE%9A%E4%BD%8D%E7%BB%8F%E7%BA%AC%E5%BA%A6"><span class="nav-text"> 星空定位经纬度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-text"> 注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A4%8D%E7%89%A9-%E7%89%A9%E5%80%99%E7%B2%97%E7%95%A5%E5%AE%9A%E4%BD%8D"><span class="nav-text"> 植物、物候粗略定位</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E5%80%99"><span class="nav-text"> 物候</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A4%8D%E8%A2%AB"><span class="nav-text"> 植被</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%88%98"><span class="nav-text"> 实战</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E9%81%93%E6%A0%91"><span class="nav-text"> 行道树</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2022</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Jackie</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A4%BE%E5%B7%A5%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86"><span class="nav-text"> 社工信息搜集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%98%9F%E7%A9%BA%E5%AE%9A%E4%BD%8D%E7%BB%8F%E7%BA%AC%E5%BA%A6"><span class="nav-text"> 星空定位经纬度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-text"> 注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A4%8D%E7%89%A9-%E7%89%A9%E5%80%99%E7%B2%97%E7%95%A5%E5%AE%9A%E4%BD%8D"><span class="nav-text"> 植物、物候粗略定位</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E5%80%99"><span class="nav-text"> 物候</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A4%8D%E8%A2%AB"><span class="nav-text"> 植被</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%88%98"><span class="nav-text"> 实战</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E9%81%93%E6%A0%91"><span class="nav-text"> 行道树</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            
+<script src="/js/post/share.js"></script>
+
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+
+</body>
+</html>

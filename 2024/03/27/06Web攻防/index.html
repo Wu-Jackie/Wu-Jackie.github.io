@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jackie">
+    
+    <title>
+        
+            06Web攻防 |
+        
+        Jackie&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logoow.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+                
+<link rel="stylesheet" href="/css/hide.css">
+
+            
+        
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Jackie's Blog","author":"Jackie","avatar":"/images/nemo.svg","logo":"/images/logoow.svg","favicon":"/images/logoow.svg"},"menu":{"home":"/ || fa-solid fa-home","archives":"/archives || fa-solid fa-box-archive","tags":"/tags || fa-solid fa-tags","links":"/links || fa-solid fa-link","about":"/about || fa-solid fa-user-graduate"},"first_screen":{"enable":true,"background_img":"/images/bg2.svg","background_img_dark":"/images/bg2.svg","description":"Welcome To My Blog! || 無限進步！","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":false,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":null},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"waline","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":"waline-for-blog-psi.vercel.app","reaction":false,"version":"3.3.2","options":{"login":"force","copyright":false}},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2022,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":["/css/hide.css"],"js":[null]},"root":"","source_data":{"links":[{"title":"Web"},{"name":"小小邵同学","link":"https://swq111.online/","description":null,"avatar":"https://swq111.online/wp-content/uploads/2024/01/3.jpg"},{"name":"yxhhyy","link":"https://yxhhyy.github.io/","description":null,"avatar":"https://yxhhyy.github.io/images/1.jpg"},{"title":"Pwn"},{"name":"jwjlearning","link":"https://jwjlearning.github.io/","description":null,"avatar":"https://jwjlearning.github.io/img/avatar.png"},{"name":"yw-by","link":"https://yw-by.github.io/","description":null,"avatar":"https://yw-by.github.io/images/avatar.jpg"},{"title":"Reverse"},{"name":"FeowmAomr","link":"https://feowmaomr.github.io/","description":null,"avatar":"https://FeowmAomr.github.io/picx-images-hosting/Aomr.webp"},{"name":"Yigod","link":"https://hexo-beta-fawn.vercel.app/","description":null,"avatar":"https://hexo-beta-fawn.vercel.app/images/avatar.jpg"},{"title":"Crypto"},{"name":"Waiting a destined person","link":"\\#","description":null,"avatar":"https://wu-jackie.github.io/images/nemo.svg"},{"title":"Embedded"},{"name":"Taboo","link":"http://taboo-sdh.top/","description":null,"avatar":"http://taboo-sdh.top/wp-content/uploads/2024/04/1712235965-%E6%A0%97%E5%AD%90%E7%90%83%E5%A4%B4%E5%83%8F.jpg"}]},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logoow.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Jackie&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-home"></i>
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-box-archive"></i>
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-tags"></i>
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/links">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-link"></i>
+                                
+                                友链
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-home"></i>
+                                </span>
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-box-archive"></i>
+                                </span>
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-tags"></i>
+                                </span>
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/links">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-link"></i>
+                                </span>
+                            
+                            友链
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                </span>
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        06Web攻防
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/nemo.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Jackie</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-03-27</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun May 04 2025 22:04:06 GMT+0800">2025-05-04</span>
+                </span>
+            
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%B0%8F%E8%BF%AA/">小迪</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.1k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>8 分钟</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="asp"><a class="markdownIt-Anchor" href="#asp"></a> ASP</h1>
+<ul>
+<li>ASP环境搭建组合：Windows+IIS+ASP+Access（SQLserver）</li>
+</ul>
+<p>Access数据库一般后缀名asp asa（前两个被解析）mdb（下载）</p>
+<p>mdb文件在网站目录下</p>
+<blockquote>
+<p>数据库配置：./database/***.mdb</p>
+<p>后台：./admin/admin_login.asp</p>
+</blockquote>
+<p><mark>思路</mark>：如果知道数据库地址，可尝试获取数据库文件，获取当前管理员账号密码信息</p>
+<ul>
+<li>
+<p>IIS-短文件&amp;解析&amp;写权限</p>
+<ul>
+<li>
+<p>ASP-中间件-IIS短文件名探针-安全漏洞</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/lijiejie/IIS_shortname_Scanner" >IIS shortname Scanner<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li>
+<p>ASP-中间件-IIS文件上传解析-安全漏洞</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*.asp:.jpg</span><br><span class="line">*.asp/1.jpg(*.asp的目录里有1.jpg)</span><br><span class="line">下文具体解释</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>ASP-中间件-IIS配置目录读写-安全配置</p>
+<p>网站配置中勾选了写入，同时Web服务拓展中的WebDAV开启，此时出现写入漏洞</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/k8gege/iisput" >IISPutScanner<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="iis60解析漏洞"><a class="markdownIt-Anchor" href="#iis60解析漏洞"></a> IIS6.0解析漏洞</h2>
+<ul>
+<li>
+<p>IIS版本</p>
+<ul>
+<li>Windows Server 2003→IIS 6.0</li>
+<li>Windows7→IIS7.0和IIS7.5</li>
+<li>Windows Server 2008 SP2→IIS7.0</li>
+<li>Windows Server 2008 R2→IIS7.5</li>
+<li>WindowsXP和Windows Server 2000→IIS5.0</li>
+</ul>
+</li>
+<li>
+<p>漏洞原理</p>
+<p>如上</p>
+</li>
+<li>
+<p>上传原理</p>
+<p>WebDAV基于HTTP1.1协议的通信协议使得HTTP支持PUT、MOVE、COPY和DELLTE方法</p>
+<p>验证：</p>
+<p>抓包时更改GET为OPTIONS，观察到返回包的Public里有多个方法，说明存在漏洞</p>
+</li>
+<li>
+<p>上传TXT文件</p>
+<p>PUT请求</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;% eval request(&quot;a&quot;)%&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>通过COPY重命名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">COPY/1.txt HTTP1.1</span><br><span class="line">Host:127.0.0.1</span><br><span class="line">Destination:http://www.xxx.com/cmd.asp;.txt</span><br><span class="line">#将1.txt重命名为cmd.asp;.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>删除文件</p>
+<p>DELETE</p>
+</li>
+</ul>
+<h1 id="aspx"><a class="markdownIt-Anchor" href="#aspx"></a> ASPX</h1>
+<ul>
+<li>
+<p>.NET环境搭建组合：Windows+IIS+ASPX+SQLserver</p>
+</li>
+<li>
+<p>.NET配置调试-信息泄露</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/icsharpcode/ILSpy" >ILSpy反编译<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/dnSpyEx/dnSpy" >dnSpy<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li>
+<p>.NET项目-Web.config错误调试-信息泄露</p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line">&lt;customErrors mode=<span class="string">&quot;Off&quot;</span>&lt;/customErrors&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">    自定义错误，三种状态<span class="string">&quot;Off&quot;</span>、<span class="string">&quot;On&quot;</span>、<span class="string">&quot;RemoteOnly&quot;</span></span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>
+<p>.NET常见安全问题-未授权访问</p>
+<ol>
+<li>找没有包含验证代码的文件</li>
+<li>验证代码文件有没有可以绕过</li>
+</ol>
+</li>
+</ul>
+<h1 id="php"><a class="markdownIt-Anchor" href="#php"></a> PHP</h1>
+<p>详见《<a class="link"   target="_blank" rel="noopener" href="http://xn--PHP-v73fr22f.md" >PHP特性.md<i class="fas fa-external-link-alt"></i></a>》</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/hongriSec/PHP-Audit-Labs" >PHP-Audit-Labs<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="apache-httpd解析漏洞"><a class="markdownIt-Anchor" href="#apache-httpd解析漏洞"></a> Apache HTTPD解析漏洞</h2>
+<ul>
+<li>漏洞原理</li>
+</ul>
+<p>服务器解析某些精心构造的后缀文件时，会将其解析成网页脚本</p>
+<p>Apache HTTPD是一款HTTP服务器，其2.1.0~2.4.29版本存在解析漏洞，解析PHP时，1.php\x0A将按照.php进行解析</p>
+<p>上传一个1.php文件</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="title function_ invoke__">phpinfo</span>();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>抓包时在文件名后加个空格，然后在hex里修改20为0a，放包后成功</p>
+<h1 id="java"><a class="markdownIt-Anchor" href="#java"></a> Java</h1>
+<p>详见《Java安全》</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/ztosec/secscan-authcheck" >secscan-authcheck<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/WebGoat/WebGoat" >WebGoat<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/HAN91/p/14585449.html" >webgoat白盒审计+漏洞测试<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li>
+<p>通过目录遍历传shell至可执行的文件夹</p>
+</li>
+<li>
+<p>身份验证逻辑</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">问题有很多选项：</span><br><span class="line">s1：你叫什么名字？张三</span><br><span class="line">s2：你的出生地？出生地</span><br><span class="line">s3</span><br><span class="line">...</span><br><span class="line">数据库中没有s3、s4即s3=null s4=mull</span><br><span class="line">此时传入s3= &amp; s4= 发送数据</span><br><span class="line">正确</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>安全验证：固定接收的数据：s0、s1</p>
+<p>不固定：s0、s1判断数据→正常</p>
+<p>​		s2、s3不在数据库或者变量内→非法</p>
+</blockquote>
+<ul>
+<li>JWT：JSON Web令牌（JWT）验证用户的身份</li>
+</ul>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/yokan/p/14468030.html" >JWT原理及常见攻击方式<i class="fas fa-external-link-alt"></i></a></p>
+<blockquote>
+<p>判定网站是否采用JWT验证;</p>
+<p>数据包中Cookie可明确看到JWT特有的字符串格式：<strong>三部分，以点为间格</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</span><br></pre></td></tr></table></figure>
+<p><a class="link"   target="_blank" rel="noopener" href="https://jwt.io/" >JWT解密<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p><strong>绕过：</strong></p>
+<ol>
+<li>空加密算法</li>
+</ol>
+<p>在header中指定alg为None</p>
+<p>若某天开发人员在生产环境中开启了空加密算法，缺少签名算法，jwt保证信息不被篡改的功能就失效了。攻击者只需要把alg字段设置为None，就可以在payload中构造身份信息，伪造用户身份。</p>
+<ol start="2">
+<li>修改RSA加密算法为HMAC</li>
+</ol>
+<p>JWT中最常用的两种算法为<strong>HMAC</strong>和<strong>RSA</strong></p>
+<blockquote>
+<p>在HMAC和RSA算法中，都是使用私钥对signature字段进行签名，只有拿到了加密时使用的私钥，才有可能伪造token。</p>
+</blockquote>
+<p>假设一个Web应用，在JWT传输过程中使用RSA算法，密钥pem对JWT token进行签名，公钥pub对签名进行验证。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;alg&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;RS256&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;typ&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;jwt&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>通常情况下密钥pem是无法获取到的，但是公钥pub却可以很容易通过某些途径读取到，这时，将JWT的加密算法修改为HMAC，即</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;alg&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;HS256&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;typ&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;jwt&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>同时使用获取到的公钥pub作为算法的密钥，对token进行签名，发送到服务器端。</p>
+<p>服务器端会将RSA的公钥（pub）视为当前算法（HMAC）的密钥，使用HS256算法对接收到的签名进行验证。</p>
+<ol start="3">
+<li>爆破密钥</li>
+</ol>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/brendan-rius/c-jwt-cracker" >c-jwt-cracker<i class="fas fa-external-link-alt"></i></a></p>
+<blockquote>
+<p>前提：</p>
+<ul>
+<li>知悉JWT使用的加密算法</li>
+<li>一段有效的、已签名的token</li>
+<li>签名用的密钥不复杂（弱密钥）</li>
+</ul>
+</blockquote>
+<ol start="4">
+<li>
+<p>修改KID参数</p>
+<p>kid是jwt header中的一个可选参数，全称是key ID，它用于指定加密算法的密钥</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;alg&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;HS256&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;typ&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;jwt&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;kid&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;/home/jwt/.ssh/pem&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>因为该参数可以由用户输入，所以也可能造成一些安全问题。</p>
+<ul>
+<li>
+<p>任意文件读取</p>
+<p>kid参数用于读取密钥文件，但系统并不会知道用户想要读取的到底是不是密钥文件，所以，如果在没有对参数进行过滤的前提下，攻击者是可以读取到系统的任意文件的。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;alg&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;HS256&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;typ&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;jwt&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;kid&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;/etc/passwd&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>SQL注入</p>
+<p>kid也可以从数据库中提取数据，这时候就有可能造成SQL注入攻击，通过构造SQL语句来获取数据或者是绕过signature的验证</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ``<span class="string">&quot;alg&quot;</span>` `<span class="punctuation">:</span> ``<span class="string">&quot;HS256&quot;</span>``<span class="punctuation">,</span></span><br><span class="line">  ``<span class="string">&quot;typ&quot;</span>` `<span class="punctuation">:</span> ``<span class="string">&quot;jwt&quot;</span>``<span class="punctuation">,</span></span><br><span class="line">  ``<span class="string">&quot;kid&quot;</span>` `<span class="punctuation">:</span> ``<span class="string">&quot;key11111111&#x27; || union select &#x27;secretkey&#x27; -- &quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>命令注入</p>
+<p>对kid参数过滤不严也可能会出现命令注入问题，但是利用条件比较苛刻。如果服务器后端使用的是Ruby，在读取密钥文件时使用了open函数，通过构造参数就可能造成命令注入。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">&quot;/path/to/key_file|whoami&quot;</span><br></pre></td></tr></table></figure>
+<p>对于其他的语言，例如php，如果代码中使用的是exec或者是system来读取密钥文件，那么同样也可以造成命令注入，当然这个可能性就比较小了。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>修改JKU/X5U参数</p>
+</li>
+</ol>
+<p>JKU的全称是&quot;JSON Web Key Set URL&quot;，用于指定一组用于验证令牌的密钥的URL。类似于kid，JKU也可以由用户指定输入数据，如果没有经过严格过滤，就可以指定一组自定义的密钥文件，并指定web应用使用该组密钥来验证token。</p>
+<p>X5U则以URI的形式数允许攻击者指定用于验证令牌的<strong>公钥证书或证书链</strong>，与JKU的攻击利用方式类似。</p>
+<ol start="6">
+<li>信息泄露</li>
+</ol>
+<p>JWT保证的是数据传输过程中的完整性而不是机密性。</p>
+<p>由于payload是使用base64url编码的，所以相当于明文传输，如果在payload中携带了敏感信息（如存放密钥对的文件路径），单独对payload部分进行base64url解码，就可以读取到payload中携带的信息。</p>
+<blockquote>
+<p>base64url加密是先做base64加密，然后再将-替代+及_替代/。</p>
+</blockquote>
+<ul>
+<li>
+<p>访问控制</p>
+<ul>
+<li>
+<p>隐藏属性：前端页面的自卫限制显示</p>
+<p>源码中已经暴露的id值、等级之类的编号，可尝试修改值测试是否可以切换到另外用户查看信息</p>
+</li>
+<li>
+<p>水平越权：同一级别用户权限的查看</p>
+</li>
+</ul>
+</li>
+<li>
+<p>反序列化：后续讲</p>
+</li>
+</ul>
+<h1 id="javascript"><a class="markdownIt-Anchor" href="#javascript"></a> JavaScript</h1>
+<p><a class="link"   target="_blank" rel="noopener" href="https://vulhub.org/" >Vulhub<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.vulnhub.com/" >Vulnhub<i class="fas fa-external-link-alt"></i></a></p>
+<p>JavaScript开发的Web应用和PHP、Java、.NET等区别在于即没有源代码，也可以通过浏览器的查看源代码获取真实代码（相当于JS开发的Web应用属于白盒测试（默认有源码参考））</p>
+<ul>
+<li>如何判定JS开发应用？</li>
+</ul>
+<p>源代码简短</p>
+<p>引入多个js文件</p>
+<p>一般有/static/js/app.js等顺序的js文件</p>
+<p>cookie中有connect.sid</p>
+<ul>
+<li>如何获取更多的js文件？</li>
+</ul>
+<p>JSFinder</p>
+<p>Packer-Fuzzer</p>
+<p>扫描器后缀替换字典</p>
+<ul>
+<li>如何快速获取价值代码？</li>
+</ul>
+<p>method:“get”</p>
+<p>http.get(&quot;</p>
+<p>method:“post”</p>
+<p>http.post(&quot;</p>
+<p>$.ajax</p>
+<p>service.httppost</p>
+<p>service.httpget</p>
+<h1 id="python"><a class="markdownIt-Anchor" href="#python"></a> Python</h1>
+<ul>
+<li>Python文件反编译</li>
+<li>Python-Web-SSTI</li>
+<li>SSTI模板注入利用分析</li>
+</ul>
+<hr />
+<p>识别Python网站中间件：Werkzeug</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://tool.lu/pyc" >pyc反编译1<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://bugscaner.com/decompyle" >pyc反编译2<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/wibiti/uncompyle2" >uncompyle2<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li>SSTI</li>
+</ul>
+<p>服务端接收用户恶意输入后未经任何处理就将其作为Web应用模板内容的部分。模板引擎在进行目标编译渲染的过程中执行了用户插入的可以破坏模板的语句，因为可能导致了敏感信息泄露</p>
+<p>render_template_string()</p>
+<p>SSTI可能会出现的相关的地方</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="SSTI%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%87%BA%E7%8E%B0%E7%9A%84%E5%9C%B0%E6%96%B9.jpg"
+                        alt="SSTI可能会出现的地方" 
+                 ></p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%B0%8F%E8%BF%AA/">小迪</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2024/03/30/07%E9%80%9A%E7%94%A8-SQL%E6%B3%A8%E5%85%A5/"
+                                   title="07通用-SQL注入"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">07通用-SQL注入</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/03/20/Docker/"
+                                   title="Docker"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Docker</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="waline-comment-container">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline-meta.css"/>
+        <div id="waline-comment"></div>
+        <script data-pjax>
+          window.KeepCommentPlugin.walineOptions = JSON.parse('{&#34;login&#34;:&#34;force&#34;,&#34;copyright&#34;:false}'.replace(/&#34;/g, '"'))
+          window.KeepCommentPlugin.walineOptions.el = '#waline-comment'
+          window.KeepCommentPlugin.walineOptions.comment = '.post-comments-count'
+          window.KeepCommentPlugin.walineOptions.serverURL = 'waline-for-blog-psi.vercel.app'
+          window.KeepCommentPlugin.walineOptions.lang = 'zh-CN' || 'zh-CN'
+          window.KeepCommentPlugin.walineOptions.reaction = 'false' === 'true'
+        </script>
+
+        
+
+        
+            <script data-pjax
+                    async
+                    type="module"
+            >
+              import { init } from '//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline.js'
+              window.KeepCommentPlugin.initWaline = () => {
+                if (init) {
+                  init(window.KeepCommentPlugin.walineOptions)
+                  window.KeepCommentPlugin.hideLoading()
+                } else {
+                  setTimeout(() => {
+                    window.KeepCommentPlugin.initWaline()
+                  }, 1000)
+                }
+              }
+
+              if ('true' === 'true') {
+                setTimeout(() => {
+                  window.KeepCommentPlugin.initWaline()
+                }, 1200)
+              } else {
+                window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initWaline)
+              }
+            </script>
+        
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#asp"><span class="nav-text"> ASP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#iis60%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E"><span class="nav-text"> IIS6.0解析漏洞</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#aspx"><span class="nav-text"> ASPX</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#php"><span class="nav-text"> PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#apache-httpd%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E"><span class="nav-text"> Apache HTTPD解析漏洞</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java"><span class="nav-text"> Java</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript"><span class="nav-text"> JavaScript</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python"><span class="nav-text"> Python</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2022</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Jackie</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#asp"><span class="nav-text"> ASP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#iis60%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E"><span class="nav-text"> IIS6.0解析漏洞</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#aspx"><span class="nav-text"> ASPX</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#php"><span class="nav-text"> PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#apache-httpd%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E"><span class="nav-text"> Apache HTTPD解析漏洞</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java"><span class="nav-text"> Java</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript"><span class="nav-text"> JavaScript</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python"><span class="nav-text"> Python</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            
+<script src="/js/post/share.js"></script>
+
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+
+</body>
+</html>
