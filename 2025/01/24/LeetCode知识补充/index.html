@@ -308,7 +308,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Wed Feb 19 2025 22:23:06 GMT+0800">2025-02-19</span>
+                    <span class="datetime" data-updated="Wed Jul 23 2025 17:45:10 GMT+0800">2025-07-23</span>
                 </span>
             
         
@@ -329,12 +329,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>4.3k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>6.1k 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>18 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>26 分钟</span>
             </span>
         
         
@@ -653,7 +653,141 @@
                        data-src="list%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0.png"
                         alt="list辅助函数" 
                  ></p>
-<h1 id="红黑树"><a class="markdownIt-Anchor" href="#红黑树"></a> 红黑树</h1>
+<h2 id="红黑树"><a class="markdownIt-Anchor" href="#红黑树"></a> 红黑树</h2>
+<h2 id="continue"><a class="markdownIt-Anchor" href="#continue"></a> continue</h2>
+<p>continue是一条<strong>流程控制语句</strong>，用于<strong>提前结束当前循环迭代的剩余语句</strong>，并<strong>直接进入下一次循环的条件判断</strong></p>
+<ul>
+<li>continue<strong>不会跳出整个循环</strong>，只是跳过当前这次迭代</li>
+</ul>
+<h2 id="kmp算法"><a class="markdownIt-Anchor" href="#kmp算法"></a> KMP算法</h2>
+<h3 id="最长公共前后缀"><a class="markdownIt-Anchor" href="#最长公共前后缀"></a> 最长公共前后缀</h3>
+<p>字符串的<strong>前缀</strong>是指不包含最后一个字符的所有以第一个字符开头的连续子串</p>
+<p><strong>后缀</strong>是指不包含第一个字符的所有以最后一个字符结尾的连续子串</p>
+<p><strong>前缀表要求的就是相同前后缀的长度</strong></p>
+<blockquote>
+<p>以文本串：aabaabaafa和模式串：aabaaf举例</p>
+<p>匹配过程在下标5的地方遇到不匹配，模式串是指向f</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="KMP%E4%B8%BE%E4%BE%8B1.png"
+                        alt="KMP举例1" 
+                 ></p>
+<p>然后就找到了下标2，指向b，继续匹配</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="KMP%E4%B8%BE%E4%BE%8B2.png"
+                        alt="KMP举例2" 
+                 ></p>
+<p>下标5之前这部分的字符串（aabaa）的<strong>最长相等的前缀</strong>和<strong>后缀字符串</strong>是子字符串aa，因为找到了最长相等的前缀和后缀，匹配失败的位置是后缀子串的后面，那么找到与其相同的前缀的后面重新匹配就可以了</p>
+</blockquote>
+<h3 id="前缀表"><a class="markdownIt-Anchor" href="#前缀表"></a> 前缀表</h3>
+<p>记录下标i之前（包括i）的字符串中，有多大长度的相同前缀后缀，next数组就是一个前缀表（prefix table）</p>
+<p>前缀表用来回退的，它记录了模式串与主串（文本串）不匹配的时候，模式串应该从哪里开始重新匹配，使用前缀表，就不会从头匹配，而是从上次已经匹配的内容开始匹配</p>
+<ul>
+<li>求得的最长相同前后缀的长度就是对应前缀表的元素</li>
+</ul>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="KMP%E4%B8%BE%E4%BE%8B3.png"
+                        alt="KMP举例3" 
+                 ></p>
+<p>可以看出模式串与前缀表对应位置的数字表示的就是：<strong>下标i之前（包括i）的字符串中，有多大长度的相同前缀后缀</strong></p>
+<ul>
+<li>利用前缀表找到当字符不匹配的时候应该指针应该移动的位置</li>
+</ul>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="KMP%E4%B8%BE%E4%BE%8B4.gif"
+                        alt="KMP举例4" 
+                 ></p>
+<p>当字符不匹配的时候看它的前一个字符的前缀表的数值是多少</p>
+<blockquote>
+<p>为什么要前一个字符的前缀表的数值？</p>
+<p>要找前面字符串的最长相同的前缀和后缀</p>
+</blockquote>
+<h3 id="next数组"><a class="markdownIt-Anchor" href="#next数组"></a> next数组</h3>
+<blockquote>
+<p>以<strong>前缀表统一减一</strong>之后的next数组来做演示</p>
+</blockquote>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="KMP%E4%B8%BE%E4%BE%8B5.gif"
+                        alt="KMP举例5" 
+                 ></p>
+<ul>
+<li>时间复杂度</li>
+</ul>
+<p>n为文本串长度，m为模式串长度，匹配的过程中要根据前缀表不断调整匹配的位置，可以看出匹配的过程是O(n)，之前还要单独生成next数组，时间复杂度是O(m)。所以整个KMP算法的时间复杂度是<strong>O(n+m)</strong></p>
+<blockquote>
+<p>暴力解法时间复杂度O(nm)，<strong>KMP在字符串匹配中极大地提高了搜索的效率</strong></p>
+</blockquote>
+<h4 id="构造next数组"><a class="markdownIt-Anchor" href="#构造next数组"></a> 构造next数组</h4>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">getNext</span><span class="params">(<span class="type">int</span>* next, <span class="type">const</span> string&amp; s)</span></span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>初始化</li>
+<li>处理前后缀不相同的情况</li>
+<li>处理前后缀相同的情况</li>
+</ol>
+<hr />
+<ol>
+<li>初始化</li>
+</ol>
+<p>定义两个指针i和j，j指向前缀末尾位置，i指向后缀末尾位置，对next数组进行初始化赋值</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> j=<span class="number">-1</span>;</span><br><span class="line">next[<span class="number">0</span>]=j;</span><br></pre></td></tr></table></figure>
+<p>next[i]表示i（包括i）之前最长相等的前后缀长度（其实就是j），所以初始化next[0]=j</p>
+<ol start="2">
+<li>处理前后缀不相同的情况</li>
+</ol>
+<p>j初始化为-1，那么i就从1开始，进行s[i]与s[j+1]的比较，所以遍历模式串s的循环下标i要从1开始</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;s.<span class="built_in">size</span>();i++)&#123;</span><br></pre></td></tr></table></figure>
+<p>如果s[i]与s[j+1]不相同，也就是遇到前后缀末尾不相同的情况，就要向前回退</p>
+<p>next[j]就是记录着j（包括j）之前的子串的相同前后缀的长度</p>
+<p>那么s[i]与s[j+1]不相同，就要找j+1前一个元素在next数组里的值（就是next[j]）</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(j&gt;=<span class="number">0</span>&amp;&amp;s[i]!=s[j+<span class="number">1</span>])&#123;<span class="comment">//前后缀不相同</span></span><br><span class="line">	j=next[j];<span class="comment">//向前回退</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>处理前后缀相同的情况</li>
+</ol>
+<p>如果s[i]与s[j+1]相同，说明找到了相同的前后缀，那么就同时向后移动i和j，同时还要将j（前缀的长度）赋给next[i]，因为next[i]要记录相同前后缀的长度</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(s[i]==s[j+<span class="number">1</span>])&#123;<span class="comment">//找到相同的前后缀</span></span><br><span class="line">	j++;</span><br><span class="line">&#125;</span><br><span class="line">next[i]=j;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>完整代码</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">getNext</span><span class="params">(<span class="type">int</span>* next,<span class="type">const</span> string&amp; s)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> j=<span class="number">-1</span>;</span><br><span class="line">    next[<span class="number">0</span>]=j;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;s.<span class="built_in">size</span>();i++)&#123;<span class="comment">//i从1开始</span></span><br><span class="line">        <span class="keyword">while</span>(j&gt;=<span class="number">0</span>&amp;&amp;s[i]!=s[j+<span class="number">1</span>])&#123;<span class="comment">//前后缀不相同</span></span><br><span class="line">            j=next[j];<span class="comment">//向前回退</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(s[i]==s[j+<span class="number">1</span>])&#123;<span class="comment">//找到相同的前后缀</span></span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        next[i]=j;<span class="comment">//将j（前缀的长度）赋给next[i]</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="KMP%E4%B8%BE%E4%BE%8B6.gif"
+                        alt="KMP举例6" 
+                 ></p>
+<h4 id="使用next数组来做匹配"><a class="markdownIt-Anchor" href="#使用next数组来做匹配"></a> 使用next数组来做匹配</h4>
+<p>定义两个下标，j指向模式串起始位置，i指向文本串起始位置</p>
+<p>j初始值为-1，i从0开始遍历文本串</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;s.<span class="built_in">size</span>();i++)</span><br></pre></td></tr></table></figure>
+<p>如果s[i]与t[j+1]不相同，j就要从next数组里寻找下一个匹配的位置</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(j&gt;=<span class="number">0</span>&amp;&amp;s[i]!=t[j+<span class="number">1</span>])&#123;</span><br><span class="line">	j=next[j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果s[i]与t[j+1]相同，那么i和j同时向后移动</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(s[i]==t[j+<span class="number">1</span>])&#123;</span><br><span class="line">	j++;<span class="comment">//i的增加在for循环里</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果j指向模式串t的末尾，说明模式串t完全匹配文本串s里的某个子串</p>
+<p>在文本串字符串中找出模式串出现的第一个位置（从0开始），所以返回当前在文本串匹配模式串的位置i减去模式串的长度，就是文本串字符串中出现模式串的第一个位置</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(j==(t.<span class="built_in">size</span>()<span class="number">-1</span>))&#123;</span><br><span class="line">    <span class="keyword">return</span>(i-t.<span class="built_in">size</span>()+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>完整代码</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> j=<span class="number">-1</span>;<span class="comment">//next数组里记录的起始位置为-1</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;s.<span class="built_in">size</span>();i++)&#123;<span class="comment">//i从0开始</span></span><br><span class="line">    <span class="keyword">while</span>(j&gt;=<span class="number">0</span>&amp;&amp;s[i]!=t[j+<span class="number">1</span>])&#123;<span class="comment">//不匹配</span></span><br><span class="line">        j=next[j];<span class="comment">//j寻找之前匹配的位置</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(s[i]==t[j+<span class="number">1</span>])&#123;<span class="comment">//匹配，j和i同时向后移动</span></span><br><span class="line">        j++;<span class="comment">//i的增加在for循环里</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j==(t.<span class="built_in">size</span>()<span class="number">-1</span>))&#123;<span class="comment">//文本串s里出现了模式串t</span></span><br><span class="line">        <span class="keyword">return</span>(i-t.<span class="built_in">size</span>()+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="前缀表减一c代码实现"><a class="markdownIt-Anchor" href="#前缀表减一c代码实现"></a> 前缀表减一C++代码实现</h4>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">getNext</span><span class="params">(<span class="type">int</span>* next,<span class="type">const</span> string&amp; s)</span></span>&#123;</span><br><span class="line">        <span class="type">int</span> j=<span class="number">-1</span>;</span><br><span class="line">        next[<span class="number">0</span>]=j;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;s.<span class="built_in">size</span>();i++)&#123;<span class="comment">//注意i从1开始</span></span><br><span class="line">            <span class="keyword">while</span>(j&gt;=<span class="number">0</span>&amp;&amp;s[i]!=s[j+<span class="number">1</span>])&#123;<span class="comment">//前后缀不相同了</span></span><br><span class="line">                j=next[j];<span class="comment">//向前回退</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(s[i]==s[j+<span class="number">1</span>])&#123;<span class="comment">//找到相同的前后缀</span></span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            next[i]=j;<span class="comment">//将j（前缀的长度）赋给next[i]</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">strStr</span><span class="params">(string haystack, string needle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(needle.<span class="built_in">size</span>()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">next</span><span class="params">(needle.size())</span></span>;</span><br><span class="line">        <span class="built_in">getNext</span>(&amp;next[<span class="number">0</span>],needle);</span><br><span class="line">        <span class="type">int</span> j=<span class="number">-1</span>;<span class="comment">//因为next数组里记录的起始位置为-1</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;haystack.<span class="built_in">size</span>();i++)&#123;<span class="comment">//注意i就从0开始</span></span><br><span class="line">            <span class="keyword">while</span>(j&gt;=<span class="number">0</span>&amp;&amp;haystack[i]!=needle[j+<span class="number">1</span>])&#123;<span class="comment">//不匹配</span></span><br><span class="line">                j=next[j];<span class="comment">//j寻找之前匹配的位置</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(haystack[i]==needle[j+<span class="number">1</span>])&#123;<span class="comment">//匹配，j和i同时向后移动</span></span><br><span class="line">                j++;<span class="comment">//i的增加在for循环里</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(j==(needle.<span class="built_in">size</span>()<span class="number">-1</span>))&#123;<span class="comment">//文本串s里出现了模式串t</span></span><br><span class="line">                <span class="keyword">return</span>(i-needle.<span class="built_in">size</span>()+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n+m)</li>
+<li>空间复杂度：O(m)</li>
+</ul>
+<blockquote>
+<p>前缀表减一C++代码实现详见<a class="link"   target="_blank" rel="noopener" href="https://programmercarl.com/0028.%E5%AE%9E%E7%8E%B0strStr.html#%E5%89%8D%E7%BC%80%E8%A1%A8-%E4%B8%8D%E5%87%8F%E4%B8%80-c-%E5%AE%9E%E7%8E%B0" >《代码随想录》<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
 
                     
                 </div>
@@ -835,7 +969,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85"><span class="nav-text"> LeetCode知识补充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text"> 时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text"> 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%A8%8B%E5%BA%8F%E5%8D%A0%E7%94%A8%E5%A4%9A%E5%A4%A7%E5%86%85%E5%AD%98"><span class="nav-text"> 计算程序占用多大内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90"><span class="nav-text"> 内存对齐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-text"> vector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vectorvectorint-result"><span class="nav-text"> vector&lt;vector&lt;int&gt;&gt; result</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%E6%99%AE%E9%80%9A%E6%95%B0%E7%BB%84-stdarray-vector"><span class="nav-text"> 区别普通数组、std::array、vector</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> &gt;&gt;&lt;&lt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete"><span class="nav-text"> delete</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delete%E5%90%8E%E7%9A%84%E6%8C%87%E9%92%88tmp%E7%9A%84%E5%8F%98%E5%8C%96"><span class="nav-text"> ※delete后的指针tmp的变化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unordered_set"><span class="nav-text"> unordered_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8C%83%E5%9B%B4for%E5%BE%AA%E7%8E%AF"><span class="nav-text"> 范围for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iterator"><span class="nav-text"> iterator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#beginend"><span class="nav-text"> begin()&amp;end()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text"> 迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD"><span class="nav-text"> 通用功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-text"> 类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text"> 常用容器的迭代器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-text"> 实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0"><span class="nav-text"> 辅助函数</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="nav-text"> 红黑树</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85"><span class="nav-text"> LeetCode知识补充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text"> 时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text"> 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%A8%8B%E5%BA%8F%E5%8D%A0%E7%94%A8%E5%A4%9A%E5%A4%A7%E5%86%85%E5%AD%98"><span class="nav-text"> 计算程序占用多大内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90"><span class="nav-text"> 内存对齐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-text"> vector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vectorvectorint-result"><span class="nav-text"> vector&lt;vector&lt;int&gt;&gt; result</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%E6%99%AE%E9%80%9A%E6%95%B0%E7%BB%84-stdarray-vector"><span class="nav-text"> 区别普通数组、std::array、vector</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> &gt;&gt;&lt;&lt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete"><span class="nav-text"> delete</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delete%E5%90%8E%E7%9A%84%E6%8C%87%E9%92%88tmp%E7%9A%84%E5%8F%98%E5%8C%96"><span class="nav-text"> ※delete后的指针tmp的变化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unordered_set"><span class="nav-text"> unordered_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8C%83%E5%9B%B4for%E5%BE%AA%E7%8E%AF"><span class="nav-text"> 范围for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iterator"><span class="nav-text"> iterator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#beginend"><span class="nav-text"> begin()&amp;end()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text"> 迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD"><span class="nav-text"> 通用功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-text"> 类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text"> 常用容器的迭代器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-text"> 实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0"><span class="nav-text"> 辅助函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="nav-text"> 红黑树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#continue"><span class="nav-text"> continue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kmp%E7%AE%97%E6%B3%95"><span class="nav-text"> KMP算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E5%90%8E%E7%BC%80"><span class="nav-text"> 最长公共前后缀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E8%A1%A8"><span class="nav-text"> 前缀表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#next%E6%95%B0%E7%BB%84"><span class="nav-text"> next数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E9%80%A0next%E6%95%B0%E7%BB%84"><span class="nav-text"> 构造next数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8next%E6%95%B0%E7%BB%84%E6%9D%A5%E5%81%9A%E5%8C%B9%E9%85%8D"><span class="nav-text"> 使用next数组来做匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E8%A1%A8%E5%87%8F%E4%B8%80c%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text"> 前缀表减一C++代码实现</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 </div>
 
@@ -1004,7 +1138,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85"><span class="nav-text"> LeetCode知识补充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text"> 时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text"> 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%A8%8B%E5%BA%8F%E5%8D%A0%E7%94%A8%E5%A4%9A%E5%A4%A7%E5%86%85%E5%AD%98"><span class="nav-text"> 计算程序占用多大内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90"><span class="nav-text"> 内存对齐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-text"> vector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vectorvectorint-result"><span class="nav-text"> vector&lt;vector&lt;int&gt;&gt; result</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%E6%99%AE%E9%80%9A%E6%95%B0%E7%BB%84-stdarray-vector"><span class="nav-text"> 区别普通数组、std::array、vector</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> &gt;&gt;&lt;&lt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete"><span class="nav-text"> delete</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delete%E5%90%8E%E7%9A%84%E6%8C%87%E9%92%88tmp%E7%9A%84%E5%8F%98%E5%8C%96"><span class="nav-text"> ※delete后的指针tmp的变化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unordered_set"><span class="nav-text"> unordered_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8C%83%E5%9B%B4for%E5%BE%AA%E7%8E%AF"><span class="nav-text"> 范围for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iterator"><span class="nav-text"> iterator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#beginend"><span class="nav-text"> begin()&amp;end()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text"> 迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD"><span class="nav-text"> 通用功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-text"> 类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text"> 常用容器的迭代器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-text"> 实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0"><span class="nav-text"> 辅助函数</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="nav-text"> 红黑树</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85"><span class="nav-text"> LeetCode知识补充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text"> 时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text"> 内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%A8%8B%E5%BA%8F%E5%8D%A0%E7%94%A8%E5%A4%9A%E5%A4%A7%E5%86%85%E5%AD%98"><span class="nav-text"> 计算程序占用多大内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90"><span class="nav-text"> 内存对齐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-text"> vector</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vectorvectorint-result"><span class="nav-text"> vector&lt;vector&lt;int&gt;&gt; result</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%E6%99%AE%E9%80%9A%E6%95%B0%E7%BB%84-stdarray-vector"><span class="nav-text"> 区别普通数组、std::array、vector</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> &gt;&gt;&lt;&lt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete"><span class="nav-text"> delete</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#delete%E5%90%8E%E7%9A%84%E6%8C%87%E9%92%88tmp%E7%9A%84%E5%8F%98%E5%8C%96"><span class="nav-text"> ※delete后的指针tmp的变化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unordered_set"><span class="nav-text"> unordered_set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8C%83%E5%9B%B4for%E5%BE%AA%E7%8E%AF"><span class="nav-text"> 范围for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iterator"><span class="nav-text"> iterator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#beginend"><span class="nav-text"> begin()&amp;end()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text"> 迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD"><span class="nav-text"> 通用功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-text"> 类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text"> 常用容器的迭代器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-text"> 实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0"><span class="nav-text"> 辅助函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="nav-text"> 红黑树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#continue"><span class="nav-text"> continue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kmp%E7%AE%97%E6%B3%95"><span class="nav-text"> KMP算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E5%90%8E%E7%BC%80"><span class="nav-text"> 最长公共前后缀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E8%A1%A8"><span class="nav-text"> 前缀表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#next%E6%95%B0%E7%BB%84"><span class="nav-text"> next数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E9%80%A0next%E6%95%B0%E7%BB%84"><span class="nav-text"> 构造next数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8next%E6%95%B0%E7%BB%84%E6%9D%A5%E5%81%9A%E5%8C%B9%E9%85%8D"><span class="nav-text"> 使用next数组来做匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E8%A1%A8%E5%87%8F%E4%B8%80c%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text"> 前缀表减一C++代码实现</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 </div>
 
