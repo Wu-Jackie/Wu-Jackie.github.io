@@ -308,7 +308,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Fri Jan 30 2026 16:40:22 GMT+0800">2026年01月30日</span>
+                    <span class="datetime" data-updated="Mon Feb 09 2026 12:32:55 GMT+0800">2026年02月09日</span>
                 </span>
             
         
@@ -329,12 +329,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>3.8k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>4.2k 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>13 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>14 分钟</span>
             </span>
         
         
@@ -476,6 +476,19 @@
 <li><a class="link"   target="_blank" rel="noopener" href="https://www.loom.com/share/d8ffe66d9dfb44429be8a60182372f38" >聊天泄露<i class="fas fa-external-link-alt"></i></a></li>
 <li><a href="">注释投毒</a>（大语言模型提示注入攻击安全风险分析报告——大数据协同安全技术国家工程研究中心安全大脑国家新一代人工智能开放创新平台）</li>
 </ul>
+<blockquote>
+<ul>
+<li>
+<p>DPI：</p>
+<p>直接提示注入（Direct Prompt Injection）指攻击者直接向模型输入中插入恶意指令，诱导其执行共计任务</p>
+</li>
+<li>
+<p>IPI：</p>
+<p>间接提示注入（Indirect Prompt Injection）指攻击者将指令隐藏在外部内容（如网页、邮件、文档等）中，由模型在解析上下文或读取引用内容时自动执行</p>
+<p>攻击成功率（ASR）通常高于直接注入</p>
+</li>
+</ul>
+</blockquote>
 </blockquote>
 <h2 id="泛化攻击"><a class="markdownIt-Anchor" href="#泛化攻击"></a> 泛化攻击</h2>
 <p>针对模型的<strong>泛化能力</strong>进行攻击，目的是通过找到模型在某些特定输入上的弱点或漏洞，使得模型在看似正常的数据上表现异常。这种攻击通常利用模型对未见过的数据的处理方式进行操纵或破坏，从而导致模型在新的输入上输出错误或不可靠的结果</p>
@@ -521,6 +534,34 @@
 <h2 id="切换模式与返回系统提示词"><a class="markdownIt-Anchor" href="#切换模式与返回系统提示词"></a> 切换模式与返回系统提示词</h2>
 <p>通过提示模型<strong>切换至开发者模式</strong>，要求它进入一个更开放的测试环境。在这一环境下，模型会倾向于放宽对提示词的内部规则约束，认为自已可以输出原本不应暴露的信息，特别是系统提示词中的角色设定、技能和限制等信息。通过这种方法，模型被引导输出隐藏的系统提示词内容，而不是单纯依据用户问题给出普通回答</p>
 <p>提示词相关问题设计：为进一步提高成功率，模型会被问到与系统提示词相关的问题，如“你的角色设定是什么？”、“你的技能是什么？”等。这些问题不仅让模型重复系统提示词，还可以促使模型暴露更多详细的内部规则。通过进一步优化提示，促使模型不仅输出提示词的概括，还能返回系统提示词的逐条列出或完整引用（结构化的输出），这将使泄漏更加精确和有效</p>
+<h1 id="防护治理"><a class="markdownIt-Anchor" href="#防护治理"></a> 防护&amp;治理</h1>
+<h2 id="输入层"><a class="markdownIt-Anchor" href="#输入层"></a> 输入层</h2>
+<p>隔离与过滤：</p>
+<ol>
+<li>输入分隔号：用特殊标记隔离用户输入与系统指令</li>
+<li>动态过滤体系：规则引擎+向量检索+安全大模型语义分析，识别变形攻击</li>
+<li>多模型工作流：先用专用过滤模型清洗输入，再传递给主模型</li>
+<li>参数化提示：将指令与输入数据分离开，类似SQL参数化查询</li>
+</ol>
+<h2 id="模型层"><a class="markdownIt-Anchor" href="#模型层"></a> 模型层</h2>
+<p>训练与对齐：</p>
+<ol>
+<li>SecAlign：Meta与UC伯克利提出的后训练方法，通过DPO优化使模型区分指令与数据，攻击成功率&lt;2%</li>
+<li>RLHF强化学习：（Reinforcement Learning from Human Feedback）用人类反馈训练模型拒绝有害指令</li>
+<li>代理防护：用独立模型（如LlamaGuard）检查输入输出</li>
+</ol>
+<h2 id="系统层"><a class="markdownIt-Anchor" href="#系统层"></a> 系统层</h2>
+<p>网关与审计：</p>
+<ol>
+<li>大模型安全网关：部署在用户/应用与大模型服务之间，用于拦截异常流量、注入攻击，提供API级防护</li>
+<li>内容审计：实时过滤敏感词，记录生成内容用于溯源</li>
+<li>访问控制：IP白名单、身份认证、数据加密</li>
+</ol>
+<h1 id="附录"><a class="markdownIt-Anchor" href="#附录"></a> 附录</h1>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.nssctf.cn/" >NSSCTF的AI题目<i class="fas fa-external-link-alt"></i></a></p>
+<blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/kHgGXjv2aRi-eUc8AE6BNw" >Zero师傅的WP<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
 
                     
                 </div>
@@ -571,6 +612,22 @@
 
                 
                     <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2026/02/20/408%E5%85%AC%E5%BC%8F%E7%BB%93%E8%AE%BA%E6%80%BB%E7%BB%93/"
+                                   title="408公式、结论、常量总结"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">408公式、结论、常量总结</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
                         
                         
                             <div class="next-post">
@@ -686,7 +743,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8"><span class="nav-text"> 大模型安全</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5"><span class="nav-text"> 提示注入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E6%B3%A8%E5%85%A5"><span class="nav-text"> 前缀注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%92%E7%BB%9D%E6%8A%91%E5%88%B6"><span class="nav-text"> 拒绝抑制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%8E%E6%A0%BC%E6%B3%A8%E5%85%A5"><span class="nav-text"> 风格注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94"><span class="nav-text"> 角色扮演</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%B4%E6%8E%A5%E6%B3%A8%E5%85%A5"><span class="nav-text"> 间接注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%9B%E5%8C%96%E6%94%BB%E5%87%BB"><span class="nav-text"> 泛化攻击</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E6%88%98%E6%9E%84%E9%80%A0%E6%80%9D%E8%B7%AF"><span class="nav-text"> 实战构造思路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94%E4%B8%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E8%BD%AC%E7%A7%BB%E4%BB%8E%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%B0%E8%BE%93%E5%87%BA%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-text"> “角色扮演与注意力转移”从提示词到输出的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A0%B4%E6%A1%88%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%9B%9E%E7%AD%94%E6%96%B9%E6%B3%95"><span class="nav-text"> 破案驱动的回答方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2%E4%B8%8E%E6%8F%90%E7%A4%BA%E8%AF%8D%E9%87%8D%E5%A4%8D%E8%84%B1%E7%A6%BB%E7%B3%BB%E7%BB%9F%E9%99%90%E5%88%B6-%E9%87%8D%E5%A4%8D%E6%8C%87%E5%AE%9A%E5%86%85%E5%AE%B9"><span class="nav-text"> 模式切换与提示词重复——脱离系统限制、重复指定内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E6%A8%A1%E5%BC%8F%E4%B8%8E%E8%BF%94%E5%9B%9E%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="nav-text"> 切换模式与返回系统提示词</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8"><span class="nav-text"> 大模型安全</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5"><span class="nav-text"> 提示注入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E6%B3%A8%E5%85%A5"><span class="nav-text"> 前缀注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%92%E7%BB%9D%E6%8A%91%E5%88%B6"><span class="nav-text"> 拒绝抑制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%8E%E6%A0%BC%E6%B3%A8%E5%85%A5"><span class="nav-text"> 风格注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94"><span class="nav-text"> 角色扮演</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%B4%E6%8E%A5%E6%B3%A8%E5%85%A5"><span class="nav-text"> 间接注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%9B%E5%8C%96%E6%94%BB%E5%87%BB"><span class="nav-text"> 泛化攻击</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E6%88%98%E6%9E%84%E9%80%A0%E6%80%9D%E8%B7%AF"><span class="nav-text"> 实战构造思路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94%E4%B8%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E8%BD%AC%E7%A7%BB%E4%BB%8E%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%B0%E8%BE%93%E5%87%BA%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-text"> “角色扮演与注意力转移”从提示词到输出的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A0%B4%E6%A1%88%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%9B%9E%E7%AD%94%E6%96%B9%E6%B3%95"><span class="nav-text"> 破案驱动的回答方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2%E4%B8%8E%E6%8F%90%E7%A4%BA%E8%AF%8D%E9%87%8D%E5%A4%8D%E8%84%B1%E7%A6%BB%E7%B3%BB%E7%BB%9F%E9%99%90%E5%88%B6-%E9%87%8D%E5%A4%8D%E6%8C%87%E5%AE%9A%E5%86%85%E5%AE%B9"><span class="nav-text"> 模式切换与提示词重复——脱离系统限制、重复指定内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E6%A8%A1%E5%BC%8F%E4%B8%8E%E8%BF%94%E5%9B%9E%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="nav-text"> 切换模式与返回系统提示词</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%B2%E6%8A%A4%E6%B2%BB%E7%90%86"><span class="nav-text"> 防护&amp;治理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E5%B1%82"><span class="nav-text"> 输入层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%B1%82"><span class="nav-text"> 模型层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E5%B1%82"><span class="nav-text"> 系统层</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%84%E5%BD%95"><span class="nav-text"> 附录</span></a></li></ol>
     </div>
 </div>
 
@@ -721,7 +778,7 @@
             
                 <span class="count-item border-box word">
                     <span class="item-type border-box">总字数</span>
-                    <span class="item-value border-box word">157.3k</span>
+                    <span class="item-value border-box word">164.3k</span>
                 </span>
             
 
@@ -868,7 +925,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8"><span class="nav-text"> 大模型安全</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5"><span class="nav-text"> 提示注入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E6%B3%A8%E5%85%A5"><span class="nav-text"> 前缀注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%92%E7%BB%9D%E6%8A%91%E5%88%B6"><span class="nav-text"> 拒绝抑制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%8E%E6%A0%BC%E6%B3%A8%E5%85%A5"><span class="nav-text"> 风格注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94"><span class="nav-text"> 角色扮演</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%B4%E6%8E%A5%E6%B3%A8%E5%85%A5"><span class="nav-text"> 间接注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%9B%E5%8C%96%E6%94%BB%E5%87%BB"><span class="nav-text"> 泛化攻击</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E6%88%98%E6%9E%84%E9%80%A0%E6%80%9D%E8%B7%AF"><span class="nav-text"> 实战构造思路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94%E4%B8%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E8%BD%AC%E7%A7%BB%E4%BB%8E%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%B0%E8%BE%93%E5%87%BA%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-text"> “角色扮演与注意力转移”从提示词到输出的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A0%B4%E6%A1%88%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%9B%9E%E7%AD%94%E6%96%B9%E6%B3%95"><span class="nav-text"> 破案驱动的回答方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2%E4%B8%8E%E6%8F%90%E7%A4%BA%E8%AF%8D%E9%87%8D%E5%A4%8D%E8%84%B1%E7%A6%BB%E7%B3%BB%E7%BB%9F%E9%99%90%E5%88%B6-%E9%87%8D%E5%A4%8D%E6%8C%87%E5%AE%9A%E5%86%85%E5%AE%B9"><span class="nav-text"> 模式切换与提示词重复——脱离系统限制、重复指定内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E6%A8%A1%E5%BC%8F%E4%B8%8E%E8%BF%94%E5%9B%9E%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="nav-text"> 切换模式与返回系统提示词</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8"><span class="nav-text"> 大模型安全</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5"><span class="nav-text"> 提示注入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E6%B3%A8%E5%85%A5"><span class="nav-text"> 前缀注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%92%E7%BB%9D%E6%8A%91%E5%88%B6"><span class="nav-text"> 拒绝抑制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%8E%E6%A0%BC%E6%B3%A8%E5%85%A5"><span class="nav-text"> 风格注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94"><span class="nav-text"> 角色扮演</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%B4%E6%8E%A5%E6%B3%A8%E5%85%A5"><span class="nav-text"> 间接注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%9B%E5%8C%96%E6%94%BB%E5%87%BB"><span class="nav-text"> 泛化攻击</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E6%88%98%E6%9E%84%E9%80%A0%E6%80%9D%E8%B7%AF"><span class="nav-text"> 实战构造思路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94%E4%B8%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E8%BD%AC%E7%A7%BB%E4%BB%8E%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%88%B0%E8%BE%93%E5%87%BA%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-text"> “角色扮演与注意力转移”从提示词到输出的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A0%B4%E6%A1%88%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%9B%9E%E7%AD%94%E6%96%B9%E6%B3%95"><span class="nav-text"> 破案驱动的回答方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2%E4%B8%8E%E6%8F%90%E7%A4%BA%E8%AF%8D%E9%87%8D%E5%A4%8D%E8%84%B1%E7%A6%BB%E7%B3%BB%E7%BB%9F%E9%99%90%E5%88%B6-%E9%87%8D%E5%A4%8D%E6%8C%87%E5%AE%9A%E5%86%85%E5%AE%B9"><span class="nav-text"> 模式切换与提示词重复——脱离系统限制、重复指定内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E6%A8%A1%E5%BC%8F%E4%B8%8E%E8%BF%94%E5%9B%9E%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="nav-text"> 切换模式与返回系统提示词</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%B2%E6%8A%A4%E6%B2%BB%E7%90%86"><span class="nav-text"> 防护&amp;治理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E5%B1%82"><span class="nav-text"> 输入层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%B1%82"><span class="nav-text"> 模型层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E5%B1%82"><span class="nav-text"> 系统层</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%84%E5%BD%95"><span class="nav-text"> 附录</span></a></li></ol>
     </div>
 </div>
 
