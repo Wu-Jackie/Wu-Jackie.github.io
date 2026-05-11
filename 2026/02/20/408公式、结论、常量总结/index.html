@@ -308,7 +308,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sun May 10 2026 11:09:54 GMT+0800">2026年05月10日</span>
+                    <span class="datetime" data-updated="Mon May 11 2026 17:36:49 GMT+0800">2026年05月11日</span>
                 </span>
             
         
@@ -329,12 +329,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>8.4k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>8.8k 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>33 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>34 分钟</span>
             </span>
         
         
@@ -1126,7 +1126,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </li>
 </ul>
 <ul>
-<li>现代计算机中通常用补码整函数表示整数，原码小数表示浮点数的尾数部分，移码表示浮点数的阶码部分</li>
+<li>现代计算机中通常用<strong>补码</strong>整数表示整数，原码小数表示浮点数的尾数部分，移码表示浮点数的阶码部分</li>
 <li>[x]<sub>补</sub>=2<sup>n+1</sup>+x（-2<sup>n</sup>≤x≤2<sup>n</sup>，mod2<sup>n+1</sup>）</li>
 <li>由[x]<sub>补</sub>快速求[-x]<sub>补</sub>方法：符号位、数值位全部取反，末尾加1</li>
 <li>模-a的绝对值=a的补数</li>
@@ -1334,6 +1334,12 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </tbody>
 </table>
 <ul>
+<li>浮点数的规格化（BV1qG41197E4：2-4-2——湖科大教书匠）：N=r<sup>E</sup>×M</li>
+</ul>
+<p>通过调整一个非规格化浮点数的尾数和阶码的大小，使非零浮点数在尾数的最高数位上保证是一个有效值</p>
+<p>当浮点数的尾数的基数为2时，原码规格化数的尾数最高位一定是1；当浮点数的尾数的基数为4时，原码规格化数的尾数最高两位不全为0</p>
+<p>基数r越大，可表示的浮点数范围越大，而且所表示的数个数越多，但浮点数的精度反而下降</p>
+<ul>
 <li>IEEE754浮点数</li>
 </ul>
 <p><img  
@@ -1349,7 +1355,8 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
                         alt="IEEE浮点数的表示" 
                  ></p>
 <ul>
-<li>浮点数的加减运算<sup class="footnote-ref"><a href="#fn61" id="fnref61">[61]</a></sup>
+<li>
+<p>浮点数的加减运算<sup class="footnote-ref"><a href="#fn61" id="fnref61">[61]</a></sup></p>
 <ul>
 <li>对阶：小阶码向大阶码看齐（尾数右移时保留至少3位参与尾数部分的运算）</li>
 <li>舍入：如果舍弃位刚好为<strong>100</strong>
@@ -1360,9 +1367,43 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </li>
 </ul>
 </li>
-<li>溢出判断：由指数上溢来判断（111111111发生指数上溢；00000000发生指数下溢）</li>
-<li>不同类型数的混合运算时，遵循<strong>类型提升</strong>的原则</li>
+<li>
+<p>溢出判断：由指数上溢来判断（111111111发生指数上溢；00000000发生指数下溢）</p>
+<blockquote>
+<ol>
+<li>结果是否发生溢出</li>
+<li>精度是否丢失
+<ul>
+<li>整数和小数之间的转化</li>
+<li>浮点数运算对阶</li>
+<li>高精度往低精度转化</li>
 </ul>
+</li>
+</ol>
+<p>范围：double＞float＞int</p>
+<p>精度：double（53）＞int（31）＞float（24）</p>
+</blockquote>
+</li>
+<li>
+<p>不同类型数的混合运算时，遵循<strong>类型提升</strong>的原则</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>数据的大小端存储<sup class="footnote-ref"><a href="#fn62" id="fnref62">[62]</a></sup></p>
+<ul>
+<li>大端方式：先存储高位字节，后存储低位字节。字节中的字节顺序和原序列的相同</li>
+<li>小端方式：先存储低位字节，后存储高位字节。字节中的字节顺序和原序列的相反</li>
+</ul>
+<blockquote>
+<p>针对的是某一个数据内部，它的存储不会影响各个数据之间的顺序</p>
+</blockquote>
+</li>
+<li>
+<p>数据按“边界对齐”方式存储</p>
+</li>
+</ul>
+<p>现代计算机都是按<strong>字节编址</strong>的，数据按边界对齐的方式存放要求其存储地址是自身大小的整数倍</p>
 <h2 id="第3章-存储系统"><a class="markdownIt-Anchor" href="#第3章-存储系统"></a> 第3章、存储系统</h2>
 <ul>
 <li></li>
@@ -1491,6 +1532,8 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <li id="fn60" class="footnote-item"><p>P56 <a href="#fnref60" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn61" class="footnote-item"><p>P60 <a href="#fnref61" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn62" class="footnote-item"><p>P62 <a href="#fnref62" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
