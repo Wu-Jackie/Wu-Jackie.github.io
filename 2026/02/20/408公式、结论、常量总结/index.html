@@ -308,7 +308,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Fri Jul 24 2026 11:17:24 GMT+0800">2026年07月24日</span>
+                    <span class="datetime" data-updated="Fri Jul 24 2026 11:33:57 GMT+0800">2026年07月24日</span>
                 </span>
             
         
@@ -2013,6 +2013,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <li>中断优先级包括<strong>响应优先级</strong>和<strong>处理优先级</strong>。响应优先级由硬件线路或查询程序的查询顺序确定，不可动态改变；处理优先级由中断屏蔽字确定，可灵活改变</li>
 <li>在单级（或单重）中断系统中不允许中断嵌套。中断处理过程为：①关中断；②保存断点；③识别中断源；④保存现场；⑤中断事件处理；⑥恢复现场；⑦开中断；⑧中断返回。其中①~③由硬件完成，④~⑧由中断服务程序完成</li>
 <li>DMA的传送过程：①预处理：CPU完成一些必要的准备工作，由DMA控制器向CPU发总线请求。②数据传送：DMA控制器接管总线后，在设备接口和主存之间进行数据传送，此阶段由DMA控制器控制。③后处理：传送结束后，DMA控制器向CPU发送中断信号，做结束处理</li>
+<li>中断响应在一个指令周期结束后；而DMA响应是在一个总线周期后</li>
 </ul>
 <hr class="footnotes-sep" />
 <section class="footnotes">
