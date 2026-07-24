@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jackie">
+    
+    <title>
+        
+            Vibe Coding |
+        
+        Jackie&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logoow.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+        
+            
+                
+<link rel="stylesheet" href="/css/hide.css">
+
+            
+        
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Jackie's Blog","author":"Jackie","avatar":"/images/nemo.svg","logo":"/images/logoow.svg","favicon":"/images/logoow.svg"},"menu":{"home":"/ || fa-solid fa-home","archives":"/archives || fa-solid fa-box-archive","tags":"/tags || fa-solid fa-tags","links":"/links || fa-solid fa-link","about":"/about || fa-solid fa-user-graduate"},"first_screen":{"enable":true,"background_img":"/images/bg2.svg","background_img_dark":"/images/bg2.svg","description":"Welcome To My Blog! || 無限進步！","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":true},"home":{"announcement":"不定时更新博客，欢迎催更","category":true,"tag":true,"post_datetime":"updated","post_datetime_format":"YYYY年MM月DD日"},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY年MM月DD日","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null,"icon":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":true},"comment":{"enable":true,"use":"waline","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":"waline-for-blog-psi.vercel.app","reaction":false,"version":"3.3.2","options":{"login":"force","copyright":false}},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2022,"word_count":false,"site_deploy":{"enable":true,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":true,"css":["/css/hide.css"],"js":[null]},"root":"","source_data":{"links":[{"title":"Web"},{"name":"小小邵同学","link":"https://swq111.online/","description":null,"avatar":"https://swq111.online/wp-content/uploads/2024/01/3.jpg"},{"name":"yxhhyy","link":"https://yxhhyy.github.io/","description":null,"avatar":"https://yxhhyy.github.io/images/1.jpg"},{"title":"Pwn"},{"name":"jwjlearning","link":"https://jwjlearning.github.io/","description":null,"avatar":"https://jwjlearning.github.io/img/avatar.png"},{"name":"yw-by","link":"https://yw-by.github.io/","description":null,"avatar":"https://yw-by.github.io/images/avatar.jpg"},{"title":"Reverse"},{"name":"FeowmAomr","link":"https://feowmaomr.github.io/","description":null,"avatar":"https://FeowmAomr.github.io/picx-images-hosting/Aomr.webp"},{"name":"Yigod","link":"https://hexo-beta-fawn.vercel.app/","description":null,"avatar":"https://hexo-beta-fawn.vercel.app/images/avatar.jpg"},{"title":"Crypto"},{"name":"Waiting a destined person","link":"\\#","description":null,"avatar":"https://wu-jackie.github.io/images/nemo.svg"},{"title":"Embedded"},{"name":"Taboo","link":"http://taboo-sdh.top/","description":null,"avatar":"http://taboo-sdh.top/wp-content/uploads/2024/04/1712235965-%E6%A0%97%E5%AD%90%E7%90%83%E5%A4%B4%E5%83%8F.jpg"}]},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logoow.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Jackie&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-home"></i>
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-box-archive"></i>
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-tags"></i>
+                                
+                                标签
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/links">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-link"></i>
+                                
+                                友链
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-home"></i>
+                                </span>
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-box-archive"></i>
+                                </span>
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-tags"></i>
+                                </span>
+                            
+                            标签
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/links">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-link"></i>
+                                </span>
+                            
+                            友链
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-user-graduate"></i>
+                                </span>
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Vibe Coding
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/nemo.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Jackie</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2026年07月24日</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Fri Jul 24 2026 19:23:38 GMT+0800">2026年07月24日</span>
+                </span>
+            
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Summary/">Summary</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.4k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+            </span>
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="规范文档"><a class="markdownIt-Anchor" href="#规范文档"></a> 规范文档</h1>
+<p>在写任何一行代码之前，先把这六份文档写掉</p>
+<blockquote>
+<p>步骤越多，AI猜测越少</p>
+<p>AI猜测越少，幻觉越少</p>
+</blockquote>
+<ol>
+<li>
+<p>PRD.md</p>
+<p>产品需求</p>
+<p>什么在范围内/什么明确不在</p>
+<p>用户故事、成功标准</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># PRD—Study Timer</span></span><br><span class="line"><span class="section">## In Scope</span></span><br><span class="line"><span class="bullet">-</span> 番茄钟25/5、任务队列、每日统计</span><br><span class="line"><span class="bullet">-</span> 本地存储(LocalStorage)、无账号系统</span><br><span class="line"><span class="section">## Out of Scope (v1)</span></span><br><span class="line"><span class="bullet">-</span> 云同步、团队协作、音效自定义</span><br><span class="line"><span class="section">## Success Criteria</span></span><br><span class="line"><span class="bullet">-</span> 用户可30秒内完成第一个番茄</span><br><span class="line"><span class="bullet">-</span> 关掉浏览器再打开数据不丢</span><br><span class="line"><span class="section">## User Stories</span></span><br><span class="line"><span class="bullet">-</span> 作为学生，我想...</span><br><span class="line"><span class="bullet">-</span> 作为...</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>APP_FLOW.md</p>
+<blockquote>
+<p>防止AI猜测用户如何移动——屏幕清单+路由+每一步决策点</p>
+</blockquote>
+<p>用户流程</p>
+<p>每个页面、每条路径</p>
+<p>成功态/错误态、路由清单</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># App Flow</span></span><br><span class="line"><span class="section">## Screens</span></span><br><span class="line"><span class="bullet">-</span> /            Home （进入按钮、今日统计）</span><br><span class="line"><span class="bullet">-</span> /timer       Timer（开始/暂停/放弃）</span><br><span class="line"><span class="bullet">-</span> /stats       Stats（7 日折线图）</span><br><span class="line"><span class="section">## Flow: 开始一个番茄</span></span><br><span class="line"><span class="bullet">1.</span> Home→点击[开始]→/timer</span><br><span class="line"><span class="bullet">2.</span> /timer倒计时25:00→到0</span><br><span class="line"><span class="bullet">3.</span> 弹提示→计数+1→自动/break</span><br><span class="line"><span class="section">## Error States</span></span><br><span class="line"><span class="bullet">-</span> 用户拒绝通知权限→顶部黄条提示</span><br><span class="line"><span class="bullet">-</span> 中途关闭→记录为“放弃”</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>TECH_STACK.md</p>
+<p>技术栈</p>
+<p>每个包锁定版本号</p>
+<p>消除幻觉依赖（React 18.2.0…）</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Tech Stack (LOCKED)</span></span><br><span class="line"><span class="bullet">-</span> Node       20.11.1</span><br><span class="line"><span class="bullet">-</span> Next.js    14.1.0</span><br><span class="line"><span class="bullet">-</span> React      18.2.0</span><br><span class="line"><span class="bullet">-</span> TypeScript 5.3.3</span><br><span class="line"><span class="bullet">-</span> Tailwind   3.4.1</span><br><span class="line"><span class="bullet">-</span> shadcn/ui  0.8.0</span><br><span class="line"><span class="bullet">-</span> Vitest     1.2.0</span><br><span class="line">不允许引入UI库(MUI/Antd)或状态管理库(Redux/Zustand)，除非本文件更新过</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>FRONTEND_GUIDELINES.md</p>
+<blockquote>
+<p>每个视觉决策都要锁定。“看起来好看”不是描述，&quot;backdrop-filter: blur(12px)&quot;才是</p>
+</blockquote>
+<p>前端规范</p>
+<p>色板、间距、圆角、排版</p>
+<p>断点、组件命名、视觉令牌</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Design System</span></span><br><span class="line"><span class="section">## Palette</span></span><br><span class="line">primary  #1D4ED8   danger #DC2626</span><br><span class="line">ink      #111827   dim    #6B7280</span><br><span class="line">bg       #FFFFFF   panel  #F3F4F6</span><br><span class="line"><span class="section">## Spacing scale (px)</span></span><br><span class="line">4、8、12、16、24、32、48、64</span><br><span class="line"><span class="section">## Radius/Shadow</span></span><br><span class="line">radius-sm 4 、md 8 、lg 12</span><br><span class="line">shadow-1  0 1 2  rgba(0,0,0,.06)</span><br><span class="line"><span class="section">## Typography</span></span><br><span class="line">Heading  Inter 600、Body Inter 400</span><br><span class="line"><span class="section">## Breakpoints</span></span><br><span class="line">sm 640、md 768、lg 1024、xl 1280</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>BACKEND_STRUCTURE.md</p>
+<p>后端结构</p>
+<p>数据库模式、认证逻辑</p>
+<p>API合约、存储、边缘情况</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Schema</span></span><br><span class="line"><span class="section">## table: pomodoro</span></span><br><span class="line">  id         TEXT  PK</span><br><span class="line">  started<span class="emphasis">_at INT   NOT NULL   # unix ms</span></span><br><span class="line"><span class="emphasis">  duration   INT   DEFAULT 1500</span></span><br><span class="line"><span class="emphasis">  status     TEXT  CHECK IN (&#x27;done&#x27;,&#x27;abort&#x27;)</span></span><br><span class="line"><span class="emphasis">  tag_</span>id     TEXT  FK -&gt; tag.id NULLABLE</span><br><span class="line"><span class="section">## table: tag</span></span><br><span class="line">  id    TEXT PK</span><br><span class="line">  name  TEXT UNIQUE</span><br><span class="line">  color TEXT</span><br><span class="line"><span class="section">## API</span></span><br><span class="line">GET  /api/stats?range=7d  -&gt; DailyStat[]</span><br><span class="line">POST /api/pomodoro       body: &#123;duration,tag<span class="emphasis">_id&#125;</span></span><br><span class="line"><span class="emphasis">## Auth</span></span><br><span class="line"><span class="emphasis">无 (v1)、未来 magic-link + JWT</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>IMPLEMENTATION_PLAN.md</p>
+<blockquote>
+<p>让每次会话都能“从断点续跑”，AI不用重新猜项目在哪个阶段</p>
+</blockquote>
+<p>实施计划</p>
+<p>逐步序列1.1→1.2→…</p>
+<p>步骤越多，AI猜测越少</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Build Order</span></span><br><span class="line">1.1 pnpm create next-app@14.1.0 study-timer</span><br><span class="line">1.2 安装tailwind/shadcn/vitest</span><br><span class="line">1.3 建目录：app/components/lib/tests/</span><br><span class="line">2.1 按FRONTEND<span class="emphasis">_GUIDELINES建<span class="language-xml"><span class="tag">&lt;<span class="name">Button</span>&gt;</span></span></span></span><br><span class="line"><span class="emphasis">2.2 建<span class="language-xml"><span class="tag">&lt;<span class="name">TimerCircle</span>&gt;</span></span>组件(SVG)</span></span><br><span class="line"><span class="emphasis">2.3 建<span class="language-xml"><span class="tag">&lt;<span class="name">TagPicker</span>&gt;</span></span></span></span><br><span class="line"><span class="emphasis">3.1 按BACKEND_</span>STRUCTURE建SQLite schema</span><br><span class="line">3.2 lib/db.ts CRUD+Vitest单测</span><br><span class="line">4.1 /timer页拼装、状态机</span><br><span class="line">4.2 /stats页、折线图</span><br><span class="line">5.1 集成e2e、pnpm test</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="会话持久层"><a class="markdownIt-Anchor" href="#会话持久层"></a> 会话持久层</h2>
+<ol>
+<li>
+<p>CLAUDE.md</p>
+<p>≤60行、每次自动读</p>
+<ul>
+<li>技术栈摘要、命名约定</li>
+<li>设计令牌、组件模式</li>
+<li>”允许“与“禁止“清单</li>
+<li>指向progress.txt/lessons.md</li>
+<li>活文档：每次纠正就更新它</li>
+</ul>
+</li>
+<li>
+<p>progress.txt</p>
+<p>会话桥梁、断点续跑</p>
+<ul>
+<li>已完成/进行中/接下来/已知Bug</li>
+<li>每次功能完成后更新</li>
+<li>新会话第一件事：读它</li>
+<li>没有它→每次都从零上下文开始</li>
+<li>有它→AI从断点精确继续</li>
+</ul>
+</li>
+<li>
+<p>lessons.md</p>
+<p>可选但强推、失败模式库</p>
+<ul>
+<li>每次纠正AI后记录一条</li>
+<li>格式：现象→原因→防止规则</li>
+<li>CLAUDE.md 里指向它，让AI每次读</li>
+<li>这是把“好CLAUDE.md“与“伟大CLAUDE.md“分开的关键</li>
+<li>≈Reflection模式的工程落地</li>
+</ul>
+</li>
+</ol>
+<h1 id="interrogation审问系统"><a class="markdownIt-Anchor" href="#interrogation审问系统"></a> Interrogation审问系统</h1>
+<blockquote>
+<p>先想清楚再动手</p>
+</blockquote>
+<ul>
+<li>
+<p>Prompt A：无尽审问（进入Plan Mode：Shift+Tab两次）</p>
+<p>在写任何代码之前，在Planning模式下无尽地审问我的想法</p>
+<p>不要假设任何问题。问问题直到没有假设剩下</p>
+<p>一次只问一个问题，根据我的回答继续追问</p>
+<p>直到你有95%的信心理解我的真实需求和目标，然后才给出方案</p>
+<ul>
+<li>Claude应该反问你的问题
+<ul>
+<li>给谁用？（用户画像）</li>
+<li>核心动作是什么？</li>
+<li>完成后发生什么？（成功态）</li>
+<li>需要保存哪些数据？</li>
+<li>需要展示哪些数据？</li>
+<li>错误状态怎么处理？</li>
+<li>需要登录吗？需要数据库吗？</li>
+<li>需要在手机上工作吗？</li>
+<li>离线场景要不要支持？</li>
+</ul>
+</li>
+<li>规矩
+<ul>
+<li><strong>一次只问一个问题</strong></li>
+<li><strong>根据你的回答继续追问</strong></li>
+<li><strong>直到95%信心理解真实需求，才给方案</strong></li>
+<li>这些答案=六份规范文档的原材料</li>
+<li>用户描述→PRD</li>
+<li>数据结构→BACKEND STRUCTURE</li>
+<li>流程→APP FLOW</li>
+<li>手机需求→FRONTEND GUIDELINES</li>
+<li>采访完开新会话执行（对话太长会污染上下文）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Prompt B：审问结束后生成规范文档</p>
+<p>基于我们的审问，生成规范文档：PRD.md、APP_FLOW.md、TECH_STACK.md、FRONTEND_GUIDELINES.md、BACKEND_STRUCTURE.md、IMPLEMENTATION_PLAN.md</p>
+<p>要具体且详尽，没有歧义</p>
+</li>
+</ul>
+<h1 id="skill"><a class="markdownIt-Anchor" href="#skill"></a> Skill</h1>
+<p>一个Skill=一份“这类任务的操作手册”，可跨项目复用</p>
+<blockquote>
+<p>Agent的程序性记忆</p>
+</blockquote>
+<p>别写废话（重点写Gotchas）</p>
+<p>用文件夹做渐进式披露</p>
+<p>别绑死Agent，留灵活性</p>
+<p>存脚本不重写、按需钩子、测量效果</p>
+<ul>
+<li>
+<p>好用Skill的四类信息</p>
+<blockquote>
+<p>Anthropic内部9大类：API参考、产品验证、数据分析、业务流程、代码脚手架、质量Review、CI/CD、Runbook、基建运维</p>
+</blockquote>
+<ul>
+<li>任务目标：这个Skill是干什么的</li>
+<li>触发条件：什么时候用，什么时候不该用</li>
+<li>执行步骤：推荐流程→检查顺序→分支</li>
+<li>约束与坑点：Gotchas，只有你知道的经验</li>
+</ul>
+</li>
+</ul>
+<h2 id="目录结构"><a class="markdownIt-Anchor" href="#目录结构"></a> 目录结构</h2>
+<p>（典型Skill是个“工作包”，不只SKILL.md）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">my-skill/</span><br><span class="line">├── SKILL.md         主说明: 何时用、怎么用</span><br><span class="line">├── references/      参考资料、模板、规范</span><br><span class="line">├── scripts/         可直接调用的脚本</span><br><span class="line">├── examples/        输入输出示例</span><br><span class="line">└── assets/          图、模板、辅助文件</span><br></pre></td></tr></table></figure>
+<h1 id="参考资源"><a class="markdownIt-Anchor" href="#参考资源"></a> 参考资源</h1>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://docs.claude.com/en/docs/agents/skills" >Anthropics Skills<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/VoltAgent/awesome-design-md" >awesome-design-md<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/shanraisshan/claude-code-best-practice" >claude-code-best-practice<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Summary/">Summary</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2026/02/20/408%E5%85%AC%E5%BC%8F%E3%80%81%E7%BB%93%E8%AE%BA%E3%80%81%E5%B8%B8%E9%87%8F%E6%80%BB%E7%BB%93/"
+                                   title="408公式、结论、常量总结"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">408公式、结论、常量总结</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
+        </div>
+        <div class="comment-plugin-fail border-box">
+    <span class="fail-tip">评论插件加载失败</span>
+    <button class="reload keep-button">点击重新加载</button>
+</div>
+<div class="comment-plugin-loading flex-center border-box">
+    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
+    <span class="load-tip">正在加载评论插件</span>
+</div>
+<script data-pjax>
+  window.KeepCommentPlugin = {}
+  window.KeepCommentPlugin.hideLoading = () => {
+    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
+    cplDom.style.display = 'none'
+  }
+  window.KeepCommentPlugin.loadFailHandle = () => {
+    window.KeepCommentPlugin.hideLoading()
+    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
+    cpfDom.style.display = 'flex'
+    cpfDom.querySelector('.reload').addEventListener('click', () => {
+      window.location.reload()
+    })
+  }
+</script>
+
+        
+            
+
+    <div class="waline-comment-container">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline-meta.css"/>
+        <div id="waline-comment"></div>
+        <script data-pjax>
+          window.KeepCommentPlugin.walineOptions = JSON.parse('{&#34;login&#34;:&#34;force&#34;,&#34;copyright&#34;:false}'.replace(/&#34;/g, '"'))
+          window.KeepCommentPlugin.walineOptions.el = '#waline-comment'
+          window.KeepCommentPlugin.walineOptions.comment = '.post-comments-count'
+          window.KeepCommentPlugin.walineOptions.serverURL = 'waline-for-blog-psi.vercel.app'
+          window.KeepCommentPlugin.walineOptions.lang = 'zh-CN' || 'zh-CN'
+          window.KeepCommentPlugin.walineOptions.reaction = 'false' === 'true'
+        </script>
+
+        
+
+        
+            <script data-pjax
+                    async
+                    type="module"
+            >
+              import { init } from '//cdn.jsdelivr.net/npm/@waline/client@v3.3.2/dist/waline.js'
+              window.KeepCommentPlugin.initWaline = () => {
+                if (init) {
+                  init(window.KeepCommentPlugin.walineOptions)
+                  window.KeepCommentPlugin.hideLoading()
+                } else {
+                  setTimeout(() => {
+                    window.KeepCommentPlugin.initWaline()
+                  }, 1000)
+                }
+              }
+
+              if ('true' === 'true') {
+                setTimeout(() => {
+                  window.KeepCommentPlugin.initWaline()
+                }, 1200)
+              } else {
+                window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initWaline)
+              }
+            </script>
+        
+    </div>
+
+
+        
+    </div>
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3"><span class="nav-text"> 规范文档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%9A%E8%AF%9D%E6%8C%81%E4%B9%85%E5%B1%82"><span class="nav-text"> 会话持久层</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#interrogation%E5%AE%A1%E9%97%AE%E7%B3%BB%E7%BB%9F"><span class="nav-text"> Interrogation审问系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#skill"><span class="nav-text"> Skill</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-text"> 目录结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90"><span class="nav-text"> 参考资源</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2022</span>&nbsp;-&nbsp;2026
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Jackie</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+        
+        <div class="deploy-info info-item">
+            
+            本站由 <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/brands/github.png"></span> 提供部署服务
+            
+        </div>
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3"><span class="nav-text"> 规范文档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%9A%E8%AF%9D%E6%8C%81%E4%B9%85%E5%B1%82"><span class="nav-text"> 会话持久层</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#interrogation%E5%AE%A1%E9%97%AE%E7%B3%BB%E7%BB%9F"><span class="nav-text"> Interrogation审问系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#skill"><span class="nav-text"> Skill</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-text"> 目录结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90"><span class="nav-text"> 参考资源</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            
+<script src="/js/post/share.js"></script>
+
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+    
+        
+    
+
+</body>
+</html>
