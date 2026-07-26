@@ -308,7 +308,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sun May 04 2025 21:58:42 GMT+0800">2025年05月04日</span>
+                    <span class="datetime" data-updated="Sun Jul 26 2026 13:45:27 GMT+0800">2026年07月26日</span>
                 </span>
             
         
@@ -975,7 +975,7 @@ Docker容器。</p>
 <li>构建镜像文件</li>
 </ol>
 <p>构建镜像命令：docker build -f dockerfile文件路径 -t 镜像名[:版本号] .（<mark>这里有个小点.</mark>）</p>
-<p>上面命令中，-t参数用来指定 image 文件的名字，后面还可以用冒号指定标签。如果不指定，默认的标签就是latest。最后的那个点表示Dockerfile文件所在的路径，上例是当前路径，所以是一个点。</p>
+<p>上面命令中，-t参数用来指定image文件的名字，后面还可以用冒号指定标签。如果不指定，默认的标签就是latest。最后的那个点表示Dockerfile文件所在的路径，上例是当前路径，所以是一个点。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docer build -f mydockerfile-centos -t mycentos:0.1 .</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">docker images 查看镜像会发现size变大</span></span><br></pre></td></tr></table></figure>
 <p>制作tomcat镜像并发布</p>
 <p><img  
