@@ -308,7 +308,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Wed Feb 04 2026 11:47:47 GMT+0800">2026年02月04日</span>
+                    <span class="datetime" data-updated="Sun Aug 02 2026 09:17:02 GMT+0800">2026年08月02日</span>
                 </span>
             
         
@@ -329,12 +329,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>6.6k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>6.9k 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>26 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>27 分钟</span>
             </span>
         
         
@@ -493,13 +493,63 @@
 <h2 id="tags"><a class="markdownIt-Anchor" href="#tags"></a> Tags</h2>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#-a是annotation，意为注解</span></span><br><span class="line">git tag -a v1.0.0 -m <span class="string">&quot;v1.0.0大功告成&quot;</span></span><br><span class="line"><span class="comment">#删除标签</span></span><br><span class="line">git tag -d v1.0.0</span><br></pre></td></tr></table></figure>
 <h2 id="github-actions"><a class="markdownIt-Anchor" href="#github-actions"></a> GitHub Actions</h2>
-<p>【Github <a class="link"   target="_blank" rel="noopener" href="http://xn--Actionworld-6801a7413a.execute.me" >Action题目world.execute.me<i class="fas fa-external-link-alt"></i></a> 出题人讲解】 <a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1jm411d7Jk/?share_source=copy_web&amp;vd_source=15214a7977f78540f7402494fb912cda" >https://www.bilibili.com/video/BV1jm411d7Jk/?share_source=copy_web&amp;vd_source=15214a7977f78540f7402494fb912cda<i class="fas fa-external-link-alt"></i></a></p>
+<p>【Github <a class="link"   target="_blank" rel="noopener" href="http://xn--Actionworld-6801a7413a.execute.me" >Action题目world.execute.me<i class="fas fa-external-link-alt"></i></a> 出题人讲解】 <a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1jm411d7Jk/" >https://www.bilibili.com/video/BV1jm411d7Jk/<i class="fas fa-external-link-alt"></i></a></p>
 <h2 id="拓展链接"><a class="markdownIt-Anchor" href="#拓展链接"></a> 拓展链接</h2>
 <p><a class="link"   target="_blank" rel="noopener" href="http://t.csdn.cn/N467a" >Git _ 报错信息<i class="fas fa-external-link-alt"></i></a></p>
 <p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/iini/p/16300299.html" >https://www.cnblogs.com/iini/p/16300299.html<i class="fas fa-external-link-alt"></i></a></p>
 <h1 id="实用代码"><a class="markdownIt-Anchor" href="#实用代码"></a> 实用代码</h1>
-<p>clone指定tag的指定commit</p>
+<ul>
+<li>clone指定tag的指定commit</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:hankcs/HanLP.git -b v1.7.5 --depth=1</span><br><span class="line"><span class="comment"># -b 后面接 tag 名，--depth=1 指只克隆最新的版本，可以节省很多空间</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>稀疏克隆</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --filter=blob:none --sparse https://github.com/microsoft/AI-For-Beginners.git</span><br><span class="line"><span class="built_in">cd</span> AI-For-Beginners</span><br><span class="line">git sparse-checkout <span class="built_in">set</span> --no-cone <span class="string">&quot;/*&quot;</span> <span class="string">&quot;!translations&quot;</span> <span class="string">&quot;!translated_images&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">–filter=blob:none</td>
+<td style="text-align:center"><strong>部分克隆</strong>：只下载Git的提交历史和目录结构（tree），<strong>不立即下载文件内容（blob）</strong>。当你真正用到某个文件时，Git才会按需从远程拉取。这能大幅减少初始克隆体积</td>
+</tr>
+<tr>
+<td style="text-align:center">–sparse</td>
+<td style="text-align:center"><strong>启用稀疏检出模式</strong>：允许你指定只把哪些文件/目录实际写入工作区，其余文件虽然存在于仓库历史中，但本地磁盘上看不到</td>
+</tr>
+<tr>
+<td style="text-align:center">git sparse-checkout set</td>
+<td style="text-align:center">定义稀疏检出的规则</td>
+</tr>
+<tr>
+<td style="text-align:center">git sparse-checkout set</td>
+<td style="text-align:center">定义稀疏检出的规则</td>
+</tr>
+<tr>
+<td style="text-align:center">–no-cone</td>
+<td style="text-align:center">使用传统的路径匹配模式（而非新版cone模式），支持更灵活的通配符和排除规则</td>
+</tr>
+<tr>
+<td style="text-align:center">“/*”</td>
+<td style="text-align:center"><strong>包含</strong>根目录下的所有文件和文件夹</td>
+</tr>
+<tr>
+<td style="text-align:center">“!translations”</td>
+<td style="text-align:center"><strong>排除</strong>translations目录（多语言翻译文件）</td>
+</tr>
+<tr>
+<td style="text-align:center">“!translated_images”</td>
+<td style="text-align:center"><strong>排除</strong>translated_images目录（翻译用的图片）</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <p><a class="link"   target="_blank" rel="noopener" href="https://hellogithub.com/article/9aed28d4d64b4649bb364685ef557ae4" >Git的奇技淫巧<i class="fas fa-external-link-alt"></i></a></p>
 <h1 id="一台电脑绑很多ssh"><a class="markdownIt-Anchor" href="#一台电脑绑很多ssh"></a> 一台电脑绑很多ssh</h1>
 <p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/jikexianfeng/p/5873698.html" >https://www.cnblogs.com/jikexianfeng/p/5873698.html<i class="fas fa-external-link-alt"></i></a></p>
