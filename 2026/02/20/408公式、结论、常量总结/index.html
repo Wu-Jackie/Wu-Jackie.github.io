@@ -308,7 +308,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sat Oct 17 2026 16:48:01 GMT+0800">2026年10月17日</span>
+                    <span class="datetime" data-updated="Thu Oct 22 2026 00:09:03 GMT+0800">2026年10月22日</span>
                 </span>
             
         
@@ -329,12 +329,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>13.6k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>14k 字</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>52 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>53 分钟</span>
             </span>
         
         
@@ -814,7 +814,10 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <h2 id="第3章-数据链路层"><a class="markdownIt-Anchor" href="#第3章-数据链路层"></a> 第3章、数据链路层</h2>
 <ul>
-<li>海明码位数<sup class="footnote-ref"><a href="#fn33" id="fnref33">[33]</a></sup></li>
+<li>在OSI体系结构中，数据链路层具有<strong>流量控制</strong>的功能。而在TCP/IP体系结构中，<strong>流量控制</strong>功能被转移到了传输层<sup class="footnote-ref"><a href="#fn33" id="fnref33">[33]</a></sup></li>
+</ul>
+<ul>
+<li>海明码位数<sup class="footnote-ref"><a href="#fn34" id="fnref34">[34]</a></sup></li>
 </ul>
 <p>n为有限信息的位数，k为检验位的位数，则信息位n和检验位k应满足<strong>n+k+1≤2<sup>k</sup></strong></p>
 <p>规定：检验位P放在海明位号为2<sup>i-1</sup>的位置上，其余各位放置信息位</p>
@@ -843,7 +846,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <ul>
 <li>
-<p>滑动窗口机制<sup class="footnote-ref"><a href="#fn34" id="fnref34">[34]</a></sup></p>
+<p>滑动窗口机制<sup class="footnote-ref"><a href="#fn35" id="fnref35">[35]</a></sup></p>
 <ul>
 <li>
 <p>停止-等待协议（S-W）：发送窗口W<sub>T</sub>=1，接收窗口W<sub>R</sub>=1</p>
@@ -883,12 +886,16 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <p>信道平均（实际）数据传输速率=信道利用率×信道带宽（最大数据传输速率）</p>
 <p>信道平均（实际）数据传输速率=发送周期内发送的数据量/发送周期</p>
 <ul>
-<li>码分多址（CDMA）<sup class="footnote-ref"><a href="#fn35" id="fnref35">[35]</a></sup></li>
+<li>码分多址（CDMA）<sup class="footnote-ref"><a href="#fn36" id="fnref36">[36]</a></sup></li>
 </ul>
 <p>向量<strong>S</strong>表示A站的码片向量，<strong>T</strong>表示B站的码片向量</p>
 <p>不同站的码片序列<strong>相互正交</strong>，即向量S和T的<strong>规格化内积为0</strong></p>
 <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>S</mi><mo>⋅</mo><mi>T</mi><mo>≡</mo><mfrac><mn>1</mn><mi>m</mi></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover><msub><mi>S</mi><mi>i</mi></msub><msub><mi>T</mi><mi>i</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">S\cdot T\equiv \frac{1}{m}\sum_{i=1}^{m}S_iT_i=0
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">m</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></span></p>
+<blockquote>
+<p>发1发送自己的码片序列</p>
+<p>发0发送自己的码片序列的反码</p>
+</blockquote>
 <p>任何站的码片向量和该码片向量自身的规格化内积都是1</p>
 <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>S</mi><mo>⋅</mo><mi>S</mi><mo>≡</mo><mfrac><mn>1</mn><mi>m</mi></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover><msubsup><mi>S</mi><mi>i</mi><mn>2</mn></msubsup><mo>=</mo><mfrac><mn>1</mn><mi>m</mi></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover><mo stretchy="false">(</mo><mo>±</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">S\cdot S\equiv \frac{1}{m}\sum_{i=1}^{m}S_i^2=\frac{1}{m}\sum_{i=1}^{m}(\pm 1)^2=1
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">m</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">m</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mopen">(</span><span class="mord">±</span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span></p>
@@ -897,12 +904,57 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8833300000000001em;vertical-align:0em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">m</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord overline"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">m</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span></span></p>
 <p>两个向量在公共信道上叠加，实际上是线性叠加</p>
 <ul>
-<li>CSMA/CD协议<sup class="footnote-ref"><a href="#fn36" id="fnref36">[36]</a></sup></li>
+<li>
+<p>ALOHA协议<sup class="footnote-ref"><a href="#fn37" id="fnref37">[37]</a></sup></p>
+<ul>
+<li>
+<p>纯ALOHA协议</p>
+<p>当总线形网络中的任一站点需要发送数据时，可立即发送，无须事先检测信道状态。若在一段时间内未收到确认，则认为传输过程中发生了冲突。该站点需等待一段随机时间后重传，直至发送成功</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E7%BA%AFALOHA%E5%8D%8F%E8%AE%AE.png"
+                        alt="纯ALOHA协议" 
+                 ></p>
+</li>
+<li>
+<p>时隙ALOHA协议</p>
+<p>将时间划分为等长的时隙（Slot），并要求所有站点同步时钟。站点只能在每个时隙的起始时刻发送帧，且一帧的发送时间必须小于或等于一个时隙长度</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E6%97%B6%E9%9A%99ALOHA%E5%8D%8F%E8%AE%AE.png"
+                        alt="时隙ALOHA协议" 
+                 ></p>
+</li>
 </ul>
+</li>
+<li>
+<p>CSMA协议</p>
+<ul>
+<li>
+<p>1-坚持CSMA</p>
+<p>站点欲发送数据时先监听信道；若信道空闲则立即发送；若信道忙则持续监听直至信道变为空闲。“1”表示信道空闲时以概率1立即发送，“坚持”指信道忙时持续监听</p>
+</li>
+<li>
+<p>非坚持CSMA</p>
+<p>站点欲发送数据时先监听信道；若信道空闲则立即发送；若信道忙则不再监听，而是等待一段随机时间后重新尝试监听</p>
+</li>
+<li>
+<p>p-坚持CSMA</p>
+<p>适用于<strong>时隙化</strong>信道。站点在时隙开始时监听信道；若信道忙则等到下一时隙再监听；若信道空闲则以概率p发送数据，以概率1-p推迟到下一时隙再尝试</p>
+</li>
+</ul>
+</li>
+<li>
+<p>CSMA/CD协议</p>
+</li>
+</ul>
+<p>（Carrier Sense Multiple Access/Collision Detection）</p>
 <p>载波监听多路访问/冲突检测，适用于<strong>总线形网络或半双工网络</strong></p>
 <p><mark>先听后发、边听边发、冲突停发、随机重发</mark></p>
 <p><mark>最短帧长=最大单向传播时延×数据传输速率×2</mark></p>
-<p>以太网规定最短帧长为64B，最长帧长为1518B，帧间最小间隔为9.6μs</p>
+<p>以太网规定最短帧长为64B，最长帧长为1518B，帧间最小间隔为9.6μs，默认争用期为5.12μs</p>
 <ul>
 <li>截断二进制指数退避算法</li>
 </ul>
@@ -911,21 +963,35 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <li>从离散的整数集合[0,1,…,(2<sup>k</sup>-1)]中随机取一个数记为r，重传所需推迟时间为2rτ，参数k=min[重传次数,10]</li>
 <li>当重传达16次仍不成功时抛弃该帧并向高层报错</li>
 </ol>
-<blockquote>
-<p>以太网默认争用期为5.12μs</p>
-</blockquote>
 <ul>
 <li>CSMA/CA协议</li>
 </ul>
 <p><mark>先听后发、忙则退避</mark></p>
+<p>SIFS：最短的IFS，分隔属于一次对话的各帧</p>
+<p>DIFS：最长的IFS</p>
 <ul>
-<li>信道预约<sup class="footnote-ref"><a href="#fn37" id="fnref37">[37]</a></sup></li>
-</ul>
+<li>
+<p>信道预约<sup class="footnote-ref"><a href="#fn38" id="fnref38">[38]</a></sup></p>
 <p>802.11标准允许发送站对信道进行预约</p>
-<p>源站在RTS帧中填写的所需占用信道的持续时间，是从收到RTS帧后到目的站最后发送完ACK帧为止的时间，即“SIFS+CTS+SIFS+数据帧+SIFS+ACK”</p>
-<p>AP在CTS帧中填写的所需占用信道的持续时间，是从收到CTS帧后到目的站最后发送完ACK帧为止的时间，即“SIFS+数据帧+SIFS+ACK”</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E4%BF%A1%E9%81%93%E9%A2%84%E7%BA%A6.png"
+                        alt="信道预约" 
+                 ></p>
 <ul>
-<li>局域网体系结构<sup class="footnote-ref"><a href="#fn38" id="fnref38">[38]</a></sup></li>
+<li>NAV
+<ul>
+<li>源站：SIFS+CTS+SIFS+DATA+SIFS+ACK</li>
+<li>AP：SIFS+DATA+SIFS+ACK</li>
+<li>DATA：DATA+SIFS+ACK（收到DATA首部即开始静默）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>局域网体系结构<sup class="footnote-ref"><a href="#fn39" id="fnref39">[39]</a></sup></li>
 </ul>
 <p><img  
                        lazyload
@@ -934,12 +1000,24 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
                         alt="局域网体系结构" 
                  ></p>
 <ul>
-<li>以太网MAC帧<sup class="footnote-ref"><a href="#fn39" id="fnref39">[39]</a></sup></li>
+<li>以太网MAC帧<sup class="footnote-ref"><a href="#fn40" id="fnref40">[40]</a></sup></li>
 </ul>
 <p>首部和尾部为18B，662N4，收发协数验，N是46~1500</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="%E4%BB%A5%E5%A4%AA%E7%BD%91V2MAC%E5%B8%A7.png"
+                        alt="以太网V2MAC帧" 
+                 ></p>
 <ul>
-<li>802.11局域网的数据帧格式<sup class="footnote-ref"><a href="#fn40" id="fnref40">[40]</a></sup></li>
+<li>802.11局域网的数据帧格式<sup class="footnote-ref"><a href="#fn41" id="fnref41">[41]</a></sup></li>
 </ul>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="802.11%E6%95%B0%E6%8D%AE%E5%B8%A7.png"
+                        alt="802.11数据帧" 
+                 ></p>
 <p>30  N  4首数验，首部3+1地址</p>
 <p>九十比特表去来，帧的中转靠AP</p>
 <p>去往AP中起止，来自AP止中起</p>
@@ -949,14 +1027,14 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <p>当AP发往主机时，发送地址不是实际的源地址，因此用地址3来存放实际的源地址</p>
 </blockquote>
 <ul>
-<li>802.1Q帧<sup class="footnote-ref"><a href="#fn41" id="fnref41">[41]</a></sup></li>
+<li>802.1Q帧<sup class="footnote-ref"><a href="#fn42" id="fnref42">[42]</a></sup></li>
 </ul>
 <p>66<mark>4</mark>2N4，收发<mark>V</mark>协数验</p>
 <blockquote>
 <p>在干线链路上传送的帧是802.1Q帧</p>
 </blockquote>
 <ul>
-<li>设备隔离冲突域和广播域的总结<sup class="footnote-ref"><a href="#fn42" id="fnref42">[42]</a></sup></li>
+<li>设备隔离冲突域和广播域的总结<sup class="footnote-ref"><a href="#fn43" id="fnref43">[43]</a></sup></li>
 </ul>
 <table>
 <thead>
@@ -996,7 +1074,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </table>
 <h2 id="第4章-网络层"><a class="markdownIt-Anchor" href="#第4章-网络层"></a> 第4章、网络层</h2>
 <ul>
-<li>IP数据报格式<sup class="footnote-ref"><a href="#fn43" id="fnref43">[43]</a></sup></li>
+<li>IP数据报格式<sup class="footnote-ref"><a href="#fn44" id="fnref44">[44]</a></sup></li>
 </ul>
 <p>首部长度为20-60B，418，首总偏</p>
 <p>（首部长度，总长度，片偏移）以<mark>4B</mark>为单位</p>
@@ -1007,7 +1085,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <p>片偏移除了最后一个分片外，每个分片的长度一定是<mark>8B</mark>的整数倍（课后67题）</p>
 </blockquote>
 <ul>
-<li>特殊IP地址用途<sup class="footnote-ref"><a href="#fn44" id="fnref44">[44]</a></sup></li>
+<li>特殊IP地址用途<sup class="footnote-ref"><a href="#fn45" id="fnref45">[45]</a></sup></li>
 </ul>
 <table>
 <thead>
@@ -1061,7 +1139,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <p>DHCP是<mark>应用层</mark>协议，它基于UDP；RIP是<mark>应用层</mark>协议，使用UDP传送数据；OSPF是<mark>网络层</mark>协议，直接用<strong>IP数据报</strong>传送</p>
 </li>
 <li>
-<p>MAC地址会随着数据发往不同的网络而改变，IP地址当且仅当数据在私有网络与外部网络传递时才会改变（课后64题）<sup class="footnote-ref"><a href="#fn45" id="fnref45">[45]</a></sup></p>
+<p>MAC地址会随着数据发往不同的网络而改变，IP地址当且仅当数据在私有网络与外部网络传递时才会改变（课后64题）<sup class="footnote-ref"><a href="#fn46" id="fnref46">[46]</a></sup></p>
 </li>
 <li>
 <p>DHCP协议</p>
@@ -1083,23 +1161,23 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
                         alt="DHCP服务器" 
                  ></p>
 <ul>
-<li>IPv6将地址从IPv4的32位增大到<strong>128位</strong>，只有源主机才能分片，是端到端的，<strong>不允许类似IPv4在中间路由器进行分片</strong><sup class="footnote-ref"><a href="#fn46" id="fnref46">[46]</a></sup></li>
+<li>IPv6将地址从IPv4的32位增大到<strong>128位</strong>，只有源主机才能分片，是端到端的，<strong>不允许类似IPv4在中间路由器进行分片</strong><sup class="footnote-ref"><a href="#fn47" id="fnref47">[47]</a></sup></li>
 </ul>
 <h2 id="第5章-传输层"><a class="markdownIt-Anchor" href="#第5章-传输层"></a> 第5章、传输层</h2>
 <ul>
-<li>UDP首部：8B<sup class="footnote-ref"><a href="#fn47" id="fnref47">[47]</a></sup></li>
+<li>UDP首部：8B<sup class="footnote-ref"><a href="#fn48" id="fnref48">[48]</a></sup></li>
 <li>UDP一次发送一个报文，既不合并，又不拆分</li>
 <li>计算检验和时，UDP数据报前添加12B的伪首部（IP数据报检验和只检验IP数据报的<mark>首部</mark>，UDP的检验和要将<mark>首部和数据部分</mark>一起检验），最高位产生了进位要<strong>回卷</strong></li>
 </ul>
 <ul>
 <li>TCP首部：20B-60B、数据偏移以×4B为单位</li>
 <li>seq表示发送的报文段中数据部分的第一个字节在A的发送缓存区中的编号，ack表示A期望收到的下一个报文段的数据部分的第一个字节在B的发送缓存区中的编号</li>
-<li>只有握手①的ACK=0；握手①②的SYN=1，其他所有TCP的报文段都是0；挥手①③的FIN=1<sup class="footnote-ref"><a href="#fn48" id="fnref48">[48]</a></sup></li>
+<li>只有握手①的ACK=0；握手①②的SYN=1，其他所有TCP的报文段都是0；挥手①③的FIN=1<sup class="footnote-ref"><a href="#fn49" id="fnref49">[49]</a></sup></li>
 <li>握手①②不能携带数据；握手③如果不携带数据就不消耗序号；握手①②固定消耗一个序号</li>
 <li>挥手①③即使不携带数据也要消耗一个序号；挥手②<strong>可以</strong>携带数据；挥手④<strong>不可以</strong>携带数据</li>
 </ul>
 <ul>
-<li>发送窗口上限值=min[rwnd,cwnd]<sup class="footnote-ref"><a href="#fn49" id="fnref49">[49]</a></sup></li>
+<li>发送窗口上限值=min[rwnd,cwnd]<sup class="footnote-ref"><a href="#fn50" id="fnref50">[50]</a></sup></li>
 <li>ssthresh不能小于2</li>
 <li>TCP连接建立和网络出现超时时，采用慢开始和拥塞避免算法（ssthresh=cwnd/2，cwnd=1）</li>
 <li>发送方收到3个冗余ACK时，采用快重传和快恢复算法（ssthresh=cwnd/2，cwnd=ssthresh）</li>
@@ -1121,7 +1199,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <p>如果题目中出现MSS字样需考虑TCP中的拥塞控制</p>
 </li>
 <li>
-<p>HTTP三种工作方式<sup class="footnote-ref"><a href="#fn50" id="fnref50">[50]</a></sup></p>
+<p>HTTP三种工作方式<sup class="footnote-ref"><a href="#fn51" id="fnref51">[51]</a></sup></p>
 </li>
 </ul>
 <p><img  
@@ -1142,7 +1220,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <h1 id="计算机组成原理"><a class="markdownIt-Anchor" href="#计算机组成原理"></a> 计算机组成原理</h1>
 <h2 id="第1章-计算机系统概述"><a class="markdownIt-Anchor" href="#第1章-计算机系统概述"></a> 第1章、计算机系统概述</h2>
 <ul>
-<li>MAR用于寻址，其位数反映最多可寻址的存储单元的个数，MAR的长度与PC的长度相等<sup class="footnote-ref"><a href="#fn51" id="fnref51">[51]</a></sup></li>
+<li>MAR用于寻址，其位数反映最多可寻址的存储单元的个数，MAR的长度与PC的长度相等<sup class="footnote-ref"><a href="#fn52" id="fnref52">[52]</a></sup></li>
 <li>MDR的位数通常等于存储字长，一般为字节的2次幂的整数倍</li>
 <li>MAR和MDR属于存储器，但是这两元件和Cache存在于CPU中</li>
 <li>运算器：累加器（ACC）、乘商寄存器（MQ）、操作数寄存器（X）、变址寄存器（IX）、基址寄存器（BR）等</li>
@@ -1152,7 +1230,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <ul>
 <li>
-<p>字长一般等于通用寄存器的位数或ALU的宽度<sup class="footnote-ref"><a href="#fn52" id="fnref52">[52]</a></sup></p>
+<p>字长一般等于通用寄存器的位数或ALU的宽度<sup class="footnote-ref"><a href="#fn53" id="fnref53">[53]</a></sup></p>
 </li>
 <li>
 <p><mark>MAR位数反映了存储单元的个数、MDR的位数反映了存储单元的字长</mark></p>
@@ -1179,7 +1257,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </li>
 </ul>
 <ul>
-<li>在CPU中，IR、MAR和MDR对各类程序员都是透明的<sup class="footnote-ref"><a href="#fn53" id="fnref53">[53]</a></sup></li>
+<li>在CPU中，IR、MAR和MDR对各类程序员都是透明的<sup class="footnote-ref"><a href="#fn54" id="fnref54">[54]</a></sup></li>
 <li>字、字长、机器字长、指令字长、存储字长的区别和联系</li>
 </ul>
 <p>字长是指CPU内部用于整数运算的数据通路的宽度，因此字长等于CPU内部用于整数运算的运算器位数和通用寄存器宽度，它反映了计算机处理信息的能力。字和字长的概念不同。字用来表示被处理信息的单位，用来度量数据类型的宽度，如x86机器中将一个字定义为16位</p>
@@ -1190,7 +1268,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <p>早期的存储字长一般与指令字长、字长相等，因此访问一次主存储器便可取出一条指令或一个数据。随着计算机的发展，指令字长、字长都可变，但必须都是字节的整数倍</p>
 <h2 id="第2章-数据的表示和运算"><a class="markdownIt-Anchor" href="#第2章-数据的表示和运算"></a> 第2章、数据的表示和运算</h2>
 <ul>
-<li>十进制转二进制<sup class="footnote-ref"><a href="#fn54" id="fnref54">[54]</a></sup>
+<li>十进制转二进制<sup class="footnote-ref"><a href="#fn55" id="fnref55">[55]</a></sup>
 <ul>
 <li>除基取余法：除基取余，先余为低，后余为高</li>
 <li>乘基取整法：乘基取整，先整为高，后整为低</li>
@@ -1254,10 +1332,10 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
                  ></p>
 <ul>
 <li>若不指定signed/unsigned，默认为<strong>有符号整数</strong>，字符型（char，8位）是C语言中的一个特殊类型，默认按<strong>无符号整数</strong>解释，上述类型都是按<strong>补码</strong>形式存储的</li>
-<li>0拓展：原数字为无符号整数，拓展后的高位用0填充；符号拓展：原数字为有符号整数，拓展后的高位用原数字符号位填充<sup class="footnote-ref"><a href="#fn55" id="fnref55">[55]</a></sup></li>
+<li>0拓展：原数字为无符号整数，拓展后的高位用0填充；符号拓展：原数字为有符号整数，拓展后的高位用原数字符号位填充<sup class="footnote-ref"><a href="#fn56" id="fnref56">[56]</a></sup></li>
 </ul>
 <ul>
-<li>定点整数的不同类型转换（考虑机器数）<sup class="footnote-ref"><a href="#fn56" id="fnref56">[56]</a></sup></li>
+<li>定点整数的不同类型转换（考虑机器数）<sup class="footnote-ref"><a href="#fn57" id="fnref57">[57]</a></sup></li>
 </ul>
 <ol>
 <li>长→短：去掉高位，保留低位</li>
@@ -1278,7 +1356,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8833300000000001em;vertical-align:0em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9666600000000001em;vertical-align:-0.08333em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">A</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8833300000000001em;vertical-align:0em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span></span></span></p>
 </blockquote>
 <ul>
-<li>带标志加法器<sup class="footnote-ref"><a href="#fn57" id="fnref57">[57]</a></sup></li>
+<li>带标志加法器<sup class="footnote-ref"><a href="#fn58" id="fnref58">[58]</a></sup></li>
 </ul>
 <table>
 <thead>
@@ -1316,7 +1394,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <li>算术移位：将操作数视为<strong>有符号整数</strong>，左移（左移前后符号位不同发生溢出）高位移出，低位补0；右移低位移出，高位补<strong>符号位</strong></li>
 </ul>
 <ul>
-<li>无符号整数的乘法运算原理<sup class="footnote-ref"><a href="#fn58" id="fnref58">[58]</a></sup></li>
+<li>无符号整数的乘法运算原理<sup class="footnote-ref"><a href="#fn59" id="fnref59">[59]</a></sup></li>
 </ul>
 <p><img  
                        lazyload
@@ -1356,7 +1434,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
                         alt="带符号整数（补码）除法" 
                  ></p>
 <ul>
-<li>十六进制求补操作<sup class="footnote-ref"><a href="#fn59" id="fnref59">[59]</a></sup></li>
+<li>十六进制求补操作<sup class="footnote-ref"><a href="#fn60" id="fnref60">[60]</a></sup></li>
 </ul>
 <ol>
 <li>从十六进制数最低位向左找到第一个非0的数字</li>
@@ -1372,7 +1450,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <li><mark>2<sup>15</sup>=32768、2<sup>16</sup>=65536</mark></li>
 </ul>
 <ul>
-<li>复杂小数转换二进制：乘基取整法（<strong>从高到低</strong>，仅用于处理十进制真值的小数部分）<sup class="footnote-ref"><a href="#fn60" id="fnref60">[60]</a></sup></li>
+<li>复杂小数转换二进制：乘基取整法（<strong>从高到低</strong>，仅用于处理十进制真值的小数部分）<sup class="footnote-ref"><a href="#fn61" id="fnref61">[61]</a></sup></li>
 </ul>
 <table>
 <thead>
@@ -1428,7 +1506,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
                  ></p>
 <ul>
 <li>
-<p>浮点数的加减运算<sup class="footnote-ref"><a href="#fn61" id="fnref61">[61]</a></sup></p>
+<p>浮点数的加减运算<sup class="footnote-ref"><a href="#fn62" id="fnref62">[62]</a></sup></p>
 <ul>
 <li>对阶：小阶码向大阶码看齐（尾数右移时保留至少3位参与尾数部分的运算）</li>
 <li>舍入：如果舍弃位刚好为<strong>100</strong>
@@ -1462,7 +1540,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <ul>
 <li>
-<p>数据的大小端存储<sup class="footnote-ref"><a href="#fn62" id="fnref62">[62]</a></sup></p>
+<p>数据的大小端存储<sup class="footnote-ref"><a href="#fn63" id="fnref63">[63]</a></sup></p>
 <ul>
 <li>大端方式：先存储高位字节，后存储低位字节。字节中的字节顺序和原序列的相同</li>
 <li>小端方式：先存储低位字节，后存储高位字节。字节中的字节顺序和原序列的相反</li>
@@ -1479,7 +1557,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <h2 id="第3章-存储系统"><a class="markdownIt-Anchor" href="#第3章-存储系统"></a> 第3章、存储系统</h2>
 <ul>
 <li>
-<p>SDRAM刷新周期<sup class="footnote-ref"><a href="#fn63" id="fnref63">[63]</a></sup></p>
+<p>SDRAM刷新周期<sup class="footnote-ref"><a href="#fn64" id="fnref64">[64]</a></sup></p>
 <p>一般取2ms，分为<strong>集中刷新</strong>（死区不能访问存储器）、<strong>分散刷新</strong>（没有死区，但加长了系统存取周期）、<strong>异步刷新</strong>（一个刷新周期内每一行仅刷新一次（刷新周期除以行数）），<mark>刷新对CPU透明</mark>，刷新时不需要选片（整个存储器中的所有芯片同时被刷新）</p>
 </li>
 <li>
@@ -1542,7 +1620,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </table>
 <ul>
 <li>
-<p>多模块存储器——低位交叉编址<sup class="footnote-ref"><a href="#fn64" id="fnref64">[64]</a></sup></p>
+<p>多模块存储器——低位交叉编址<sup class="footnote-ref"><a href="#fn65" id="fnref65">[65]</a></sup></p>
 <p>低位地址为模块号，高位地址为模块内地址，模块号=单元地址%m</p>
 <blockquote>
 <p>m个模块，k个单元，模块存取周期为T，总线传输周期为r</p>
@@ -1567,19 +1645,19 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <ul>
 <li>
-<p>字位同时扩展法：将进行位扩展的芯片作为一组，各组的连接方式与位扩展的相同，由系统地址线<strong>高位</strong>译码产生若干片选信号，分别接到各组芯片的片选控制线<sup class="footnote-ref"><a href="#fn65" id="fnref65">[65]</a></sup></p>
+<p>字位同时扩展法：将进行位扩展的芯片作为一组，各组的连接方式与位扩展的相同，由系统地址线<strong>高位</strong>译码产生若干片选信号，分别接到各组芯片的片选控制线<sup class="footnote-ref"><a href="#fn66" id="fnref66">[66]</a></sup></p>
 <blockquote>
 <p>线选法缺点：地址空间不连续</p>
 </blockquote>
 </li>
 </ul>
 <ul>
-<li>RAID1：镜像磁盘阵列、RAID2~5：带校验的磁盘阵列<sup class="footnote-ref"><a href="#fn66" id="fnref66">[66]</a></sup></li>
+<li>RAID1：镜像磁盘阵列、RAID2~5：带校验的磁盘阵列<sup class="footnote-ref"><a href="#fn67" id="fnref67">[67]</a></sup></li>
 <li>SSD（固态硬盘）数据是以<strong>页</strong>为单位读/写、以<strong>块</strong>为单位擦除</li>
 </ul>
 <ul>
 <li>
-<p>局部性原理<sup class="footnote-ref"><a href="#fn67" id="fnref67">[67]</a></sup></p>
+<p>局部性原理<sup class="footnote-ref"><a href="#fn68" id="fnref68">[68]</a></sup></p>
 <ul>
 <li>
 <p>时间局部性：如果某条指令或数据项当前被访问，则在不久的将来很可能再次被访问</p>
@@ -1598,7 +1676,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <ul>
 <li>
-<p>Cache和主存的映射方式<sup class="footnote-ref"><a href="#fn68" id="fnref68">[68]</a></sup></p>
+<p>Cache和主存的映射方式<sup class="footnote-ref"><a href="#fn69" id="fnref69">[69]</a></sup></p>
 <p>为了识别每个Cache行对应哪个主存块，需要为每行设置一个<mark>标记位</mark>，<strong>记录其主存块编号</strong></p>
 <p>设置一位<mark>有效位</mark>，<strong>指示该行数据是否有效</strong></p>
 <ul>
@@ -1659,7 +1737,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
                  ></p>
 </li>
 <li>
-<p>通常为每个Cache行都设置一个<strong>比较器</strong>，<strong>比较器的位数等于标记字段的长度</strong>，其查找过程是一种“按内容访问”的存取方式，是一种“相联存储器”<sup class="footnote-ref"><a href="#fn69" id="fnref69">[69]</a></sup></p>
+<p>通常为每个Cache行都设置一个<strong>比较器</strong>，<strong>比较器的位数等于标记字段的长度</strong>，其查找过程是一种“按内容访问”的存取方式，是一种“相联存储器”<sup class="footnote-ref"><a href="#fn70" id="fnref70">[70]</a></sup></p>
 <ul>
 <li>直接映射只需要设置1个比较器</li>
 <li>全相联映射需要设置行数个比较器</li>
@@ -1702,7 +1780,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <blockquote>
 <ul>
-<li>【2021统考真题】若计算机主存地址为32位，按字节编址，Cache数据区大小为32KB，主存块大小为32B，采用直接映射方式和回写（Write Back）策略，则Cache行的位数至少是（）<sup class="footnote-ref"><a href="#fn70" id="fnref70">[70]</a></sup></li>
+<li>【2021统考真题】若计算机主存地址为32位，按字节编址，Cache数据区大小为32KB，主存块大小为32B，采用直接映射方式和回写（Write Back）策略，则Cache行的位数至少是（）<sup class="footnote-ref"><a href="#fn71" id="fnref71">[71]</a></sup></li>
 </ul>
 <p>分析：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">┌--------┬-----------┬--------┐</span><br><span class="line">│ tag标记 | Cache行号 │ 块内地址 |</span><br><span class="line">└--------┴-----------┴--------┘</span><br><span class="line">    17        10         5</span><br><span class="line">┌-------┬-------┬-----┬-------┬-------┐</span><br><span class="line">│ 有效位 | 替换位 │ 脏位 | tag位 | 数据位 |</span><br><span class="line">└-------┴-------┴-----┴-------┴-------┘</span><br><span class="line">   1        无     1      17     256</span><br><span class="line">一个主存块大小32B，为32×8=256位（数据部分）</span><br><span class="line">主存地址一共32位，一个主存块32B，则块内地址为5位</span><br><span class="line">Cache数据区大小32KB，一个Cache行数据32B，则共有32KB/32B=2^10行，则行号为10位</span><br><span class="line">总的主存地址32位，则32-10-5=17位的tag位</span><br></pre></td></tr></table></figure>
@@ -1738,7 +1816,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <h2 id="第4章-指令系统"><a class="markdownIt-Anchor" href="#第4章-指令系统"></a> 第4章、指令系统</h2>
 <ul>
-<li>寻址方式、有效地址及访存次数<sup class="footnote-ref"><a href="#fn71" id="fnref71">[71]</a></sup></li>
+<li>寻址方式、有效地址及访存次数<sup class="footnote-ref"><a href="#fn72" id="fnref72">[72]</a></sup></li>
 </ul>
 <table>
 <thead>
@@ -1806,7 +1884,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 </blockquote>
 <ul>
-<li>AT&amp;T格式指令和Intel格式指令对比<sup class="footnote-ref"><a href="#fn72" id="fnref72">[72]</a></sup></li>
+<li>AT&amp;T格式指令和Intel格式指令对比<sup class="footnote-ref"><a href="#fn73" id="fnref73">[73]</a></sup></li>
 </ul>
 <p><img  
                        lazyload
@@ -1852,7 +1930,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
                  ></p>
 </li>
 <li>
-<p>栈帧结构<sup class="footnote-ref"><a href="#fn73" id="fnref73">[73]</a></sup></p>
+<p>栈帧结构<sup class="footnote-ref"><a href="#fn74" id="fnref74">[74]</a></sup></p>
 </li>
 </ul>
 <p><img  
@@ -1864,7 +1942,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <h2 id="第5章-中央处理器"><a class="markdownIt-Anchor" href="#第5章-中央处理器"></a> 第5章、中央处理器</h2>
 <ul>
 <li>
-<p>运算器<sup class="footnote-ref"><a href="#fn74" id="fnref74">[74]</a></sup></p>
+<p>运算器<sup class="footnote-ref"><a href="#fn75" id="fnref75">[75]</a></sup></p>
 <p>算术逻辑单元（ALU）、暂存器、累加寄存器（ACC）、通用寄存器组（GPRs）、程序状态字（PSW）寄存器、移位寄存器、计数器（CT）等组成</p>
 </li>
 <li>
@@ -1884,7 +1962,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <p>IR位数等于指令字长</p>
 <ul>
 <li>
-<p>CPU可视为由<strong>数据通路</strong>和<strong>控制部件</strong>两大部分组成，数据通路的基本构成元件可分为<strong>组合逻辑元件</strong>和<strong>时序逻辑元件</strong>两大类<sup class="footnote-ref"><a href="#fn75" id="fnref75">[75]</a></sup></p>
+<p>CPU可视为由<strong>数据通路</strong>和<strong>控制部件</strong>两大部分组成，数据通路的基本构成元件可分为<strong>组合逻辑元件</strong>和<strong>时序逻辑元件</strong>两大类<sup class="footnote-ref"><a href="#fn76" id="fnref76">[76]</a></sup></p>
 <ul>
 <li>
 <p><strong>组合逻辑元件（操作元件）</strong></p>
@@ -1901,7 +1979,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <ul>
 <li>
-<p>微程序控制器<sup class="footnote-ref"><a href="#fn76" id="fnref76">[76]</a></sup></p>
+<p>微程序控制器<sup class="footnote-ref"><a href="#fn77" id="fnref77">[77]</a></sup></p>
 <p><img  
                        lazyload
                        alt="image"
@@ -1992,7 +2070,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </tbody>
 </table>
 <ul>
-<li>中断<sup class="footnote-ref"><a href="#fn77" id="fnref77">[77]</a></sup></li>
+<li>中断<sup class="footnote-ref"><a href="#fn78" id="fnref78">[78]</a></sup></li>
 </ul>
 <p><img  
                        lazyload
@@ -2011,7 +2089,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
                  ></p>
 <ul>
 <li>
-<p>流水线的冒险与处理<sup class="footnote-ref"><a href="#fn78" id="fnref78">[78]</a></sup></p>
+<p>流水线的冒险与处理<sup class="footnote-ref"><a href="#fn79" id="fnref79">[79]</a></sup></p>
 <blockquote>
 <p>流水线逻辑结构：取值（IF）、译码（ID）、执行（EX）、访存（MEM）、写回（WR）</p>
 </blockquote>
@@ -2104,7 +2182,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <h2 id="第6章-总线"><a class="markdownIt-Anchor" href="#第6章-总线"></a> 第6章、总线</h2>
 <ul>
-<li>数据总线<strong>双向</strong>传输，位数反映一次能传送的数据的位数<sup class="footnote-ref"><a href="#fn79" id="fnref79">[79]</a></sup></li>
+<li>数据总线<strong>双向</strong>传输，位数反映一次能传送的数据的位数<sup class="footnote-ref"><a href="#fn80" id="fnref80">[80]</a></sup></li>
 <li>地址总线<strong>单向</strong>传输，地址信息只能由CPU发送至内存或外设，位数反映最大的寻址空间</li>
 <li>控制信息和状态信息<strong>单向</strong>传输，控制信息通过控制总线由CPU发送至内存或外设，状态信息通过状态总线由内存或外设发送至CPU</li>
 </ul>
@@ -2113,7 +2191,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <h2 id="第7章-输入输出系统"><a class="markdownIt-Anchor" href="#第7章-输入输出系统"></a> 第7章、输入/输出系统</h2>
 <ul>
-<li>I/O接口中的<strong>数据线</strong>传送的是读/写数据、状态信息、控制信息和中断类型号；<strong>地址线</strong>传送的是要访问I/O接口中的寄存器的地址；<strong>控制线</strong>传送的是读/写控制信号<sup class="footnote-ref"><a href="#fn80" id="fnref80">[80]</a></sup></li>
+<li>I/O接口中的<strong>数据线</strong>传送的是读/写数据、状态信息、控制信息和中断类型号；<strong>地址线</strong>传送的是要访问I/O接口中的寄存器的地址；<strong>控制线</strong>传送的是读/写控制信号<sup class="footnote-ref"><a href="#fn81" id="fnref81">[81]</a></sup></li>
 </ul>
 <ul>
 <li>中断优先级包括<strong>响应优先级</strong>和<strong>处理优先级</strong>。响应优先级由硬件线路或查询程序的查询顺序确定，不可动态改变；处理优先级由中断屏蔽字确定，可灵活改变</li>
@@ -2188,101 +2266,103 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </li>
 <li id="fn32" class="footnote-item"><p>P46 <a href="#fnref32" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn33" class="footnote-item"><p>P59 <a href="#fnref33" class="footnote-backref">↩︎</a></p>
+<li id="fn33" class="footnote-item"><p>P53 <a href="#fnref33" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn34" class="footnote-item"><p>P63 <a href="#fnref34" class="footnote-backref">↩︎</a></p>
+<li id="fn34" class="footnote-item"><p>P59 <a href="#fnref34" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn35" class="footnote-item"><p>P80 <a href="#fnref35" class="footnote-backref">↩︎</a></p>
+<li id="fn35" class="footnote-item"><p>P63 <a href="#fnref35" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn36" class="footnote-item"><p>P84 <a href="#fnref36" class="footnote-backref">↩︎</a></p>
+<li id="fn36" class="footnote-item"><p>P80 <a href="#fnref36" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn37" class="footnote-item"><p>P86 <a href="#fnref37" class="footnote-backref">↩︎</a></p>
+<li id="fn37" class="footnote-item"><p>P81 <a href="#fnref37" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn38" class="footnote-item"><p>P99 <a href="#fnref38" class="footnote-backref">↩︎</a></p>
+<li id="fn38" class="footnote-item"><p>P86 <a href="#fnref38" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn39" class="footnote-item"><p>P102 <a href="#fnref39" class="footnote-backref">↩︎</a></p>
+<li id="fn39" class="footnote-item"><p>P99 <a href="#fnref39" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn40" class="footnote-item"><p>P105 <a href="#fnref40" class="footnote-backref">↩︎</a></p>
+<li id="fn40" class="footnote-item"><p>P102 <a href="#fnref40" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn41" class="footnote-item"><p>P105 <a href="#fnref41" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn42" class="footnote-item"><p>P125 <a href="#fnref42" class="footnote-backref">↩︎</a></p>
+<li id="fn42" class="footnote-item"><p>P105 <a href="#fnref42" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn43" class="footnote-item"><p>P137 <a href="#fnref43" class="footnote-backref">↩︎</a></p>
+<li id="fn43" class="footnote-item"><p>P125 <a href="#fnref43" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn44" class="footnote-item"><p>P139 <a href="#fnref44" class="footnote-backref">↩︎</a></p>
+<li id="fn44" class="footnote-item"><p>P137 <a href="#fnref44" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn45" class="footnote-item"><p>P147-P150 <a href="#fnref45" class="footnote-backref">↩︎</a></p>
+<li id="fn45" class="footnote-item"><p>P139 <a href="#fnref45" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn46" class="footnote-item"><p>P179 <a href="#fnref46" class="footnote-backref">↩︎</a></p>
+<li id="fn46" class="footnote-item"><p>P147-P150 <a href="#fnref46" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn47" class="footnote-item"><p>P226 <a href="#fnref47" class="footnote-backref">↩︎</a></p>
+<li id="fn47" class="footnote-item"><p>P179 <a href="#fnref47" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn48" class="footnote-item"><p>P234 <a href="#fnref48" class="footnote-backref">↩︎</a></p>
+<li id="fn48" class="footnote-item"><p>P226 <a href="#fnref48" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn49" class="footnote-item"><p>P240 <a href="#fnref49" class="footnote-backref">↩︎</a></p>
+<li id="fn49" class="footnote-item"><p>P234 <a href="#fnref49" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn50" class="footnote-item"><p>P288 <a href="#fnref50" class="footnote-backref">↩︎</a></p>
+<li id="fn50" class="footnote-item"><p>P240 <a href="#fnref50" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn51" class="footnote-item"><p>P4 <a href="#fnref51" class="footnote-backref">↩︎</a></p>
+<li id="fn51" class="footnote-item"><p>P288 <a href="#fnref51" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn52" class="footnote-item"><p>P12 <a href="#fnref52" class="footnote-backref">↩︎</a></p>
+<li id="fn52" class="footnote-item"><p>P4 <a href="#fnref52" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn53" class="footnote-item"><p>P24 <a href="#fnref53" class="footnote-backref">↩︎</a></p>
+<li id="fn53" class="footnote-item"><p>P12 <a href="#fnref53" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn54" class="footnote-item"><p>P27 <a href="#fnref54" class="footnote-backref">↩︎</a></p>
+<li id="fn54" class="footnote-item"><p>P24 <a href="#fnref54" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn55" class="footnote-item"><p>P32 <a href="#fnref55" class="footnote-backref">↩︎</a></p>
+<li id="fn55" class="footnote-item"><p>P27 <a href="#fnref55" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn56" class="footnote-item"><p>P33 <a href="#fnref56" class="footnote-backref">↩︎</a></p>
+<li id="fn56" class="footnote-item"><p>P32 <a href="#fnref56" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn57" class="footnote-item"><p>P40 <a href="#fnref57" class="footnote-backref">↩︎</a></p>
+<li id="fn57" class="footnote-item"><p>P33 <a href="#fnref57" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn58" class="footnote-item"><p>P45 <a href="#fnref58" class="footnote-backref">↩︎</a></p>
+<li id="fn58" class="footnote-item"><p>P40 <a href="#fnref58" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn59" class="footnote-item"><p>P47 <a href="#fnref59" class="footnote-backref">↩︎</a></p>
+<li id="fn59" class="footnote-item"><p>P45 <a href="#fnref59" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn60" class="footnote-item"><p>P56 <a href="#fnref60" class="footnote-backref">↩︎</a></p>
+<li id="fn60" class="footnote-item"><p>P47 <a href="#fnref60" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn61" class="footnote-item"><p>P60 <a href="#fnref61" class="footnote-backref">↩︎</a></p>
+<li id="fn61" class="footnote-item"><p>P56 <a href="#fnref61" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn62" class="footnote-item"><p>P62 <a href="#fnref62" class="footnote-backref">↩︎</a></p>
+<li id="fn62" class="footnote-item"><p>P60 <a href="#fnref62" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn63" class="footnote-item"><p>P86 <a href="#fnref63" class="footnote-backref">↩︎</a></p>
+<li id="fn63" class="footnote-item"><p>P62 <a href="#fnref63" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn64" class="footnote-item"><p>P90 <a href="#fnref64" class="footnote-backref">↩︎</a></p>
+<li id="fn64" class="footnote-item"><p>P86 <a href="#fnref64" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn65" class="footnote-item"><p>P103 <a href="#fnref65" class="footnote-backref">↩︎</a></p>
+<li id="fn65" class="footnote-item"><p>P90 <a href="#fnref65" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn66" class="footnote-item"><p>P111 <a href="#fnref66" class="footnote-backref">↩︎</a></p>
+<li id="fn66" class="footnote-item"><p>P103 <a href="#fnref66" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn67" class="footnote-item"><p>P115 <a href="#fnref67" class="footnote-backref">↩︎</a></p>
+<li id="fn67" class="footnote-item"><p>P111 <a href="#fnref67" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn68" class="footnote-item"><p>P118 <a href="#fnref68" class="footnote-backref">↩︎</a></p>
+<li id="fn68" class="footnote-item"><p>P115 <a href="#fnref68" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn69" class="footnote-item"><p>P120 <a href="#fnref69" class="footnote-backref">↩︎</a></p>
+<li id="fn69" class="footnote-item"><p>P118 <a href="#fnref69" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn70" class="footnote-item"><p>P128 <a href="#fnref70" class="footnote-backref">↩︎</a></p>
+<li id="fn70" class="footnote-item"><p>P120 <a href="#fnref70" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn71" class="footnote-item"><p>P169 <a href="#fnref71" class="footnote-backref">↩︎</a></p>
+<li id="fn71" class="footnote-item"><p>P128 <a href="#fnref71" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn72" class="footnote-item"><p>P184 <a href="#fnref72" class="footnote-backref">↩︎</a></p>
+<li id="fn72" class="footnote-item"><p>P169 <a href="#fnref72" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn73" class="footnote-item"><p>P192 <a href="#fnref73" class="footnote-backref">↩︎</a></p>
+<li id="fn73" class="footnote-item"><p>P184 <a href="#fnref73" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn74" class="footnote-item"><p>P207 <a href="#fnref74" class="footnote-backref">↩︎</a></p>
+<li id="fn74" class="footnote-item"><p>P192 <a href="#fnref74" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn75" class="footnote-item"><p>P219 <a href="#fnref75" class="footnote-backref">↩︎</a></p>
+<li id="fn75" class="footnote-item"><p>P207 <a href="#fnref75" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn76" class="footnote-item"><p>P236 <a href="#fnref76" class="footnote-backref">↩︎</a></p>
+<li id="fn76" class="footnote-item"><p>P219 <a href="#fnref76" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn77" class="footnote-item"><p>P249 <a href="#fnref77" class="footnote-backref">↩︎</a></p>
+<li id="fn77" class="footnote-item"><p>P236 <a href="#fnref77" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn78" class="footnote-item"><p>P256 <a href="#fnref78" class="footnote-backref">↩︎</a></p>
+<li id="fn78" class="footnote-item"><p>P249 <a href="#fnref78" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn79" class="footnote-item"><p>P282 <a href="#fnref79" class="footnote-backref">↩︎</a></p>
+<li id="fn79" class="footnote-item"><p>P256 <a href="#fnref79" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn80" class="footnote-item"><p>P302 <a href="#fnref80" class="footnote-backref">↩︎</a></p>
+<li id="fn80" class="footnote-item"><p>P282 <a href="#fnref80" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn81" class="footnote-item"><p>P302 <a href="#fnref81" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
