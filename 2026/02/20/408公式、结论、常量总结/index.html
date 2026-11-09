@@ -308,7 +308,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sat Nov 07 2026 13:09:52 GMT+0800">2026年11月07日</span>
+                    <span class="datetime" data-updated="Mon Nov 09 2026 12:55:47 GMT+0800">2026年11月09日</span>
                 </span>
             
         
@@ -329,7 +329,7 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>14.8k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>14.9k 字</span>
             </span>
         
         
@@ -2052,7 +2052,11 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <h2 id="第4章-指令系统"><a class="markdownIt-Anchor" href="#第4章-指令系统"></a> 第4章、指令系统</h2>
 <ul>
-<li>寻址方式、有效地址及访存次数<sup class="footnote-ref"><a href="#fn73" id="fnref73">[73]</a></sup></li>
+<li>零地址指令参与运算的两个操作数隐含地从栈顶和次栈顶弹出，送到运算器进行运算，运算结果再隐含地压入堆栈<sup class="footnote-ref"><a href="#fn73" id="fnref73">[73]</a></sup></li>
+<li>一地址指令按指令地址A可读取源操作数，指令可隐含约定另一个操作数由ACC（累加器）提供，运算结果也将存放在ACC中</li>
+</ul>
+<ul>
+<li>寻址方式、有效地址及访存次数<sup class="footnote-ref"><a href="#fn74" id="fnref74">[74]</a></sup></li>
 </ul>
 <table>
 <thead>
@@ -2120,7 +2124,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 </blockquote>
 <ul>
-<li>AT&amp;T格式指令和Intel格式指令对比<sup class="footnote-ref"><a href="#fn74" id="fnref74">[74]</a></sup></li>
+<li>AT&amp;T格式指令和Intel格式指令对比<sup class="footnote-ref"><a href="#fn75" id="fnref75">[75]</a></sup></li>
 </ul>
 <p><img  
                        lazyload
@@ -2166,7 +2170,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
                  ></p>
 </li>
 <li>
-<p>栈帧结构<sup class="footnote-ref"><a href="#fn75" id="fnref75">[75]</a></sup></p>
+<p>栈帧结构<sup class="footnote-ref"><a href="#fn76" id="fnref76">[76]</a></sup></p>
 </li>
 </ul>
 <p><img  
@@ -2178,7 +2182,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <h2 id="第5章-中央处理器"><a class="markdownIt-Anchor" href="#第5章-中央处理器"></a> 第5章、中央处理器</h2>
 <ul>
 <li>
-<p>运算器<sup class="footnote-ref"><a href="#fn76" id="fnref76">[76]</a></sup></p>
+<p>运算器<sup class="footnote-ref"><a href="#fn77" id="fnref77">[77]</a></sup></p>
 <p>算术逻辑单元（ALU）、暂存器、累加寄存器（ACC）、通用寄存器组（GPRs）、程序状态字（PSW）寄存器、移位寄存器、计数器（CT）等组成</p>
 </li>
 <li>
@@ -2198,7 +2202,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 <p>IR位数等于指令字长</p>
 <ul>
 <li>
-<p>CPU可视为由<strong>数据通路</strong>和<strong>控制部件</strong>两大部分组成，数据通路的基本构成元件可分为<strong>组合逻辑元件</strong>和<strong>时序逻辑元件</strong>两大类<sup class="footnote-ref"><a href="#fn77" id="fnref77">[77]</a></sup></p>
+<p>CPU可视为由<strong>数据通路</strong>和<strong>控制部件</strong>两大部分组成，数据通路的基本构成元件可分为<strong>组合逻辑元件</strong>和<strong>时序逻辑元件</strong>两大类<sup class="footnote-ref"><a href="#fn78" id="fnref78">[78]</a></sup></p>
 <ul>
 <li>
 <p><strong>组合逻辑元件（操作元件）</strong></p>
@@ -2215,7 +2219,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <ul>
 <li>
-<p>微程序控制器<sup class="footnote-ref"><a href="#fn78" id="fnref78">[78]</a></sup></p>
+<p>微程序控制器<sup class="footnote-ref"><a href="#fn79" id="fnref79">[79]</a></sup></p>
 <p><img  
                        lazyload
                        alt="image"
@@ -2306,7 +2310,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </tbody>
 </table>
 <ul>
-<li>中断<sup class="footnote-ref"><a href="#fn79" id="fnref79">[79]</a></sup></li>
+<li>中断<sup class="footnote-ref"><a href="#fn80" id="fnref80">[80]</a></sup></li>
 </ul>
 <p><img  
                        lazyload
@@ -2325,7 +2329,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
                  ></p>
 <ul>
 <li>
-<p>流水线的冒险与处理<sup class="footnote-ref"><a href="#fn80" id="fnref80">[80]</a></sup></p>
+<p>流水线的冒险与处理<sup class="footnote-ref"><a href="#fn81" id="fnref81">[81]</a></sup></p>
 <blockquote>
 <p>流水线逻辑结构：取值（IF）、译码（ID）、执行（EX）、访存（MEM）、写回（WR）</p>
 </blockquote>
@@ -2418,7 +2422,7 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <h2 id="第6章-总线"><a class="markdownIt-Anchor" href="#第6章-总线"></a> 第6章、总线</h2>
 <ul>
-<li>数据总线<strong>双向</strong>传输，位数反映一次能传送的数据的位数<sup class="footnote-ref"><a href="#fn81" id="fnref81">[81]</a></sup></li>
+<li>数据总线<strong>双向</strong>传输，位数反映一次能传送的数据的位数<sup class="footnote-ref"><a href="#fn82" id="fnref82">[82]</a></sup></li>
 <li>地址总线<strong>单向</strong>传输，地址信息只能由CPU发送至内存或外设，位数反映最大的寻址空间</li>
 <li>控制信息和状态信息<strong>单向</strong>传输，控制信息通过控制总线由CPU发送至内存或外设，状态信息通过状态总线由内存或外设发送至CPU</li>
 </ul>
@@ -2427,14 +2431,13 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </ul>
 <h2 id="第7章-输入输出系统"><a class="markdownIt-Anchor" href="#第7章-输入输出系统"></a> 第7章、输入/输出系统</h2>
 <ul>
-<li>I/O接口中的<strong>数据线</strong>传送的是读/写数据、状态信息、控制信息和中断类型号；<strong>地址线</strong>传送的是要访问I/O接口中的寄存器的地址；<strong>控制线</strong>传送的是读/写控制信号<sup class="footnote-ref"><a href="#fn82" id="fnref82">[82]</a></sup></li>
+<li>I/O接口中的<strong>数据线</strong>传送的是读/写数据、状态信息、控制信息和中断类型号；<strong>地址线</strong>传送的是要访问I/O接口中的寄存器的地址；<strong>控制线</strong>传送的是读/写控制信号<sup class="footnote-ref"><a href="#fn83" id="fnref83">[83]</a></sup></li>
 </ul>
 <ul>
 <li>中断优先级包括<strong>响应优先级</strong>和<strong>处理优先级</strong>。响应优先级由硬件线路或查询程序的查询顺序确定，不可动态改变；处理优先级由中断屏蔽字确定，可灵活改变</li>
 <li>在单级（或单重）中断系统中不允许中断嵌套。中断处理过程为：①关中断；②保存断点；③识别中断源；④保存现场；⑤中断事件处理；⑥恢复现场；⑦开中断；⑧中断返回。其中①~③由硬件完成，④~⑧由中断服务程序完成</li>
 <li>DMA的传送过程：①预处理：CPU完成一些必要的准备工作，由DMA控制器向CPU发总线请求。②数据传送：DMA控制器接管总线后，在设备接口和主存之间进行数据传送，此阶段由DMA控制器控制。③后处理：传送结束后，DMA控制器向CPU发送中断信号，做结束处理</li>
 <li>中断响应在一个指令周期结束后；而DMA响应是在一个总线周期后</li>
-<li></li>
 </ul>
 <hr class="footnotes-sep" />
 <section class="footnotes">
@@ -2583,25 +2586,27 @@ hence,h\le log_{\left \lceil \frac{m}{2} \right \rceil}(\frac{n+1}{2})+1
 </li>
 <li id="fn72" class="footnote-item"><p>P128 <a href="#fnref72" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn73" class="footnote-item"><p>P169 <a href="#fnref73" class="footnote-backref">↩︎</a></p>
+<li id="fn73" class="footnote-item"><p>P157 <a href="#fnref73" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn74" class="footnote-item"><p>P184 <a href="#fnref74" class="footnote-backref">↩︎</a></p>
+<li id="fn74" class="footnote-item"><p>P169 <a href="#fnref74" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn75" class="footnote-item"><p>P192 <a href="#fnref75" class="footnote-backref">↩︎</a></p>
+<li id="fn75" class="footnote-item"><p>P184 <a href="#fnref75" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn76" class="footnote-item"><p>P207 <a href="#fnref76" class="footnote-backref">↩︎</a></p>
+<li id="fn76" class="footnote-item"><p>P192 <a href="#fnref76" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn77" class="footnote-item"><p>P219 <a href="#fnref77" class="footnote-backref">↩︎</a></p>
+<li id="fn77" class="footnote-item"><p>P207 <a href="#fnref77" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn78" class="footnote-item"><p>P236 <a href="#fnref78" class="footnote-backref">↩︎</a></p>
+<li id="fn78" class="footnote-item"><p>P219 <a href="#fnref78" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn79" class="footnote-item"><p>P249 <a href="#fnref79" class="footnote-backref">↩︎</a></p>
+<li id="fn79" class="footnote-item"><p>P236 <a href="#fnref79" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn80" class="footnote-item"><p>P256 <a href="#fnref80" class="footnote-backref">↩︎</a></p>
+<li id="fn80" class="footnote-item"><p>P249 <a href="#fnref80" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn81" class="footnote-item"><p>P282 <a href="#fnref81" class="footnote-backref">↩︎</a></p>
+<li id="fn81" class="footnote-item"><p>P256 <a href="#fnref81" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn82" class="footnote-item"><p>P302 <a href="#fnref82" class="footnote-backref">↩︎</a></p>
+<li id="fn82" class="footnote-item"><p>P282 <a href="#fnref82" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn83" class="footnote-item"><p>P302 <a href="#fnref83" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
